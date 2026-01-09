@@ -114,7 +114,7 @@ export default function Header() {
                   className="flex items-center gap-1 px-1 py-2 text-gray-700 hover:text-cyan-600 transition"
                 >
                   {!link.submenu || link.submenu.length === 0 ? (
-                    <Link href={`/${link.href}`}>
+                    <Link href={`${link.href}`}>
                       {link.name}
                     </Link>  ) : (
                  link.name)
