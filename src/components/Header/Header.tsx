@@ -156,12 +156,13 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex gap-3">
+            <a href="https://property.ibigdata.in/admin">
             <button
               onClick={() => handleScroll("contact")}
               className="inline-flex items-center rounded-lg border-2 border-cyan-600 px-5 py-2 text-sm font-semibold text-cyan-600 hover:bg-cyan-50 transition"
             >
               Login
-            </button>
+            </button></a>
             <Link
             href="/get-started"
               onClick={() => handleScroll("contact")}
