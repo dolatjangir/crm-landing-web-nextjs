@@ -60,11 +60,11 @@ export default function Header() {
       name: "CRM Products", 
       href: "#",
       submenu: [ 
-        { name: "Property", href: "/property" },
-        { name: "Consult", href: "/consult" },
-        { name: "Travel", href: "/travel" },
-        { name: "Education", href: "/education" },
-        { name: "WBH", href: "/wbh" },
+        { name: "Property", href: "https://property.ibigdata.in/" },
+        { name: "Consult", href: "https://consult.ibigdata.in/" },
+        { name: "Travel", href: "https://travel.ibigdata.in/" },
+        { name: "Education", href: "https://edu.ibigdata.in/" },
+        { name: "WBH", href: "https://wbh.ibigdata.in/" },
       ]
     },
     { name: "contact us", href: "contact-us" },
@@ -164,11 +164,13 @@ export default function Header() {
               Login
             </button></a>
             <Link
-            href="/get-started"
+            href="/get-started">
+              <button
               onClick={() => handleScroll("contact")}
               className="inline-flex items-center rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 px-6 py-2 text-sm font-semibold text-white shadow-lg hover:shadow-cyan-500/50 hover:scale-105 transition-all"
             >
               Get Started
+              </button>
             </Link>
           </div>
 
@@ -228,10 +230,20 @@ export default function Header() {
                   } else {
                     handleScroll(link.href);
                   }
+                   
                 }}
                 className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition font-medium"
               >
-                <span>{link.name}</span>
+                <span
+                
+                >  {!link.submenu || link.submenu.length === 0 ? (
+                    <Link
+                      onClick={() => setMenuOpen(false)} 
+                      href={`/${link.href}`}>
+                      {link.name}
+                    </Link>  ) : (
+                 link.name)
+                }</span>
                 {link.submenu && (
                   <FiChevronDown
                     className={`w-4 h-4 transition-transform ${
@@ -244,13 +256,16 @@ export default function Header() {
               {/* Submenu Items */}
               {link.submenu && (
                 <div
+
                   className={`overflow-hidden transition-all duration-300 ${
                     mobileSubmenuOpen === link.name
                       ? 'max-h-96 opacity-100'
                       : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <div className="pl-3">
+                  <div
+                   onClick={() => setMenuOpen(false)}
+                  className="pl-3">
                     {link.submenu.map((item) => (
                       <Link
                         key={item.name}
@@ -271,21 +286,29 @@ export default function Header() {
         </nav>
 
         {/* Mobile Menu Footer - CTA Buttons */}
-        <div className="absolute bottom-0 left-0 right-0 px-6 py-4 bg-gradient-to-t from-white via-white to-transparent border-t border-gray-100">
+        <div className="absolute bottom-0 left-0 right-0 px-6 py-4 bg-gradient-to-b from-white via-white to-transparent border-t border-gray-100">
           <div className="space-y-3">
+            <a  onClick={() => setMenuOpen(false)} className="w-full inline-flex items-center justify-center rounded-lg border-2 border-cyan-600 px-4 py-3 text-sm font-semibold text-cyan-600 hover:bg-cyan-50 transition" href="https://property.ibigdata.in/">
             <button
               onClick={() => handleScroll("contact")}
-              className="w-full inline-flex items-center justify-center rounded-lg border-2 border-cyan-600 px-4 py-3 text-sm font-semibold text-cyan-600 hover:bg-cyan-50 transition"
+             
             >
               Login
             </button>
+            </a>
                  {/* onClick={() => handleScroll("contact")} */}
+            <Link
+            href="/get-started"
+             onClick={() => setMenuOpen(false)}
+             className="w-full inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-lg hover:shadow-cyan-500/50 transition"
+
+            >
             <button
           onClick={() => handleScroll("contact")}
-              className="w-full inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-lg hover:shadow-cyan-500/50 transition"
-            >
+                         >
               Get Started
-            </button>
+              </button>
+            </Link>
           </div>
         </div>
       </div>
