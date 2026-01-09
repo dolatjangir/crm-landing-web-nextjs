@@ -239,7 +239,7 @@ export default function Header() {
                 >  {!link.submenu || link.submenu.length === 0 ? (
                     <Link
                       onClick={() => setMenuOpen(false)} 
-                      href={`/${link.href}`}>
+                      href={`${link.href}`}>
                       {link.name}
                     </Link>  ) : (
                  link.name)
@@ -269,7 +269,7 @@ export default function Header() {
                     {link.submenu.map((item) => (
                       <Link
                         key={item.name}
-                        href={`/${item.href}`}
+                        href={`${item.href}`}
                         className="block px-4 py-2.5 text-sm text-gray-600 hover:bg-cyan-50 hover:text-cyan-600 rounded-lg transition"
                         onClick={() => setMenuOpen(false)}
                       >
