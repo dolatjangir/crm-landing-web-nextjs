@@ -15,9 +15,9 @@ export default function Header() {
       name: "Company", 
       href: "/company",
       submenu: [
-      { name: "Ecosystem", href: "company/ecosystem" },
-        { name: "About us", href: "company/about-us" },
-        { name: "Why choose us", href: "company/why-choose-us" },
+      { name: "Ecosystem", href: "/company/ecosystem" },
+        { name: "About us", href: "/company/about-us" },
+        { name: "Why choose us", href: "/company/why-choose-us" },
       ]
     },
     // { 
@@ -32,28 +32,28 @@ export default function Header() {
     // },
     { 
       name: "Features", 
-      href: "feature",
+      href: "/feature",
       submenu: [
-        { name: "Workflow Automation", href: "features/workflowautomation" },
-        { name: "customize workflow", href: "features/customize-workflow" },
-         { name: "scalability", href: "features/scalability" },
-          { name: "integration", href: "features/integration" },
-        { name: "Advanced Analytics", href: "features/advanced-analytics" },
-        { name: "Security & Compliance", href: "features/security-compilance" },
+        { name: "Workflow Automation", href: "/features/workflowautomation" },
+        { name: "customize workflow", href: "/features/customize-workflow" },
+         { name: "scalability", href: "/features/scalability" },
+          { name: "integration", href: "/features/integrations" },
+        { name: "Advanced Analytics", href: "/features/advanced-analytics" },
+        { name: "Security & Compliance", href: "/features/security-compilance" },
         
-        { name: "ROI Calculator", href: "features/roicalculator" },
+        { name: "ROI Calculator", href: "/features/roicalculator" },
       ]
     },
     { 
       name: "Industries", 
       href: "industries",
       submenu: [
-        { name: "Healthcare", href: "industries/health-care" },
-        { name: "Real Estate", href: "industries/real-estate" },
-        { name: "Finance", href: "industries/finance" },
-        { name: "E-commerce", href: "industries/e-commerce" },
-        { name: "Education", href: "industries/education" },
-        { name: "Manufacturing", href: "industries/manufacturing" },
+        { name: "Healthcare", href: "/industries/health-care" },
+        { name: "Real Estate", href: "/industries/real-estate" },
+        { name: "Finance", href: "/industries/finance" },
+        { name: "E-commerce", href: "/industries/e-commerce" },
+        { name: "Education", href: "/industries/education" },
+        { name: "Manufacturing", href: "/industries/manufacturing" },
       ]
     },
     { 
@@ -138,7 +138,7 @@ export default function Header() {
                     {link.submenu.map((item) => (
                       <Link
                         key={item.name}
-                        href={`/${item.href}`}
+                        href={`${item.href}`}
                         onClick={()=>setActiveSubmenu(null)}
                         className="block px-4 py-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors"
                       >
