@@ -34,7 +34,7 @@ export default function Header() {
       name: "Features", 
       href: "/feature",
       submenu: [
-        { name: "Workflow Automation", href: "/features/workflowautomation" },
+        { name: "Workflow Automation", href: "/features/workflowautomation"},
         { name: "customize workflow", href: "/features/customize-workflow" },
          { name: "scalability", href: "/features/scalability" },
           { name: "integration", href: "/features/integrations" },
@@ -60,14 +60,15 @@ export default function Header() {
       name: "CRM Products", 
       href: "#",
       submenu: [ 
-        { name: "Property", href: "https://property.ibigdata.in/" },
-        { name: "Consult", href: "https://consult.ibigdata.in/" },
-        { name: "Travel", href: "https://travel.ibigdata.in/" },
-        { name: "Education", href: "https://edu.ibigdata.in/" },
-        { name: "WBH", href: "https://wbh.ibigdata.in/" },
+        { name: "Property", href: "https://property.ibigdata.in/", target:"_blank", rel:"noopener noreferrer" },
+        { name: "Consult", href: "https://consult.ibigdata.in/", target:"_blank", rel:"noopener noreferrer" },
+        { name: "Travel", href: "https://travel.ibigdata.in/", target:"_blank", rel:"noopener noreferrer"  },
+        { name: "Education", href: "https://edu.ibigdata.in/", target:"_blank", rel:"noopener noreferrer"  },
+        { name: "WBH", href: "https://wbh.ibigdata.in/",  target:"_blank", rel:"noopener noreferrer"  },
+          { name: "airbnb", href: "https://airbnb.ibigdata.in/",  target:"_blank", rel:"noopener noreferrer"  },
       ]
     },
-    { name: "contact us", href: "contact-us" },
+    { name: "contact us", href: "/contact-us" },
   ];
 
   // Scroll function for sticky header
@@ -135,10 +136,13 @@ export default function Header() {
                     }`}
                     style={{zIndex:999}}
                   >
-                    {link.submenu.map((item) => (
-                      <Link
+                    {link.submenu.map((item) => {
+                      const crm = link.name === "CRM Products";
+                     return( <Link
                         key={item.name}
                         href={`${item.href}`}
+                       target={crm ?"_blank" : undefined}
+                       rel={crm ?"noopener noreferrer" : undefined}
                         onClick={()=>setActiveSubmenu(null)}
                         className="block px-4 py-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors"
                       >
@@ -146,8 +150,8 @@ export default function Header() {
                         {/*   <div className="w-1.5 h-1.5 rounded-full bg-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity"></div> */}
                           <span>{item.name}</span>
                         </div>
-                      </Link>
-                    ))}
+                      </Link>)
+                    })}
                   </div>
                 )}
               </div>
