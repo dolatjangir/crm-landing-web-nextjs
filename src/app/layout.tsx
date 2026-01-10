@@ -1,4 +1,3 @@
-"use client";
 import type { Metadata } from "next";
 import "./globals.css";
 import AOSProvider from "@/providers/AOSProvider";
@@ -6,30 +5,16 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import ScrollProgressBar from "@/components/common/indicators/ScrollProgressBar";
 
-
-/* export const metadata: Metadata = {
-  title: "ibigdata | Industry-Specific CRM Platform",
-  description:
-    "ibigdata is a unified CRM ecosystem offering industry-specific CRM solutions for real estate, consulting, travel, and more.",
-  keywords: [
-    "CRM platform",
-    "industry specific CRM",
-    "real estate CRM",
-    "consultancy CRM",
-    "travel CRM",
-    "ibigdata",
-  ],
-  authors: [{ name: "ibigdata" }],
-  openGraph: {
-    title: "ibigdata CRM Platform",
-    description:
-      "One CRM platform. Multiple industry-specific solutions.",
-    url: "https://ibigdata.in",
-    siteName: "ibigdata",
-    type: "website",
-  },
-}; */
-
+export const metadata = {
+  title: "ibigdata CRM",
+  description: "AI-powered CRM platform",
+  manifest: "/manifest.json",
+};
+export function generateViewport() {
+  return {
+    themeColor: "#a752cc",
+  };
+}
 export default function RootLayout({
   children,
 }: {
@@ -38,6 +23,12 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+         <head>
+        {/* PWA & Apple */}
+        <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      </head>
       <AOSProvider />
       <body className="bg-white text-gray-900 antialiased hide-scrollbar">
         <div className=" bg-white">
