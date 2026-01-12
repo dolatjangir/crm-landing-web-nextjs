@@ -4,8 +4,8 @@
   "description": "AI-powered CRM to automate leads and grow your business",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#1E88E5",
-  "theme_color": "#fff",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "orientation": "portrait",
   "icons": [
     {
