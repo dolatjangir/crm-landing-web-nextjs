@@ -9,6 +9,13 @@ import DarkHeroSection from "@/components/common/sections/DarkHeroSection";
 import { useNavigate } from "@/hooks/useNavigate";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { IoRocket,IoStatsChartSharp ,IoChatboxEllipsesOutline } from "react-icons/io5";
+import { PiTargetBold ,PiArrowsClockwiseBold} from "react-icons/pi";
+import { IoFlash } from "react-icons/io5";
+import { GiRobotAntennas,GiCrossedChains } from "react-icons/gi";
+import { FaLock,FaInfinity,FaStar } from "react-icons/fa";
+import { FaEarthAmericas,FaCalendar, FaUsers, FaUser } from "react-icons/fa6";
+
 
 export default function WorkflowAutomationPage() {
     const [activeWorkflow, setActiveWorkflow] = useState(0);
@@ -70,9 +77,12 @@ export default function WorkflowAutomationPage() {
 
                 <div className="grid grid-cols-3 max-md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-16 animate-fade-in animation-delay-1000">
                     {[
-                        { value: "85%", label: "Time Saved", icon: "⚡" },
-                        { value: "99.9%", label: "Accuracy", icon: "🎯" },
-                        { value: "10M+", label: "Tasks/Day", icon: "🚀" },
+                        { value: "85%", label: "Time Saved", icon: <IoFlash className="text-cyan-100 "/> },
+                        { value: "99.9%", label: "Accuracy", icon: <PiTargetBold className="text-cyan-100"/> },
+
+                        { value: "10M+", label: "Tasks/Day", icon: <IoRocket className="text-cyan-100"/>
+
+                         },
                     ].map((stat, i) => (
                         <div
                             key={i}
@@ -83,7 +93,7 @@ export default function WorkflowAutomationPage() {
         ${i === 2 ? "max-md:col-span-2" : ""}
       `}
                         >
-                            <div className=" mb-3 group-hover:scale-110 transition-transform">{stat.icon}</div>
+                            <div className=" mb-3  flex items-center justify-center group-hover:scale-110  transition-transform">{stat.icon}</div>
                             <div className=" font-bold text-cyan-400 mb-2">{stat.value}</div>
                             <div className="text-sm text-gray-300 max-md:col-start-2">{stat.label}</div>
                         </div>
@@ -150,28 +160,28 @@ export default function WorkflowAutomationPage() {
                         <div className="space-y-6">
                             {[
                                 {
-                                    icon: "🤖",
+                                    icon:<GiRobotAntennas className="bg-linear-to-br from-blue-500 to-blue-600  p-1 w-9 h-9 rounded-md "/>,
                                     title: "Intelligent Task Routing",
                                     description: "AI automatically assigns tasks to the right team members based on workload, expertise, and availability."
                                 },
                                 {
-                                    icon: "⚡",
+                                    icon:<IoFlash className="bg-linear-to-br from-blue-500 to-blue-600  p-1 w-9 h-9 rounded-md "/>,
                                     title: "Real-time Optimization",
                                     description: "The system identifies bottlenecks and suggests improvements, learning from every completed workflow."
                                 },
                                 {
-                                    icon: "🔄",
+                                    icon: <PiArrowsClockwiseBold className="bg-linear-to-br from-blue-500 to-blue-600  p-1 w-9 h-9 rounded-md "/>,
                                     title: "Approval Automation",
                                     description: "Multi-level approval chains execute automatically with configurable rules and notifications."
                                 },
                                 {
-                                    icon: "📊",
+                                    icon: <IoStatsChartSharp className="bg-linear-to-br from-blue-500 to-blue-600  p-1 w-9 h-9 rounded-md "/>,
                                     title: "Performance Analytics",
                                     description: "Track workflow efficiency, completion rates, and identify areas for improvement."
                                 }
                             ].map((feature, i) => (
                                 <div key={i} className="flex gap-4 p-6 bg-white border-2 border-cyan-100 rounded-2xl hover:border-cyan-300 hover:shadow-lg transition-all group">
-                                    <div className="text-4xl group-hover:scale-110 transition-transform">{feature.icon}</div>
+                                    <div className="text-3xl text-white  group-hover:scale-110 transition-transform">{feature.icon}</div>
                                     <div>
                                         <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
                                         <p className="text-gray-600">{feature.description}</p>
@@ -260,37 +270,37 @@ export default function WorkflowAutomationPage() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[
                             {
-                                icon: "🎯",
+                                icon: <PiTargetBold className="text-cyan-600"/>,
                                 title: "Smart Triggers",
                                 description: "AI detects patterns and creates predictive triggers for proactive automation.",
                                 features: ["Pattern recognition", "Anomaly detection", "Predictive scheduling"]
                             },
                             {
-                                icon: "🔗",
+                                icon: <GiCrossedChains className="text-cyan-600"/>,
                                 title: "1000+ Integrations",
                                 description: "Connect with any tool or service through pre-built connectors or custom APIs.",
                                 features: ["Pre-built connectors", "REST & GraphQL", "Webhooks"]
                             },
                             {
-                                icon: "🤖",
+                                icon: <GiRobotAntennas className="text-cyan-600"/>,
                                 title: "AI Assistant",
                                 description: "Natural language interface for creating and managing workflows.",
                                 features: ["Voice commands", "Natural language", "Smart suggestions"]
                             },
                             {
-                                icon: "📊",
+                                icon: <IoStatsChartSharp className="text-cyan-600"/>,
                                 title: "Advanced Analytics",
                                 description: "Track performance, identify bottlenecks, and optimize workflows in real-time.",
                                 features: ["Real-time metrics", "Bottleneck detection", "ROI tracking"]
                             },
                             {
-                                icon: "🔒",
+                                icon: <FaLock  className="text-cyan-600"/>,
                                 title: "Enterprise Security",
                                 description: "Bank-level encryption, compliance automation, and granular access control.",
                                 features: ["256-bit encryption", "SOC 2 compliant", "Audit trails"]
                             },
                             {
-                                icon: "⚡",
+                                icon: <IoFlash className="text-cyan-600"/>,
                                 title: "Lightning Fast",
                                 description: "Execute workflows in milliseconds with distributed cloud infrastructure.",
                                 features: ["< 50ms latency", "Global CDN", "Auto-scaling"]
@@ -398,17 +408,17 @@ export default function WorkflowAutomationPage() {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {[
-                            { label: "Execution Speed", value: "< 50ms", icon: "⚡" },
-                            { label: "Uptime SLA", value: "99.99%", icon: "🔒" },
-                            { label: "Concurrent Workflows", value: "Unlimited", icon: "♾️" },
-                            { label: "API Rate Limit", value: "10K/min", icon: "🚀" },
-                            { label: "Data Retention", value: "Forever", icon: "💾" },
-                            { label: "Global Regions", value: "15+", icon: "🌍" },
-                            { label: "Integrations", value: "1000+", icon: "🔗" },
-                            { label: "Support", value: "24/7", icon: "💬" }
+                            { label: "Execution Speed", value: "< 50ms", icon: <IoFlash /> },
+                            { label: "Uptime SLA", value: "99.99%", icon: <FaLock/> },
+                            { label: "Concurrent Workflows", value: "Unlimited", icon: <FaInfinity /> },
+                            { label: "API Rate Limit", value: "10K/min", icon: <IoRocket /> },
+                            { label: "Data Retention", value: "Forever", icon: <FaCalendar /> },
+                            { label: "Global Regions", value: "15+", icon: < FaEarthAmericas/> },
+                            { label: "Integrations", value: "1000+", icon: <GiCrossedChains/> },
+                            { label: "Support", value: "24/7", icon: <IoChatboxEllipsesOutline /> }
                         ].map((spec, i) => (
                             <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all group">
-                                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{spec.icon}</div>
+                                <div className="text-4xl text-cyan-400 mb-4 group-hover:scale-110 transition-transform">{spec.icon}</div>
                                 <div className="text-sm text-gray-400 mb-2">{spec.label}</div>
                                 <div className="text-3xl font-black text-cyan-400">{spec.value}</div>
                             </div>
@@ -437,30 +447,37 @@ export default function WorkflowAutomationPage() {
 
                     <div className="grid lg:grid-cols-3 gap-8">
                         {[
-                            {
+                            {   
+                               
                                 quote: "Workflow automation saved us 200+ hours per month. We've redirected that time to growth initiatives and seen a 40% revenue increase.",
                                 author: "Sarah Chen",
                                 role: "VP of Operations",
                                 company: "TechFlow Inc",
-                                avatar: "👩‍💼"
+                                avatar: <FaUser/>
                             },
                             {
                                 quote: "The AI-powered routing is incredible. Our response time dropped from 4 hours to 15 minutes, and customer satisfaction scores jumped 35%.",
                                 author: "Michael Rodriguez",
                                 role: "Customer Success Director",
                                 company: "ServicePro",
-                                avatar: "👨‍💼"
+                                avatar: <FaUser/>
                             },
                             {
                                 quote: "We automated our entire lead nurturing process. Conversion rates tripled and our sales team can focus on closing instead of admin work.",
                                 author: "Emily Thompson",
                                 role: "Head of Sales",
                                 company: "GrowthCo",
-                                avatar: "👩‍💼"
+                                avatar: <FaUser/>
                             }
                         ].map((testimonial, i) => (
-                            <div key={i} className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all">
-                                <div className="text-6xl mb-6 opacity-30 text-cyan-600">"</div>
+                            <div key={i} className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-5 hover:border-cyan-300 hover:shadow-xl transition-all">
+                                <div className="text-6xl mb-2 opacity-30 text-cyan-600">"</div>
+                                <div>
+                                  {Array.from({ length: 5 }).map((_, index) => (
+                                    <FaStar key={index} className="text-yellow-400 mb-4 text-xl inline-block mr-1" />
+                                  ))}
+                                </div>
+                               
                                 <p className="text-gray-700 text-lg mb-8 leading-relaxed">{testimonial.quote}</p>
                                 <div className="flex items-center gap-4">
                                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-2xl">
@@ -469,7 +486,7 @@ export default function WorkflowAutomationPage() {
                                     <div>
                                         <div className="font-bold text-gray-900">{testimonial.author}</div>
                                         <div className="text-sm text-gray-600">{testimonial.role}</div>
-                                        <div className="text-sm text-cyan-600 font-semibold">{testimonial.company}</div>
+                                        {/* <div className="text-sm text-cyan-600 font-semibold">{testimonial.company}</div> */}
                                     </div>
                                 </div>
                             </div>

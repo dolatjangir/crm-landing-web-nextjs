@@ -1,7 +1,7 @@
 import React from "react";
 
 interface Feature {
-  icon: string;
+  icon: string | React.ReactNode;
   title: string;
   description: string;
   features: string[];

@@ -9,7 +9,8 @@ import DarkHeroSection from "@/components/common/sections/DarkHeroSection";
 import { useNavigate } from "@/hooks/useNavigate";
 import Link from "next/link";
 import { useState } from "react";
-
+import { RiTeamFill } from "react-icons/ri";
+import { FaUser } from "react-icons/fa";
 export default function WhyChooseUsPage() {
     const navigate = useNavigate();
     const [activeComparison, setActiveComparison] = useState(0);
@@ -69,7 +70,7 @@ export default function WhyChooseUsPage() {
         <div className="bg-white text-gray-900 overflow-hidden">
 
             {/* Hero Section - DARK THEME */}
-            <DarkHeroSection backgroundImage="/whychoseusimg.png">
+            <DarkHeroSection backgroundImage="/whychoseusimg.png" className="animate-grid-move bg-cover bg-center bg-fixed  min-h-screen">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-8 animate-fade-in">
                     <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
                     <span className="text-sm font-medium text-cyan-400">Why ibigdata?</span>
@@ -275,11 +276,11 @@ export default function WhyChooseUsPage() {
                                 metric: "94%",
                                 label: "team adoption",
                                 detail: "Teams that actively use ibigdata after 30 days",
-                                icon: "👥"
+                                icon: <RiTeamFill className=""/>
                             }
                         ].map((stat, i) => (
                             <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-cyan-300 hover:shadow-xl transition-all group">
-                                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">{stat.icon}</div>
+                                <div className="text-4xl mb-4 group-hover:scale-110 flex items-center justify-center transition-transform">{stat.icon}</div>
                                 <div className="text-3xl font-black text-gray-900 mb-2">{stat.metric}</div>
                                 <div className="text-lg font-semibold text-gray-700 mb-2">{stat.label}</div>
                                 <div className="text-sm text-gray-600">{stat.detail}</div>
@@ -295,7 +296,7 @@ export default function WhyChooseUsPage() {
                                 author: "Sarah Chen",
                                 role: "Sales Director",
                                 company: "TechFlow Solutions",
-                                avatar: "👩‍💼",
+                                avatar: <FaUser/>,
                                 metric: "3 hours saved daily"
                             },
                             {
@@ -303,7 +304,7 @@ export default function WhyChooseUsPage() {
                                 author: "Michael Rodriguez",
                                 role: "VP of Sales",
                                 company: "Growth Dynamics",
-                                avatar: "👨‍💼",
+                                avatar: <FaUser/>,
                                 metric: "Live in 5 minutes"
                             },
                             {
@@ -311,7 +312,7 @@ export default function WhyChooseUsPage() {
                                 author: "Emily Thompson",
                                 role: "Operations Manager",
                                 company: "MarketMax Inc",
-                                avatar: "👩‍💼",
+                                avatar: <FaUser/>,
                                 metric: "Zero admin needed"
                             }
                         ].map((testimonial, i) => (
@@ -471,7 +472,7 @@ export default function WhyChooseUsPage() {
                             {
                                 question: "What if my team resists change?",
                                 answer: "That's why we built ibigdata to feel familiar. Your team keeps using the same tools—they just work better together. Most users say \"this finally makes sense\" within their first day.",
-                                icon: "👥",
+                                icon:  <RiTeamFill className=""/>,
                                 color: "from-orange-500 to-red-500"
                             }
                         ].map((item, i) => (

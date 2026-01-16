@@ -9,6 +9,7 @@ import FeatureShowcase from "@/components/common/sections/FeatureShowcase";
 import SectionTabs from "@/components/common/sections/SectionTabs";
 import { howItWorkstabsData } from "@/data/pages/ecosystem/howItWorksData";
 import ModuleCard from "@/components/common/cards/ModuleCard";
+import { GiRobotAntennas } from "react-icons/gi";
 
 
 export default function EcosystemDetails() {

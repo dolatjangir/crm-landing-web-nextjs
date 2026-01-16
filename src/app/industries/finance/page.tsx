@@ -10,6 +10,9 @@ import { useNavigate } from "@/hooks/useNavigate";
 import Link from "next/link";
 import { features } from "process";
 import { useState, useEffect } from "react";
+import { FaHandshakeSimple, FaLock, FaMobileRetro, FaRegChartBar, FaSackDollar, FaScaleBalanced, FaUser, FaUsers } from "react-icons/fa6";
+import { GiFamilyHouse } from "react-icons/gi";
+import { IoIosFlash } from "react-icons/io";
 
 export default function FinanceLandingPage() {
     const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -55,7 +58,7 @@ export default function FinanceLandingPage() {
             author: "Sarah Johnson",
             role: "Homeowner",
             company: "Dallas, TX",
-            avatar: "👩‍💼",
+            avatar: <FaUser/>,
             metric: "$200/month savings"
         },
         {
@@ -63,7 +66,7 @@ export default function FinanceLandingPage() {
             author: "Michael Chen",
             role: "Investor",
             company: "San Francisco, CA",
-            avatar: "👨‍💼",
+            avatar: <FaUser/>,
             metric: "34% portfolio growth"
         },
         {
@@ -71,7 +74,7 @@ export default function FinanceLandingPage() {
             author: "Emily Rodriguez",
             role: "Entrepreneur",
             company: "Miami, FL",
-            avatar: "👩‍💼",
+            avatar: <FaUser/>,
             metric: "50% rate reduction"
         }
     ];
@@ -157,9 +160,9 @@ export default function FinanceLandingPage() {
 
                 <div className="grid grid-cols-3 max-md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-16 animate-fade-in animation-delay-1000">
                     {[
-                        { value: "5 Min", label: "Approval Time", icon: "⚡" },
-                        { value: "5.99%", label: "Starting APR", icon: "💰" },
-                        { value: "50K+", label: "Happy Customers", icon: "👥" },
+                        { value: "5 Min", label: "Approval Time", icon: <IoIosFlash /> },
+                        { value: "5.99%", label: "Starting APR", icon: <FaSackDollar /> },
+                        { value: "50K+", label: "Happy Customers", icon: <FaUsers /> },
                     ].map((stat, i) => (
                         <div
                             key={i}
@@ -170,7 +173,7 @@ export default function FinanceLandingPage() {
         ${i === 2 ? "max-md:col-span-2" : ""}
       `}
                         >
-                            <div className=" mb-3 group-hover:scale-110 transition-transform">{stat.icon}</div>
+                            <div className=" mb-3 group-hover:scale-110 transition-transform flex items-center justify-center text-cyan-100">{stat.icon}</div>
                             <div className=" font-bold text-cyan-400 mb-2">{stat.value}</div>
                             <div className="text-sm text-gray-300 max-md:col-start-2">{stat.label}</div>
                         </div>
@@ -267,37 +270,37 @@ export default function FinanceLandingPage() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
                         {[
                             {
-                                icon: "⚡",
+                                icon: <IoIosFlash className="text-cyan-500"/>,
                                features:[],
                                 title: "Lightning Fast Approvals",
                                 description: "Get pre-approved in minutes, not weeks. Our AI-powered system analyzes your profile instantly and provides immediate decisions."
                             },
                             {
-                                icon: "💰",
+                                icon: <FaSackDollar className="text-cyan-500"/>,
                                 features:[],
                                 title: "Better Rates, Guaranteed",
                                 description: "Access rates starting at 5.99% APR. We negotiate with multiple lenders to ensure you get the best possible deal."
                             },
                             {
-                                icon: "🔒",
+                                icon: <FaLock className="text-cyan-500"/>,
                                features:[],
                                 title: "Bank-Level Security",
                                 description: "Your financial data is encrypted and protected with the same security standards used by major banks. Full transparency, zero risk."
                             },
                             {
-                                icon: "📊",
+                                icon: <FaRegChartBar className="text-cyan-500"/>,
                                 features:[],
                                 title: "Smart Financial Planning",
                                 description: "AI-powered recommendations help you make better financial decisions and optimize your money for maximum returns."
                             },
                             {
-                                icon: "🤝",
+                                icon: <FaHandshakeSimple className="text-cyan-500"/>,
                                features:[],
                                 title: "Personalized Service",
                                 description: "Get matched with financial solutions tailored to your unique situation. No one-size-fits-all approaches here."
                             },
                             {
-                                icon: "📱",
+                                icon: <FaMobileRetro className="text-cyan-500" />,
                                 features:[],
                                 title: "Mobile-First Experience",
                                 description: "Manage your finances from anywhere. Apply, track, and manage everything from your phone with our intuitive app."
@@ -375,24 +378,24 @@ export default function FinanceLandingPage() {
                         <h3 className="text-2xl font-black text-gray-900 mb-8">Trusted & Secure</h3>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                             <div>
-                                <div className="text-3xl mb-2">🔒</div>
+                                <div className="text-3xl mb-2 flex items-center justify-center text-cyan-500"><FaLock/></div>
                                 <div className="font-bold text-gray-900 mb-1">Bank-Level Security</div>
-                                <div className="text-sm text-gray-600">256-bit encryption</div>
+                                <div className="text-sm text-cyan-500">256-bit encryption</div>
                             </div>
                             <div>
-                                <div className="text-3xl mb-2">🏦</div>
+                                <div className="text-3xl flex items-center justify-center text-cyan-500 mb-2"><GiFamilyHouse /></div>
                                 <div className="font-bold text-gray-900 mb-1">FDIC Insured</div>
-                                <div className="text-sm text-gray-600">Up to $250K protection</div>
+                                <div className="text-sm text-cyan-500">Up to $250K protection</div>
                             </div>
                             <div>
-                                <div className="text-3xl mb-2">📊</div>
+                                <div className="text-3xl mb-2 flex items-center justify-center text-cyan-500"><FaRegChartBar /></div>
                                 <div className="font-bold text-gray-900 mb-1">Real-Time Data</div>
-                                <div className="text-sm text-gray-600">Always accurate</div>
+                                <div className="text-sm text-cyan-500">Always accurate</div>
                             </div>
                             <div>
-                                <div className="text-3xl mb-2">⚖️</div>
+                                <div className="text-3xl mb-2 flex items-center justify-center text-cyan-500"><FaScaleBalanced /></div>
                                 <div className="font-bold text-gray-900 mb-1">Fully Compliant</div>
-                                <div className="text-sm text-gray-600">Regulatory approved</div>
+                                <div className="text-sm text-cyan-500">Regulatory approved</div>
                             </div>
                         </div>
                     </div>

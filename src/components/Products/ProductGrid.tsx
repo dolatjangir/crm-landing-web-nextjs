@@ -72,7 +72,7 @@ export default function ProductGrid() {
   return (
     <section
       id="platform"
-      className="relative scroll-mt-20 bg-gradient-to-br from-blue-50 via-white to-cyan-50 py-20 overflow-hidden"
+      className="relative scroll-mt-20 py-20 overflow-hidden"
       data-aos="fade-up"
     >
       {/* Animated Background Elements */}

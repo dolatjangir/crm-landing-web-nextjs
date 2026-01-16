@@ -2,6 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { Send, MessageCircle, Calendar, Mail, Phone, Clock, Shield, Check, ChevronRight, Star, ArrowRight, Users } from "lucide-react";
+import { FaUser } from "react-icons/fa6";
+import { LuLock } from "react-icons/lu";
+import { LiaStumbleupon } from "react-icons/lia";
+import { HiOutlineHomeModern } from "react-icons/hi2";
+import { IoChatboxEllipsesOutline, IoStatsChartSharp } from "react-icons/io5";
+import { FaRegCalendarAlt } from "react-icons/fa";
+import { IoMdCall } from "react-icons/io";
 
 export default function ContactUsPage() {
   const [selectedPath, setSelectedPath] = useState<"sales" | "support" | "partnerships" | "general">("general");
@@ -112,7 +119,7 @@ export default function ContactUsPage() {
     {
       title: "Live Chat",
       description: "Instant help with AI + human support",
-      icon: "💬",
+      icon: <IoChatboxEllipsesOutline className=" text-green-500"/>,
       action: "Start Chat",
       available: "24/7",
       color: "from-green-500 to-emerald-500"
@@ -120,7 +127,7 @@ export default function ContactUsPage() {
     {
       title: "Book Meeting",
       description: "Schedule a call at your convenience",
-      icon: "📅",
+      icon: <FaRegCalendarAlt className="text-blue-500"/>,
       action: "Book Time",
       available: "Business hours",
       color: "from-blue-500 to-indigo-500"
@@ -128,7 +135,7 @@ export default function ContactUsPage() {
     {
       title: "Call Sales",
       description: "Speak with our sales team directly",
-      icon: "📞",
+      icon: <IoMdCall className="text-red-600" />,
       action: "Call Now",
       available: "9 AM - 6 PM EST",
       color: "from-purple-500 to-pink-500"
@@ -236,14 +243,14 @@ ${formData.fullName}`
       <section className="relative py-20 px-6 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
         <div className="max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 border border-green-200 mb-8">
-            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-sm font-medium text-green-700">Average response: 47 minutes</span>
+            <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
+            <span className="text-sm font-medium text-cyan-700">Average response: 47 minutes</span>
           </div>
 
           <h1 className="text-5xl lg:text-7xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Let's Talk About Growing
             <br />
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-600 bg-clip-text text-transparent">
               Your Business
             </span>
           </h1>
@@ -270,6 +277,193 @@ ${formData.fullName}`
         </div>
       </section>
 
+      {/* Contact Form */}
+     <div className="min-h-screen bg-white">
+      {/* Hero Section - Matching your styling */}
+      <section className="relative w-full bg-white py-16">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            
+            {/* LEFT CONTENT */}
+            <div className="space-y-8">
+              <div className="h-6" />
+              
+              <h3 className="text-2xl md:text-3xl font-semibold leading-snug relative pl-6">
+                <span className="absolute left-0 top-1 h-8 w-[3px] bg-[#1E88E5]" />
+                To make requests for further information,{" "}
+                <mark className="bg-transparent text-[#1E88E5] font-semibold">
+                  contact us
+                </mark>{" "}
+                via our social channels.
+              </h3>
+
+              <p className="text-gray-600 text-lg">
+                We just need a couple of hours!
+                <br />
+                No more than 2 working days since receiving your issue ticket.
+              </p>
+
+              {/* Response Time Info */}
+              <div className="flex items-center gap-4 text-sm text-gray-500">
+                <div className="flex items-center gap-1">
+                  <Clock className="w-4 h-4" />
+                  <span>Avg response: 47 min</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Shield className="w-4 h-4" />
+                  <span>SSL Secured</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Users className="w-4 h-4" />
+                  <span>Real humans</span>
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT FORM - Matching your exact styling */}
+            <div className="bg-white rounded-xl shadow-lg p-8">
+              {showSuccess ? (
+                <div className="text-center py-8">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Check className="w-8 h-8 text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Message Sent!</h3>
+                  <p className="text-gray-600">We'll get back to you within 2 working days.</p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  
+                  {/* Contact Path Selector - Integrated into form */}
+                  <div className="mb-6">
+                    <label className="block text-sm font-medium text-gray-700 mb-3">How can we help?</label>
+               
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input
+                      type="text"
+                      placeholder="Name *"
+                      required
+                      value={formData.fullName}
+                      onChange={(e) => handleInputChange('fullName', e.target.value)}
+                      className="w-full rounded-md border border-gray-300 px-4 py-3 text-sm focus:border-[#1E88E5] focus:outline-none"
+                    />
+
+                    <input
+                      type="email"
+                      placeholder="Email *"
+                      required
+                      value={formData.email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
+                      className="w-full rounded-md border border-gray-300 px-4 py-3 text-sm focus:border-[#1E88E5] focus:outline-none"
+                    />
+                  </div>
+
+                  <input
+                    type="text"
+                    placeholder="Company (Optional)"
+                    value={formData.companyName}
+                    onChange={(e) => handleInputChange('companyName', e.target.value)}
+                    className="w-full rounded-md border border-gray-300 px-4 py-3 text-sm focus:border-[#1E88E5] focus:outline-none"
+                  />
+
+                  <select
+                    required
+                    value={formData.subject}
+                    onChange={(e) => handleInputChange('subject', e.target.value)}
+                    className="w-full rounded-md border border-gray-300 px-4 py-3 text-sm focus:border-[#1E88E5] focus:outline-none"
+                  >
+                    <option value="">Select inquiry type *</option>
+                    {inquiryTypes[selectedPath]?.map(type => (
+                      <option key={type} value={type}>{type}</option>
+                    ))}
+                  </select>
+
+                  <textarea
+                    rows={5}
+                    placeholder="Please describe what you need."
+                    required
+                    value={formData.message}
+                    onChange={(e) => handleInputChange('message', e.target.value)}
+                    className="w-full rounded-md border border-gray-300 px-4 py-3 text-sm focus:border-[#1E88E5] focus:outline-none resize-none"
+                  />
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="inline-flex items-center justify-center rounded-md bg-[#1E88E5] px-6 py-3 text-white font-medium transition hover:bg-[#1565C0] disabled:opacity-50"
+                  >
+                    {isSubmitting ? (
+                      <span>Sending...</span>
+                    ) : (
+                      <span className="flex items-center gap-2">
+                        Send message
+                        <Send className="w-4 h-4" />
+                      </span>
+                    )}
+                  </button>
+
+                </form>
+              )}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials - Matching your clean style */}
+      <section className="py-16 px-6 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
+              Trusted by Teams Worldwide
+            </h2>
+            <p className="text-gray-600 text-lg">
+              Here's what our customers say about our support
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-cyan-50 rounded-xl shadow-lg p-6">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4 italic">"{testimonial.text}"</p>
+                <div className="flex items-center gap-3">
+                  <div className="text-xl"><FaUser/></div>
+                  <div>
+                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                    <div className="text-sm text-gray-600">{testimonial.role}, {testimonial.company}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA - Matching your blue theme */}
+      <section className="py-16 px-6 bg-[#1E88E5]">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-white">
+            Ready to Get Expert Help?
+          </h2>
+          <p className="text-white/90 text-lg mb-8">
+            Don't let questions hold you back. Our team is ready to help you succeed.
+          </p>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="inline-flex items-center gap-2 rounded-md bg-white px-6 py-3 text-[#1E88E5] font-medium transition hover:bg-gray-100"
+          >
+            Contact Our Team
+            <Send className="w-4 h-4" />
+          </button>
+        </div>
+      </section>
+    </div>
       {/* Contact Path Selector */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
@@ -329,199 +523,6 @@ ${formData.fullName}`
         </div>
       </section>
 
-      {/* Contact Form */}
-      <section className="py-16 px-6 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-black mb-4 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-              Send Us a Message
-            </h2>
-            <p className="text-lg text-gray-600">
-              We'll get back to you as quickly as possible
-            </p>
-          </div>
-
-          <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-2xl border border-gray-100">
-            {showSuccess ? (
-              <div className="text-center py-12">
-                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Check className="w-10 h-10 text-green-600" />
-                </div>
-                <h3 className="text-2xl font-black text-gray-900 mb-4">Message Sent Successfully!</h3>
-                <p className="text-gray-600 mb-6">
-                  Thank you for reaching out. Our team will respond within the timeframe specified above.
-                </p>
-                <div className="bg-gray-50 rounded-2xl p-6 max-w-md mx-auto">
-                  <p className="text-sm text-gray-600">
-                    <strong>What happens next:</strong><br />
-                    • You'll receive a confirmation email<br />
-                    • Our expert will review your inquiry<br />
-                    • We'll respond with helpful solutions<br />
-                    • Follow-up support if needed
-                  </p>
-                </div>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.fullName}
-                      onChange={(e) => handleInputChange('fullName', e.target.value)}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-colors"
-                      placeholder="John Smith"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">
-                      Work Email *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => handleInputChange('email', e.target.value)}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-colors"
-                      placeholder="john@company.com"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">
-                      Company Name <span className="text-gray-400">(Optional)</span>
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.companyName}
-                      onChange={(e) => handleInputChange('companyName', e.target.value)}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-colors"
-                      placeholder="Acme Corp"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">
-                      Inquiry Type *
-                    </label>
-                    <select
-                      required
-                      value={formData.subject}
-                      onChange={(e) => handleInputChange('subject', e.target.value)}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-colors"
-                    >
-                      <option value="">Select inquiry type</option>
-                      {inquiryTypes[selectedPath]?.map(type => (
-                        <option key={type} value={type}>{type}</option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-
-                {/* AI Assist Toggle */}
-                <div className="bg-blue-50 rounded-2xl p-4 border border-blue-200">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="text-2xl">🤖</div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900">AI-Assisted Message</h4>
-                        <p className="text-sm text-gray-600">Let AI help format your message for faster response</p>
-                      </div>
-                    </div>
-                    <button
-                      type="button"
-                      onClick={() => handleInputChange('aiAssist', !formData.aiAssist)}
-                      className={`relative w-12 h-6 rounded-full transition-colors ${
-                        formData.aiAssist ? 'bg-blue-500' : 'bg-gray-300'
-                      }`}
-                    >
-                      <div className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-transform ${
-                        formData.aiAssist ? 'translate-x-7' : 'translate-x-1'
-                      }`} />
-                    </button>
-                  </div>
-
-                  {formData.aiAssist && (
-                    <div className="mt-4">
-                      <button
-                        type="button"
-                        onClick={generateAIMessage}
-                        disabled={isGenerating || !formData.fullName || !formData.subject}
-                        className="px-4 py-2 bg-blue-500 text-white rounded-lg text-sm font-medium hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                      >
-                        {isGenerating ? (
-                          <span className="flex items-center gap-2">
-                            <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                            Generating...
-                          </span>
-                        ) : (
-                          'Generate AI Message'
-                        )}
-                      </button>
-
-                      {aiGeneratedMessage && (
-                        <div className="mt-4">
-                          <textarea
-                            value={aiGeneratedMessage}
-                            onChange={(e) => setAiGeneratedMessage(e.target.value)}
-                            rows={6}
-                            className="w-full px-4 py-3 border-2 border-blue-200 rounded-xl focus:border-blue-500 focus:outline-none transition-colors resize-none bg-white"
-                            placeholder="AI-generated message (you can edit it)"
-                          />
-                          <p className="text-xs text-gray-500 mt-2">
-                            💡 Pro tip: Feel free to edit the AI-generated message to add your personal touch
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
-
-                <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-2">
-                    Your Message *
-                  </label>
-                  <textarea
-                    required
-                    rows={6}
-                    value={formData.aiAssist && aiGeneratedMessage ? aiGeneratedMessage : formData.message}
-                    onChange={(e) => handleInputChange('message', e.target.value)}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-colors resize-none"
-                    placeholder="Tell us more about your inquiry..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? (
-                    <span className="flex items-center justify-center gap-2">
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      Sending Message...
-                    </span>
-                  ) : (
-                    <span className="flex items-center justify-center gap-2">
-                      Send Message
-                      <Send className="w-5 h-5" />
-                    </span>
-                  )}
-                </button>
-
-                <div className="text-center text-sm text-gray-500">
-                  By contacting us, you agree to our Privacy Policy. We respect your privacy and will never share your information.
-                </div>
-              </form>
-            )}
-          </div>
-        </div>
-      </section>
 
       {/* Trust & Security Section */}
       <section className="py-16 px-6 bg-white">
@@ -537,13 +538,13 @@ ${formData.fullName}`
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: "🔒", title: "SOC 2 Type II", description: "Security compliance certified" },
-              { icon: "🇪🇺", title: "GDPR Compliant", description: "Full data protection rights" },
-              { icon: "🏥", title: "HIPAA Ready", description: "Healthcare data security" },
-              { icon: "📊", title: "ISO 27001", description: "Information security standard" }
+              { icon: <LuLock />, title: "SOC 2 Type II", description: "Security compliance certified" },
+              { icon: <LiaStumbleupon />, title: "GDPR Compliant", description: "Full data protection rights" },
+              { icon: <HiOutlineHomeModern />, title: "HIPAA Ready", description: "Healthcare data security" },
+              { icon: <IoStatsChartSharp />, title: "ISO 27001", description: "Information security standard" }
             ].map((badge, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl mb-3">{badge.icon}</div>
+                <div className="text-4xl mb-3 flex items-center justify-center text-cyan-500">{badge.icon}</div>
                 <h3 className="font-bold text-gray-900 mb-2">{badge.title}</h3>
                 <p className="text-sm text-gray-600">{badge.description}</p>
               </div>
@@ -574,7 +575,7 @@ ${formData.fullName}`
                 </div>
                 <p className="text-gray-700 mb-6 italic">"{testimonial.text}"</p>
                 <div className="flex items-center gap-3">
-                  <div className="text-2xl">👤</div>
+                  <div className="text-2xl p-3 rounded-full bg-cyan-100"><FaUser/></div>
                   <div>
                     <div className="font-bold text-gray-900">{testimonial.name}</div>
                     <div className="text-sm text-gray-600">{testimonial.role}, {testimonial.company}</div>
@@ -587,7 +588,7 @@ ${formData.fullName}`
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 px-6 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600">
+      <section className="py-16 px-6 bg-gradient-to-br from-blue-600 via-cyan-600 to-purple-500">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-black mb-6 text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Ready to Get Expert Help?

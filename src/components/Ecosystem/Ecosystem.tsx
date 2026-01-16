@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 
+
 export default function Ecosystem() {
   return (
     <section
-      className="relative bg-gradient-to-br from-cyan-50 via-white to-blue-50 py-20 sm:py-28 lg:py-32 overflow-hidden"
-      data-aos="fade-up"
+      className="relative  py-20 sm:py-28 lg:py-32 overflow-hidden"
+     
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">

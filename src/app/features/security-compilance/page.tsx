@@ -7,6 +7,12 @@ import { FAQSection } from "@/components/common/FAQ/FAQSection";
 import DarkHeroSection from "@/components/common/sections/DarkHeroSection";
 import { useNavigate } from "@/hooks/useNavigate";
 import { useState, useEffect } from "react";
+import { CgNotes } from "react-icons/cg";
+import { FaShieldAlt, FaUser } from "react-icons/fa";
+import { FaArrowsRotate, FaChartLine, FaChartSimple, FaCheck, FaEarthAmericas, FaLock, FaRegChartBar, FaRegEye, FaUnlock } from "react-icons/fa6";
+import { GiRobotAntennas } from "react-icons/gi";
+import { IoIosFlash } from "react-icons/io";
+import { IoCheckmarkSharp, IoSearch } from "react-icons/io5";
 
 // Animated AI Robot SVG Component
 const AnimatedRobot = () => {
@@ -535,11 +541,11 @@ const AnimatedRobot = () => {
 };
 
 // Security Badge Component
-const SecurityBadge = ({ icon, title, subtitle, color } : any) => (
+const SecurityBadge = ({ icon : Icon, title, subtitle, color } : any) => (
     <div className={`relative group cursor-pointer`}>
         <div className={`absolute inset-0 bg-gradient-to-br ${color} rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity`} />
         <div className="relative bg-white border-2 border-gray-200 rounded-2xl p-6 hover:border-cyan-300 hover:shadow-2xl transition-all">
-            <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">{icon}</div>
+            <div className="text-5xl mb-4 group-hover:scale-110 transition-transform"><Icon className="text-blue-500 text-3xl"/></div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
             <p className="text-sm text-gray-600">{subtitle}</p>
         </div>
@@ -638,14 +644,14 @@ export default function SecurityCompliancePage() {
 
                         <div className="grid grid-cols-2 max-md:grid-cols-1 gap-6 max-w-xl mx-auto lg:mx-0 mb-16 animate-fade-in animation-delay-1000">
                             {[
-                                { value: "256-bit", label: "Encryption", icon: "🔐" },
-                                { value: "99.99%", label: "Uptime SLA", icon: "🛡️" },
+                                { value: "256-bit", label: "Encryption", icon:<FaUnlock /> },
+                                { value: "99.99%", label: "Uptime SLA", icon: <FaShieldAlt /> },
                             ].map((stat, i) => (
                                 <div
                                     key={i}
                                     className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all group"
                                 >
-                                    <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">{stat.icon}</div>
+                                    <div className="text-4xl mb-3 group-hover:scale-110 text-cyan-200 transition-transform">{stat.icon}</div>
                                     <div className="text-4xl font-bold text-cyan-400 mb-2">{stat.value}</div>
                                     <div className="text-sm text-gray-300">{stat.label}</div>
                                 </div>
@@ -679,10 +685,10 @@ export default function SecurityCompliancePage() {
                             <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-3xl blur-3xl" />
                             <div className="relative space-y-4">
                                 {[
-                                    { layer: "Application Security", status: "active", icon: "🔒", features: ["WAF Protection", "SQL Injection Prevention", "XSS Protection"] },
-                                    { layer: "Data Encryption", status: "active", icon: "🔐", features: ["AES-256 Encryption", "TLS 1.3", "Zero-Knowledge"] },
-                                    { layer: "Access Control", status: "active", icon: "👤", features: ["RBAC", "MFA", "SSO Integration"] },
-                                    { layer: "Network Security", status: "active", icon: "🛡️", features: ["DDoS Protection", "Firewall", "VPN Access"] }
+                                    { layer: "Application Security", status: "active", icon: <FaLock />, features: ["WAF Protection", "SQL Injection Prevention", "XSS Protection"] },
+                                    { layer: "Data Encryption", status: "active", icon: <FaUnlock />, features: ["AES-256 Encryption", "TLS 1.3", "Zero-Knowledge"] },
+                                    { layer: "Access Control", status: "active", icon: <FaUser/>, features: ["RBAC", "MFA", "SSO Integration"] },
+                                    { layer: "Network Security", status: "active", icon: <FaShieldAlt />, features: ["DDoS Protection", "Firewall", "VPN Access"] }
                                 ].map((item, i) => (
                                     <div 
                                         key={i} 
@@ -699,7 +705,7 @@ export default function SecurityCompliancePage() {
                                                     ? 'bg-gradient-to-br from-cyan-500 to-blue-500' 
                                                     : 'bg-gray-100'
                                             }`}>
-                                                <span className="text-2xl">{item.icon}</span>
+                                                <span className="text-2xl text-gray-800">{item.icon}</span>
                                             </div>
                                             <div className="flex-1">
                                                 <h3 className="text-lg font-bold text-gray-900">{item.layer}</h3>
@@ -725,28 +731,28 @@ export default function SecurityCompliancePage() {
                         <div className="space-y-6">
                             {[
                                 {
-                                    icon: "🤖",
+                                    icon: <GiRobotAntennas />,
                                     title: "AI-Powered Threat Detection",
                                     description: "Machine learning algorithms continuously monitor for suspicious activities, anomalies, and potential security threats in real-time."
                                 },
                                 {
-                                    icon: "⚡",
+                                    icon: <IoIosFlash />,
                                     title: "Real-Time Security Monitoring",
                                     description: "24/7 security operations center (SOC) with automated alerts and instant response to any security incidents."
                                 },
                                 {
-                                    icon: "🔄",
+                                    icon: <FaArrowsRotate />,
                                     title: "Automated Backup & Recovery",
                                     description: "Daily encrypted backups with point-in-time recovery. Your data is safe and can be restored within minutes."
                                 },
                                 {
-                                    icon: "📊",
+                                    icon: <FaRegChartBar />,
                                     title: "Comprehensive Audit Logs",
                                     description: "Every action is logged and tracked. Complete audit trails for compliance and forensic analysis."
                                 }
                             ].map((feature, i) => (
                                 <div key={i} className="flex gap-4 p-6 bg-white border-2 border-cyan-100 rounded-2xl hover:border-cyan-300 hover:shadow-lg transition-all group">
-                                    <div className="text-4xl group-hover:scale-110 transition-transform">{feature.icon}</div>
+                                    <div className="text-4xl group-hover:scale-110 transition-transform text-cyan-600">{feature.icon}</div>
                                     <div>
                                         <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
                                         <p className="text-gray-600">{feature.description}</p>
@@ -787,25 +793,25 @@ export default function SecurityCompliancePage() {
                     {/* Security Badges Grid */}
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <SecurityBadge 
-                            icon="🔐" 
+                            icon={FaUnlock } 
                             title="256-bit AES" 
                             subtitle="Military-grade encryption"
                             color="from-cyan-500 to-blue-500"
                         />
                         <SecurityBadge 
-                            icon="🛡️" 
+                            icon={FaShieldAlt} 
                             title="DDoS Protection" 
                             subtitle="Always-on protection"
                             color="from-blue-500 to-purple-500"
                         />
                         <SecurityBadge 
-                            icon="🔒" 
+                            icon={FaLock} 
                             title="Zero Trust" 
                             subtitle="Architecture verified"
                             color="from-purple-500 to-pink-500"
                         />
                         <SecurityBadge 
-                            icon="✓" 
+                            icon={IoCheckmarkSharp} 
                             title="Pen Tested" 
                             subtitle="Quarterly audits"
                             color="from-green-500 to-teal-500"
@@ -889,37 +895,37 @@ export default function SecurityCompliancePage() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[
                             {
-                                icon: "🔐",
+                                icon: <FaUnlock className="text-cyan-600 text-4xl"/>,
                                 title: "End-to-End Encryption",
                                 description: "AES-256 encryption for data at rest and TLS 1.3 for data in transit. Zero-knowledge architecture ensures maximum privacy.",
                                 features: ["AES-256 encryption", "TLS 1.3 protocol", "Zero-knowledge"]
                             },
                             {
-                                icon: "👤",
+                                icon: <FaUser className="text-cyan-600 text-4xl"/>,
                                 title: "Role-Based Access Control",
                                 description: "Granular permissions system with custom roles, MFA, SSO, and IP whitelisting for complete access management.",
                                 features: ["Custom roles", "MFA required", "SSO integration"]
                             },
                             {
-                                icon: "📊",
+                                icon: <FaRegChartBar className="text-cyan-600 text-4xl"/>,
                                 title: "Comprehensive Audit Logs",
                                 description: "Every action is logged with timestamp, user, IP address, and details. Export logs for compliance reporting.",
                                 features: ["Complete logging", "Export capability", "Real-time monitoring"]
                             },
                             {
-                                icon: "🤖",
+                                icon: <GiRobotAntennas className="text-cyan-600 text-4xl"/>,
                                 title: "AI Threat Detection",
                                 description: "Machine learning algorithms detect anomalies, suspicious activities, and potential threats in real-time.",
                                 features: ["Anomaly detection", "Real-time alerts", "Auto-response"]
                             },
                             {
-                                icon: "🔄",
+                                icon: <FaArrowsRotate className="text-cyan-600 text-4xl"/>,
                                 title: "Automated Backups",
                                 description: "Daily encrypted backups with point-in-time recovery. 30-day retention with geo-redundancy.",
                                 features: ["Daily backups", "Point-in-time recovery", "Geo-redundant"]
                             },
                             {
-                                icon: "🛡️",
+                                icon: <FaShieldAlt className="text-cyan-600 text-4xl"/>,
                                 title: "DDoS Protection",
                                 description: "Always-on DDoS mitigation with automatic traffic filtering and real-time threat intelligence.",
                                 features: ["Always-on protection", "Auto-mitigation", "99.99% uptime"]
@@ -949,25 +955,25 @@ export default function SecurityCompliancePage() {
                                 step: "01",
                                 title: "Continuous Monitoring",
                                 description: "24/7 security operations center monitors all systems with AI-powered threat detection and automated response protocols.",
-                                icon: "👁️"
+                                icon: <FaRegEye />
                             },
                             {
                                 step: "02",
                                 title: "Regular Audits",
                                 description: "Weekly internal security audits, quarterly penetration testing, and annual third-party compliance certifications.",
-                                icon: "🔍"
+                                icon: <IoSearch />
                             },
                             {
                                 step: "03",
                                 title: "Incident Response",
                                 description: "Immediate incident response team activation with containment, analysis, and notification within 24 hours.",
-                                icon: "⚡"
+                                icon: <IoIosFlash />
                             },
                             {
                                 step: "04",
                                 title: "Continuous Improvement",
                                 description: "Regular security updates, patches, and improvements based on latest threats and industry best practices.",
-                                icon: "📈"
+                                icon: <FaChartLine  />
                             }
                         ].map((item, i) => (
                             <div key={i} className="flex gap-6 items-start">
@@ -978,7 +984,7 @@ export default function SecurityCompliancePage() {
                                 </div>
                                 <div className="flex-1 bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-lg transition-all">
                                     <div className="flex items-center gap-4 mb-4">
-                                        <span className="text-4xl">{item.icon}</span>
+                                        <span className="text-4xl text-blue-600">{item.icon}</span>
                                         <h3 className="text-2xl font-bold text-gray-900">{item.title}</h3>
                                     </div>
                                     <p className="text-gray-600 text-lg">{item.description}</p>
@@ -1085,17 +1091,17 @@ export default function SecurityCompliancePage() {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {[
-                            { label: "Encryption", value: "AES-256", icon: "🔐" },
-                            { label: "Uptime SLA", value: "99.99%", icon: "🛡️" },
-                            { label: "Data Centers", value: "Global", icon: "🌍" },
-                            { label: "Backup Frequency", value: "Daily", icon: "💾" },
-                            { label: "Audit Logs", value: "Unlimited", icon: "📊" },
-                            { label: "SOC Response", value: "24/7", icon: "👁️" },
-                            { label: "Pen Testing", value: "Quarterly", icon: "🔍" },
-                            { label: "Compliance", value: "6+ Certs", icon: "✓" }
+                            { label: "Encryption", value: "AES-256", icon: <FaLock /> },
+                            { label: "Uptime SLA", value: "99.99%", icon: <FaShieldAlt /> },
+                            { label: "Data Centers", value: "Global", icon: <FaEarthAmericas /> },
+                            { label: "Backup Frequency", value: "Daily", icon: <CgNotes /> },
+                            { label: "Audit Logs", value: "Unlimited", icon: <FaChartSimple /> },
+                            { label: "SOC Response", value: "24/7", icon: <FaRegEye /> },
+                            { label: "Pen Testing", value: "Quarterly", icon: <IoSearch /> },
+                            { label: "Compliance", value: "6+ Certs", icon: <FaCheck /> }
                         ].map((spec, i) => (
                             <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all group">
-                                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{spec.icon}</div>
+                                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform text-cyan-400">{spec.icon}</div>
                                 <div className="text-sm text-gray-400 mb-2">{spec.label}</div>
                                 <div className="text-3xl font-black text-cyan-400">{spec.value}</div>
                             </div>
@@ -1132,25 +1138,32 @@ export default function SecurityCompliancePage() {
                                 author: "Dr. Sarah Johnson",
                                 role: "Chief Information Security Officer",
                                 company: "HealthTech Systems",
-                                avatar: "👩‍⚕️"
+                                avatar: <FaUser/>
                             },
                             {
                                 quote: "As a financial institution, security is non-negotiable. Their SOC 2 Type II certification, real-time monitoring, and 99.99% uptime exceeded our requirements.",
                                 author: "Michael Chen",
                                 role: "VP of Security",
                                 company: "SecureBank Corp",
-                                avatar: "👨‍💼"
+                                avatar: <FaUser/>
                             },
                             {
                                 quote: "The AI-powered threat detection caught suspicious activity we didn't even know was happening. Their incident response team was incredible.",
                                 author: "Jennifer Williams",
                                 role: "IT Director",
                                 company: "GlobalTech Industries",
-                                avatar: "👩‍💼"
+                                avatar: <FaUser/>
                             }
                         ].map((testimonial, i) => (
                             <div key={i} className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all">
-                                <div className="text-6xl mb-6 opacity-30 text-cyan-600">"</div>
+                                <div className="text-6xl opacity-30 text-cyan-600">"</div>
+                                <div>
+                                    {
+                                        Array.from({length:5}).map((_, index) => (
+                                            <span key={index} className="text-yellow-400 mb-4 text-2xl">★</span>
+                                        ))
+                                    }
+                                </div>
                                 <p className="text-gray-700 text-lg mb-8 leading-relaxed">{testimonial.quote}</p>
                                 <div className="flex items-center gap-4">
                                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-2xl">
@@ -1159,7 +1172,7 @@ export default function SecurityCompliancePage() {
                                     <div>
                                         <div className="font-bold text-gray-900">{testimonial.author}</div>
                                         <div className="text-sm text-gray-600">{testimonial.role}</div>
-                                        <div className="text-sm text-cyan-600 font-semibold">{testimonial.company}</div>
+                                        {/* <div className="text-sm text-cyan-600 font-semibold">{testimonial.company}</div> */}
                                     </div>
                                 </div>
                             </div>

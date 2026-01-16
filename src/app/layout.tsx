@@ -4,6 +4,7 @@ import AOSProvider from "@/providers/AOSProvider";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import ScrollProgressBar from "@/components/common/indicators/ScrollProgressBar";
+import ScrollUpButton from "@/components/common/scrollUpButton/ScrollUpButton";
 
 export const metadata = {
   title: "ibigdata CRM",
@@ -27,11 +28,14 @@ export default function RootLayout({
         {/* PWA & Apple */}
         <link rel="apple-touch-icon" href="/icons/icon-192.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        
       </head>
       <AOSProvider />
-      <body className="bg-white text-gray-900 antialiased hide-scrollbar">
-        <div className=" bg-white">
+      <body className=" text-gray-900 antialiased hide-scrollbar">
+        
+        <div className="bg-gradient-to-br from-blue-50 via-white to-cyan-50 ">
 
 
           {/* Header / Navigation */}
@@ -40,6 +44,7 @@ export default function RootLayout({
           {children}
           {/* Footer */}
           <Footer />
+          <ScrollUpButton />
         </div>
 
       </body>

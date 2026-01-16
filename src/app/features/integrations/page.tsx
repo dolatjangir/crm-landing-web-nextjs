@@ -10,6 +10,17 @@ import IntegrationsFinder from "@/components/common/intigrationSearching/Integra
     import { useNavigate } from "@/hooks/useNavigate";
     import Link from "next/link";
     import { useState, useEffect } from "react";
+import { BsFillCameraReelsFill } from "react-icons/bs";
+import { FaShieldAlt } from "react-icons/fa";
+import { FaArrowsRotate, FaUser } from "react-icons/fa6";
+import { FiTarget } from "react-icons/fi";
+import { GiArcheryTarget, GiBreakingChain, GiCrossedChains } from "react-icons/gi";
+import { ImBooks } from "react-icons/im";
+import { IoIosFlash } from "react-icons/io";
+import { IoChatboxEllipsesOutline } from "react-icons/io5";
+import { MdOutlineSettings } from "react-icons/md";
+import { TiChartLine } from "react-icons/ti";
+import { VscGraph } from "react-icons/vsc";
 
     export default function IntegrationsPage() {
         const [selectedIntegration, setSelectedIntegration] = useState<number | null>(null);
@@ -234,9 +245,9 @@ import IntegrationsFinder from "@/components/common/intigrationSearching/Integra
 
                     <div className="grid grid-cols-3 max-md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-16 animate-fade-in animation-delay-1000">
                         {[
-                            { value: "5 min", label: "Average Setup", icon: "⚡" },
-                            { value: "2000+", label: "Integrations", icon: "🔗" },
-                            { value: "99.9%", label: "Success Rate", icon: "🎯" },
+                            { value: "5 min", label: "Average Setup", icon: <IoIosFlash /> },
+                            { value: "2000+", label: "Integrations", icon: <GiCrossedChains /> },
+                            { value: "99.9%", label: "Success Rate", icon: <FiTarget /> },
                         ].map((stat, i) => (
                             <div
                                 key={i}
@@ -247,7 +258,7 @@ import IntegrationsFinder from "@/components/common/intigrationSearching/Integra
             ${i === 2 ? "max-md:col-span-2" : ""}
         `}
                             >
-                                <div className=" mb-3 group-hover:scale-110 transition-transform">{stat.icon}</div>
+                                <div className=" mb-3 group-hover:scale-110 flex items-center justify-center text-cyan-100 transition-transform">{stat.icon}</div>
                                 <div className=" font-bold text-cyan-400 mb-2">{stat.value}</div>
                                 <div className="text-sm text-gray-300 max-md:col-start-2">{stat.label}</div>
                             </div>
@@ -299,28 +310,28 @@ import IntegrationsFinder from "@/components/common/intigrationSearching/Integra
                                 
                                 {[
                                     {
-                                        icon: "⚡",
+                                        icon: <IoIosFlash />,
                                         title: "5-Minute Setup",
                                         description: "Most integrations connect in under 5 minutes with our guided setup process"
                                     },
                                     {
-                                        icon: "🔄",
+                                        icon: <FaArrowsRotate />,
                                         title: "Real-Time Sync",
                                         description: "Data flows instantly between systems with sub-second synchronization"
                                     },
                                     {
-                                        icon: "🛡️",
+                                        icon: <FaShieldAlt />,
                                         title: "Enterprise Security",
                                         description: "Bank-level encryption and compliance certifications keep your data safe"
                                     },
                                     {
-                                        icon: "📊",
+                                        icon: <VscGraph />,
                                         title: "Powerful Analytics",
                                         description: "Track integration performance and ROI with built-in analytics dashboards"
                                     }
                                 ].map((benefit, i) => (
                                     <div key={i} className="flex gap-4 p-6 bg-white border-2 border-cyan-100 rounded-2xl hover:border-cyan-300 hover:shadow-lg transition-all group">
-                                        <div className="text-4xl group-hover:scale-110 transition-transform">{benefit.icon}</div>
+                                        <div className="text-4xl group-hover:scale-110 text-cyan-600 transition-transform">{benefit.icon}</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-gray-900 mb-2">{benefit.title}</h3>
                                             <p className="text-gray-600">{benefit.description}</p>
@@ -379,28 +390,28 @@ import IntegrationsFinder from "@/components/common/intigrationSearching/Integra
                             {[
                                 {
                                     role: "Sales Teams",
-                                    icon: "🎯",
+                                    icon: <GiArcheryTarget className="text-green-100 text-3xl"/>,
                                     color: "from-green-500 to-emerald-500",
                                     integrations: ["Salesforce", "HubSpot", "LinkedIn", "Calendly"],
                                     benefits: ["Auto-update CRM from calls", "Sync meeting notes", "Track email opens", "Schedule follow-ups"]
                                 },
                                 {
                                     role: "Marketing Teams",
-                                    icon: "📈",
+                                    icon: <TiChartLine className="text-blue-100 text-3xl"/>,
                                     color: "from-blue-500 to-indigo-500",
                                     integrations: ["HubSpot", "Mailchimp", "Google Ads", "Facebook"],
                                     benefits: ["Track campaign ROI", "Sync lead sources", "Automate nurturing", "Measure attribution"]
                                 },
                                 {
                                     role: "Support Teams",
-                                    icon: "💬",
+                                    icon: <IoChatboxEllipsesOutline className="text-purple-100 text-3xl"/>,
                                     color: "from-purple-500 to-pink-500",
                                     integrations: ["Zendesk", "Intercom", "Slack", "Microsoft Teams"],
                                     benefits: ["View customer history", "Escalate issues", "Track resolution time", "Collaborate on tickets"]
                                 },
                                 {
                                     role: "Operations Teams",
-                                    icon: "⚙️",
+                                    icon: <MdOutlineSettings className="text-orange-100 text-3xl"  />,
                                     color: "from-orange-500 to-red-500",
                                     integrations: ["Zapier", "Google Sheets", "Airtable", "QuickBooks"],
                                     benefits: ["Automate reporting", "Sync financial data", "Track inventory", "Manage projects"]
@@ -470,7 +481,7 @@ import IntegrationsFinder from "@/components/common/intigrationSearching/Integra
                                     author: "Sarah Chen",
                                     role: "VP of Sales",
                                     company: "TechFlow Inc",
-                                    avatar: "👩‍💼",
+                                    avatar: <FaUser />,
                                     rating: 5
                                 },
                                 {
@@ -478,7 +489,7 @@ import IntegrationsFinder from "@/components/common/intigrationSearching/Integra
                                     author: "Michael Rodriguez",
                                     role: "Operations Director",
                                     company: "GrowthCo",
-                                    avatar: "👨‍💼",
+                                    avatar: <FaUser />,
                                     rating: 5
                                 },
                                 {
@@ -486,7 +497,7 @@ import IntegrationsFinder from "@/components/common/intigrationSearching/Integra
                                     author: "Emily Thompson",
                                     role: "Marketing Manager",
                                     company: "MarketPro",
-                                    avatar: "👩‍💼",
+                                    avatar: <FaUser />,
                                     rating: 5
                                 }
                             ].map((testimonial, i) => (
@@ -504,7 +515,7 @@ import IntegrationsFinder from "@/components/common/intigrationSearching/Integra
                                         <div>
                                             <div className="font-bold text-gray-900">{testimonial.author}</div>
                                             <div className="text-sm text-gray-600">{testimonial.role}</div>
-                                            <div className="text-sm text-cyan-600 font-semibold">{testimonial.company}</div>
+                                            {/* <div className="text-sm text-cyan-600 font-semibold">{testimonial.company}</div> */}
                                         </div>
                                     </div>
                                 </div>
@@ -530,28 +541,28 @@ import IntegrationsFinder from "@/components/common/intigrationSearching/Integra
                         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {[
                                 {
-                                    icon: "📚",
+                                    icon: <ImBooks />,
                                     title: "Documentation",
                                     description: "Step-by-step guides for every integration",
                                     link: "View Docs →",
                                     href: "/docs/integrations"
                                 },
                                 {
-                                    icon: "🎥",
+                                    icon: <BsFillCameraReelsFill />,
                                     title: "Video Tutorials",
                                     description: "Watch setup videos for popular integrations",
                                     link: "Watch Tutorials →",
                                     href: "/tutorials"
                                 },
                                 {
-                                    icon: "💬",
+                                    icon: <IoChatboxEllipsesOutline />,
                                     title: "Live Chat",
                                     description: "Get instant help from integration experts",
                                     link: "Start Chat →",
                                     href: "/support/chat"
                                 },
                                 {
-                                    icon: "🎯",
+                                    icon: <GiArcheryTarget />,
                                     title: "Best Practices",
                                     description: "Learn integration optimization techniques",
                                     link: "Learn More →",
@@ -559,7 +570,7 @@ import IntegrationsFinder from "@/components/common/intigrationSearching/Integra
                                 }
                             ].map((resource, i) => (
                                 <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all group">
-                                    <div className="text-5xl mb-6 group-hover:scale-110 transition-transform">{resource.icon}</div>
+                                    <div className="text-5xl mb-6 group-hover:scale-110 text-cyan-600 transition-transform">{resource.icon}</div>
                                     <h3 className="text-xl font-bold text-gray-900 mb-4">{resource.title}</h3>
                                     <p className="text-gray-600 mb-6">{resource.description}</p>
                                     <Link href={resource.href} className="text-cyan-600 font-semibold hover:text-cyan-700 transition-colors">
@@ -746,7 +757,7 @@ import IntegrationsFinder from "@/components/common/intigrationSearching/Integra
     // Integration Modal Component
     function IntegrationModal({ integration, onClose }: { integration: any; onClose: () => void }) {
         return (
-            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+            <div className="fixed pt-20 inset-0 bg-black/90  bg-opacity-50 flex items-center justify-center p-4 z-50">
                 <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
                     {/* Modal Header */}
                     <div className="p-8 border-b border-gray-200">

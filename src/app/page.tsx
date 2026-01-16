@@ -15,7 +15,7 @@ export default function HomePage() {
   return (
     <div className="">
       
-      <main className="flex flex-col py-[64px]">
+      <main className="flex flex-col pt-[64px] ">
         {/* Hero Section */}
         <Hero />
 

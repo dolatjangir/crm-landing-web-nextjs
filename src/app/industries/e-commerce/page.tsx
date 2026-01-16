@@ -9,6 +9,15 @@ import DarkHeroSection from "@/components/common/sections/DarkHeroSection";
 import { useNavigate } from "@/hooks/useNavigate";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { FaShieldAlt } from "react-icons/fa";
+import { FaBoxOpen, FaCameraRetro, FaRegChartBar, FaRegStar, FaSackDollar, FaUser } from "react-icons/fa6";
+import { FcAlarmClock } from "react-icons/fc";
+import { GiArcheryTarget } from "react-icons/gi";
+import { ImHappy } from "react-icons/im";
+import { IoIosGift } from "react-icons/io";
+import { IoChatboxEllipsesOutline } from "react-icons/io5";
+import { LuAlarmClock } from "react-icons/lu";
+import { MdLocalFireDepartment } from "react-icons/md";
 
 export default function EcommerceProductLanding() {
     const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -56,7 +65,7 @@ export default function EcommerceProductLanding() {
             author: "Sarah Johnson",
             role: "Verified Buyer",
             company: "New York, NY",
-            avatar: "👩‍💼",
+            avatar: <FaUser/>,
             metric: "5-Star Rating"
         },
         {
@@ -64,7 +73,7 @@ export default function EcommerceProductLanding() {
             author: "Michael Chen",
             role: "Verified Buyer",
             company: "San Francisco, CA",
-            avatar: "👨‍💼",
+            avatar: <FaUser/>,
             metric: "5-Star Rating"
         },
         {
@@ -72,7 +81,7 @@ export default function EcommerceProductLanding() {
             author: "Emily Rodriguez",
             role: "Verified Buyer",
             company: "Miami, FL",
-            avatar: "👩‍💼",
+            avatar: <FaUser/>,
             metric: "5-Star Rating"
         }
     ];
@@ -188,9 +197,9 @@ export default function EcommerceProductLanding() {
 
                 <div className="grid grid-cols-3 max-md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-16 animate-fade-in animation-delay-1000">
                     {[
-                        { value: "25K+", label: "Happy Customers", icon: "😊" },
-                        { value: "4.9/5", label: "Customer Rating", icon: "⭐" },
-                        { value: "{stockCount}", label: "Left in Stock", icon: "🔥" },
+                        { value: "25K+", label: "Happy Customers", icon: <ImHappy /> },
+                        { value: "4.9/5", label: "Customer Rating", icon: <FaRegStar /> },
+                        { value: "{stockCount}", label: "Left in Stock", icon: <MdLocalFireDepartment /> },
                     ].map((stat, i) => (
                         <div
                             key={i}
@@ -201,7 +210,7 @@ export default function EcommerceProductLanding() {
         ${i === 2 ? "max-md:col-span-2" : ""}
       `}
                         >
-                            <div className=" mb-3 group-hover:scale-110 transition-transform">{stat.icon}</div>
+                            <div className=" mb-3 group-hover:scale-110 transition-transform flex items-center justify-center text-cyan-100">{stat.icon}</div>
                             <div className=" font-bold text-cyan-400 mb-2">{i === 2 ? stockCount : stat.value}</div>
                             <div className="text-sm text-gray-300 max-md:col-start-2">{stat.label}</div>
                         </div>
@@ -223,13 +232,13 @@ export default function EcommerceProductLanding() {
                 {/* Urgency Indicator */}
                 <div className="mt-4 flex items-center justify-center gap-4">
                     <div className="flex items-center gap-2 text-orange-400">
-                        <span className="text-xl">⏰</span>
+                        <span className="text-3xl text-red-500"><FcAlarmClock /></span>
                         <span className="text-xl text-cyan-400 font-semibold animate-pulse">Offer ends in: {formatTime(timeLeft)}</span>
                     </div>
                     <div className="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></div>
                     <div className="flex items-center gap-2 text-red-500 py-4">
-                        <span className="text-xl animate-pulse">🔥</span>
-                        <span className="text-xl font-semibold">Only {stockCount} left!</span>
+                        <span className="text-3xl text-orange-500 "><MdLocalFireDepartment /></span>
+                        <span className="text-xl font-semibold animate-pulse">Only {stockCount} left!</span>
                     </div>
                 </div>
             </DarkHeroSection>
@@ -244,13 +253,13 @@ export default function EcommerceProductLanding() {
                         <div className="relative">
                             <div className="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-pink-400/20 rounded-3xl blur-3xl" />
                             <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-2xl">
-                                <div className="aspect-square bg-gradient-to-br from-cyan-400 to-pink-500 rounded-2xl flex items-center justify-center text-white text-6xl">
-                                    🎯
+                                <div className="aspect-square bg-gradient-to-br from-cyan-400 to-pink-500  rounded-2xl flex items-center justify-center text-white text-8xl">
+                                    <GiArcheryTarget />
                                 </div>
                                 <div className="mt-6 grid grid-cols-3 gap-4">
                                     {[1, 2, 3].map((i) => (
                                         <div key={i} className="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-2xl">
-                                            📸
+                                            <FaCameraRetro />
                                         </div>
                                     ))}
                                 </div>
@@ -363,7 +372,7 @@ export default function EcommerceProductLanding() {
 
                     <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-3xl p-12 shadow-xl">
                         <div className="text-center mb-8">
-                            <div className="text-8xl mb-6 opacity-20">"</div>
+                            <div className="text-8xl mb-6 text-start pl-40 opacity-20">"</div>
                             <blockquote className="text-2xl text-gray-700 italic leading-relaxed mb-8">
                                 "{testimonials[activeTestimonial].quote}"
                             </blockquote>
@@ -430,28 +439,28 @@ export default function EcommerceProductLanding() {
                             <div className="space-y-4">
                                 {[
                                     {
-                                        icon: "🎯",
+                                        icon: <GiArcheryTarget />,
                                         title: "Personalized Recommendations",
                                         description: "AI learns your preferences and suggests products you'll love"
                                     },
                                     {
-                                        icon: "🎁",
+                                        icon: <IoIosGift />,
                                         title: "Exclusive Member Perks",
                                         description: "Early access to new products and member-only discounts"
                                     },
                                     {
-                                        icon: "💬",
+                                        icon: <IoChatboxEllipsesOutline />,
                                         title: "VIP Customer Support",
                                         description: "Priority assistance and personalized service for life"
                                     },
                                     {
-                                        icon: "📊",
+                                        icon:  <FaRegChartBar />,
                                         title: "Smart Usage Insights",
                                         description: "Track your progress and optimize your experience"
                                     }
                                 ].map((benefit, i) => (
                                     <div key={i} className="flex items-start gap-4">
-                                        <div className="text-2xl">{benefit.icon}</div>
+                                        <div className="text-2xl text-cyan-500">{benefit.icon}</div>
                                         <div>
                                             <h4 className="font-bold text-gray-900">{benefit.title}</h4>
                                             <p className="text-gray-600 text-sm">{benefit.description}</p>
@@ -507,25 +516,25 @@ export default function EcommerceProductLanding() {
                             {
                                 question: "Is it really worth the price?",
                                 answer: "Absolutely! With our 25% discount, lifetime warranty, and 30-day money-back guarantee, you're getting exceptional value. Most customers save more than the purchase price within the first month.",
-                                icon: "💰",
+                                icon: <FaSackDollar />,
                                 color: "from-green-500 to-emerald-500"
                             },
                             {
                                 question: "Will it work for my specific needs?",
                                 answer: "Our product adapts to your unique situation through AI-powered personalization. Take our quick quiz to get matched with the perfect configuration for your lifestyle.",
-                                icon: "🎯",
+                                icon: <GiArcheryTarget />,
                                 color: "from-blue-500 to-indigo-500"
                             },
                             {
                                 question: "What if I'm not satisfied?",
                                 answer: "No risk! We offer a 30-day money-back guarantee. If you're not completely satisfied, return it for a full refund. Plus, our lifetime warranty ensures you're covered forever.",
-                                icon: "🛡️",
+                                icon: <FaShieldAlt />,
                                 color: "from-purple-500 to-pink-500"
                             },
                             {
                                 question: "How does shipping and delivery work?",
                                 answer: "Free shipping on all orders, usually delivered within 2-3 business days. Express options available for urgent needs. You'll receive tracking info and SMS updates.",
-                                icon: "📦",
+                                icon: <FaBoxOpen />,
                                 color: "from-orange-500 to-red-500"
                             }
                         ].map((item, i) => (
@@ -572,10 +581,10 @@ export default function EcommerceProductLanding() {
                         <p className="text-xl text-gray-600 mb-8">Complete your purchase in 2 minutes • Secure checkout</p>
                         
                         {/* Urgency Banner */}
-                        <div className="bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-2xl p-6 mb-8">
+                        <div className="bg-gradient-to-r from-pink-400 to-cyan-500 text-white rounded-2xl p-6 mb-8">
                             <div className="flex items-center justify-between">
                                 <div className="flex items-center gap-4">
-                                    <div className="text-2xl">⏰</div>
+                                    <div className="text-4xl text-red-500"><FcAlarmClock /></div>
                                     <div>
                                         <div className="font-bold text-lg">Limited Time Offer Ends Soon!</div>
                                         <div className="text-sm">Only {stockCount} left in stock</div>
@@ -675,7 +684,7 @@ export default function EcommerceProductLanding() {
                                     onChange={(e) => handleInputChange('message', e.target.value)}
                                     placeholder="Any special requests or questions?"
                                     rows={3}
-                                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 resize-none"
+                                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 resize-none"
                                 />
                             </div>
 
@@ -684,21 +693,21 @@ export default function EcommerceProductLanding() {
                                 <div className="flex items-center justify-between">
                                     <div className="flex items-center gap-3">
                                         <div className="w-5 h-5 rounded-full bg-orange-100 flex items-center justify-center">
-                                            <span className="text-orange-600 text-xs">✓</span>
+                                            <span className="text-cyan-600 text-xs">✓</span>
                                         </div>
-                                        <span className="text-sm text-orange-700">30-day money-back guarantee</span>
+                                        <span className="text-sm text-cyan-700">30-day money-back guarantee</span>
                                     </div>
                                     <div className="flex items-center gap-3">
                                         <div className="w-5 h-5 rounded-full bg-orange-100 flex items-center justify-center">
-                                            <span className="text-orange-600 text-xs">✓</span>
+                                            <span className="text-cyan-600 text-xs">✓</span>
                                         </div>
-                                        <span className="text-sm text-orange-700">Free shipping & returns</span>
+                                        <span className="text-sm text-cyan-700">Free shipping & returns</span>
                                     </div>
                                     <div className="flex items-center gap-3">
                                         <div className="w-5 h-5 rounded-full bg-orange-100 flex items-center justify-center">
-                                            <span className="text-orange-600 text-xs">✓</span>
+                                            <span className="text-cyan-600 text-xs">✓</span>
                                         </div>
-                                        <span className="text-sm text-orange-700">Lifetime warranty</span>
+                                        <span className="text-sm text-cyan-700">Lifetime warranty</span>
                                     </div>
                                 </div>
                             </div>
@@ -709,7 +718,7 @@ export default function EcommerceProductLanding() {
                                 className={`w-full py-4 rounded-xl font-black text-lg transition-all ${
                                     isSubmitting
                                         ? 'bg-gray-400 cursor-not-allowed'
-                                        : 'bg-orange-600 hover:bg-orange-700 hover:shadow-xl text-white'
+                                        : 'bg-cyan-600 hover:bg-cyan-700 hover:shadow-xl text-white'
                                 }`}
                             >
                                 {isSubmitting ? (
@@ -724,9 +733,9 @@ export default function EcommerceProductLanding() {
 
                             <p className="text-center text-sm text-gray-500">
                                 By submitting this form, you agree to our{' '}
-                                <Link href="/privacy" className="text-orange-600 hover:underline">Privacy Policy</Link>{' '}
+                                <Link href="/privacy" className="text-cyan-600 hover:underline">Privacy Policy</Link>{' '}
                                 and{' '}
-                                <Link href="/terms" className="text-orange-600 hover:underline">Terms of Service</Link>.
+                                <Link href="/terms" className="text-cyan-600 hover:underline">Terms of Service</Link>.
                                 Your information is protected and will be used to create your CRM profile for personalized service.
                             </p>
                         </form>
@@ -750,13 +759,13 @@ export default function EcommerceProductLanding() {
                         <div className="text-center mt-12">
                             <p className="text-gray-600 mb-4">Need help with your order? We're here for you.</p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                                <button className="flex items-center gap-2 px-6 py-3 bg-white border-2 border-orange-200 text-orange-600 rounded-lg font-semibold hover:border-orange-300 transition-all">
+                                <button className="flex items-center gap-2 px-6 py-3 bg-white border-2 border-cyan-200 text-cyan-600 rounded-lg font-semibold hover:border-cyan-300 transition-all">
                                     <span>💬</span>
                                     <span>Live Chat</span>
                                 </button>
                                 <a 
                                     href="tel:+1-555-123-4567" 
-                                    className="flex items-center gap-2 px-6 py-3 bg-white border-2 border-orange-200 text-orange-600 rounded-lg font-semibold hover:border-orange-300 transition-all"
+                                    className="flex items-center gap-2 px-6 py-3 bg-white border-2 border-cyan-200 text-cyan-600 rounded-lg font-semibold hover:border-cyan-300 transition-all"
                                 >
                                     <span>📞</span>
                                     <span>Call Support</span>
@@ -778,7 +787,7 @@ export default function EcommerceProductLanding() {
 
 
             {/* Final CTA Section - DARK THEME */}
-            <section className="py-32 px-6 relative overflow-hidden bg-gradient-to-br from-green-600 via-green-500  to-green-300">
+            <section className="py-32 px-6 relative overflow-hidden bg-gradient-to-br from-cyan-600 via-cyan-500  to-pink-300">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.25),transparent_40%),radial-gradient(circle_at_80%_40%,rgba(16,185,129,0.45),transparent_45%),radial-gradient(circle_at_50%_80%,rgba(34,197,94,0.5),transparent_50%)]"
                    /><div  className="absolute inset-0 opacity-20 pointer-events-none" style={{
                         backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
@@ -797,7 +806,7 @@ export default function EcommerceProductLanding() {
                     <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
                         <button 
                             onClick={() => document.getElementById('product-form')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="px-10 py-5 bg-white text-orange-600 rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105"
+                            className="px-10 py-5 bg-white text-cyan-700 rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105"
                         >
                             Complete Purchase Now
                         </button>

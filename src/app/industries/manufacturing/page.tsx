@@ -9,6 +9,15 @@ import DarkHeroSection from "@/components/common/sections/DarkHeroSection";
 import { useNavigate } from "@/hooks/useNavigate";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { BsTools } from "react-icons/bs";
+import { CgNotes } from "react-icons/cg";
+import { FaArrowsRotate, FaBoxOpen, FaCarSide, FaChartLine, FaRegChartBar, FaSackDollar, FaSquareFull, FaUser } from "react-icons/fa6";
+import { GiArcheryTarget, GiCheckMark, GiCrossedChains } from "react-icons/gi";
+import { HiOutlineHomeModern } from "react-icons/hi2";
+import { IoIosFlash } from "react-icons/io";
+import { IoSettingsOutline } from "react-icons/io5";
+import { LiaIndustrySolid } from "react-icons/lia";
+import { TfiMicrosoftAlt } from "react-icons/tfi";
 
 export default function ManufacturingCRMLanding() {
     const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -56,7 +65,7 @@ export default function ManufacturingCRMLanding() {
             author: "Sarah Chen",
             role: "VP of Sales",
             company: "Precision Manufacturing Corp",
-            avatar: "👩‍💼",
+            avatar: <FaUser/>,
             metric: "37% reduction in lead times"
         },
         {
@@ -64,7 +73,7 @@ export default function ManufacturingCRMLanding() {
             author: "Michael Rodriguez",
             role: "Operations Director",
             company: "Industrial Solutions Ltd",
-            avatar: "👨‍💼",
+            avatar: <FaUser/>,
             metric: "15 hours/week saved"
         },
         {
@@ -72,44 +81,44 @@ export default function ManufacturingCRMLanding() {
             author: "Emily Thompson",
             role: "Customer Success Manager",
             company: "Tech Manufacturing Inc",
-            avatar: "👩‍💼",
+            avatar: <FaUser/>,
             metric: "28% customer satisfaction increase"
         }
     ];
 
     const manufacturingFeatures = [
         {
-            icon: "🏭",
+            icon: <LiaIndustrySolid className="text-cyan-600"/>,
             features:[],
             title: "Production Pipeline Management",
             description: "Track orders from raw material to finished goods with real-time visibility into every stage of your manufacturing process"
         },
         {
-            icon: "📊",
+            icon: <FaRegChartBar className="text-cyan-600" />,
             features:[],
             title: "Inventory & Order Management",
             description: "Real-time inventory tracking with automatic reorder points and seamless integration with your ERP system"
         },
         {
-            icon: "✅",
+            icon: <GiCheckMark className="text-cyan-600" />,
             features:[],
             title: "Quality Control & Compliance",
             description: "Centralized quality audits, documentation, and compliance tracking with automated quality checks"
         },
         {
-            icon: "🔗",
+            icon: <GiCrossedChains className="text-cyan-600" />,
             features:[],
             title: "Supply Chain Collaboration",
             description: "Better coordination with suppliers and distributors through shared dashboards and automated workflows"
         },
         {
-            icon: "📈",
+            icon: <FaChartLine className="text-cyan-600" />,
             features:[],
             title: "Sales Forecasting & Analytics",
             description: "AI-powered demand planning and production optimization based on sales pipeline and historical data"
         },
         {
-            icon: "⚡",
+            icon: <IoIosFlash className="text-cyan-600" />,
             features:[],
             title: "ERP/MES Integration",
             description: "Seamless integration with SAP, Oracle, Microsoft Dynamics, and 50+ other manufacturing systems"
@@ -167,15 +176,15 @@ export default function ManufacturingCRMLanding() {
 
             {/* Hero Section - DARK THEME with Manufacturing Focus */}
             <DarkHeroSection backgroundImage="/manufacturing-hero.jpg">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-8 animate-fade-in">
-                    <div className="w-2 h-2 rounded-full bg-orange-400 animate-pulse" />
-                    <span className="text-sm font-medium text-orange-400">Manufacturing CRM</span>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-8 animate-fade-in">
+                    <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                    <span className="text-sm font-medium text-cyan-400">Manufacturing CRM</span>
                 </div>
 
                 <h1 className="text-6xl lg:text-8xl max-md:text-4xl font-black mb-6 animate-slide-up text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                     Streamline Manufacturing
                     <br />
-                    <span className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-500 bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-cyan-400 via-cyan-500 to-purple-500 bg-clip-text text-transparent">
                         Operations
                     </span>
                 </h1>
@@ -187,9 +196,9 @@ export default function ManufacturingCRMLanding() {
 
                 <div className="grid grid-cols-3 max-md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-16 animate-fade-in animation-delay-1000">
                     {[
-                        { value: "37%", label: "Lead Time Reduction", icon: "⚡" },
-                        { value: "28%", label: "Production Efficiency", icon: "📈" },
-                        { value: "45%", label: "Customer Retention", icon: "🎯" },
+                        { value: "37%", label: "Lead Time Reduction", icon: <IoIosFlash/> },
+                        { value: "28%", label: "Production Efficiency", icon: <FaChartLine /> },
+                        { value: "45%", label: "Customer Retention", icon: <GiArcheryTarget /> },
                     ].map((stat, i) => (
                         <div
                             key={i}
@@ -200,8 +209,8 @@ export default function ManufacturingCRMLanding() {
                                 ${i === 2 ? "max-md:col-span-2" : ""}
                             `}
                         >
-                            <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">{stat.icon}</div>
-                            <div className="font-bold text-orange-400 mb-2">{stat.value}</div>
+                            <div className="text-4xl mb-3 group-hover:scale-110 flex items-center justify-center text-cyan-100 transition-transform">{stat.icon}</div>
+                            <div className="font-bold text-cyan-400 mb-2">{stat.value}</div>
                             <div className="text-sm text-gray-300 max-md:col-start-2">{stat.label}</div>
                         </div>
                     ))}
@@ -301,29 +310,29 @@ export default function ManufacturingCRMLanding() {
                         <h3 className="text-3xl font-black text-gray-900 mb-6">Your Complete Manufacturing Workflow</h3>
                         <div className="grid md:grid-cols-5 gap-8">
                             <div className="text-center">
-                                <div className="text-4xl mb-4">📋</div>
+                                <div className="text-4xl mb-4 flex justify-center items-center text-cyan-500"><CgNotes /></div>
                                 <div className="text-2xl font-bold text-gray-900 mb-2">Lead</div>
-                                <div className="text-gray-600">Track opportunities</div>
+                                <div className="text-cyan-600">Track opportunities</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl mb-4">🏭</div>
+                                <div className="text-4xl mb-4 flex justify-center items-center text-cyan-500"><LiaIndustrySolid /></div>
                                 <div className="text-2xl font-bold text-gray-900 mb-2">Quote</div>
-                                <div className="text-gray-600">Custom order specs</div>
+                                <div className="text-cyan-600">Custom order specs</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl mb-4">⚙️</div>
+                                <div className="text-4xl mb-4 flex justify-center items-center text-cyan-500"><IoSettingsOutline /></div>
                                 <div className="text-2xl font-bold text-gray-900 mb-2">Produce</div>
-                                <div className="text-gray-600">Track production</div>
+                                <div className="text-cyan-600">Track production</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl mb-4">📦</div>
+                                <div className="text-4xl mb-4 flex justify-center items-center text-cyan-500"><FaBoxOpen /></div>
                                 <div className="text-2xl font-bold text-gray-900 mb-2">Ship</div>
-                                <div className="text-gray-600">Monitor delivery</div>
+                                <div className="text-cyan-600">Monitor delivery</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl mb-4">💰</div>
+                                <div className="text-4xl mb-4 flex justify-center items-center text-cyan-500"><FaSackDollar /></div>
                                 <div className="text-2xl font-bold text-gray-900 mb-2">Support</div>
-                                <div className="text-gray-600">Lifetime service</div>
+                                <div className="text-cyan-600">Lifetime service</div>
                             </div>
                         </div>
                     </div>
@@ -349,7 +358,7 @@ export default function ManufacturingCRMLanding() {
                             {
                                 industry: "Precision Manufacturing",
                                 company: "TechFab Industries",
-                                logo: "🏭",
+                                logo: <LiaIndustrySolid className="text-blue-100"/>,
                                 challenge: "Complex custom orders with 6-month lead times and no visibility into production status for customers or sales team.",
                                 solution: "Implemented manufacturing CRM with real-time production tracking and automated customer updates throughout the manufacturing process.",
                                 results: [
@@ -362,7 +371,7 @@ export default function ManufacturingCRMLanding() {
                             {
                                 industry: "Automotive Parts",
                                 company: "Auto Components Ltd",
-                                logo: "🚗",
+                                logo: <FaCarSide className="text-green-100"/>,
                                 challenge: "Manual order tracking across multiple production facilities with frequent miscommunication between sales and production teams.",
                                 solution: "Unified CRM system connecting all facilities with automated workflows and real-time production status updates.",
                                 results: [
@@ -375,7 +384,7 @@ export default function ManufacturingCRMLanding() {
                             {
                                 industry: "Industrial Equipment",
                                 company: "Industrial Solutions Inc",
-                                logo: "⚙️",
+                                logo: <IoSettingsOutline className="text-orange-100" />,
                                 challenge: "Disconnected sales and production systems leading to missed deadlines and inventory management issues across multiple warehouses.",
                                 solution: "Integrated CRM with ERP system providing complete visibility from sales to delivery with automated inventory management.",
                                 results: [
@@ -408,13 +417,13 @@ export default function ManufacturingCRMLanding() {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
                         {[
-                            { name: "SAP", icon: "🏢", description: "Full ERP integration" },
-                            { name: "Oracle", icon: "🔷", description: "Complete data sync" },
-                            { name: "Microsoft Dynamics", icon: "🪟", description: "Seamless workflow" },
-                            { name: "50+ Systems", icon: "🔗", description: "Full compatibility" }
+                            { name: "SAP", icon: <HiOutlineHomeModern />, description: "Full ERP integration" },
+                            { name: "Oracle", icon: <FaSquareFull className="rotate-45"/>, description: "Complete data sync" },
+                            { name: "Microsoft Dynamics", icon: <TfiMicrosoftAlt />, description: "Seamless workflow" },
+                            { name: "50+ Systems", icon: <GiCrossedChains />, description: "Full compatibility" }
                         ].map((system, i) => (
                             <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-cyan-300 hover:shadow-xl transition-all group">
-                                <div className="text-5xl mb-6 group-hover:scale-110 transition-transform">{system.icon}</div>
+                                <div className="text-5xl mb-6 group-hover:scale-110 transition-transform  flex items-center justify-center text-cyan-600">{system.icon}</div>
                                 <div className="text-xl font-bold text-gray-900 mb-2">{system.name}</div>
                                 <div className="text-gray-600">{system.description}</div>
                             </div>
@@ -426,22 +435,22 @@ export default function ManufacturingCRMLanding() {
                         <h3 className="text-3xl font-black text-gray-900 mb-8 text-center">Integration Process</h3>
                         <div className="grid md:grid-cols-4 gap-8">
                             <div className="text-center">
-                                <div className="text-4xl mb-4">📊</div>
+                                <div className="text-4xl mb-4 flex items-center justify-center text-cyan-600"><FaRegChartBar /></div>
                                 <div className="text-xl font-bold text-gray-900 mb-2">Assessment</div>
                                 <div className="text-gray-600">Analyze current systems</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl mb-4">🔧</div>
+                                <div className="text-4xl mb-4 flex items-center justify-center text-cyan-600"><BsTools /></div>
                                 <div className="text-xl font-bold text-gray-900 mb-2">Configuration</div>
                                 <div className="text-gray-600">Customize integration</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl mb-4">🔄</div>
+                                <div className="text-4xl mb-4 flex items-center justify-center text-cyan-600"><FaArrowsRotate /></div>
                                 <div className="text-xl font-bold text-gray-900 mb-2">Migration</div>
                                 <div className="text-gray-600">Transfer data safely</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl mb-4">✅</div>
+                                <div className="text-4xl mb-4 flex items-center justify-center text-cyan-600"><GiCheckMark /></div>
                                 <div className="text-xl font-bold text-gray-900 mb-2">Go Live</div>
                                 <div className="text-gray-600">Full system sync</div>
                             </div>
@@ -461,21 +470,21 @@ export default function ManufacturingCRMLanding() {
                         </h2>
                     </div>
 
-                    <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-12 mb-8">
+                    <div className="bg-gradient-to-br from-cyan-50 to-red-50 rounded-3xl p-12 mb-8">
                         <div className="text-6xl mb-6 text-center">💬</div>
                         <blockquote className="text-2xl lg:text-3xl font-bold text-gray-900 mb-8 text-center italic">
                             "{testimonials[activeTestimonial].quote}"
                         </blockquote>
                         <div className="flex items-center justify-center gap-4">
-                            <div className="text-4xl">{testimonials[activeTestimonial].avatar}</div>
+                            <div className="text-4xl bg-cyan-100 p-4 rounded-full">{testimonials[activeTestimonial].avatar}</div>
                             <div>
                                 <div className="font-bold text-lg text-gray-900">{testimonials[activeTestimonial].author}</div>
                                 <div className="text-gray-600">{testimonials[activeTestimonial].role}, {testimonials[activeTestimonial].company}</div>
                             </div>
                         </div>
                         <div className="mt-6 text-center">
-                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border-2 border-orange-200">
-                                <div className="text-orange-500 font-bold">{testimonials[activeTestimonial].metric}</div>
+                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border-2 border-cyan-200">
+                                <div className="text-cyan-500 font-bold">{testimonials[activeTestimonial].metric}</div>
                             </div>
                         </div>
                     </div>
@@ -486,7 +495,7 @@ export default function ManufacturingCRMLanding() {
                                 key={i}
                                 onClick={() => setActiveTestimonial(i)}
                                 className={`w-3 h-3 rounded-full transition-all ${
-                                    i === activeTestimonial ? 'bg-orange-500' : 'bg-gray-300'
+                                    i === activeTestimonial ? 'bg-cyan-500' : 'bg-gray-300'
                                 }`}
                             />
                         ))}
@@ -497,15 +506,15 @@ export default function ManufacturingCRMLanding() {
             {/* CTA Section - DARK THEME */}
             <section className="py-32 px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
                 <div className="max-w-4xl mx-auto text-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-8">
-                        <div className="w-2 h-2 rounded-full bg-orange-400 animate-pulse" />
-                        <span className="text-sm font-medium text-orange-400">Limited Time Offer</span>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-8">
+                        <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                        <span className="text-sm font-medium text-cyan-400">Limited Time Offer</span>
                     </div>
 
                     <h2 className="text-5xl lg:text-6xl font-black mb-6 text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         Ready to Transform Your
                         <br />
-                        <span className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-500 bg-clip-text text-transparent">
+                        <span className="bg-gradient-to-r from-cyan-400 via-cyan-500 to-purple-500 bg-clip-text text-transparent">
                             Manufacturing Operations?
                         </span>
                     </h2>
@@ -518,7 +527,7 @@ export default function ManufacturingCRMLanding() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                         <button 
                             onClick={() => document.getElementById('manufacturing-form')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="px-8 py-4 bg-orange-500 text-white rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105"
+                            className="px-8 py-4 bg-cyan-500 text-white rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105"
                         >
                             Book Free Consultation
                         </button>
@@ -529,15 +538,15 @@ export default function ManufacturingCRMLanding() {
 
                     <div className="flex justify-center gap-8 text-sm text-gray-400">
                         <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 rounded-full bg-green-400" />
+                            <div className="w-2 h-2 rounded-full bg-cyan-400" />
                             <span>Free Setup Included</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 rounded-full bg-green-400" />
+                            <div className="w-2 h-2 rounded-full bg-cyan-400" />
                             <span>30-Day Money Back Guarantee</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 rounded-full bg-green-400" />
+                            <div className="w-2 h-2 rounded-full bg-cyan-400" />
                             <span>24/7 Support</span>
                         </div>
                     </div>
@@ -559,7 +568,7 @@ export default function ManufacturingCRMLanding() {
                         </p>
                     </div>
 
-                    <div className="bg-gradient-to-br from-orange-50 via-white to-red-50 rounded-3xl p-8 lg:p-12 border-2 border-orange-100">
+                    <div className="bg-gradient-to-br from-cyan-50 via-white to-cyan-50 rounded-3xl p-8 lg:p-12 border-2 border-cyan-100">
                         {showSuccess ? (
                             <div className="text-center py-12">
                                 <div className="text-6xl mb-6">🎉</div>
@@ -568,7 +577,7 @@ export default function ManufacturingCRMLanding() {
                                     Your consultation request has been received. Our manufacturing expert will contact you within 24 hours.
                                 </p>
                                 <div className="bg-white rounded-2xl p-6 border-2 border-green-200">
-                                    <div className="text-green-600 font-bold mb-2">What happens next:</div>
+                                    <div className="text-cyan-600 font-bold mb-2">What happens next:</div>
                                     <ul className="text-left text-gray-700 space-y-2">
                                         <li>• 30-minute discovery call scheduled</li>
                                         <li>• Custom ROI analysis prepared</li>
@@ -587,7 +596,7 @@ export default function ManufacturingCRMLanding() {
                                             required
                                             value={formData.fullName}
                                             onChange={(e) => handleInputChange('fullName', e.target.value)}
-                                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors"
+                                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-cyan-500 focus:outline-none transition-colors"
                                             placeholder="John Smith"
                                         />
                                     </div>
@@ -598,7 +607,7 @@ export default function ManufacturingCRMLanding() {
                                             required
                                             value={formData.email}
                                             onChange={(e) => handleInputChange('email', e.target.value)}
-                                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors"
+                                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-cyan-500 focus:outline-none transition-colors"
                                             placeholder="john@company.com"
                                         />
                                     </div>
@@ -612,7 +621,7 @@ export default function ManufacturingCRMLanding() {
                                             required
                                             value={formData.phone}
                                             onChange={(e) => handleInputChange('phone', e.target.value)}
-                                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors"
+                                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-cyan-500 focus:outline-none transition-colors"
                                             placeholder="+1 (555) 123-4567"
                                         />
                                     </div>
@@ -623,7 +632,7 @@ export default function ManufacturingCRMLanding() {
                                             required
                                             value={formData.companyName}
                                             onChange={(e) => handleInputChange('companyName', e.target.value)}
-                                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors"
+                                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-cyan-500 focus:outline-none transition-colors"
                                             placeholder="Tech Manufacturing Inc"
                                         />
                                     </div>
@@ -635,7 +644,7 @@ export default function ManufacturingCRMLanding() {
                                         <select
                                             value={formData.industry}
                                             onChange={(e) => handleInputChange('industry', e.target.value)}
-                                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors"
+                                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-cyan-500 focus:outline-none transition-colors"
                                         >
                                             {industries.map(industry => (
                                                 <option key={industry} value={industry.toLowerCase()}>{industry}</option>
@@ -647,7 +656,7 @@ export default function ManufacturingCRMLanding() {
                                         <select
                                             value={formData.companySize}
                                             onChange={(e) => handleInputChange('companySize', e.target.value)}
-                                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors"
+                                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-cyan-500 focus:outline-none transition-colors"
                                         >
                                             {companySizes.map(size => (
                                                 <option key={size} value={size}>{size} employees</option>
@@ -662,7 +671,7 @@ export default function ManufacturingCRMLanding() {
                                         <select
                                             value={formData.primaryChallenge}
                                             onChange={(e) => handleInputChange('primaryChallenge', e.target.value)}
-                                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors"
+                                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-cyan-500 focus:outline-none transition-colors"
                                         >
                                             <option value="">Select your biggest challenge</option>
                                             <option value="lead-times">Long lead times</option>
@@ -679,7 +688,7 @@ export default function ManufacturingCRMLanding() {
                                             type="text"
                                             value={formData.currentSystem}
                                             onChange={(e) => handleInputChange('currentSystem', e.target.value)}
-                                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors"
+                                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-cyan-500 focus:outline-none transition-colors"
                                             placeholder="Excel, SAP, Salesforce, etc."
                                         />
                                     </div>
@@ -691,7 +700,7 @@ export default function ManufacturingCRMLanding() {
                                         rows={4}
                                         value={formData.message}
                                         onChange={(e) => handleInputChange('message', e.target.value)}
-                                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors resize-none"
+                                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-cyan-500 focus:outline-none transition-colors resize-none"
                                         placeholder="Tell us about your specific manufacturing challenges and goals..."
                                     />
                                 </div>
@@ -699,7 +708,7 @@ export default function ManufacturingCRMLanding() {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="w-full py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                     {isSubmitting ? (
                                         <span className="flex items-center justify-center gap-2">
@@ -742,15 +751,15 @@ export default function ManufacturingCRMLanding() {
             {/* Final CTA - DARK THEME */}
             <section className="py-32 px-6 bg-gradient-to-br from-black via-gray-900 to-purple-900">
                 <div className="max-w-4xl mx-auto text-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-8">
-                        <div className="w-2 h-2 rounded-full bg-orange-400 animate-pulse" />
-                        <span className="text-sm font-medium text-orange-400">Last Chance</span>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-8">
+                        <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                        <span className="text-sm font-medium text-cyan-400">Last Chance</span>
                     </div>
 
                     <h2 className="text-5xl lg:text-6xl font-black mb-6 text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         Don't Let Another Day
                         <br />
-                        <span className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-500 bg-clip-text text-transparent">
+                        <span className="bg-gradient-to-r from-cyan-400 via-cyan-500 to-purple-500 bg-clip-text text-transparent">
                             Pass You By
                         </span>
                     </h2>
@@ -763,7 +772,7 @@ export default function ManufacturingCRMLanding() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                         <button 
                             onClick={() => document.getElementById('manufacturing-form')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="px-8 py-4 bg-orange-500 text-white rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105"
+                            className="px-8 py-4 bg-cyan-500 text-white rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105"
                         >
                             Start Your Transformation
                         </button>

@@ -9,6 +9,10 @@ import DarkHeroSection from "@/components/common/sections/DarkHeroSection";
 import { useNavigate } from "@/hooks/useNavigate";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { FaChartLine, FaHouseChimneyUser, FaMobileRetro, FaRegChartBar, FaUser } from "react-icons/fa6";
+import { GiArcheryTarget, GiCrossedChains, GiRobotAntennas } from "react-icons/gi";
+import { IoIosFlash } from "react-icons/io";
+import { IoChatbox, IoHome, IoKeyOutline } from "react-icons/io5";
 
 export default function RealEstateCRMLanding() {
     const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -53,7 +57,7 @@ export default function RealEstateCRMLanding() {
             author: "Sarah Chen",
             role: "Top Real Estate Agent",
             company: "Elite Properties",
-            avatar: "👩‍💼",
+            avatar: <FaUser/>,
             metric: "43% more deals closed"
         },
         {
@@ -61,7 +65,7 @@ export default function RealEstateCRMLanding() {
             author: "Michael Rodriguez",
             role: "Team Leader",
             company: "Metro Realty Group",
-            avatar: "👨‍💼",
+            avatar: <FaUser/>,
             metric: "15+ hours saved weekly"
         },
         {
@@ -69,7 +73,7 @@ export default function RealEstateCRMLanding() {
             author: "Emily Thompson",
             role: "Broker Owner",
             company: "Thompson Real Estate",
-            avatar: "👩‍💼",
+            avatar: <FaUser/>,
             metric: "300% ROI in 90 days"
         }
     ];
@@ -142,9 +146,9 @@ export default function RealEstateCRMLanding() {
 
                 <div className="grid grid-cols-3 max-md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-16 animate-fade-in animation-delay-1000">
                     {[
-                        { value: "5 Min", label: "Instant Valuation", icon: "⚡" },
-                        { value: "97%", label: "Accuracy Rate", icon: "🎯" },
-                        { value: "10K+", label: "Happy Clients", icon: "🏠" },
+                        { value: "5 Min", label: "Instant Valuation", icon: <IoIosFlash /> },
+                        { value: "97%", label: "Accuracy Rate", icon: <GiArcheryTarget /> },
+                        { value: "10K+", label: "Happy Clients", icon: <FaHouseChimneyUser /> },
                     ].map((stat, i) => (
                         <div
                             key={i}
@@ -155,7 +159,7 @@ export default function RealEstateCRMLanding() {
         ${i === 2 ? "max-md:col-span-2" : ""}
       `}
                         >
-                            <div className=" mb-3 group-hover:scale-110 transition-transform">{stat.icon}</div>
+                            <div className=" mb-3 group-hover:scale-110 transition-transform flex items-center justify-center text-4xl text-cyan-100">{stat.icon}</div>
                             <div className=" font-bold text-cyan-400 mb-2">{stat.value}</div>
                             <div className="text-sm text-gray-300 max-md:col-start-2">{stat.label}</div>
                         </div>
@@ -370,37 +374,37 @@ export default function RealEstateCRMLanding() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
                         {[
                             {
-                                icon: "⚡",
+                                icon: <IoIosFlash className="text-cyan-600"/>,
                                   features:[],
                                 title: "Instant Lead Capture",
                                 description: "Never lose a lead again. Our CRM captures leads from all sources and automatically qualifies them based on buying intent and timeline."
                             },
                             {
-                                icon: "🤖",
+                                icon: <GiRobotAntennas className="text-cyan-600"/>,
                                   features:[],
                                 title: "AI-Powered Follow-Up",
                                 description: "Automated email sequences, SMS reminders, and call scheduling that adapt to each lead's behavior and preferences."
                             },
                             {
-                                icon: "📊",
+                                icon: <FaRegChartBar className="text-cyan-600"/>,
                                   features:[],
                                 title: "Smart Lead Scoring",
                                 description: "AI identifies your hottest prospects so you focus on leads most likely to convert, saving you hours of qualification time."
                             },
                             {
-                                icon: "🏠",
+                                icon: <IoHome className="text-cyan-600"/>,
                                   features:[],
                                 title: "Property Matching",
                                 description: "Automatically match leads with suitable properties from your MLS and get notified when perfect listings become available."
                             },
                             {
-                                icon: "📱",
+                                icon: <FaMobileRetro className="text-cyan-600"/> ,
                                   features:[],
                                 title: "Mobile-First Design",
                                 description: "Manage your entire pipeline from your phone. Update deals, schedule showings, and communicate with clients on the go."
                             },
                             {
-                                icon: "🔗",
+                                icon: <GiCrossedChains className="text-cyan-600"/>,
                                 features:[],
                                 title: "Seamless Integrations",
                                 description: "Connect with 50+ real estate platforms including MLS, Zillow, Realtor.com, and your favorite marketing tools."
@@ -415,19 +419,19 @@ export default function RealEstateCRMLanding() {
                         <h3 className="text-3xl font-black text-gray-900 mb-6">CRM Automation That Works 24/7</h3>
                         <div className="grid md:grid-cols-3 gap-8">
                             <div className="text-center">
-                                <div className="text-4xl mb-4">⚡</div>
+                                <div className="text-4xl mb-4 flex items-center justify-center text-cyan-600"><IoIosFlash/></div>
                                 <div className="text-2xl font-bold text-gray-900 mb-2">Instant</div>
-                                <div className="text-gray-600">Leads captured and saved to CRM immediately</div>
+                                <div className="text-cyan-600">Leads captured and saved to CRM immediately</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl mb-4">🤖</div>
+                                <div className="text-4xl mb-4 flex items-center justify-center text-cyan-600"><GiRobotAntennas/></div>
                                 <div className="text-2xl font-bold text-gray-900 mb-2">Automatic</div>
-                                <div className="text-gray-600">Follow-ups sent without manual intervention</div>
+                                <div className="text-cyan-600">Follow-ups sent without manual intervention</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl mb-4">📈</div>
+                                <div className="text-4xl mb-4 flex items-center justify-center text-cyan-600"><IoChatbox /></div>
                                 <div className="text-2xl font-bold text-gray-900 mb-2">Intelligent</div>
-                                <div className="text-gray-600">AI learns and optimizes your sales process</div>
+                                <div className="text-cyan-600">AI learns and optimizes your sales process</div>
                             </div>
                         </div>
                     </div>
@@ -453,7 +457,7 @@ export default function RealEstateCRMLanding() {
                     <div className="grid md:grid-cols-3 gap-8">
                         {/* Lead Magnet 1: Home Valuation */}
                         <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all group">
-                            <div className="text-5xl mb-6 group-hover:scale-110 transition-transform">🏠</div>
+                            <div className="text-5xl mb-6 group-hover:scale-110 transition-transform text-cyan-500"><IoHome /></div>
                             <h3 className="text-xl font-black text-gray-900 mb-4">Instant Home Valuation</h3>
                             <p className="text-gray-600 mb-6">
                                 Get your home's true market value in minutes with our AI-powered analysis that considers recent sales, market trends, and property features.
@@ -482,7 +486,7 @@ export default function RealEstateCRMLanding() {
 
                         {/* Lead Magnet 2: Exclusive Listings */}
                         <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all group">
-                            <div className="text-5xl mb-6 group-hover:scale-110 transition-transform">🔑</div>
+                            <div className="text-5xl mb-6 group-hover:scale-110 transition-transform text-cyan-500"><IoKeyOutline /></div>
                             <h3 className="text-xl font-black text-gray-900 mb-4">Exclusive Listings</h3>
                             <p className="text-gray-600 mb-6">
                                 Access off-market properties and exclusive listings before they go public. Get first dibs on the best deals in your area.
@@ -511,7 +515,7 @@ export default function RealEstateCRMLanding() {
 
                         {/* Lead Magnet 3: Market Insights */}
                         <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all group">
-                            <div className="text-5xl mb-6 group-hover:scale-110 transition-transform">📊</div>
+                            <div className="text-5xl mb-6 group-hover:scale-110 transition-transform text-cyan-500"><FaRegChartBar /></div>
                             <h3 className="text-xl font-black text-gray-900 mb-4">Market Insights</h3>
                             <p className="text-gray-600 mb-6">
                                 Receive personalized market reports, price trends, and investment opportunities tailored to your specific interests and areas.
@@ -597,7 +601,7 @@ export default function RealEstateCRMLanding() {
 
                     <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-3xl p-12 shadow-xl">
                         <div className="text-center mb-8">
-                            <div className="text-8xl mb-6 opacity-30">"</div>
+                            <div className="text-8xl mb-6 opacity-30 text-start pl-40">"</div>
                             <blockquote className="text-2xl text-gray-700 italic leading-relaxed mb-8">
                                 {testimonials[activeTestimonial].quote}
                             </blockquote>
@@ -657,29 +661,29 @@ export default function RealEstateCRMLanding() {
                                 value: "97%",
                                 label: "Valuation Accuracy",
                                 detail: "AI-powered estimates you can trust",
-                                icon: "🎯"
+                                icon: <GiArcheryTarget />
                             },
                             {
                                 value: "40%",
                                 label: "Faster Sales",
                                 detail: "With our optimized process",
-                                icon: "⚡"
+                                icon: <IoIosFlash/>
                             },
                             {
                                 value: "300%",
                                 label: "ROI Increase",
                                 detail: "Average return on investment",
-                                icon: "📈"
+                                icon: <FaChartLine />
                             },
                             {
                                 value: "24/7",
                                 label: "CRM Automation",
                                 detail: "Never miss an opportunity",
-                                icon: "🤖"
+                                icon: <GiRobotAntennas />
                             }
                         ].map((stat, i) => (
                             <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-cyan-300 hover:shadow-xl transition-all group">
-                                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">{stat.icon}</div>
+                                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform flex items-center justify-center text-cyan-500">{stat.icon}</div>
                                 <div className="text-3xl font-black text-gray-900 mb-2">{stat.value}</div>
                                 <div className="text-lg font-semibold text-gray-700 mb-2">{stat.label}</div>
                                 <div className="text-sm text-gray-600">{stat.detail}</div>

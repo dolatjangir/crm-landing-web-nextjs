@@ -7,7 +7,19 @@ import { FAQSection } from "@/components/common/FAQ/FAQSection";
 import DarkHeroSection from "@/components/common/sections/DarkHeroSection";
 import { useNavigate } from "@/hooks/useNavigate";
 import { useState, useEffect } from "react";
-
+import { AiOutlineHeatMap } from "react-icons/ai";
+import { BsBarChartLine, BsCart4, BsFillPieChartFill, BsGraphUpArrow, BsPlugFill } from "react-icons/bs";
+import { CgNotes } from "react-icons/cg";
+import { FaCloud, FaLock, FaRegBell, FaStar, FaUsers } from "react-icons/fa6";
+import { FiTarget } from "react-icons/fi";
+import { GiArcheryTarget, GiCrossedChains, GiRobotAntennas } from "react-icons/gi";
+import { IoIosAnalytics, IoIosFlash, IoIosRocket } from "react-icons/io";
+import { IoFunnelSharp } from "react-icons/io5";
+import { LiaIndustrySolid } from "react-icons/lia";
+import { RiExportFill } from "react-icons/ri";
+import { TiChartLine } from "react-icons/ti";
+import { VscGraph } from "react-icons/vsc";
+import { FaUser } from "react-icons/fa";
 export default function AdvancedAnalyticsPage() {
     const [activeMetric, setActiveMetric] = useState(0);
     const navigate = useNavigate();
@@ -56,7 +68,7 @@ export default function AdvancedAnalyticsPage() {
                 <h1 className="text-6xl lg:text-8xl max-md:text-4xl font-black mb-6 animate-slide-up text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                     Advanced
                     <br />
-                    <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-500 bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 bg-clip-text text-transparent">
                         Analytics
                     </span>
                 </h1>
@@ -68,9 +80,9 @@ export default function AdvancedAnalyticsPage() {
 
                 <div className="grid grid-cols-3 max-md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-16 animate-fade-in animation-delay-1000">
                     {[
-                        { value: "50+", label: "CRM Integrations", icon: "🔗" },
-                        { value: "Real-time", label: "Data Sync", icon: "⚡" },
-                        { value: "95%", label: "Accuracy", icon: "🎯" },
+                        { value: "50+", label: "CRM Integrations", icon: <GiCrossedChains /> },
+                        { value: "Real-time", label: "Data Sync", icon: <IoIosFlash /> },
+                        { value: "95%", label: "Accuracy", icon: <FiTarget /> },
                     ].map((stat, i) => (
                         <div
                             key={i}
@@ -81,7 +93,7 @@ export default function AdvancedAnalyticsPage() {
                                 ${i === 2 ? "max-md:col-span-2" : ""}
                             `}
                         >
-                            <div className="mb-3 group-hover:scale-110 transition-transform">{stat.icon}</div>
+                            <div className="mb-3 group-hover:scale-110 text-cyan-500 flex justify-center items-center text-5xl transition-transform">{stat.icon}</div>
                             <div className="font-bold text-purple-400 mb-2">{stat.value}</div>
                             <div className="text-sm text-gray-300">{stat.label}</div>
                         </div>
@@ -183,28 +195,28 @@ export default function AdvancedAnalyticsPage() {
                         <div className="space-y-6">
                             {[
                                 {
-                                    icon: "📊",
+                                    icon: <VscGraph />,
                                     title: "Unified Data Dashboard",
                                     description: "Connect all your CRMs into one powerful dashboard. See everything in real-time with automatic data synchronization every 60 seconds."
                                 },
                                 {
-                                    icon: "🤖",
+                                    icon: <GiRobotAntennas />,
                                     title: "AI-Powered Predictions",
                                     description: "Machine learning algorithms analyze patterns to predict deal outcomes, revenue forecasts, and identify at-risk opportunities."
                                 },
                                 {
-                                    icon: "⚡",
+                                    icon: <IoIosFlash />,
                                     title: "Real-Time Alerts",
                                     description: "Get instant notifications when metrics hit thresholds, deals stall, or opportunities require attention. Never miss a critical moment."
                                 },
                                 {
-                                    icon: "🎯",
+                                    icon: <FiTarget />,
                                     title: "Custom Reporting",
                                     description: "Build unlimited custom reports with drag-and-drop simplicity. Schedule automatic delivery and share insights across teams."
                                 }
                             ].map((feature, i) => (
                                 <div key={i} className="flex gap-4 p-6 bg-white border-2 border-purple-100 rounded-2xl hover:border-purple-300 hover:shadow-lg transition-all group">
-                                    <div className="text-4xl group-hover:scale-110 transition-transform">{feature.icon}</div>
+                                    <div className="text-4xl group-hover:scale-110 transition-transform text-purple-500">{feature.icon}</div>
                                     <div>
                                         <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
                                         <p className="text-gray-600">{feature.description}</p>
@@ -233,7 +245,7 @@ export default function AdvancedAnalyticsPage() {
                             {
                                 industry: "E-Commerce",
                                 company: "ShopTech Solutions",
-                                logo: "🛒",
+                                logo: <BsCart4 className="text-purple-100 text-4xl"/>,
                                 challenge: "Managing data from 5 different CRMs led to siloed insights and poor decision-making. Sales forecasting was off by 30%.",
                                 solution: "Unified all CRMs into one analytics dashboard with AI-powered forecasting and automated reporting across departments.",
                                 results: [
@@ -246,7 +258,7 @@ export default function AdvancedAnalyticsPage() {
                             {
                                 industry: "SaaS",
                                 company: "CloudScale Inc",
-                                logo: "☁️",
+                                logo: <FaCloud className="text-blue-100 text-4xl"/>,
                                 challenge: "Unable to identify churn signals early. Lost 25% of customers before understanding why they were leaving.",
                                 solution: "Implemented AI churn prediction and customer health scoring with real-time alerts for at-risk accounts.",
                                 results: [
@@ -259,7 +271,7 @@ export default function AdvancedAnalyticsPage() {
                             {
                                 industry: "Manufacturing",
                                 company: "IndustrialPro Corp",
-                                logo: "🏭",
+                                logo: <LiaIndustrySolid  className="text-green-100 text-4xl"/>,
                                 challenge: "Sales team had no visibility into pipeline health. Deals were slipping through cracks with no predictive insights.",
                                 solution: "Deployed predictive deal scoring and pipeline analytics with automated alerts for stalled opportunities.",
                                 results: [
@@ -291,37 +303,37 @@ export default function AdvancedAnalyticsPage() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[
                             {
-                                icon: "🔮",
+                                icon: <IoIosAnalytics className="text-cyan-600" />,
                                 title: "Predictive Analytics",
                                 description: "AI forecasts revenue, predicts deal outcomes, and identifies risks before they impact your business.",
                                 features: ["Revenue forecasting", "Deal probability", "Churn prediction"]
                             },
                             {
-                                icon: "📈",
+                                icon: <BsGraphUpArrow className="text-cyan-600" />,
                                 title: "Custom Dashboards",
                                 description: "Drag-and-drop builder for unlimited dashboards tailored to any team or use case.",
                                 features: ["No-code builder", "Real-time updates", "Mobile responsive"]
                             },
                             {
-                                icon: "🎯",
+                                icon: <GiArcheryTarget className="text-cyan-600" />,
                                 title: "Smart Segmentation",
                                 description: "AI automatically segments customers based on behavior, value, and engagement patterns.",
                                 features: ["Auto-clustering", "Behavior tracking", "Value scoring"]
                             },
                             {
-                                icon: "📊",
+                                icon: <VscGraph className="text-cyan-600" />,
                                 title: "Advanced Reporting",
                                 description: "Generate comprehensive reports with custom metrics, filters, and scheduled delivery.",
                                 features: ["Custom reports", "Auto-scheduling", "Export options"]
                             },
                             {
-                                icon: "🔔",
+                                icon: <FaRegBell className="text-cyan-600" />,
                                 title: "Intelligent Alerts",
                                 description: "Get notified when metrics change, deals stall, or opportunities need attention.",
                                 features: ["Custom triggers", "Multi-channel alerts", "Smart routing"]
                             },
                             {
-                                icon: "🔗",
+                                icon: <GiCrossedChains className="text-cyan-600"/>,
                                 title: "50+ Integrations",
                                 description: "Connect Salesforce, HubSpot, Zoho, Pipedrive, and 50+ other CRM platforms seamlessly.",
                                 features: ["Pre-built connectors", "Real-time sync", "Two-way updates"]
@@ -347,18 +359,18 @@ export default function AdvancedAnalyticsPage() {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {[
-                            { type: "Line Charts", icon: "📈", color: "from-blue-500 to-cyan-500" },
-                            { type: "Bar Charts", icon: "📊", color: "from-purple-500 to-pink-500" },
-                            { type: "Pie Charts", icon: "🥧", color: "from-green-500 to-teal-500" },
-                            { type: "Heat Maps", icon: "🔥", color: "from-red-500 to-orange-500" },
-                            { type: "Funnels", icon: "🔽", color: "from-indigo-500 to-purple-500" },
-                            { type: "Cohort Analysis", icon: "👥", color: "from-cyan-500 to-blue-500" },
-                            { type: "Scatter Plots", icon: "⚡", color: "from-yellow-500 to-orange-500" },
-                            { type: "Gauges", icon: "🎯", color: "from-pink-500 to-rose-500" }
+                            { type: "Line Charts", icon: <TiChartLine />, color: "from-blue-500 to-cyan-500" },
+                            { type: "Bar Charts", icon: <BsBarChartLine />, color: "from-purple-500 to-pink-500" },
+                            { type: "Pie Charts", icon: <BsFillPieChartFill />, color: "from-green-500 to-teal-500" },
+                            { type: "Heat Maps", icon: <AiOutlineHeatMap />, color: "from-red-500 to-orange-500" },
+                            { type: "Funnels", icon: <IoFunnelSharp />, color: "from-indigo-500 to-purple-500" },
+                            { type: "Cohort Analysis", icon: <FaUsers/>, color: "from-cyan-500 to-blue-500" },
+                            { type: "Scatter Plots", icon: <IoIosFlash />, color: "from-yellow-500 to-orange-500" },
+                            { type: "Gauges", icon: <FiTarget/>, color: "from-pink-500 to-rose-500" }
                         ].map((viz, i) => (
                             <div key={i} className="group cursor-pointer">
                                 <div className={`bg-gradient-to-br ${viz.color} rounded-2xl p-8 text-center hover:shadow-2xl transition-all hover:scale-105`}>
-                                    <div className="text-5xl mb-3 group-hover:scale-110 transition-transform">{viz.icon}</div>
+                                    <div className="text-5xl mb-3 group-hover:scale-110 flex justify-center items-center text-gray-100 transition-transform">{viz.icon}</div>
                                     <h3 className="text-xl font-bold text-white">{viz.type}</h3>
                                 </div>
                             </div>
@@ -463,18 +475,18 @@ export default function AdvancedAnalyticsPage() {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {[
-                            { label: "Data Refresh", value: "60 sec", icon: "⚡" },
-                            { label: "Query Speed", value: "< 1s", icon: "🚀" },
-                            { label: "Data Retention", value: "Unlimited", icon: "💾" },
-                            { label: "API Rate", value: "Unlimited", icon: "🔗" },
-                            { label: "Concurrent Users", value: "Unlimited", icon: "👥" },
-                            { label: "Uptime SLA", value: "99.99%", icon: "🔒" },
-                            { label: "CRM Integrations", value: "50+", icon: "🔌" },
-                            { label: "Export Formats", value: "10+", icon: "📤" }
+                            { label: "Data Refresh", value: "60 sec", icon: <IoIosFlash /> },
+                            { label: "Query Speed", value: "< 1s", icon: <IoIosRocket /> },
+                            { label: "Data Retention", value: "Unlimited", icon: <CgNotes /> },
+                            { label: "API Rate", value: "Unlimited", icon: <GiCrossedChains /> },
+                            { label: "Concurrent Users", value: "Unlimited", icon: <FaUsers /> },
+                            { label: "Uptime SLA", value: "99.99%", icon: <FaLock />},
+                            { label: "CRM Integrations", value: "50+", icon: <BsPlugFill /> },
+                            { label: "Export Formats", value: "10+", icon: <RiExportFill /> }
                         ].map((spec, i) => (
                             <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all group">
-                                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{spec.icon}</div>
-                                <div className="text-sm text-gray-400 mb-2">{spec.label}</div>
+                                <div className="text-4xl mb-4 group-hover:scale-110 text-purple-400 transition-transform">{spec.icon}</div>
+                                <div className="text-sm text-gray-200 mb-2">{spec.label}</div>
                                 <div className="text-3xl font-black text-purple-400">{spec.value}</div>
                             </div>
                         ))}
@@ -510,25 +522,32 @@ export default function AdvancedAnalyticsPage() {
                                 author: "David Park",
                                 role: "VP of Sales",
                                 company: "DataDriven Inc",
-                                avatar: "👨‍💼"
+                                avatar: <FaUser />
                             },
                             {
                                 quote: "Having all our CRM data in one dashboard saved us 20+ hours per week. The real-time insights help us catch issues before they become problems.",
                                 author: "Lisa Martinez",
                                 role: "Head of Operations",
                                 company: "ScaleUp Solutions",
-                                avatar: "👩‍💼"
+                                avatar: <FaUser />
                             },
                             {
                                 quote: "The churn prediction model identified at-risk customers 2 weeks before they churned. We saved $500K in annual revenue in the first quarter alone.",
                                 author: "James Wilson",
                                 role: "Customer Success Director",
                                 company: "CloudTech Pro",
-                                avatar: "👨‍💼"
+                                avatar: <FaUser />
                             }
                         ].map((testimonial, i) => (
                             <div key={i} className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-8 hover:border-purple-300 hover:shadow-xl transition-all">
-                                <div className="text-6xl mb-6 opacity-30 text-cyan-600">"</div>
+                                <div className="text-6xl  opacity-30 text-cyan-600">"</div>
+                                <div>
+                                    {
+                                        Array.from({ length: 5 }).map((_, starIndex) => (
+                                            <FaStar key={starIndex} className="inline mb-4 text-yellow-400 mr-1" />
+                                        ))
+                                    }
+                                </div>
                                 <p className="text-gray-700 text-lg mb-8 leading-relaxed">{testimonial.quote}</p>
                                 <div className="flex items-center gap-4">
                                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-2xl">

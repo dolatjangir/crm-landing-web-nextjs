@@ -46,7 +46,7 @@ export default function Whyus() {
     <section
       id="why-us"
       data-aos="fade-up"
-      className="relative bg-white py-20  overflow-hidden"
+      className="relative  py-20  overflow-hidden"
     >
       {/* Decorative Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -54,8 +54,8 @@ export default function Whyus() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:64px_64px]"></div>
 
         {/* Gradient Orbs */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full opacity-10 blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-blue-400 to-cyan-500 rounded-full opacity-10 blur-3xl translate-x-1/2 translate-y-1/2"></div>
+        <div className="absolute top-0 left-0 w-96 h-96  rounded-full opacity-10 blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96  rounded-full opacity-10 blur-3xl translate-x-1/2 translate-y-1/2"></div>
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative text-center">

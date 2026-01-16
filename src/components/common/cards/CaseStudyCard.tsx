@@ -8,7 +8,7 @@ interface Result {
 interface CaseStudy {
   industry: string;
   company: string;
-  logo: string;
+  logo: string | React.ReactNode;
   challenge: string;
   solution: string;
   results: Result[];

@@ -71,7 +71,7 @@ export default function Industries() {
     <section
       id="industries"
       data-aos="fade-up"
-      className="relative scroll-mt-20 bg-gradient-to-br from-blue-50 via-white to-cyan-50 py-20 sm:py-28 lg:py-32 overflow-hidden"
+      className="relative scroll-mt-20  py-20 sm:py-28 lg:py-32 overflow-hidden"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">

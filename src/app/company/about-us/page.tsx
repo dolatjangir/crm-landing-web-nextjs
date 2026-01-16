@@ -9,6 +9,8 @@ import DarkHeroSection from "@/components/common/sections/DarkHeroSection";
 import { useNavigate } from "@/hooks/useNavigate";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { FaFaceAngry } from "react-icons/fa6";
+import { FaUser } from "react-icons/fa";
 
 export default function AboutPage() {
     const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -43,7 +45,7 @@ export default function AboutPage() {
             author: "Sarah Chen",
             role: "CEO",
             company: "TechFlow Solutions",
-            avatar: "👩‍💼",
+            avatar: <FaUser/>,
             metric: "10+ hours saved weekly"
         },
         {
@@ -51,7 +53,7 @@ export default function AboutPage() {
             author: "Michael Rodriguez",
             role: "VP of Sales",
             company: "Growth Dynamics",
-            avatar: "👨‍💼",
+            avatar: <FaUser/>,
             metric: "3x productivity increase"
         },
         {
@@ -59,7 +61,7 @@ export default function AboutPage() {
             author: "Emily Thompson",
             role: "Operations Director",
             company: "MarketMax Inc",
-            avatar: "👩‍💼",
+            avatar: <FaUser/>,
             metric: "300% ROI in 30 days"
         }
     ];
@@ -75,25 +77,25 @@ export default function AboutPage() {
         {
             name: "Alex Rodriguez",
             role: "Founder & CEO",
-            avatar: "👨‍💼",
+            avatar: <FaUser/>,
             bio: "Former Salesforce executive with 15+ years in CRM innovation"
         },
         {
             name: "Sarah Chen",
             role: "CTO",
-            avatar: "👩‍💻",
+            avatar: <FaUser/>,
             bio: "AI/ML expert from Google, leading our intelligent automation"
         },
         {
             name: "Michael Thompson",
             role: "Head of Product",
-            avatar: "👨‍🎨",
+            avatar: <FaUser/>,
             bio: "UX visionary focused on making complex tools beautifully simple"
         },
         {
             name: "Emily Davis",
             role: "VP of Customer Success",
-            avatar: "👩‍🏫",
+            avatar: <FaUser/>,
             bio: "Customer experience expert ensuring every user achieves success"
         }
     ];
@@ -175,7 +177,7 @@ export default function AboutPage() {
                     <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
                         <div className="space-y-6">
                             <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 shadow-lg">
-                                <div className="text-6xl mb-4">😤</div>
+                                <div className="text-3xl mb-4">😤</div>
                                 <h3 className="text-2xl font-black text-gray-900 mb-4">The Problem We Saw</h3>
                                 <p className="text-gray-600 leading-relaxed">
                                     After 15+ years in enterprise CRM, our founders kept seeing the same pattern: 
@@ -185,7 +187,7 @@ export default function AboutPage() {
                             </div>
 
                             <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 shadow-lg">
-                                <div className="text-6xl mb-4">💡</div>
+                                <div className="text-3xl mb-4">💡</div>
                                 <h3 className="text-2xl font-black text-gray-900 mb-4">Our Solution</h3>
                                 <p className="text-gray-600 leading-relaxed">
                                     We built ibigdata to give growing businesses enterprise-level CRM power 
@@ -281,7 +283,7 @@ export default function AboutPage() {
                             }
                         ].map((usp, i) => (
                             <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all group">
-                                <div className="text-5xl mb-6 group-hover:scale-110 transition-transform">{usp.icon}</div>
+                                <div className="text-3xl mb-6 group-hover:scale-110 transition-transform">{usp.icon}</div>
                                 <h3 className="text-xl font-black text-gray-900 mb-4">{usp.title}</h3>
                                 <p className="text-gray-700 font-semibold mb-3">{usp.description}</p>
                                 <p className="text-sm text-gray-600">{usp.detail}</p>
@@ -294,7 +296,7 @@ export default function AboutPage() {
                         <h3 className="text-3xl font-black text-gray-900 mb-8 text-center">How We Stack Up</h3>
                         <div className="grid md:grid-cols-3 gap-8">
                             <div className="text-center">
-                                <div className="text-4xl mb-4">🏢</div>
+                                <div className="text-3xl mb-4">🏢</div>
                                 <h4 className="font-bold text-gray-900 mb-2">Traditional CRM</h4>
                                 <ul className="text-sm text-gray-600 space-y-2">
                                     <li>Complex setup</li>
@@ -304,7 +306,7 @@ export default function AboutPage() {
                                 </ul>
                             </div>
                             <div className="text-center border-l border-r border-gray-200 px-8">
-                                <div className="text-4xl mb-4">🚀</div>
+                                <div className="text-3xl mb-4">🚀</div>
                                 <h4 className="font-bold text-cyan-600 mb-2">ibigdata</h4>
                                 <ul className="text-sm text-gray-700 space-y-2">
                                     <li>5-minute setup</li>
@@ -314,7 +316,7 @@ export default function AboutPage() {
                                 </ul>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl mb-4">💡</div>
+                                <div className="text-3xl mb-4">💡</div>
                                 <h4 className="font-bold text-gray-900 mb-2">The Difference</h4>
                                 <ul className="text-sm text-gray-600 space-y-2">
                                     <li>93% faster deployment</li>
@@ -345,7 +347,7 @@ export default function AboutPage() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
                         {teamMembers.map((member, i) => (
                             <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-cyan-300 hover:shadow-xl transition-all group">
-                                <div className="text-6xl mb-6 group-hover:scale-110 transition-transform">{member.avatar}</div>
+                                <div className="text-5xl mb-6 text-neutral-600 flex justify-center items-center group-hover:scale-110 transition-transform">{member.avatar}</div>
                                 <h3 className="text-xl font-black text-gray-900 mb-2">{member.name}</h3>
                                 <div className="text-cyan-600 font-semibold mb-4">{member.role}</div>
                                 <p className="text-sm text-gray-600 leading-relaxed">{member.bio}</p>
@@ -417,7 +419,7 @@ export default function AboutPage() {
                         </div>
 
                         <div className="flex items-center justify-center gap-8">
-                            <div className="flex items-center gap-4">
+                            <div className="flex items-center gap-4 w-">
                                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-3xl">
                                     {testimonials[activeTestimonial].avatar}
                                 </div>

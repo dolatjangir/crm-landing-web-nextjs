@@ -9,6 +9,12 @@ import DarkHeroSection from "@/components/common/sections/DarkHeroSection";
 import { useNavigate } from "@/hooks/useNavigate";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { FaShieldAlt } from "react-icons/fa";
+import { FaArrowsRotate, FaEarthAmericas, FaIntercom, FaLock, FaRocket, FaSackDollar, FaUsers } from "react-icons/fa6";
+import { GiArcheryTarget, GiBrain } from "react-icons/gi";
+import { IoIosFlash, IoIosRocket } from "react-icons/io";
+import { IoChatboxEllipsesOutline } from "react-icons/io5";
+import { VscGraph } from "react-icons/vsc";
 
 export default function ScalabilityPage() {
     const [activeScenario, setActiveScenario] = useState(0);
@@ -41,7 +47,7 @@ export default function ScalabilityPage() {
     const growthScenarios = [
         {
             name: "Small Team",
-            icon: "👥",
+            icon: <FaUsers/>,
             users: "10-100",
             records: "1K-50K",
             description: "Starting your growth journey",
@@ -52,7 +58,7 @@ export default function ScalabilityPage() {
         },
         {
             name: "Growing Startup",
-            icon: "🚀",
+            icon: <IoIosRocket />,
             users: "100-1K",
             records: "50K-500K",
             description: "Rapid expansion phase",
@@ -63,7 +69,7 @@ export default function ScalabilityPage() {
         },
         {
             name: "Enterprise",
-            icon: "🏢",
+            icon: <FaIntercom />,
             users: "1K-100K+",
             records: "500K-50M+",
             description: "Large-scale operations",
@@ -107,9 +113,9 @@ export default function ScalabilityPage() {
 
                 <div className="grid grid-cols-3 max-md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-16 animate-fade-in animation-delay-1000">
                     {[
-                        { value: "99.99%", label: "Uptime SLA", icon: "🛡️" },
-                        { value: "< 100ms", label: "Response Time", icon: "⚡" },
-                        { value: "10M+", label: "Concurrent Users", icon: "🚀" },
+                        { value: "99.99%", label: "Uptime SLA", icon: <FaShieldAlt /> },
+                        { value: "< 100ms", label: "Response Time", icon: <IoIosFlash /> },
+                        { value: "10M+", label: "Concurrent Users", icon: <IoIosRocket /> },
                     ].map((stat, i) => (
                         <div
                             key={i}
@@ -120,7 +126,8 @@ export default function ScalabilityPage() {
         ${i === 2 ? "max-md:col-span-2" : ""}
       `}
                         >
-                            <div className=" mb-3 group-hover:scale-110 transition-transform">{stat.icon}</div>
+                            <div className=" mb-3 group-hover:scale-110 transition-transform flex justify-center items-center text-cyan-100">
+                                {stat.icon}</div>
                             <div className=" font-bold text-cyan-400 mb-2">{stat.value}</div>
                             <div className="text-sm text-gray-300 max-md:col-start-2">{stat.label}</div>
                         </div>
@@ -143,13 +150,13 @@ export default function ScalabilityPage() {
 
                     <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8 mb-20">
                         {[
-                            { value: "99.99%", label: "Uptime SLA", change: "+0.01% vs last month", icon: "🛡️", color: "text-green-600" },
-                            { value: "47ms", label: "Average Response", change: "-12% vs last month", icon: "⚡", color: "text-cyan-600" },
-                            { value: "2.3M", label: "Requests/Minute", change: "+45% vs last month", icon: "📈", color: "text-blue-600" },
-                            { value: "Zero", label: "Downtime Events", change: "Last 12 months", icon: "🎯", color: "text-purple-600" }
+                            { value: "99.99%", label: "Uptime SLA", change: "+0.01% vs last month", icon:  <FaShieldAlt /> , color: "text-green-600" },
+                            { value: "47ms", label: "Average Response", change: "-12% vs last month", icon: <IoIosFlash />, color: "text-cyan-600" },
+                            { value: "2.3M", label: "Requests/Minute", change: "+45% vs last month", icon: <VscGraph />, color: "text-blue-600" },
+                            { value: "Zero", label: "Downtime Events", change: "Last 12 months", icon: <GiArcheryTarget />, color: "text-purple-600" }
                         ].map((metric, i) => (
                             <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all group">
-                                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">{metric.icon}</div>
+                                <div className={`text-5xl mb-4 group-hover:scale-110 transition-transform ${metric.color}`}>{metric.icon}</div>
                                 <div className={`text-4xl font-black mb-2 ${metric.color}`}>{metric.value}</div>
                                 <div className="text-lg font-semibold text-gray-900 mb-2">{metric.label}</div>
                                 <div className="text-sm text-gray-500">{metric.change}</div>
@@ -216,10 +223,10 @@ export default function ScalabilityPage() {
                                 <h3 className="text-2xl font-black text-gray-900 mb-6">How We Scale With You</h3>
                                 <div className="space-y-6">
                                     {[
-                                        { benefit: "Auto-Scaling", description: "Resources increase automatically during traffic spikes", icon: "📈", color: "bg-green-100 text-green-700" },
-                                        { benefit: "Load Distribution", description: "Traffic spread across global servers for consistent speed", icon: "🌍", color: "bg-blue-100 text-blue-700" },
-                                        { benefit: "Smart Caching", description: "Frequently accessed data served instantly from nearby locations", icon: "⚡", color: "bg-cyan-100 text-cyan-700" },
-                                        { benefit: "Fault Tolerance", description: "Automatic failover keeps you running even during outages", icon: "🛡️", color: "bg-purple-100 text-purple-700" }
+                                        { benefit: "Auto-Scaling", description: "Resources increase automatically during traffic spikes", icon: <VscGraph />, color: "bg-green-100 text-green-700" },
+                                        { benefit: "Load Distribution", description: "Traffic spread across global servers for consistent speed", icon: <FaEarthAmericas />, color: "bg-blue-100 text-blue-700" },
+                                        { benefit: "Smart Caching", description: "Frequently accessed data served instantly from nearby locations", icon: <IoIosFlash />, color: "bg-cyan-100 text-cyan-700" },
+                                        { benefit: "Fault Tolerance", description: "Automatic failover keeps you running even during outages", icon: <FaShieldAlt /> , color: "bg-purple-100 text-purple-700" }
                                     ].map((item, i) => (
                                         <div key={i} className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
                                             <div className={`w-12 h-12 rounded-xl ${item.color} flex items-center justify-center text-xl`}>
@@ -239,28 +246,32 @@ export default function ScalabilityPage() {
                         <div className="space-y-6">
                             {[
                                 {
-                                    icon: "🚀",
+                                    icon: <IoIosRocket />,
                                     title: "Instant Auto-Scaling",
-                                    description: "No downtime during traffic spikes. Our system detects load increases and scales resources in milliseconds, not minutes."
+                                    description: "No downtime during traffic spikes. Our system detects load increases and scales resources in milliseconds, not minutes.",
+                                    color: " text-green-700",
                                 },
                                 {
-                                    icon: "🌍",
+                                    icon: <FaEarthAmericas />,
                                     title: "Global Edge Network",
-                                    description: "Content delivered from 200+ locations worldwide. Your users experience the same fast performance regardless of location."
+                                    description: "Content delivered from 200+ locations worldwide. Your users experience the same fast performance regardless of location.",
+                                     color: "text-blue-700" 
                                 },
                                 {
-                                    icon: "⚡",
+                                    icon: <IoIosFlash />,
                                     title: "Predictive Optimization",
-                                    description: "AI analyzes usage patterns and pre-allocates resources before you need them. Always ready for your next growth surge."
+                                    description: "AI analyzes usage patterns and pre-allocates resources before you need them. Always ready for your next growth surge.",
+                                    color: "text-cyan-700"
                                 },
                                 {
-                                    icon: "🛡️",
+                                    icon: <FaShieldAlt />,
                                     title: "Self-Healing Infrastructure",
-                                    description: "Automatic detection and resolution of issues before they impact your business. Problems fixed before you notice them."
+                                    description: "Automatic detection and resolution of issues before they impact your business. Problems fixed before you notice them.",
+                                    color: "text-purple-700"
                                 }
                             ].map((feature, i) => (
                                 <div key={i} className="flex gap-4 p-6 bg-white border-2 border-cyan-100 rounded-2xl hover:border-cyan-300 hover:shadow-lg transition-all group">
-                                    <div className="text-4xl group-hover:scale-110 transition-transform">{feature.icon}</div>
+                                    <div className={`text-4xl group-hover:scale-110 transition-transform ${feature.color}`}>{feature.icon}</div>
                                     <div>
                                         <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
                                         <p className="text-gray-600">{feature.description}</p>
@@ -293,12 +304,12 @@ export default function ScalabilityPage() {
                             <button
                                 key={i}
                                 onClick={() => setActiveScenario(i)}
-                                className={`px-6 py-3 rounded-xl font-semibold transition-all ${activeScenario === i
+                                className={`px-6 py-3 rounded-xl font-semibold transition-all group flex justify-center items-center ${activeScenario === i
                                     ? 'bg-cyan-600 text-white shadow-lg'
-                                    : 'bg-white border-2 border-gray-200 text-gray-600 hover:border-cyan-300 hover:shadow-md'
+                                    : 'bg-white border-2 border-gray-200 text-gray-600  hover:border-cyan-300 hover:shadow-md'
                                     }`}
                             >
-                                <span className="mr-2">{scenario.icon}</span>
+                                <span className="mr-2 group-hover:text-gray-800">{scenario.icon}</span>
                                 {scenario.name}
                             </button>
                         ))}
@@ -309,7 +320,7 @@ export default function ScalabilityPage() {
                         <div className="grid lg:grid-cols-2 gap-12 items-center">
                             <div>
                                 <div className="flex items-center gap-4 mb-6">
-                                    <div className="text-6xl">{growthScenarios[activeScenario].icon}</div>
+                                    <div className="text-6xl text-cyan-600">{growthScenarios[activeScenario].icon}</div>
                                     <div>
                                         <h3 className="text-3xl font-black text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                                             {growthScenarios[activeScenario].name}
@@ -433,11 +444,40 @@ export default function ScalabilityPage() {
                                         <span className="text-sm font-medium text-green-600">Auto-Scaling Active</span>
                                     </div>
                                     <div className="text-3xl font-black text-gray-900">
-                                        {trafficLevel === 0 && "Lightning Fast ⚡"}
-                                        {trafficLevel === 1 && "Consistent Speed 🚀"}
-                                        {trafficLevel === 2 && "Scaling Up 📈"}
-                                        {trafficLevel === 3 && "Peak Performance 🎯"}
-                                        {trafficLevel === 4 && "Surge Handling 🛡️"}
+                                        {trafficLevel === 0 && (
+                                         <span className="flex items-center justify-start gap-4">
+                                            Lightning Fast 
+                                               <IoIosFlash className="inline-block ml-2 text-green-500" />
+                                         </span>
+                                        ) }
+                                        {trafficLevel === 1 &&
+                                        (
+                                         <span className="flex items-center justify-start gap-4">
+                                           Consistent Speed  
+                                              <IoIosRocket className="inline-block ml-2 text-blue-500"  />
+                                         </span>
+                                        ) }
+                                        {trafficLevel === 2 && 
+                                          (
+                                         <span className="flex items-center justify-start gap-4">
+                                           Scaling Up  
+                                              <VscGraph className="inline-block ml-2 text-yellow-500"  />
+                                         </span>
+                                        )  }
+                                        {trafficLevel === 3 && 
+                                         (
+                                         <span className="flex items-center justify-start gap-4">
+                                          Peak Performance  
+                                             <GiArcheryTarget className="inline-block ml-2 text-red-500" />
+                                         </span>
+                                        ) }
+                                        {trafficLevel === 4 && 
+                                         (
+                                         <span className="flex items-center justify-start gap-4">
+                                          Surge Handling  
+                                             <FaShieldAlt className="inline-block ml-2 text-purple-500" />
+                                         </span>
+                                        ) }
                                     </div>
                                 </div>
                             </div>
@@ -447,28 +487,28 @@ export default function ScalabilityPage() {
                         <div className="space-y-6">
                             {[
                                 {
-                                    icon: "🔄",
+                                    icon: <FaArrowsRotate />,
                                     title: "Instant Auto-Scaling",
                                     description: "Resources scale up in real-time during traffic spikes. No manual intervention, no downtime, no performance degradation."
                                 },
                                 {
-                                    icon: "🧠",
+                                    icon: <GiBrain />,
                                     title: "Predictive Intelligence",
                                     description: "AI analyzes patterns and pre-allocates resources before traffic surges. Always ready for your next big campaign or product launch."
                                 },
                                 {
-                                    icon: "💰",
+                                    icon: <FaSackDollar />,
                                     title: "Cost Optimization",
                                     description: "Pay only for what you use. Resources automatically scale down when traffic normalizes, optimizing your infrastructure costs."
                                 },
                                 {
-                                    icon: "🛡️",
+                                    icon: <FaShieldAlt />,
                                     title: "Built-in Protection",
                                     description: "DDoS protection and rate limiting ensure malicious traffic can't impact your legitimate users' experience."
                                 }
                             ].map((benefit, i) => (
                                 <div key={i} className="flex gap-4 p-6 bg-white border-2 border-cyan-100 rounded-2xl hover:border-cyan-300 hover:shadow-lg transition-all group">
-                                    <div className="text-4xl group-hover:scale-110 transition-transform">{benefit.icon}</div>
+                                    <div className="text-4xl group-hover:scale-110 transition-transform text-cyan-600">{benefit.icon}</div>
                                     <div>
                                         <h3 className="text-xl font-bold text-gray-900 mb-2">{benefit.title}</h3>
                                         <p className="text-gray-600">{benefit.description}</p>
@@ -496,13 +536,13 @@ export default function ScalabilityPage() {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
                         {[
-                            { label: "Uptime SLA", value: "99.99%", icon: "🛡️" },
-                            { label: "Response Time", value: "< 100ms", icon: "⚡" },
-                            { label: "Security Certifications", value: "15+", icon: "🔒" },
-                            { label: "Support Response", value: "< 5 mins", icon: "💬" }
+                            { label: "Uptime SLA", value: "99.99%", icon:  <FaShieldAlt />},
+                            { label: "Response Time", value: "< 100ms", icon: <IoIosFlash/> },
+                            { label: "Security Certifications", value: "15+", icon: <FaLock /> },
+                            { label: "Support Response", value: "< 5 mins", icon: <IoChatboxEllipsesOutline /> }
                         ].map((spec, i) => (
                             <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all group">
-                                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{spec.icon}</div>
+                                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform text-cyan-400">{spec.icon}</div>
                                 <div className="text-sm text-gray-400 mb-2">{spec.label}</div>
                                 <div className="text-3xl font-black text-cyan-400">{spec.value}</div>
                             </div>

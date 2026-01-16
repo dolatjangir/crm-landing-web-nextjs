@@ -9,6 +9,14 @@ import DarkHeroSection from "@/components/common/sections/DarkHeroSection";
 import { useNavigate } from "@/hooks/useNavigate";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { BsTools } from "react-icons/bs";
+import { CgNotes } from "react-icons/cg";
+import { FaUserCog } from "react-icons/fa";
+import { FaChartLine, FaGraduationCap, FaHandshake, FaRegChartBar, FaSackDollar, FaUser, FaUsers } from "react-icons/fa6";
+import { GiArcheryTarget, GiRobotAntennas, GiRocketThruster } from "react-icons/gi";
+import { IoIosColorPalette, IoIosFlash, IoIosRocket } from "react-icons/io";
+import { IoBag, IoBagHandleSharp, IoChatboxEllipsesOutline, IoStatsChartSharp } from "react-icons/io5";
+import { SiBookstack } from "react-icons/si";
 
 export default function EducationCRMLanding() {
     const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -55,7 +63,7 @@ export default function EducationCRMLanding() {
             author: "Sarah Chen",
             role: "Data Scientist",
             company: "Google",
-            avatar: "👩‍💼",
+            avatar: <FaUser/>,
             metric: "Hired at Google in 3 months"
         },
         {
@@ -63,7 +71,7 @@ export default function EducationCRMLanding() {
             author: "Michael Rodriguez",
             role: "Data Analyst",
             company: "Meta",
-            avatar: "👨‍💼",
+            avatar: <FaUser/>,
             metric: "Doubled salary"
         },
         {
@@ -71,44 +79,44 @@ export default function EducationCRMLanding() {
             author: "Emily Thompson",
             role: "Business Analyst",
             company: "Microsoft",
-            avatar: "👩‍💼",
+            avatar: <FaUser/>,
             metric: "300% ROI in 6 months"
         }
     ];
 
     const programFeatures = [
         {
-            icon: "🎓",
+            icon: <FaGraduationCap className="text-cyan-600 " />,
             features:[],
             title: "Industry-Recognized Certification",
             description: "Earn credentials that employers actually look for, backed by real-world projects and portfolio"
         },
         {
-            icon: "💼",
+            icon: <IoBagHandleSharp className="text-cyan-600 " />,
             features:[],
             title: "Career-Focused Curriculum",
             description: "Learn exactly what companies need with curriculum designed by industry professionals"
         },
         {
-            icon: "🤖",
+            icon: <GiRobotAntennas className="text-cyan-600 "/>,
             features:[],
             title: "AI-Powered Learning",
             description: "Personalized learning paths that adapt to your pace and style with CRM integration"
         },
         {
-            icon: "👥",
+            icon: <FaUsers className="text-cyan-600 "/>,
             features:[],
             title: "Expert Mentorship",
             description: "Get guidance from professionals working at top companies in your field"
         },
         {
-            icon: "📊",
+            icon: <FaRegChartBar className="text-cyan-600 " />,
             features:[],
             title: "Real-World Projects",
             description: "Build portfolio-worthy projects that demonstrate your skills to employers"
         },
         {
-            icon: "🚀",
+            icon: <IoIosRocket className="text-cyan-600 " />,
             features:[],
             title: "Job Placement Support",
             description: "Lifetime career support with resume optimization and interview preparation"
@@ -211,7 +219,7 @@ export default function EducationCRMLanding() {
                 <h1 className="text-6xl lg:text-8xl max-md:text-4xl font-black mb-6 animate-slide-up text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                     Master Data Science
                     <br />
-                    <span className="bg-gradient-to-r from-blue-400 via-green-500 to-purple-500 bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
                         In 12 Weeks
                     </span>
                 </h1>
@@ -223,9 +231,9 @@ export default function EducationCRMLanding() {
 
                 <div className="grid grid-cols-3 max-md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-16 animate-fade-in animation-delay-1000">
                     {[
-                        { value: "94%", label: "Job Placement Rate", icon: "🎯" },
-                        { value: "$45K", label: "Avg Salary Increase", icon: "💰" },
-                        { value: "12", label: "Weeks to Job Ready", icon: "⚡" },
+                        { value: "94%", label: "Job Placement Rate", icon: <GiArcheryTarget /> },
+                        { value: "$45K", label: "Avg Salary Increase", icon: <FaSackDollar /> },
+                        { value: "12", label: "Weeks to Job Ready", icon: <IoIosFlash/> },
                     ].map((stat, i) => (
                         <div
                             key={i}
@@ -236,7 +244,7 @@ export default function EducationCRMLanding() {
         ${i === 2 ? "max-md:col-span-2" : ""}
       `}
                         >
-                            <div className=" mb-3 group-hover:scale-110 transition-transform">{stat.icon}</div>
+                            <div className=" mb-3 group-hover:scale-110 transition-transform flex items-center justify-center text-cyan-100">{stat.icon}</div>
                             <div className=" font-bold text-blue-400 mb-2">{stat.value}</div>
                             <div className="text-sm text-gray-300 max-md:col-start-2">{stat.label}</div>
                         </div>
@@ -283,24 +291,24 @@ export default function EducationCRMLanding() {
                         <h3 className="text-3xl font-black text-gray-900 mb-6">Your Learning Journey</h3>
                         <div className="grid md:grid-cols-4 gap-8">
                             <div className="text-center">
-                                <div className="text-4xl mb-4">📚</div>
+                                <div className="text-4xl mb-4  flex items-center justify-center text-cyan-600"><SiBookstack /></div>
                                 <div className="text-2xl font-bold text-gray-900 mb-2">Week 1-4</div>
-                                <div className="text-gray-600">Foundations & Core Skills</div>
+                                <div className="text-cyan-600">Foundations & Core Skills</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl mb-4">🔧</div>
+                                <div className="text-4xl mb-4  flex items-center justify-center text-cyan-600"><BsTools /></div>
                                 <div className="text-2xl font-bold text-gray-900 mb-2">Week 5-8</div>
-                                <div className="text-gray-600">Advanced Techniques</div>
+                                <div className="text-cyan-600">Advanced Techniques</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl mb-4">💼</div>
+                                <div className="text-4xl mb-4  flex items-center justify-center text-cyan-600"><IoBag /></div>
                                 <div className="text-2xl font-bold text-gray-900 mb-2">Week 9-12</div>
-                                <div className="text-gray-600">Real-World Projects</div>
+                                <div className="text-cyan-600">Real-World Projects</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl mb-4">🚀</div>
+                                <div className="text-4xl mb-4 flex items-center justify-center text-cyan-600"><IoIosRocket /></div>
                                 <div className="text-2xl font-bold text-gray-900 mb-2">Week 13+</div>
-                                <div className="text-gray-600">Job Placement</div>
+                                <div className="text-cyan-600">Job Placement</div>
                             </div>
                         </div>
                     </div>
@@ -329,7 +337,7 @@ export default function EducationCRMLanding() {
                                 <div className="grid lg:grid-cols-3 gap-8 items-center">
                                     <div className="flex items-center gap-4">
                                         <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${program.color} flex items-center justify-center text-2xl text-white`}>
-                                            {i === 0 ? "📊" : i === 1 ? "📈" : i === 2 ? "📊" : "🎨"}
+                                            {i === 0 ? <FaRegChartBar /> : i === 1 ? <FaChartLine /> : i === 2 ? <IoStatsChartSharp /> : <IoIosColorPalette />}
                                         </div>
                                         <div>
                                             <h3 className="text-2xl font-black text-gray-900">{program.name}</h3>
@@ -447,7 +455,7 @@ export default function EducationCRMLanding() {
                             <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 shadow-sm">
                                 <div className="flex items-center gap-6 mb-6">
                                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-3xl">
-                                        👨‍🏫
+                                        <FaUserCog />
                                     </div>
                                     <div>
                                         <h4 className="text-xl font-black text-gray-900">Dr. Sarah Chen</h4>
@@ -464,7 +472,7 @@ export default function EducationCRMLanding() {
                             <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 shadow-sm">
                                 <div className="flex items-center gap-6 mb-6">
                                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-3xl">
-                                        👩‍💼
+                                        <FaUser/>
                                     </div>
                                     <div>
                                         <h4 className="text-xl font-black text-gray-900">Michael Rodriguez</h4>
@@ -548,37 +556,37 @@ export default function EducationCRMLanding() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
                         {[
                             {
-                                icon: "🎯",
+                                icon: <GiArcheryTarget className="text-cyan-600"/>,
                                 features:[],
                                 title: "Personalized Learning Paths",
                                 description: "AI analyzes your progress and adapts content to your learning style and pace"
                             },
                             {
-                                icon: "📊",
+                                icon: <FaRegChartBar className="text-cyan-600"/>,
                                 features:[],
                                 title: "Progress Tracking",
                                 description: "Real-time analytics show exactly where you stand and what to focus on next"
                             },
                             {
-                                icon: "💬",
+                                icon: <IoChatboxEllipsesOutline className="text-cyan-600"/>,
                                 features:[],
                                 title: "Smart Mentorship",
                                 description: "Get matched with mentors based on your learning patterns and career goals"
                             },
                             {
-                                icon: "🚀",
+                                icon: <IoIosRocket className="text-cyan-600"/>,
                                 features:[],
                                 title: "Career Acceleration",
                                 description: "CRM tracks your skills and automatically suggests relevant job opportunities"
                             },
                             {
-                                icon: "📚",
+                                icon: <SiBookstack className="text-cyan-600"/>,
                                 features:[],
                                 title: "Lifetime Access",
                                 description: "Keep learning with updated content and new modules added regularly"
                             },
                             {
-                                icon: "🤝",
+                                icon: <FaHandshake  className="text-cyan-600"/>,
                                 features:[],
                                 title: "Network Building",
                                 description: "Connect with alumni and industry professionals through our CRM-powered network"
@@ -593,24 +601,24 @@ export default function EducationCRMLanding() {
                         <h3 className="text-3xl font-black text-gray-900 mb-6">Your Personalized Journey</h3>
                         <div className="grid md:grid-cols-4 gap-8">
                             <div className="text-center">
-                                <div className="text-4xl mb-4">📋</div>
+                                <div className="text-4xl mb-4 flex items-center justify-center text-cyan-600"><CgNotes /></div>
                                 <div className="text-2xl font-bold text-gray-900 mb-2">Assessment</div>
-                                <div className="text-gray-600">AI evaluates your skills and goals</div>
+                                <div className="text-cyan-600">AI evaluates your skills and goals</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl mb-4">🎯</div>
+                                <div className="text-4xl mb-4 flex items-center justify-center text-cyan-600"><GiArcheryTarget /></div>
                                 <div className="text-2xl font-bold text-gray-900 mb-2">Personalization</div>
-                                <div className="text-gray-600">Custom learning path created</div>
+                                <div className="text-cyan-600">Custom learning path created</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl mb-4">📈</div>
+                                <div className="text-4xl mb-4 flex items-center justify-center text-cyan-600"><FaChartLine /></div>
                                 <div className="text-2xl font-bold text-gray-900 mb-2">Optimization</div>
-                                <div className="text-gray-600">Path adapts to your progress</div>
+                                <div className="text-cyan-600">Path adapts to your progress</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-4xl mb-4">💼</div>
+                                <div className="text-4xl mb-4 flex items-center justify-center text-cyan-600"><IoBag /></div>
                                 <div className="text-2xl font-bold text-gray-900 mb-2">Placement</div>
-                                <div className="text-gray-600">Job placement assistance</div>
+                                <div className="text-cyan-600 ">Job placement assistance</div>
                             </div>
                         </div>
                     </div>

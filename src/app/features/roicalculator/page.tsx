@@ -51,48 +51,66 @@ export default function ROICalculator() {
     }));
   };
 
-  const calculateROI = () => {
-    const conversionBoost = 2.5;
-    const newConversionRate =
-      inputs.currentConversionRate + conversionBoost;
+const calculateROI = () => {
+  // === ASSUMPTIONS (Industry realistic) ===
+  const conversionUpliftPercent = 15; // 10–25% is realistic
+  const automationEfficiency = 0.6;   // 60% reduction in manual work
+  const annualInvestment = 15000;     // CRM cost per year
 
-    const revenueIncrease =
-      inputs.monthlyRevenue *
-      (newConversionRate / inputs.currentConversionRate) -
-      inputs.monthlyRevenue;
+  // === REVENUE INCREASE ===
+  const annualRevenueIncrease =
+    inputs.monthlyRevenue *
+    (conversionUpliftPercent / 100) *
+    12;
 
-    const annualRevenueIncrease = revenueIncrease * 12;
+  // === TIME SAVINGS ===
+  const hoursSavedPerWeek =
+    inputs.hoursPerWeek * automationEfficiency;
 
-    const hoursSavedPerWeek = inputs.hoursPerWeek * 0.6;
-    const hoursSavedPerYear = hoursSavedPerWeek * 52;
+  const hoursSavedPerYear =
+    hoursSavedPerWeek * 52 * inputs.employeeCount;
 
-    const costPerHour = inputs.avgSalary / 2080;
-    const timeSavingsValue =
-      hoursSavedPerYear * costPerHour * inputs.employeeCount;
+  // Salary assumed ANNUAL
+  const costPerHour =
+    inputs.avgSalary / 2080;
 
-    const annualInvestment = 15000;
-    const totalBenefit = annualRevenueIncrease + timeSavingsValue;
-    const netBenefit = totalBenefit - annualInvestment;
+  const timeSavingsValue =
+    hoursSavedPerYear * costPerHour;
 
-    const roi = ((netBenefit / annualInvestment) * 100).toFixed(1);
-    const paybackMonths = (
-      annualInvestment /
-      (totalBenefit / 12)
-    ).toFixed(1);
+  // === TOTAL BENEFIT ===
+  const totalBenefit =
+    annualRevenueIncrease + timeSavingsValue;
 
-    setResults({
-      annualRevenueIncrease,
-      timeSavingsValue,
-      totalBenefit,
-      annualInvestment,
-      netBenefit,
-      roi,
-      paybackMonths,
-      conversionBoost,
-      newConversionRate,
-      hoursSavedPerYear,
-    });
-  };
+  const netBenefit =
+    totalBenefit - annualInvestment;
+
+  // === ROI & PAYBACK ===
+  const roi = (
+    (netBenefit / annualInvestment) * 100
+  ).toFixed(1);
+
+  const paybackMonths = (
+    annualInvestment / (totalBenefit / 12)
+  ).toFixed(1);
+
+  // === CONVERSION DISPLAY (FOR UI) ===
+  const newConversionRate =
+    inputs.currentConversionRate *
+    (1 + conversionUpliftPercent / 100);
+
+  setResults({
+    annualRevenueIncrease,
+    timeSavingsValue,
+    totalBenefit,
+    annualInvestment,
+    netBenefit,
+    roi,
+    paybackMonths,
+    conversionBoost: conversionUpliftPercent,
+    newConversionRate,
+    hoursSavedPerYear,
+  });
+};
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 py-24 px-4">

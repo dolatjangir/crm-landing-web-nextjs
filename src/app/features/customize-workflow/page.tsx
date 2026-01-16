@@ -9,6 +9,20 @@ import DarkHeroSection from "@/components/common/sections/DarkHeroSection";
 import { useNavigate } from "@/hooks/useNavigate";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { BiSolidCustomize } from "react-icons/bi";
+import { BsPlugFill, BsTools } from "react-icons/bs";
+import { CgNotes } from "react-icons/cg";
+import { FaLock, FaUser } from "react-icons/fa6";
+import { GiArcheryTarget, GiCrossedChains, GiRobotAntennas } from "react-icons/gi";
+import { GoWorkflow } from "react-icons/go";
+import { IoIosFlash } from "react-icons/io";
+import { IoSettingsSharp } from "react-icons/io5";
+import { LiaIndustrySolid } from "react-icons/lia";
+import { MdDashboardCustomize, MdOutlineDashboardCustomize } from "react-icons/md";
+import { RiComputerFill, RiComputerLine } from "react-icons/ri";
+import { TbLabelImportantFilled } from "react-icons/tb";
+import { TiArrowSync } from "react-icons/ti";
+import { VscGraph, VscGraphLine } from "react-icons/vsc";
 
 export default function CustomizableWorkflowsPage() {
     const [selectedIndustry, setSelectedIndustry] = useState(0);
@@ -118,9 +132,9 @@ export default function CustomizableWorkflowsPage() {
 
                 <div className="grid grid-cols-3 max-md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-16 animate-fade-in animation-delay-1000">
                     {[
-                        { value: "50+", label: "Industries", icon: "🏭" },
-                        { value: "100%", label: "Customizable", icon: "🎨" },
-                        { value: "10x", label: "ROI", icon: "📈" },
+                        { value: "50+", label: "Industries", icon: <LiaIndustrySolid /> },
+                        { value: "100%", label: "Customizable", icon: <BiSolidCustomize /> },
+                        { value: "10x", label: "ROI", icon: <VscGraphLine  /> },
                     ].map((stat, i) => (
                         <div
                             key={i}
@@ -131,7 +145,7 @@ export default function CustomizableWorkflowsPage() {
         ${i === 2 ? "max-md:col-span-2" : ""}
       `}
                         >
-                            <div className=" mb-3 group-hover:scale-110 transition-transform">{stat.icon}</div>
+                            <div className=" mb-3 group-hover:scale-110 flex justify-center items-center text-cyan-200 text-5xl transition-transform">{stat.icon}</div>
                             <div className=" font-bold text-cyan-400 mb-2">{stat.value}</div>
                             <div className="text-sm text-gray-300 max-md:col-start-2">{stat.label}</div>
                         </div>
@@ -256,28 +270,28 @@ export default function CustomizableWorkflowsPage() {
                         <div className="space-y-6">
                             {[
                                 {
-                                    icon: "🎨",
+                                    icon: <MdDashboardCustomize />,
                                     title: "Visual Workflow Builder",
                                     description: "Drag-and-drop interface with 200+ pre-built components. No coding required for 95% of use cases."
                                 },
                                 {
-                                    icon: "🔧",
+                                    icon: <BsTools />,
                                     title: "Custom Logic Engine",
                                     description: "Build complex business rules with conditional logic, loops, variables, and custom functions."
                                 },
                                 {
-                                    icon: "🔗",
+                                    icon: <GiCrossedChains />,
                                     title: "API & Integration Builder",
                                     description: "Connect to any system with custom APIs, webhooks, and data transformation tools."
                                 },
                                 {
-                                    icon: "🤖",
+                                    icon: <GiRobotAntennas />,
                                     title: "AI-Powered Suggestions",
                                     description: "Our AI analyzes your business patterns and suggests workflow optimizations automatically."
                                 }
                             ].map((feature, i) => (
                                 <div key={i} className="flex gap-4 p-6 bg-white border-2 border-cyan-100 rounded-2xl hover:border-cyan-300 hover:shadow-lg transition-all group">
-                                    <div className="text-4xl group-hover:scale-110 transition-transform">{feature.icon}</div>
+                                    <div className="text-4xl group-hover:scale-110 transition-transform text-cyan-500">{feature.icon}</div>
                                     <div>
                                         <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
                                         <p className="text-gray-600">{feature.description}</p>
@@ -390,37 +404,37 @@ export default function CustomizableWorkflowsPage() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[
                             {
-                                icon: "🎯",
+                                icon: <GiArcheryTarget className="text-cyan-500"/>,
                                 title: "Industry Templates",
                                 description: "Start with pre-built workflows for your industry and customize every detail.",
                                 features: ["50+ Industries", "1000+ Templates", "Best Practices Built-in"]
                             },
                             {
-                                icon: "🔄",
+                                icon: <TiArrowSync className="text-cyan-500"/>,
                                 title: "Dynamic Routing",
                                 description: "Create intelligent paths based on data, conditions, and business rules.",
                                 features: ["Conditional Logic", "Data-Driven Paths", "Smart Escalation"]
                             },
                             {
-                                icon: "🤖",
+                                icon: <GiRobotAntennas className="text-cyan-500"/>,
                                 title: "AI Customization",
                                 description: "Let AI learn your processes and suggest optimizations automatically.",
                                 features: ["Pattern Recognition", "Smart Suggestions", "Auto-Optimization"]
                             },
                             {
-                                icon: "📊",
+                                icon: <VscGraph className="text-cyan-500"/>,
                                 title: "Custom Analytics",
                                 description: "Build dashboards that track the metrics that matter to your business.",
                                 features: ["Custom KPIs", "Real-time Dashboards", "Predictive Analytics"]
                             },
                             {
-                                icon: "🔒",
+                                icon: <FaLock className="text-cyan-500"/>,
                                 title: "Flexible Security",
                                 description: "Configure security and compliance rules that match your requirements.",
                                 features: ["Role-based Access", "Compliance Rules", "Audit Controls"]
                             },
                             {
-                                icon: "⚡",
+                                icon: <IoIosFlash className="text-cyan-500" />,
                                 title: "Rapid Deployment",
                                 description: "Deploy custom workflows in minutes with our visual builder and testing tools.",
                                 features: ["Visual Builder", "Instant Testing", "One-click Deploy"]
@@ -536,17 +550,17 @@ export default function CustomizableWorkflowsPage() {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {[
-                            { label: "Workflow Elements", value: "500+", icon: "🧩" },
-                            { label: "Custom Fields", value: "Unlimited", icon: "📝" },
-                            { label: "Business Rules", value: "Infinite", icon: "⚙️" },
-                            { label: "API Endpoints", value: "1000+", icon: "🔌" },
-                            { label: "Integrations", value: "2000+", icon: "🔗" },
-                            { label: "Templates", value: "1000+", icon: "📋" },
-                            { label: "Custom Code", value: "Full Access", icon: "💻" },
-                            { label: "White Label", value: "Available", icon: "🏷️" }
+                            { label: "Workflow Elements", value: "500+", icon: <GoWorkflow /> },
+                            { label: "Custom Fields", value: "Unlimited", icon: <MdOutlineDashboardCustomize /> },
+                            { label: "Business Rules", value: "Infinite", icon: <IoSettingsSharp /> },
+                            { label: "API Endpoints", value: "1000+", icon: <BsPlugFill /> },
+                            { label: "Integrations", value: "2000+", icon: <GiCrossedChains /> },
+                            { label: "Templates", value: "1000+", icon: <CgNotes /> },
+                            { label: "Custom Code", value: "Full Access", icon: <RiComputerLine /> },
+                            { label: "White Label", value: "Available", icon: <TbLabelImportantFilled /> }
                         ].map((spec, i) => (
                             <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all group">
-                                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{spec.icon}</div>
+                                <div className="text-4xl mb-4 group-hover:scale-110 text-cyan-400 transition-transform">{spec.icon}</div>
                                 <div className="text-sm text-gray-400 mb-2">{spec.label}</div>
                                 <div className="text-3xl font-black text-cyan-400">{spec.value}</div>
                             </div>
@@ -582,21 +596,21 @@ export default function CustomizableWorkflowsPage() {
                                 author: "Dr. Jennifer Walsh",
                                 role: "Chief Medical Officer",
                                 company: "Premier Health Network",
-                                avatar: "👩‍⚕️"
+                                avatar: <FaUser/>
                             },
                             {
                                 quote: "The customization capabilities are incredible. We built workflows that match our exact manufacturing processes, saving us 30+ hours per week.",
                                 author: "Robert Kim",
                                 role: "Operations Director",
                                 company: "Tech Manufacturing Co",
-                                avatar: "👨‍🏭"
+                                avatar: <FaUser/>
                             },
                             {
                                 quote: "We created custom workflows for each property type we manage. The flexibility allowed us to scale from 50 to 500 properties without adding staff.",
                                 author: "Lisa Martinez",
                                 role: "Property Management CEO",
                                 company: "Elite Properties",
-                                avatar: "👩‍💼"
+                                avatar: <FaUser/>
                             }
                         ].map((testimonial, i) => (
                             <div key={i} className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all">

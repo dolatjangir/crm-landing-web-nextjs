@@ -212,7 +212,7 @@ export default function CoreFeatures() {
   };
 
   return (
-    <section id="feature"  className="relative scroll-mt-20 bg-gradient-to-br from-cyan-50 via-white to-blue-50 py-20 sm:py-28 lg:py-32 overflow-hidden">
+    <section id="feature"  className="relative scroll-mt-20  py-20 sm:py-28 lg:py-32 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center relative">
         <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl mb-10">
           Core Platform{" "}

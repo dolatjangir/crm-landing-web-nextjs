@@ -9,6 +9,10 @@ import DarkHeroSection from "@/components/common/sections/DarkHeroSection";
 import { useNavigate } from "@/hooks/useNavigate";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { FaCalendarAlt, FaHeartbeat } from "react-icons/fa";
+import { FaHandHoldingMedical, FaRegChartBar, FaUser } from "react-icons/fa6";
+import { GiBrain, GiCrossedChains, GiMoebiusStar } from "react-icons/gi";
+import { IoIosFlash } from "react-icons/io";
 
 export default function HealthcareCRMLanding() {
     const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -53,7 +57,7 @@ export default function HealthcareCRMLanding() {
             author: "Dr. Sarah Chen",
             role: "Practice Manager",
             company: "Family Health Associates",
-            avatar: "👩‍⚕️",
+            avatar: <FaUser/>,
             metric: "40% reduction in no-shows"
         },
         {
@@ -61,7 +65,7 @@ export default function HealthcareCRMLanding() {
             author: "Dr. Michael Rodriguez",
             role: "Chief Medical Officer",
             company: "Metro Health Network",
-            avatar: "👨‍⚕️",
+            avatar: <FaUser/>,
             metric: "300% ROI in 90 days"
         },
         {
@@ -69,7 +73,7 @@ export default function HealthcareCRMLanding() {
             author: "Emily Thompson",
             role: "Practice Administrator",
             company: "Wellness Medical Group",
-            avatar: "👩‍💼",
+            avatar: <FaUser/>,
             metric: "60% productivity increase"
         }
     ];
@@ -128,9 +132,9 @@ export default function HealthcareCRMLanding() {
 
                 <div className="grid grid-cols-3 max-md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-16 animate-fade-in animation-delay-1000">
                     {[
-                        { value: "40%", label: "Fewer No-Shows", icon: "📅" },
-                        { value: "60%", label: "More Efficient", icon: "⚡" },
-                        { value: "300%", label: "ROI in 90 Days", icon: "📈" },
+                        { value: "40%", label: "Fewer No-Shows", icon:<FaCalendarAlt /> },
+                        { value: "60%", label: "More Efficient", icon: <IoIosFlash /> },
+                        { value: "300%", label: "ROI in 90 Days", icon: <FaRegChartBar /> },
                     ].map((stat, i) => (
                         <div
                             key={i}
@@ -141,7 +145,7 @@ export default function HealthcareCRMLanding() {
         ${i === 2 ? "max-md:col-span-2" : ""}
       `}
                         >
-                            <div className=" mb-3 group-hover:scale-110 transition-transform">{stat.icon}</div>
+                            <div className=" mb-3 group-hover:scale-110 transition-transform text-3xl flex items-center justify-center text-cyan-100 ">{stat.icon}</div>
                             <div className=" font-bold text-cyan-400 mb-2">{stat.value}</div>
                             <div className="text-sm text-gray-300 max-md:col-start-2">{stat.label}</div>
                         </div>
@@ -238,7 +242,7 @@ export default function HealthcareCRMLanding() {
                     <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
                         <div className="space-y-8">
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-2xl flex-shrink-0">⚡</div>
+                                <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-2xl  text-cyan-700 flex-shrink-0"><IoIosFlash/></div>
                                 <div>
                                     <h3 className="text-xl font-black text-gray-900 mb-2">Automated Patient Management</h3>
                                     <p className="text-gray-600">AI-powered appointment reminders, follow-ups, and care coordination that reduce no-shows by 40% and improve patient engagement.</p>
@@ -246,7 +250,7 @@ export default function HealthcareCRMLanding() {
                             </div>
 
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-2xl flex-shrink-0">🧠</div>
+                                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-2xl  text-cyan-700 flex-shrink-0"><GiBrain /></div>
                                 <div>
                                     <h3 className="text-xl font-black text-gray-900 mb-2">Predictive Health Insights</h3>
                                     <p className="text-gray-600">Identify at-risk patients, predict no-shows, and suggest optimal appointment times. Our AI learns your practice patterns and improves continuously.</p>
@@ -254,7 +258,7 @@ export default function HealthcareCRMLanding() {
                             </div>
 
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-2xl flex-shrink-0">🔗</div>
+                                <div className="w-12 h-12 rounded-full bg-purple-100 text-cyan-700 flex items-center justify-center text-2xl flex-shrink-0"><GiCrossedChains /></div>
                                 <div>
                                     <h3 className="text-xl font-black text-gray-900 mb-2">Seamless EHR Integration</h3>
                                     <p className="text-gray-600">Connect with Epic, Cerner, Allscripts, and 50+ other EHR systems. Patient data flows bidirectionally while maintaining full HIPAA compliance.</p>
@@ -262,7 +266,7 @@ export default function HealthcareCRMLanding() {
                             </div>
 
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-2xl flex-shrink-0">📊</div>
+                                <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-2xl  text-cyan-700 flex-shrink-0"><FaRegChartBar /></div>
                                 <div>
                                     <h3 className="text-xl font-black text-gray-900 mb-2">Practice Intelligence</h3>
                                     <p className="text-gray-600">Track patient outcomes, monitor practice performance, and identify growth opportunities with real-time analytics and reporting.</p>
@@ -319,7 +323,7 @@ export default function HealthcareCRMLanding() {
                             {
                                 industry: "Family Medicine",
                                 company: "Family Health Associates",
-                                logo: "🏥",
+                                logo: <FaHandHoldingMedical className="text-green-100"/>,
                                 challenge: "40% no-show rate was costing $150K annually while staff spent hours on manual appointment management.",
                                 solution: "Implemented AI-powered appointment reminders and predictive scheduling to optimize patient flow.",
                                 results: [
@@ -332,7 +336,7 @@ export default function HealthcareCRMLanding() {
                             {
                                 industry: "Cardiology",
                                 company: "Metro Heart Center",
-                                logo: "❤️",
+                                logo: <FaHeartbeat className="text-red-100"/>,
                                 challenge: "Complex patient follow-up requirements led to missed appointments and poor outcomes tracking.",
                                 solution: "Automated care coordination with AI identifying high-risk patients needing immediate attention.",
                                 results: [
@@ -345,7 +349,7 @@ export default function HealthcareCRMLanding() {
                             {
                                 industry: "Multi-Specialty",
                                 company: "Wellness Medical Group",
-                                logo: "🌟",
+                                logo: <GiMoebiusStar className="text-blue-100" />,
                                 challenge: "Managing 50+ providers across 5 locations with disconnected systems and poor visibility.",
                                 solution: "Unified platform with real-time analytics and automated workflows for all specialties.",
                                 results: [
@@ -377,7 +381,7 @@ export default function HealthcareCRMLanding() {
 
                     <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-3xl p-12 shadow-xl">
                         <div className="text-center mb-8">
-                            <div className="text-8xl mb-6 opacity-30">"</div>
+                            <div className="text-8xl text-start pl-40 mb-6 opacity-30">"</div>
                             <blockquote className="text-2xl text-gray-700 italic leading-relaxed mb-8">
                                 {testimonials[activeTestimonial].quote}
                             </blockquote>
@@ -548,7 +552,7 @@ export default function HealthcareCRMLanding() {
                                 className={`w-full py-4 rounded-xl font-black text-lg transition-all ${
                                     isSubmitting
                                         ? 'bg-gray-400 cursor-not-allowed'
-                                        : 'bg-green-600 hover:bg-green-700 hover:shadow-xl text-white'
+                                        : 'bg-gradient-to-r from-green-300 via-cyan-600 to-cyan-500 hover:bg-green-700 hover:shadow-xl text-white'
                                 }`}
                             >
                                 {isSubmitting ? (
