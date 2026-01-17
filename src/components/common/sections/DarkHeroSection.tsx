@@ -36,7 +36,7 @@ export default function DarkHeroSection({ backgroundImage, children, className }
             </div>
 
             {/* ================= CONTENT ================= */}
-            <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 text-center">
                 {children}
             </div>
 

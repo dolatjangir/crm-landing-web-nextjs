@@ -240,7 +240,7 @@ ${formData.fullName}`
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 px-6 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+      <section className="relative py-20 px-4 md:px-8 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
         <div className="max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 border border-green-200 mb-8">
             <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
@@ -281,7 +281,7 @@ ${formData.fullName}`
      <div className="min-h-screen bg-white">
       {/* Hero Section - Matching your styling */}
       <section className="relative w-full bg-white py-16">
-        <div className="mx-auto max-w-7xl px-6">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             
             {/* LEFT CONTENT */}
@@ -321,7 +321,7 @@ ${formData.fullName}`
             </div>
 
             {/* RIGHT FORM - Matching your exact styling */}
-            <div className="bg-white rounded-xl shadow-lg p-8">
+            <div className="bg-white rounded-xl shadow-lg p-4 md:p-8">
               {showSuccess ? (
                 <div className="text-center py-8">
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -391,7 +391,7 @@ ${formData.fullName}`
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex items-center justify-center rounded-md bg-[#1E88E5] px-6 py-3 text-white font-medium transition hover:bg-[#1565C0] disabled:opacity-50"
+                    className="inline-flex items-center justify-center rounded-md bg-[#1E88E5] px-4 md:px-8 py-3 text-white font-medium transition hover:bg-[#1565C0] disabled:opacity-50"
                   >
                     {isSubmitting ? (
                       <span>Sending...</span>
@@ -412,8 +412,8 @@ ${formData.fullName}`
       </section>
 
       {/* Testimonials - Matching your clean style */}
-      <section className="py-16 px-6 bg-gray-50">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="py-16 px-4 md:px-8 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
               Trusted by Teams Worldwide
@@ -425,7 +425,7 @@ ${formData.fullName}`
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-cyan-50 rounded-xl shadow-lg p-6">
+              <div key={index} className="bg-cyan-50 rounded-xl shadow-lg p-4 md:p-8">
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
@@ -446,7 +446,7 @@ ${formData.fullName}`
       </section>
 
       {/* Final CTA - Matching your blue theme */}
-      <section className="py-16 px-6 bg-[#1E88E5]">
+      <section className="py-16 px-4 md:px-8 bg-[#1E88E5]">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-white">
             Ready to Get Expert Help?
@@ -456,7 +456,7 @@ ${formData.fullName}`
           </p>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="inline-flex items-center gap-2 rounded-md bg-white px-6 py-3 text-[#1E88E5] font-medium transition hover:bg-gray-100"
+            className="inline-flex items-center gap-2 rounded-md bg-white px-4 md:px-8 py-3 text-[#1E88E5] font-medium transition hover:bg-gray-100"
           >
             Contact Our Team
             <Send className="w-4 h-4" />
@@ -465,7 +465,7 @@ ${formData.fullName}`
       </section>
     </div>
       {/* Contact Path Selector */}
-      <section className="py-16 px-6 bg-white">
+      <section className="py-16 px-4 md:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-black mb-4 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -481,7 +481,7 @@ ${formData.fullName}`
               <button
                 key={path.id}
                 onClick={() => setSelectedPath(path.id as "sales" | "support" | "partnerships" | "general")}
-                className={`p-6 rounded-2xl border-2 transition-all hover:scale-105 text-left ${
+                className={`p-4 md:p-8 rounded-2xl border-2 transition-all hover:scale-105 text-left ${
                   selectedPath === path.id
                     ? 'border-blue-500 bg-blue-50 shadow-lg'
                     : 'border-gray-200 bg-white hover:border-gray-300'
@@ -507,7 +507,7 @@ ${formData.fullName}`
           {/* Alternative Contact Methods */}
           <div className="grid md:grid-cols-3 gap-6">
             {alternativeContacts.map((contact, index) => (
-              <div key={index} className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200">
+              <div key={index} className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-4 md:p-8 border border-gray-200">
                 <div className="text-3xl mb-3">{contact.icon}</div>
                 <h3 className="font-bold text-gray-900 mb-2">{contact.title}</h3>
                 <p className="text-sm text-gray-600 mb-4">{contact.description}</p>
@@ -525,7 +525,7 @@ ${formData.fullName}`
 
 
       {/* Trust & Security Section */}
-      <section className="py-16 px-6 bg-white">
+      <section className="py-16 px-4 md:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-black mb-4 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -554,7 +554,7 @@ ${formData.fullName}`
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 px-6 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-16 px-4 md:px-8 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-black mb-4 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -567,7 +567,7 @@ ${formData.fullName}`
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+              <div key={index} className="bg-white rounded-2xl p-4 md:p-8 shadow-lg border border-gray-100">
                 <div className="flex items-center gap-2 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
@@ -588,7 +588,7 @@ ${formData.fullName}`
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 px-6 bg-gradient-to-br from-blue-600 via-cyan-600 to-purple-500">
+      <section className="py-16 px-4 md:px-8 bg-gradient-to-br from-blue-600 via-cyan-600 to-purple-500">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-black mb-6 text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Ready to Get Expert Help?

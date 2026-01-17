@@ -1,6 +1,6 @@
 interface ModuleCardProps {
   name: string;
-  icon: string;
+  icon: string | React.ReactNode; // can be an emoji or a React icon component
   color: string; // Tailwind gradient, e.g., "from-purple-500 to-pink-500"
   description?: string; // optional, defaults to "AI-Enhanced"
   className?: string; // for extra customization if needed

@@ -10,7 +10,12 @@ import { useNavigate } from "@/hooks/useNavigate";
 import Link from "next/link";
 import { useState } from "react";
 import { RiTeamFill } from "react-icons/ri";
-import { FaUser } from "react-icons/fa";
+import { FaShieldAlt, FaUser } from "react-icons/fa";
+import { FaChartLine, FaRegChartBar, FaSackDollar } from "react-icons/fa6";
+import { FcAlarmClock } from "react-icons/fc";
+import { LuAlarmClock } from "react-icons/lu";
+import { GiArcheryTarget, GiBrain, GiCrossedChains } from "react-icons/gi";
+import { IoIosFlash, IoIosRocket } from "react-icons/io";
 export default function WhyChooseUsPage() {
     const navigate = useNavigate();
     const [activeComparison, setActiveComparison] = useState(0);
@@ -42,27 +47,27 @@ export default function WhyChooseUsPage() {
         {
             traditional: "Months of setup and configuration",
             ibigdata: "Live in 5 minutes with your existing data",
-            icon: "⚡"
+            icon: <IoIosFlash/>
         },
         {
             traditional: "Expensive consultants required",
             ibigdata: "Self-configuring AI that learns your business",
-            icon: "🧠"
+            icon: <GiBrain />
         },
         {
             traditional: "Disconnected tools and manual work",
             ibigdata: "Everything works together automatically",
-            icon: "🔗"
+            icon: <GiCrossedChains />
         },
         {
             traditional: "One-size-fits-all workflows",
             ibigdata: "Adapts to how you actually work",
-            icon: "🎯"
+            icon: <GiArcheryTarget />
         },
         {
             traditional: "Surprise costs and hidden fees",
             ibigdata: "Transparent pricing that scales with you",
-            icon: "💰"
+            icon: <FaSackDollar />
         }
     ];
 
@@ -108,14 +113,14 @@ export default function WhyChooseUsPage() {
 
 
             {/* Problem Agitation - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-red-50 via-white to-orange-50">
+            <section className="py-32 px-4 md:px-6 bg-gradient-to-br from-red-50 via-white to-orange-50">
                 <div className="max-w-4xl mx-auto text-center">
                     <h2 className="text-4xl lg:text-5xl font-black mb-8 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         Does This Sound Like You?
                     </h2>
                     
                     <div className="space-y-8 text-left">
-                        <div className="bg-white border-l-4 border-red-500 p-6 rounded-r-xl shadow-sm">
+                        <div className="bg-white border-l-4 border-red-500 p-4 md:p-6 rounded-r-xl shadow-sm">
                             <p className="text-lg text-gray-700 mb-2">
                                 <strong>"I'm spending more time managing tools than managing customers."</strong>
                             </p>
@@ -124,7 +129,7 @@ export default function WhyChooseUsPage() {
                             </p>
                         </div>
 
-                        <div className="bg-white border-l-4 border-orange-500 p-6 rounded-r-xl shadow-sm">
+                        <div className="bg-white border-l-4 border-orange-500 p-4 md:p-6 rounded-r-xl shadow-sm">
                             <p className="text-lg text-gray-700 mb-2">
                                 <strong>"My team avoids the CRM because it's too complicated."</strong>
                             </p>
@@ -133,7 +138,7 @@ export default function WhyChooseUsPage() {
                             </p>
                         </div>
 
-                        <div className="bg-white border-l-4 border-yellow-500 p-6 rounded-r-xl shadow-sm">
+                        <div className="bg-white border-l-4 border-yellow-500 p-4 md:p-6 rounded-r-xl shadow-sm">
                             <p className="text-lg text-gray-700 mb-2">
                                 <strong>"I'm paying for features I'll never use."</strong>
                             </p>
@@ -142,7 +147,7 @@ export default function WhyChooseUsPage() {
                             </p>
                         </div>
 
-                        <div className="bg-white border-l-4 border-blue-500 p-6 rounded-r-xl shadow-sm">
+                        <div className="bg-white border-l-4 border-blue-500 p-4 md:p-6 rounded-r-xl shadow-sm">
                             <p className="text-lg text-gray-700 mb-2">
                                 <strong>"My CRM breaks every time we try to grow."</strong>
                             </p>
@@ -152,7 +157,7 @@ export default function WhyChooseUsPage() {
                         </div>
                     </div>
 
-                    <div className="mt-12 p-8 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-2xl">
+                    <div className="mt-12 p-4 md:p-8 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-2xl">
                         <p className="text-xl font-bold text-gray-900 mb-4">
                             You're not alone. 73% of CRM users say their system makes them less productive.
                         </p>
@@ -166,7 +171,7 @@ export default function WhyChooseUsPage() {
 
 
             {/* Value Shift - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-18 md:py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -182,7 +187,7 @@ export default function WhyChooseUsPage() {
                     <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
                         <div className="space-y-8">
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-2xl flex-shrink-0">⚡</div>
+                                <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-2xl flex-shrink-0 text-green-600"><IoIosFlash/></div>
                                 <div>
                                     <h3 className="text-xl font-black text-gray-900 mb-2">Setup That Takes Minutes, Not Months</h3>
                                     <p className="text-gray-600">Import your data, connect your tools, and start seeing value today. Our AI learns your workflow patterns and adapts automatically—no manual configuration marathon.</p>
@@ -190,7 +195,7 @@ export default function WhyChooseUsPage() {
                             </div>
 
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-2xl flex-shrink-0">🧠</div>
+                                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-2xl flex-shrink-0 text-blue-600"><GiBrain /></div>
                                 <div>
                                     <h3 className="text-xl font-black text-gray-900 mb-2">AI That Handles the Busy Work</h3>
                                     <p className="text-gray-600">While you're closing deals, our AI is updating records, scheduling follow-ups, and scoring leads. It learns from your actions and gets smarter every day.</p>
@@ -198,7 +203,7 @@ export default function WhyChooseUsPage() {
                             </div>
 
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-2xl flex-shrink-0">🔗</div>
+                                <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-2xl flex-shrink-0 text-purple-600"><GiCrossedChains /></div>
                                 <div>
                                     <h3 className="text-xl font-black text-gray-900 mb-2">Everything Works Together</h3>
                                     <p className="text-gray-600">Your email, calendar, phone, and 2,000+ other tools sync automatically. No more copy-pasting between systems or hunting for information.</p>
@@ -206,7 +211,7 @@ export default function WhyChooseUsPage() {
                             </div>
 
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-2xl flex-shrink-0">📈</div>
+                                <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-2xl flex-shrink-0 text-orange-600"><FaChartLine /></div>
                                 <div>
                                     <h3 className="text-xl font-black text-gray-900 mb-2">Grows With You, Not Against You</h3>
                                     <p className="text-gray-600">Add users, connect new tools, handle more data—ibigdata scales automatically. No performance issues, no expensive upgrades, no migration headaches.</p>
@@ -216,7 +221,7 @@ export default function WhyChooseUsPage() {
 
                         <div className="relative">
                             <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-purple-400/20 rounded-3xl blur-3xl" />
-                            <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-2xl">
+                            <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 shadow-2xl">
                                 <h3 className="text-2xl font-black text-gray-900 mb-6">The Result?</h3>
                                 <div className="space-y-6">
                                     <div className="flex items-center justify-between p-4 bg-green-50 rounded-xl">
@@ -245,7 +250,7 @@ export default function WhyChooseUsPage() {
 
 
             {/* Proof That It Works - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-green-50 via-white to-blue-50">
+            <section className="py-18 md:py-32 px-4 md:px-6 bg-gradient-to-br from-green-50 via-white to-blue-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -264,13 +269,13 @@ export default function WhyChooseUsPage() {
                                 metric: "15+ hours",
                                 label: "saved per week",
                                 detail: "Average time teams get back with automation",
-                                icon: "⏰"
+                                icon: <LuAlarmClock />
                             },
                             {
                                 metric: "32%",
                                 label: "higher close rate",
                                 detail: "Improvement in deal conversion with AI insights",
-                                icon: "📈"
+                                icon: <FaChartLine />
                             },
                             {
                                 metric: "94%",
@@ -279,8 +284,8 @@ export default function WhyChooseUsPage() {
                                 icon: <RiTeamFill className=""/>
                             }
                         ].map((stat, i) => (
-                            <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-cyan-300 hover:shadow-xl transition-all group">
-                                <div className="text-4xl mb-4 group-hover:scale-110 flex items-center justify-center transition-transform">{stat.icon}</div>
+                            <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 text-center hover:border-cyan-300 hover:shadow-xl transition-all group">
+                                <div className="text-4xl mb-4  text-cyan-600 group-hover:scale-110 flex items-center justify-center transition-transform">{stat.icon}</div>
                                 <div className="text-3xl font-black text-gray-900 mb-2">{stat.metric}</div>
                                 <div className="text-lg font-semibold text-gray-700 mb-2">{stat.label}</div>
                                 <div className="text-sm text-gray-600">{stat.detail}</div>
@@ -316,7 +321,7 @@ export default function WhyChooseUsPage() {
                                 metric: "Zero admin needed"
                             }
                         ].map((testimonial, i) => (
-                            <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all">
+                            <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 hover:border-cyan-300 hover:shadow-xl transition-all">
                                 <div className="flex items-center gap-4 mb-6">
                                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-2xl">
                                         {testimonial.avatar}
@@ -338,7 +343,7 @@ export default function WhyChooseUsPage() {
                     </div>
 
                     {/* Trust Signals */}
-                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 text-center">
+                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 text-center">
                         <h3 className="text-2xl font-black text-gray-900 mb-6">Trusted by Growing Businesses Worldwide</h3>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                             <div>
@@ -365,7 +370,7 @@ export default function WhyChooseUsPage() {
 
 
             {/* Comparison Section - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-18 md:py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -380,7 +385,7 @@ export default function WhyChooseUsPage() {
 
                     <div className="bg-white border-2 border-gray-200 rounded-3xl overflow-hidden shadow-xl">
                         <div className="grid md:grid-cols-2">
-                            <div className="bg-gray-50 p-8 border-r border-gray-200">
+                            <div className="bg-gray-50 p-4 md:p-8 border-r border-gray-200">
                                 <div className="flex items-center gap-3 mb-6">
                                     <div className="text-3xl">😩</div>
                                     <h3 className="text-2xl font-black text-gray-700">Traditional CRMs</h3>
@@ -395,9 +400,9 @@ export default function WhyChooseUsPage() {
                                 </div>
                             </div>
                             
-                            <div className="bg-gradient-to-br from-cyan-50 to-blue-50 p-8">
+                            <div className="bg-gradient-to-br from-cyan-50 to-blue-50 p-4 md:p-8">
                                 <div className="flex items-center gap-3 mb-6">
-                                    <div className="text-3xl">🚀</div>
+                                    <div className="text-3xl"><IoIosRocket /></div>
                                     <h3 className="text-2xl font-black text-cyan-600">ibigdata</h3>
                                 </div>
                                 <div className="space-y-4">
@@ -414,18 +419,18 @@ export default function WhyChooseUsPage() {
 
                     {/* Key Differentiators */}
                     <div className="mt-16 grid md:grid-cols-3 gap-8">
-                        <div className="text-center p-6">
-                            <div className="text-4xl mb-4">⚡</div>
+                        <div className="text-center p-4 md:p-6 ">
+                            <div className="text-4xl mb-4 flex items-center justify-center text-cyan-600"><IoIosFlash /></div>
                             <h4 className="text-xl font-bold text-gray-900 mb-2">93% Faster Setup</h4>
                             <p className="text-gray-600">Most customers are fully operational in under 5 minutes, not 5 months.</p>
                         </div>
-                        <div className="text-center p-6">
-                            <div className="text-4xl mb-4">🧠</div>
+                        <div className="text-center p-4 md:p-6 ">
+                            <div className="text-4xl mb-4 flex items-center justify-center text-cyan-600"><GiBrain /></div>
                             <h4 className="text-xl font-bold text-gray-900 mb-2">97% AI Accuracy</h4>
                             <p className="text-gray-600">Our automation learns your patterns and gets smarter every day.</p>
                         </div>
-                        <div className="text-center p-6">
-                            <div className="text-4xl mb-4">💰</div>
+                        <div className="text-center p-4 md:p-6">
+                            <div className="text-4xl mb-4 flex items-center justify-center text-cyan-600"><FaSackDollar /></div>
                             <h4 className="text-xl font-bold text-gray-900 mb-2">60% Lower Cost</h4>
                             <p className="text-gray-600">Transparent pricing with no hidden fees or consultant costs.</p>
                         </div>
@@ -436,7 +441,7 @@ export default function WhyChooseUsPage() {
 
 
             {/* Objection Handling - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-green-50 via-white to-blue-50">
+            <section className="py-32 px-4 md:px-6 bg-gradient-to-br from-green-50 via-white to-blue-50">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -454,19 +459,19 @@ export default function WhyChooseUsPage() {
                             {
                                 question: "Is it hard to set up?",
                                 answer: "No. Most customers import their data and connect their tools in under 5 minutes. Our AI learns your workflow patterns automatically—no manual configuration required.",
-                                icon: "⚡",
+                                icon: <IoIosFlash/>,
                                 color: "from-green-500 to-emerald-500"
                             },
                             {
                                 question: "Will it scale with my business?",
                                 answer: "Built for growth. Our platform automatically handles from 10 to 10,000 users without performance issues. Add users, connect tools, handle more data—ibigdata grows with you.",
-                                icon: "📈",
+                                icon: <FaRegChartBar />,
                                 color: "from-blue-500 to-indigo-500"
                             },
                             {
                                 question: "Is my data safe?",
                                 answer: "Bank-level security with SOC 2 Type II certification, 256-bit encryption, and 99.99% uptime. Your data is safer with us than on your own servers.",
-                                icon: "🛡️",
+                                icon: <FaShieldAlt />,
                                 color: "from-purple-500 to-pink-500"
                             },
                             {
@@ -476,8 +481,8 @@ export default function WhyChooseUsPage() {
                                 color: "from-orange-500 to-red-500"
                             }
                         ].map((item, i) => (
-                            <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all">
-                                <div className="flex items-start gap-4">
+                            <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 hover:border-cyan-300 hover:shadow-xl transition-all">
+                                <div className="flex flex-col items-start gap-4">
                                     <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${item.color} flex items-center justify-center text-2xl text-white flex-shrink-0`}>
                                         {item.icon}
                                     </div>
@@ -491,14 +496,14 @@ export default function WhyChooseUsPage() {
                     </div>
 
                     <div className="mt-16 text-center">
-                        <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 inline-block">
+                        <div className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 inline-block">
                             <h3 className="text-2xl font-black text-gray-900 mb-4">Still Have Questions?</h3>
                             <p className="text-gray-600 mb-6">Talk to a real human who gets it.</p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <button className="px-6 py-3 bg-cyan-600 text-white rounded-xl font-semibold hover:bg-cyan-700 transition-all">
+                                <button className="px-4 md:px-6 py-3 bg-cyan-600 text-white rounded-xl font-semibold hover:bg-cyan-700 transition-all">
                                     Chat with Sales
                                 </button>
-                                <button className="px-6 py-3 bg-white border-2 border-gray-200 text-gray-700 rounded-xl font-semibold hover:border-gray-300 transition-all">
+                                <button className="px-4 md:px-6 py-3 bg-white border-2 border-gray-200 text-gray-700 rounded-xl font-semibold hover:border-gray-300 transition-all">
                                     Email Us
                                 </button>
                             </div>
@@ -510,7 +515,7 @@ export default function WhyChooseUsPage() {
 
 
             {/* Final CTA Section - DARK THEME */}
-            <section className="py-32 px-6 relative overflow-hidden bg-gradient-to-br from-cyan-600 to-blue-600">
+            <section className="py-32 px-4 md:px-6 relative overflow-hidden bg-gradient-to-br from-cyan-600 to-blue-600">
                 <div className="absolute inset-0 opacity-10"
                     style={{
                         backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
@@ -578,9 +583,9 @@ export default function WhyChooseUsPage() {
 
 
             {/* Footer */}
-            <footer className="py-12 px-6 border-t border-gray-200 bg-white">
+            <footer className="py-12 px-4 md:px-6 border-t border-gray-200 bg-white">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid md:grid-cols-4 gap-8 mb-8">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
                         <div>
                             <h4 className="font-bold text-gray-900 mb-4">Company</h4>
                             <div className="space-y-2 text-sm text-gray-600">

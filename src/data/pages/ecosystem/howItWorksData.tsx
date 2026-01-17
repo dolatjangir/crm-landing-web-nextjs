@@ -1,8 +1,14 @@
+import { CgNotes } from "react-icons/cg";
+import { FaShieldAlt } from "react-icons/fa";
+import { FaChartLine, FaLock, FaUnlock, FaUsers } from "react-icons/fa6";
+import { GiArcheryTarget, GiBrain, GiCheckMark } from "react-icons/gi";
+import { IoStatsChart } from "react-icons/io5";
+
 export const howItWorkstabsData = [
   {
     id: "core",
     label: "AI-Powered Core",
-    icon: "🧠",
+    icon: <GiBrain />,
     content: (
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <div>
@@ -52,7 +58,7 @@ export const howItWorkstabsData = [
   {
     id: "intelligence",
     label: "Industry Intelligence",
-    icon: "🎯",
+    icon: <GiArcheryTarget/>,
     content: (
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <div className="order-2 lg:order-1">
@@ -64,7 +70,7 @@ export const howItWorkstabsData = [
               { industry: "Finance", tasks: "1.5M", accuracy: "98.9%" },
             ].map((stat, i) => (
               <div key={i} className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-2xl border-2 border-gray-200 hover:border-cyan-400 hover:shadow-lg transition-all">
-                <div className="text-3xl mb-2">📊</div>
+                <div className="text-3xl mb-2"><IoStatsChart  className="text-green-500"/></div>
                 <h4 className="font-bold text-gray-900 mb-1">{stat.industry}</h4>
                 <div className="text-sm text-gray-600">
                   <div>{stat.tasks} automated tasks</div>
@@ -109,7 +115,7 @@ export const howItWorkstabsData = [
   {
     id: "scaling",
     label: "Self-Scaling",
-    icon: "📈",
+    icon: <FaChartLine />,
     content: (
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <div>
@@ -172,7 +178,7 @@ export const howItWorkstabsData = [
   {
     id: "security",
     label: "AI Security",
-    icon: "🔒",
+    icon: <FaLock />,
     content: (
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <div className="order-2 lg:order-1">
@@ -181,14 +187,14 @@ export const howItWorkstabsData = [
             <div className="relative bg-gradient-to-br from-green-600 to-emerald-600 rounded-3xl p-8 shadow-2xl">
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { icon: "🔐", label: "256-bit AES" },
-                  { icon: "🛡️", label: "Real-time Monitoring" },
-                  { icon: "✅", label: "SOC 2 Certified" },
-                  { icon: "🔒", label: "GDPR Compliant" },
+                  { icon: <FaUnlock />, label: "256-bit AES" },
+                  { icon: <FaShieldAlt />, label: "Real-time Monitoring" },
+                  { icon: <GiCheckMark />, label: "SOC 2 Certified" },
+                  { icon: <FaLock/>, label: "GDPR Compliant" },
                 ].map((item, i) => (
                   <div key={i} className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
-                    <div className="text-4xl mb-2">{item.icon}</div>
-                    <div className="text-white font-semibold text-sm">{item.label}</div>
+                    <div className="text-4xl mb-2 text-green-100">{item.icon}</div>
+                    <div className="text-gray-800 font-semibold text-sm">{item.label}</div>
                   </div>
                 ))}
               </div>
@@ -210,26 +216,26 @@ export const howItWorkstabsData = [
               {
                 title: "AI Threat Detection",
                 desc: "Machine learning identifies suspicious patterns before breaches occur",
-                icon: "🎯"
+                icon: <GiArcheryTarget />
               },
               {
                 title: "End-to-End Encryption",
                 desc: "All data encrypted at rest and in transit with enterprise-grade protocols",
-                icon: "🔐"
+                icon: <FaUnlock />
               },
               {
                 title: "Compliance Automation",
                 desc: "Automatically maintain GDPR, HIPAA, SOC 2, and other regulatory standards",
-                icon: "📋"
+                icon: <CgNotes />
               },
               {
                 title: "Granular Access Control",
                 desc: "AI-powered role management with dynamic permission assignment",
-                icon: "👥"
+                icon: <FaUsers/>
               },
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-green-50 hover:bg-green-100 transition-colors border border-green-200">
-                <div className="text-2xl">{item.icon}</div>
+                <div className="text-2xl text-cyan-600">{item.icon}</div>
                 <div>
                   <h4 className="font-bold text-gray-900 mb-1">{item.title}</h4>
                   <p className="text-gray-600 text-sm">{item.desc}</p>

@@ -42,7 +42,7 @@ const ProcessSteps: React.FC<ProcessStepsProps> = ({
 
               {/* Step Card */}
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all">
-                <div className="text-3xl mb-4">{item.icon}</div>
+                <div className="text-4xl mb-4">{item.icon}</div>
                 <div className="text-cyan-400 font-bold mb-2">STEP {item.step}</div>
                 <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
                 <p className="text-gray-300">{item.desc}</p>

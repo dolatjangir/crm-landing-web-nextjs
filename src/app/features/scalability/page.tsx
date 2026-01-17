@@ -13,7 +13,7 @@ import { FaShieldAlt } from "react-icons/fa";
 import { FaArrowsRotate, FaEarthAmericas, FaIntercom, FaLock, FaRocket, FaSackDollar, FaUsers } from "react-icons/fa6";
 import { GiArcheryTarget, GiBrain } from "react-icons/gi";
 import { IoIosFlash, IoIosRocket } from "react-icons/io";
-import { IoChatboxEllipsesOutline } from "react-icons/io5";
+import { IoCartOutline, IoChatboxEllipsesOutline, IoStatsChart } from "react-icons/io5";
 import { VscGraph } from "react-icons/vsc";
 
 export default function ScalabilityPage() {
@@ -121,7 +121,7 @@ export default function ScalabilityPage() {
                             key={i}
                             className={`
         bg-white/5 text-4xl max-md:text-2xl backdrop-blur-sm
-        border border-white/10 rounded-2xl p-6
+        border border-white/10 rounded-2xl p-4 md:p-6
         hover:bg-white/10 transition-all group
         ${i === 2 ? "max-md:col-span-2" : ""}
       `}
@@ -137,7 +137,7 @@ export default function ScalabilityPage() {
 
 
             {/* Key Performance Metrics - LIGHT THEME */}
-            <section className="py-32 px-6 relative bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+            <section className="py-32 px-4 md:px-6 relative bg-gradient-to-br from-cyan-50 via-white to-blue-50">
                 <div className="max-w-7xl mx-auto relative">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -155,7 +155,7 @@ export default function ScalabilityPage() {
                             { value: "2.3M", label: "Requests/Minute", change: "+45% vs last month", icon: <VscGraph />, color: "text-blue-600" },
                             { value: "Zero", label: "Downtime Events", change: "Last 12 months", icon: <GiArcheryTarget />, color: "text-purple-600" }
                         ].map((metric, i) => (
-                            <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all group">
+                            <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 hover:border-cyan-300 hover:shadow-xl transition-all group">
                                 <div className={`text-5xl mb-4 group-hover:scale-110 transition-transform ${metric.color}`}>{metric.icon}</div>
                                 <div className={`text-4xl font-black mb-2 ${metric.color}`}>{metric.value}</div>
                                 <div className="text-lg font-semibold text-gray-900 mb-2">{metric.label}</div>
@@ -165,8 +165,8 @@ export default function ScalabilityPage() {
                     </div>
 
                     {/* Live System Status */}
-                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-xl">
-                        <div className="flex items-center justify-between mb-6">
+                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 shadow-xl">
+                        <div className="flex flex-col md:flex-row items-center justify-between mb-6">
                             <h3 className="text-2xl font-black text-gray-900">System Status</h3>
                             <div className="flex items-center gap-2">
                                 <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
@@ -175,21 +175,21 @@ export default function ScalabilityPage() {
                         </div>
                         <div className="grid md:grid-cols-3 gap-6">
                             <div className="text-center">
-                                <div className="text-3xl font-bold text-gray-900 mb-2">Global CDN</div>
+                                <div className="text-xl md:text-3xl font-bold text-gray-900 mb-2">Global CDN</div>
                                 <div className="text-sm text-gray-600">15 regions active</div>
                                 <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
                                     <div className="bg-green-500 h-2 rounded-full" style={{ width: '100%' }} />
                                 </div>
                             </div>
                             <div className="text-center">
-                                <div className="text-3xl font-bold text-gray-900 mb-2">Database Cluster</div>
+                                <div className="text-xl md:text-3xl font-bold text-gray-900 mb-2">Database Cluster</div>
                                 <div className="text-sm text-gray-600">5 nodes healthy</div>
                                 <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
                                     <div className="bg-green-500 h-2 rounded-full" style={{ width: '100%' }} />
                                 </div>
                             </div>
                             <div className="text-center">
-                                <div className="text-3xl font-bold text-gray-900 mb-2">API Gateway</div>
+                                <div className="text-xl md:text-3xl font-bold text-gray-900 mb-2">API Gateway</div>
                                 <div className="text-sm text-gray-600">All endpoints responsive</div>
                                 <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
                                     <div className="bg-green-500 h-2 rounded-full" style={{ width: '100%' }} />
@@ -203,7 +203,7 @@ export default function ScalabilityPage() {
 
 
             {/* Technical Benefits - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -219,7 +219,7 @@ export default function ScalabilityPage() {
                         {/* Benefits Visualization */}
                         <div className="relative">
                             <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-3xl blur-3xl" />
-                            <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-2xl">
+                            <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 shadow-2xl">
                                 <h3 className="text-2xl font-black text-gray-900 mb-6">How We Scale With You</h3>
                                 <div className="space-y-6">
                                     {[
@@ -228,11 +228,11 @@ export default function ScalabilityPage() {
                                         { benefit: "Smart Caching", description: "Frequently accessed data served instantly from nearby locations", icon: <IoIosFlash />, color: "bg-cyan-100 text-cyan-700" },
                                         { benefit: "Fault Tolerance", description: "Automatic failover keeps you running even during outages", icon: <FaShieldAlt /> , color: "bg-purple-100 text-purple-700" }
                                     ].map((item, i) => (
-                                        <div key={i} className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
-                                            <div className={`w-12 h-12 rounded-xl ${item.color} flex items-center justify-center text-xl`}>
+                                        <div key={i} className="flex  items-center gap-4 p-4 bg-gray-50 rounded-xl">
+                                            <div className={`w-12 h-12  rounded-full md:rounded-xl ${item.color} flex items-center justify-center text-xl`}>
                                                 {item.icon}
                                             </div>
-                                            <div>
+                                            <div className="flex-1">
                                                 <div className="font-bold text-gray-900">{item.benefit}</div>
                                                 <div className="text-sm text-gray-600">{item.description}</div>
                                             </div>
@@ -270,7 +270,7 @@ export default function ScalabilityPage() {
                                     color: "text-purple-700"
                                 }
                             ].map((feature, i) => (
-                                <div key={i} className="flex gap-4 p-6 bg-white border-2 border-cyan-100 rounded-2xl hover:border-cyan-300 hover:shadow-lg transition-all group">
+                                <div key={i} className="flex gap-4 p-4 md:p-6 bg-white border-2 border-cyan-100 rounded-2xl hover:border-cyan-300 hover:shadow-lg transition-all group">
                                     <div className={`text-4xl group-hover:scale-110 transition-transform ${feature.color}`}>{feature.icon}</div>
                                     <div>
                                         <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
@@ -286,7 +286,7 @@ export default function ScalabilityPage() {
 
 
             {/* Growth Scenarios - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+            <section className="py-32 px-4 md:px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -304,7 +304,7 @@ export default function ScalabilityPage() {
                             <button
                                 key={i}
                                 onClick={() => setActiveScenario(i)}
-                                className={`px-6 py-3 rounded-xl font-semibold transition-all group flex justify-center items-center ${activeScenario === i
+                                className={`px-4 md:px-6 py-3 rounded-xl font-semibold transition-all group flex justify-center items-center ${activeScenario === i
                                     ? 'bg-cyan-600 text-white shadow-lg'
                                     : 'bg-white border-2 border-gray-200 text-gray-600  hover:border-cyan-300 hover:shadow-md'
                                     }`}
@@ -316,7 +316,7 @@ export default function ScalabilityPage() {
                     </div>
 
                     {/* Active Scenario Display */}
-                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-2xl">
+                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 shadow-2xl">
                         <div className="grid lg:grid-cols-2 gap-12 items-center">
                             <div>
                                 <div className="flex items-center gap-4 mb-6">
@@ -362,7 +362,7 @@ export default function ScalabilityPage() {
 
                             <div className="relative">
                                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-3xl blur-3xl" />
-                                <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 text-white">
+                                <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-4 md:p-6 text-white">
                                     <div className="flex items-center gap-3 mb-6">
                                         <div className="w-3 h-3 rounded-full bg-red-500" />
                                         <div className="w-3 h-3 rounded-full bg-yellow-500" />
@@ -395,7 +395,7 @@ export default function ScalabilityPage() {
 
 
             {/* Performance Under Load - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -411,7 +411,7 @@ export default function ScalabilityPage() {
                         {/* Traffic Visualization */}
                         <div className="relative">
                             <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-purple-400/20 rounded-3xl blur-3xl" />
-                            <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-2xl">
+                            <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 shadow-2xl">
                                 <h3 className="text-2xl font-black text-gray-900 mb-6">Real-Time Traffic Adaptation</h3>
                                 
                                 {/* Traffic Levels */}
@@ -507,7 +507,7 @@ export default function ScalabilityPage() {
                                     description: "DDoS protection and rate limiting ensure malicious traffic can't impact your legitimate users' experience."
                                 }
                             ].map((benefit, i) => (
-                                <div key={i} className="flex gap-4 p-6 bg-white border-2 border-cyan-100 rounded-2xl hover:border-cyan-300 hover:shadow-lg transition-all group">
+                                <div key={i} className="flex gap-4 p-4 md:p-6 bg-white border-2 border-cyan-100 rounded-2xl hover:border-cyan-300 hover:shadow-lg transition-all group">
                                     <div className="text-4xl group-hover:scale-110 transition-transform text-cyan-600">{benefit.icon}</div>
                                     <div>
                                         <h3 className="text-xl font-bold text-gray-900 mb-2">{benefit.title}</h3>
@@ -523,7 +523,7 @@ export default function ScalabilityPage() {
 
 
             {/* Enterprise Assurance - DARK THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
+            <section className="py-32 px-4 md:px-6 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -541,7 +541,7 @@ export default function ScalabilityPage() {
                             { label: "Security Certifications", value: "15+", icon: <FaLock /> },
                             { label: "Support Response", value: "< 5 mins", icon: <IoChatboxEllipsesOutline /> }
                         ].map((spec, i) => (
-                            <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all group">
+                            <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-4 md:p-6 hover:bg-white/10 transition-all group">
                                 <div className="text-4xl mb-4 group-hover:scale-110 transition-transform text-cyan-400">{spec.icon}</div>
                                 <div className="text-sm text-gray-400 mb-2">{spec.label}</div>
                                 <div className="text-3xl font-black text-cyan-400">{spec.value}</div>
@@ -552,7 +552,7 @@ export default function ScalabilityPage() {
                     {/* Compliance & Security Grid */}
                     <div className="grid md:grid-cols-2 gap-8 mb-16">
                         {/* Security Features */}
-                        <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
+                        <div className="bg-white/5 border border-white/10 rounded-2xl p-4 md:p-8">
                             <h3 className="text-2xl font-black text-white mb-6">Security & Compliance</h3>
                             <div className="space-y-4">
                                 {[
@@ -572,7 +572,7 @@ export default function ScalabilityPage() {
                         </div>
 
                         {/* Infrastructure Features */}
-                        <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
+                        <div className="bg-white/5 border border-white/10 rounded-2xl p-4 md:p-8">
                             <h3 className="text-2xl font-black text-white mb-6">Infrastructure Features</h3>
                             <div className="space-y-4">
                                 {[
@@ -609,7 +609,7 @@ export default function ScalabilityPage() {
 
 
             {/* Real-World Examples - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -626,7 +626,7 @@ export default function ScalabilityPage() {
                             {
                                 industry: "E-commerce",
                                 company: "ShopFlow",
-                                logo: "🛒",
+                                logo: <IoCartOutline className="text-orange-100"/>,
                                 challenge: "Black Friday traffic spikes crashed their platform yearly, losing millions in revenue during peak sales periods.",
                                 solution: "Auto-scaling infrastructure that handles 50x normal traffic without performance degradation or downtime.",
                                 results: [
@@ -639,7 +639,7 @@ export default function ScalabilityPage() {
                             {
                                 industry: "SaaS Platform",
                                 company: "DataSync Pro",
-                                logo: "📊",
+                                logo: <IoStatsChart className="text-blue-100"/>,
                                 challenge: "Growing from 1K to 100K users caused database bottlenecks and 5-second page load times.",
                                 solution: "Distributed architecture with intelligent caching and database sharding for consistent sub-100ms response times.",
                                 results: [
@@ -652,7 +652,7 @@ export default function ScalabilityPage() {
                             {
                                 industry: "Financial Services",
                                 company: "FinTech Solutions",
-                                logo: "💰",
+                                logo: <FaSackDollar className="text-green-100" />,
                                 challenge: "Processing millions of transactions daily while maintaining compliance and zero data loss requirements.",
                                 solution: "Multi-region deployment with real-time replication and automatic failover for mission-critical reliability.",
                                 results: [
@@ -677,7 +677,7 @@ export default function ScalabilityPage() {
 
 
             {/* Final CTA Section - DARK THEME */}
-            <section className="py-32 px-6 relative overflow-hidden bg-gradient-to-br from-cyan-600 to-blue-600">
+            <section className="py-32 px-4 md:px-6 relative overflow-hidden bg-gradient-to-br from-cyan-600 to-blue-600">
                 <div className="absolute inset-0 opacity-10"
                     style={{
                         backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
@@ -728,7 +728,7 @@ export default function ScalabilityPage() {
 
 
             {/* Footer */}
-            <footer className="py-12 px-6 border-t border-gray-200 bg-white">
+            <footer className="py-12 px-4 md:px-6 border-t border-gray-200 bg-white">
                 <div className="max-w-7xl mx-auto text-center text-gray-500 text-sm">
                     <p>© 2024 ibigdata. All rights reserved.</p>
                 </div>

@@ -13,7 +13,7 @@ interface FeatureCardProps {
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ feature }) => {
   return (
-    <div className="group bg-white border-2 border-cyan-100 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all hover:-translate-y-2">
+    <div className="group bg-white border-2 border-cyan-100 rounded-2xl p-4 md:p-8 hover:border-cyan-300 hover:shadow-xl transition-all hover:-translate-y-2">
       <div className="text-5xl mb-6 group-hover:scale-110 transition-transform">{feature.icon}</div>
       <h3 className="text-2xl font-bold text-gray-900 mb-3">{feature.title}</h3>
       <p className="text-gray-600 mb-6">{feature.description}</p>

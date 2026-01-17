@@ -9,6 +9,20 @@ import FeatureShowcase from "@/components/common/sections/FeatureShowcase";
 import SectionTabs from "@/components/common/sections/SectionTabs";
 import { howItWorkstabsData } from "@/data/pages/ecosystem/howItWorksData";
 import ModuleCard from "@/components/common/cards/ModuleCard";
+import { MdHomeWork } from "react-icons/md";
+import { HiHomeModern } from "react-icons/hi2";
+import { BiImport, BiLogoZoom, BiSolidShoppingBags } from "react-icons/bi";
+import { IoBagSharp, IoCart, IoChatboxEllipsesOutline, IoSearch } from "react-icons/io5";
+import { SiBookstack } from "react-icons/si";
+import { FaCloud, FaRegChartBar, FaRegHospital, FaUser } from "react-icons/fa6";
+import { LiaIndustrySolid } from "react-icons/lia";
+import { FaBalanceScale } from "react-icons/fa";
+import { GiArcheryTarget, GiRobotAntennas } from "react-icons/gi";
+import { IoIosFlash } from "react-icons/io";
+import { CgMail } from "react-icons/cg";
+import { PiFilmStripDuotone } from "react-icons/pi";
+import { BsMailbox2Flag } from "react-icons/bs";
+import { TiVendorMicrosoft } from "react-icons/ti";
 
 
 export default function EcosystemDetails() {
@@ -54,14 +68,14 @@ export default function EcosystemDetails() {
                         {/* Connected Modules */}
                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                             {[
-                                { name: "Real Estate CRM", icon: "🏢", color: "from-purple-500 to-pink-500" },
-                                { name: "Healthcare CRM", icon: "🏥", color: "from-green-500 to-emerald-500" },
-                                { name: "E-commerce CRM", icon: "🛍️", color: "from-orange-500 to-red-500" },
-                                { name: "Finance CRM", icon: "💼", color: "from-blue-500 to-indigo-500" },
-                                { name: "Education CRM", icon: "📚", color: "from-yellow-500 to-amber-500" },
-                                { name: "Hospitality CRM", icon: "🏨", color: "from-teal-500 to-cyan-500" },
-                                { name: "Manufacturing CRM", icon: "🏭", color: "from-gray-500 to-slate-500" },
-                                { name: "Legal CRM", icon: "⚖️", color: "from-indigo-500 to-purple-500" },
+                                { name: "Real Estate CRM", icon: <MdHomeWork className="text-purple-100" />, color: "from-purple-500 to-pink-500" },
+                                { name: "Healthcare CRM", icon: <HiHomeModern className="text-green-100"  />, color: "from-green-500 to-emerald-500" },
+                                { name: "E-commerce CRM", icon: <BiSolidShoppingBags className="text-orange-100"  />, color: "from-orange-500 to-red-500" },
+                                { name: "Finance CRM", icon: <IoBagSharp className="text-blue-100"  />, color: "from-blue-500 to-indigo-500" },
+                                { name: "Education CRM", icon: <SiBookstack className="text-yellow-100"  />, color: "from-yellow-500 to-amber-500" },
+                                { name: "Hospitality CRM", icon: <FaRegHospital  className="text-teal-100" />, color: "from-teal-500 to-cyan-500" },
+                                { name: "Manufacturing CRM", icon: <LiaIndustrySolid  className="text-gray-100"  />, color: "from-gray-500 to-slate-500" },
+                                { name: "Legal CRM", icon: <FaBalanceScale className="text-indigo-100" />, color: "from-indigo-500 to-purple-500" },
                             ].map((module, i) => (
                                 <ModuleCard
                                     key={i}
@@ -112,7 +126,7 @@ export default function EcosystemDetails() {
                         <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-4">
                             <div className="flex items-center gap-3 mb-3">
                                 <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-                                    <span className="text-2xl">👤</span>
+                                    <span className="text-2xl text-pink-100"><FaUser/></span>
                                 </div>
                                 <div className="flex-1">
                                     <div className="bg-white rounded-lg px-4 py-2 text-gray-900">
@@ -122,7 +136,7 @@ export default function EcosystemDetails() {
                             </div>
                             <div className="flex items-center gap-3">
                                 <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-                                    <span className="text-2xl">🤖</span>
+                                    <span className="text-2xl text-purple-200"><GiRobotAntennas/></span>
                                 </div>
                                 <div className="flex-1">
                                     <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2 text-white">
@@ -153,19 +167,19 @@ export default function EcosystemDetails() {
                         step: "01",
                         title: "Data Capture",
                         desc: "AI extracts information from emails, forms, calls, and integrations",
-                        icon: "📥"
+                        icon: <BiImport />
                     },
                     {
                         step: "02",
                         title: "Intelligent Processing",
                         desc: "The AI core analyzes, categorizes, and enriches data automatically",
-                        icon: "⚡"
+                        icon: <IoIosFlash/>
                     },
                     {
                         step: "03",
                         title: "Actionable Insights",
                         desc: "Delivered to the right team member at the perfect moment",
-                        icon: "🎯"
+                        icon: <GiArcheryTarget  />
                     },
                 ]}
             />
@@ -175,18 +189,18 @@ export default function EcosystemDetails() {
                 title="Connects With Everything"
                 subtitle="Seamlessly integrate with your existing tools and platforms"
                 integrations={[
-                    { name: "Slack", logo: "💬" },
-                    { name: "Gmail", logo: "📧" },
-                    { name: "Zoom", logo: "📹" },
-                    { name: "Stripe", logo: "💳" },
-                    { name: "Salesforce", logo: "☁️" },
-                    { name: "QuickBooks", logo: "📊" },
-                    { name: "HubSpot", logo: "🎯" },
-                    { name: "Mailchimp", logo: "📬" },
-                    { name: "Zapier", logo: "⚡" },
-                    { name: "Microsoft", logo: "🪟" },
-                    { name: "Google", logo: "🔍" },
-                    { name: "Shopify", logo: "🛒" },
+                    { name: "Slack", logo: <IoChatboxEllipsesOutline /> },
+                    { name: "Gmail", logo: <CgMail /> },
+                    { name: "Zoom", logo: <BiLogoZoom /> },
+                    { name: "Stripe", logo: <PiFilmStripDuotone /> },
+                    { name: "Salesforce", logo:<FaCloud /> },
+                    { name: "QuickBooks", logo: <FaRegChartBar /> },
+                    { name: "HubSpot", logo: <GiArcheryTarget /> },
+                    { name: "Mailchimp", logo: <BsMailbox2Flag /> },
+                    { name: "Zapier", logo: <IoIosFlash /> },
+                    { name: "Microsoft", logo: <TiVendorMicrosoft /> },
+                    { name: "Google", logo: <IoSearch /> },
+                    { name: "Shopify", logo: <IoCart /> },
                 ]}
                 buttonText="View All Integrations →"
                 buttonOnClick={() => console.log("View all clicked")}

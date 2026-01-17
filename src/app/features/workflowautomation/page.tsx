@@ -88,7 +88,7 @@ export default function WorkflowAutomationPage() {
                             key={i}
                             className={`
         bg-white/5 text-4xl max-md:text-2xl backdrop-blur-sm
-        border border-white/10 rounded-2xl p-6
+        border border-white/10 rounded-2xl p-4 md:p-6
         hover:bg-white/10 transition-all group
         ${i === 2 ? "max-md:col-span-2" : ""}
       `}
@@ -103,7 +103,7 @@ export default function WorkflowAutomationPage() {
 
 
             {/* What It Does Section - LIGHT THEME */}
-            <section className="py-32 px-6 relative bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+            <section className="py-32 px-4 md:px-6 relative bg-gradient-to-br from-cyan-50 via-white to-blue-50">
 
                 <div className="max-w-7xl mx-auto relative">
                     <div className="text-center mb-20">
@@ -120,7 +120,7 @@ export default function WorkflowAutomationPage() {
                         {/* Visual Demo */}
                         <div className="relative">
                             <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-3xl blur-3xl" />
-                            <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-2xl">
+                            <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 shadow-2xl">
                                 {/* Animated Workflow Visualization */}
                                 <div className="space-y-4">
                                     {[
@@ -180,7 +180,7 @@ export default function WorkflowAutomationPage() {
                                     description: "Track workflow efficiency, completion rates, and identify areas for improvement."
                                 }
                             ].map((feature, i) => (
-                                <div key={i} className="flex gap-4 p-6 bg-white border-2 border-cyan-100 rounded-2xl hover:border-cyan-300 hover:shadow-lg transition-all group">
+                                <div key={i} className="flex gap-4 p-4 md:p-6 bg-white border-2 border-cyan-100 rounded-2xl hover:border-cyan-300 hover:shadow-lg transition-all group">
                                     <div className="text-3xl text-white  group-hover:scale-110 transition-transform">{feature.icon}</div>
                                     <div>
                                         <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
@@ -196,7 +196,7 @@ export default function WorkflowAutomationPage() {
 
 
             {/* Real-World Examples Section - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -256,7 +256,7 @@ export default function WorkflowAutomationPage() {
             </section>
 
             {/* Features Deep Dive Section - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+            <section className="py-32 px-4 md:px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -313,7 +313,7 @@ export default function WorkflowAutomationPage() {
             </section>
 
             {/* Comparison Section - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -326,7 +326,7 @@ export default function WorkflowAutomationPage() {
 
                     <div className="grid lg:grid-cols-2 gap-8">
                         {/* Before */}
-                        <div className="bg-red-50 border-2 border-red-300 rounded-3xl p-8">
+                        <div className="bg-red-50 border-2 border-red-300 rounded-3xl p-4 md:p-8">
                             <div className="flex items-center gap-3 mb-8">
                                 <div className="w-12 h-12 rounded-xl bg-red-200 flex items-center justify-center">
                                     <span className="text-2xl">❌</span>
@@ -353,7 +353,7 @@ export default function WorkflowAutomationPage() {
                         </div>
 
                         {/* After */}
-                        <div className="bg-green-50 border-2 border-green-300 rounded-3xl p-8">
+                        <div className="bg-green-50 border-2 border-green-300 rounded-3xl p-4 md:p-8">
                             <div className="flex items-center gap-3 mb-8">
                                 <div className="w-12 h-12 rounded-xl bg-green-200 flex items-center justify-center">
                                     <span className="text-2xl">✓</span>
@@ -395,7 +395,7 @@ export default function WorkflowAutomationPage() {
             </section>
 
             {/* Technical Specifications - DARK THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
+            <section className="py-32 px-4 md:px-6 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -417,7 +417,7 @@ export default function WorkflowAutomationPage() {
                             { label: "Integrations", value: "1000+", icon: <GiCrossedChains/> },
                             { label: "Support", value: "24/7", icon: <IoChatboxEllipsesOutline /> }
                         ].map((spec, i) => (
-                            <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all group">
+                            <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-4 md:p-6 hover:bg-white/10 transition-all group">
                                 <div className="text-4xl text-cyan-400 mb-4 group-hover:scale-110 transition-transform">{spec.icon}</div>
                                 <div className="text-sm text-gray-400 mb-2">{spec.label}</div>
                                 <div className="text-3xl font-black text-cyan-400">{spec.value}</div>
@@ -428,7 +428,7 @@ export default function WorkflowAutomationPage() {
                     {/* Certifications */}
                     <div className="mt-16 flex flex-wrap justify-center gap-6">
                         {["SOC 2 Type II", "ISO 27001", "GDPR", "HIPAA", "PCI DSS"].map((cert, i) => (
-                            <div key={i} className="px-6 py-3 bg-white/5 border border-white/10 rounded-xl text-sm font-semibold text-gray-300">
+                            <div key={i} className="px-4 md:px-6 py-3 bg-white/5 border border-white/10 rounded-xl text-sm font-semibold text-gray-300">
                                 {cert}
                             </div>
                         ))}
@@ -437,7 +437,7 @@ export default function WorkflowAutomationPage() {
             </section>
 
             {/* Testimonials Section - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -470,7 +470,7 @@ export default function WorkflowAutomationPage() {
                                 avatar: <FaUser/>
                             }
                         ].map((testimonial, i) => (
-                            <div key={i} className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-5 hover:border-cyan-300 hover:shadow-xl transition-all">
+                            <div key={i} className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-4 md:p-5 hover:border-cyan-300 hover:shadow-xl transition-all">
                                 <div className="text-6xl mb-2 opacity-30 text-cyan-600">"</div>
                                 <div>
                                   {Array.from({ length: 5 }).map((_, index) => (
@@ -499,7 +499,7 @@ export default function WorkflowAutomationPage() {
             <FAQSection items={workflowautomationFAQ} />
 
             {/* Final CTA Section - DARK THEME */}
-            <section className="py-32 px-6 relative overflow-hidden bg-gradient-to-br from-cyan-600 to-blue-600">
+            <section className="py-32 px-4 md:px-6 relative overflow-hidden bg-gradient-to-br from-cyan-600 to-blue-600">
                 <div className="absolute inset-0 opacity-10"
                     style={{
                         backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
@@ -508,7 +508,7 @@ export default function WorkflowAutomationPage() {
                 />
 
                 <div className="max-w-4xl mx-auto relative text-center">
-                    <h2 className="text-5xl lg:text-7xl font-black text-white mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                    <h2 className="text-3xl lg:text-7xl font-black text-white mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         Start Automating Today
                     </h2>
                     <p className="text-2xl text-cyan-50 mb-12">
@@ -548,7 +548,7 @@ export default function WorkflowAutomationPage() {
             </section>
 
             {/* Footer */}
-            <footer className="py-12 px-6 border-t border-gray-200 bg-white">
+            <footer className="py-12 px-4 md:px-6 border-t border-gray-200 bg-white">
                 <div className="max-w-7xl mx-auto text-center text-gray-500 text-sm">
                     <p>© 2024 ibigdata. All rights reserved.</p>
                 </div>

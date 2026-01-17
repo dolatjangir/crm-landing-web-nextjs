@@ -78,7 +78,7 @@ export default function Footer() {
               ))}
             </div>
           </div>
-
+                <div></div>
           {/* Navigation */}
           <div>
             <h4 className="text-gray-900 font-bold text-sm uppercase tracking-wider mb-4">

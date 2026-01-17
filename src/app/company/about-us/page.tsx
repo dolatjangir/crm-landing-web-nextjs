@@ -9,8 +9,12 @@ import DarkHeroSection from "@/components/common/sections/DarkHeroSection";
 import { useNavigate } from "@/hooks/useNavigate";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { FaFaceAngry } from "react-icons/fa6";
-import { FaUser } from "react-icons/fa";
+import { FaChartLine, FaCloud, FaFaceAngry, FaHandshake, FaMobileRetro, FaRegHeart, FaRegLightbulb, FaSackDollar, FaUsers } from "react-icons/fa6";
+import { FaRegCalendarAlt, FaShieldAlt, FaUser } from "react-icons/fa";
+import { IoCart, IoHome } from "react-icons/io5";
+import { IoIosFlash, IoIosRocket } from "react-icons/io";
+import { GiCrossedChains, GiFamilyHouse, GiRobotAntennas } from "react-icons/gi";
+import { BsTools } from "react-icons/bs";
 
 export default function AboutPage() {
     const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -67,10 +71,10 @@ export default function AboutPage() {
     ];
 
     const companyMetrics = [
-        { value: "10,000+", label: "Happy Customers", icon: "🏢" },
-        { value: "5", label: "Years in Business", icon: "📅" },
-        { value: "99.99%", label: "Uptime SLA", icon: "🛡️" },
-        { value: "50M+", label: "Contacts Managed", icon: "👥" }
+        { value: "10,000+", label: "Happy Customers", icon: <IoHome /> },
+        { value: "5", label: "Years in Business", icon: <FaRegCalendarAlt /> },
+        { value: "99.99%", label: "Uptime SLA", icon: <FaShieldAlt /> },
+        { value: "50M+", label: "Contacts Managed", icon: <FaUsers /> }
     ];
 
     const teamMembers = [
@@ -135,9 +139,9 @@ export default function AboutPage() {
                     {companyMetrics.map((stat, i) => (
                         <div
                             key={i}
-                            className="bg-white/5 text-3xl max-md:text-xl backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all group"
+                            className="bg-white/5 text-3xl max-md:text-xl backdrop-blur-sm border border-white/10 rounded-2xl p-4 md:p-6 hover:bg-white/10 transition-all group"
                         >
-                            <div className="mb-3 group-hover:scale-110 transition-transform">{stat.icon}</div>
+                            <div className="mb-3 group-hover:scale-110 transition-transform text-cyan-100 flex items-center justify-center text-3xl">{stat.icon}</div>
                             <div className="font-bold text-cyan-400 mb-2">{stat.value}</div>
                             <div className="text-sm text-gray-300">{stat.label}</div>
                         </div>
@@ -163,7 +167,7 @@ export default function AboutPage() {
 
 
             {/* Brand Story & Mission - LIGHT THEME */}
-            <section className="py-32 px-6 relative bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+            <section className="py-32 px-4 relative bg-gradient-to-br from-cyan-50 via-white to-blue-50">
                 <div className="max-w-7xl mx-auto relative">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -176,7 +180,7 @@ export default function AboutPage() {
 
                     <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
                         <div className="space-y-6">
-                            <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 shadow-lg">
+                            <div className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 shadow-lg">
                                 <div className="text-3xl mb-4">😤</div>
                                 <h3 className="text-2xl font-black text-gray-900 mb-4">The Problem We Saw</h3>
                                 <p className="text-gray-600 leading-relaxed">
@@ -186,7 +190,7 @@ export default function AboutPage() {
                                 </p>
                             </div>
 
-                            <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 shadow-lg">
+                            <div className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 shadow-lg">
                                 <div className="text-3xl mb-4">💡</div>
                                 <h3 className="text-2xl font-black text-gray-900 mb-4">Our Solution</h3>
                                 <p className="text-gray-600 leading-relaxed">
@@ -199,7 +203,7 @@ export default function AboutPage() {
 
                         <div className="relative">
                             <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-3xl blur-3xl" />
-                            <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-2xl">
+                            <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 shadow-2xl">
                                 <h3 className="text-2xl font-black text-gray-900 mb-6">Our Mission</h3>
                                 <blockquote className="text-lg text-gray-700 italic mb-6 border-l-4 border-cyan-500 pl-6">
                                     "Democratize powerful CRM technology so every business—regardless of size—
@@ -229,7 +233,7 @@ export default function AboutPage() {
 
 
             {/* USP & Differentiation - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-32 px-4 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -246,44 +250,44 @@ export default function AboutPage() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
                         {[
                             {
-                                icon: "⚡",
+                                icon: <IoIosFlash/>,
                                 title: "Works in 5 Minutes",
                                 description: "Not 5 months. Get up and running with your existing data instantly.",
                                 detail: "Import contacts, connect tools, and start seeing value today—not weeks from now."
                             },
                             {
-                                icon: "🤖",
+                                icon: <GiRobotAntennas/>,
                                 title: "AI That Actually Helps",
                                 description: "Smart automation that learns your business and gets better over time.",
                                 detail: "Our AI suggests actions, predicts outcomes, and handles routine tasks so you can focus on relationships."
                             },
                             {
-                                icon: "💰",
+                                icon: <FaSackDollar />,
                                 title: "Transparent Pricing",
                                 description: "No hidden fees, no surprises, no consultants required.",
                                 detail: "Simple per-user pricing that scales with you. Enterprise features included at every level."
                             },
                             {
-                                icon: "🔗",
+                                icon: <GiCrossedChains />,
                                 title: "Connects to Everything",
                                 description: "2,000+ integrations with the tools you already use.",
                                 detail: "From Gmail to Slack to Salesforce—if you use it, we integrate with it. No workarounds needed."
                             },
                             {
-                                icon: "📱",
+                                icon: <FaMobileRetro />,
                                 title: "Mobile-First Design",
                                 description: "Full CRM power in your pocket. Work from anywhere.",
                                 detail: "Every feature works perfectly on mobile. Update deals, check insights, and collaborate on the go."
                             },
                             {
-                                icon: "🛡️",
+                                icon: <FaShieldAlt />,
                                 title: "Enterprise Security",
                                 description: "Bank-level security without the enterprise complexity.",
                                 detail: "SOC 2 certified, GDPR compliant, with 99.99% uptime. Your data is safer than in your own servers."
                             }
                         ].map((usp, i) => (
-                            <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all group">
-                                <div className="text-3xl mb-6 group-hover:scale-110 transition-transform">{usp.icon}</div>
+                            <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 hover:border-cyan-300 hover:shadow-xl transition-all group">
+                                <div className="text-3xl mb-6 group-hover:scale-110 transition-transform text-cyan-600">{usp.icon}</div>
                                 <h3 className="text-xl font-black text-gray-900 mb-4">{usp.title}</h3>
                                 <p className="text-gray-700 font-semibold mb-3">{usp.description}</p>
                                 <p className="text-sm text-gray-600">{usp.detail}</p>
@@ -292,11 +296,11 @@ export default function AboutPage() {
                     </div>
 
                     {/* Comparison Table */}
-                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-xl">
+                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 shadow-xl">
                         <h3 className="text-3xl font-black text-gray-900 mb-8 text-center">How We Stack Up</h3>
                         <div className="grid md:grid-cols-3 gap-8">
                             <div className="text-center">
-                                <div className="text-3xl mb-4">🏢</div>
+                                <div className="text-4xl mb-4 flex justify-center items-center text-cyan-600"><GiFamilyHouse /></div>
                                 <h4 className="font-bold text-gray-900 mb-2">Traditional CRM</h4>
                                 <ul className="text-sm text-gray-600 space-y-2">
                                     <li>Complex setup</li>
@@ -305,9 +309,9 @@ export default function AboutPage() {
                                     <li>Hidden costs</li>
                                 </ul>
                             </div>
-                            <div className="text-center border-l border-r border-gray-200 px-8">
-                                <div className="text-3xl mb-4">🚀</div>
-                                <h4 className="font-bold text-cyan-600 mb-2">ibigdata</h4>
+                            <div className="text-center md:border-l md:border-r border-gray-200 p-4 md:p-8">
+                                <div className="text-4xl mb-4 flex justify-center items-center text-cyan-600"><IoIosRocket/></div>
+                                <h4 className="font-bold text-gray-900 mb-2">ibigdata</h4>
                                 <ul className="text-sm text-gray-700 space-y-2">
                                     <li>5-minute setup</li>
                                     <li>AI-powered automation</li>
@@ -316,7 +320,7 @@ export default function AboutPage() {
                                 </ul>
                             </div>
                             <div className="text-center">
-                                <div className="text-3xl mb-4">💡</div>
+                                <div className="text-4xl mb-4 flex justify-center items-center text-cyan-600"><FaRegLightbulb /></div>
                                 <h4 className="font-bold text-gray-900 mb-2">The Difference</h4>
                                 <ul className="text-sm text-gray-600 space-y-2">
                                     <li>93% faster deployment</li>
@@ -333,7 +337,7 @@ export default function AboutPage() {
 
 
             {/* Team Section - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+            <section className="py-32 px-4 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -346,8 +350,8 @@ export default function AboutPage() {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
                         {teamMembers.map((member, i) => (
-                            <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-cyan-300 hover:shadow-xl transition-all group">
-                                <div className="text-5xl mb-6 text-neutral-600 flex justify-center items-center group-hover:scale-110 transition-transform">{member.avatar}</div>
+                            <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 text-center hover:border-cyan-300 hover:shadow-xl transition-all group">
+                                <div className="text-5xl mb-6 text-gray-900 flex justify-center items-center group-hover:scale-110 transition-transform">{member.avatar}</div>
                                 <h3 className="text-xl font-black text-gray-900 mb-2">{member.name}</h3>
                                 <div className="text-cyan-600 font-semibold mb-4">{member.role}</div>
                                 <p className="text-sm text-gray-600 leading-relaxed">{member.bio}</p>
@@ -356,33 +360,33 @@ export default function AboutPage() {
                     </div>
 
                     {/* Company Values */}
-                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-xl">
+                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 shadow-xl">
                         <h3 className="text-3xl font-black text-gray-900 mb-8 text-center">Our Core Values</h3>
                         <div className="grid md:grid-cols-2 gap-8">
                             {[
                                 {
-                                    icon: "❤️",
+                                    icon: <FaRegHeart />,
                                     title: "Customer First",
                                     description: "Every decision starts with 'How does this help our customers succeed?'"
                                 },
                                 {
-                                    icon: "🔧",
+                                    icon: <BsTools />,
                                     title: "Simplicity Wins",
                                     description: "Powerful doesn't have to mean complicated. We make complex things simple."
                                 },
                                 {
-                                    icon: "🚀",
+                                    icon: <GiRobotAntennas />,
                                     title: "Move Fast, Iterate Faster",
                                     description: "We ship improvements weekly, not yearly. Your feedback drives our roadmap."
                                 },
                                 {
-                                    icon: "🤝",
+                                    icon: <FaHandshake />,
                                     title: "Transparency Always",
                                     description: "Clear pricing, honest communication, and open about what we're building."
                                 }
                             ].map((value, i) => (
                                 <div key={i} className="flex items-start gap-4">
-                                    <div className="text-3xl">{value.icon}</div>
+                                    <div className="text-3xl flex items-center justify-center text-cyan-600">{value.icon}</div>
                                     <div>
                                         <h4 className="font-bold text-gray-900 mb-2">{value.title}</h4>
                                         <p className="text-sm text-gray-600">{value.description}</p>
@@ -397,7 +401,7 @@ export default function AboutPage() {
 
 
             {/* Social Proof Carousel - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-32 px-4 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -410,16 +414,16 @@ export default function AboutPage() {
                         </p>
                     </div>
 
-                    <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-3xl p-12 shadow-xl">
+                    <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-3xl py-12 px-4 shadow-xl">
                         <div className="text-center mb-8">
-                            <div className="text-8xl mb-6 opacity-20">"</div>
-                            <blockquote className="text-2xl text-gray-700 italic leading-relaxed mb-8">
+                            <div className="text-8xl mb-6 text-start md:ml-40 opacity-20">"</div>
+                            <blockquote className="text-xl md:text-2xl text-gray-700 italic leading-relaxed mb-8">
                                 {testimonials[activeTestimonial].quote}
                             </blockquote>
                         </div>
 
-                        <div className="flex items-center justify-center gap-8">
-                            <div className="flex items-center gap-4 w-">
+                        <div className="flex flex-col md:flex-row items-center justify-center  gap-8">
+                            <div className="flex items-center gap-4 ">
                                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-3xl">
                                     {testimonials[activeTestimonial].avatar}
                                 </div>
@@ -429,7 +433,7 @@ export default function AboutPage() {
                                     <div className="text-cyan-600 font-semibold">{testimonials[activeTestimonial].company}</div>
                                 </div>
                             </div>
-                            <div className="text-right">
+                            <div className="md:text-right">
                                 <div className="text-2xl font-bold text-green-600">{testimonials[activeTestimonial].metric}</div>
                             </div>
                         </div>
@@ -453,7 +457,7 @@ export default function AboutPage() {
 
 
             {/* Success Stories - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+            <section className="py-32 px-4 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -469,7 +473,7 @@ export default function AboutPage() {
                             {
                                 industry: "SaaS Startup",
                                 company: "CloudSync Pro",
-                                logo: "☁️",
+                                logo: <FaCloud className="text-cyan-100"/>,
                                 challenge: "Struggling to manage 500+ leads with spreadsheets and basic CRM tools that couldn't scale.",
                                 solution: "Implemented ibigdata with AI automation and saw immediate improvements in lead management.",
                                 results: [
@@ -482,7 +486,7 @@ export default function AboutPage() {
                             {
                                 industry: "Marketing Agency",
                                 company: "Growth Dynamics",
-                                logo: "📈",
+                                logo: <FaChartLine className="text-cyan-100"/>,
                                 challenge: "Client data scattered across multiple tools, making it impossible to track ROI and manage relationships effectively.",
                                 solution: "Consolidated all client interactions into ibigdata with full integration stack.",
                                 results: [
@@ -495,7 +499,7 @@ export default function AboutPage() {
                             {
                                 industry: "E-commerce",
                                 company: "ShopFlow",
-                                logo: "🛒",
+                                logo: <IoCart className="text-cyan-100"/>,
                                 challenge: "Rapid growth created chaos in customer communications and follow-up processes.",
                                 solution: "Automated customer journey tracking and personalized communication at scale.",
                                 results: [
@@ -515,11 +519,11 @@ export default function AboutPage() {
 
 
             {/* Final CTA Section - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
-                <div className="max-w-4xl mx-auto text-center">
-                    <div className="bg-gradient-to-br from-cyan-600 to-blue-600 rounded-3xl p-12 text-white shadow-2xl">
+            <section className="py-18 px-4 bg-white">
+                <div className="max-w-4xl md:mx-auto text-center">
+                    <div className="bg-gradient-to-br from-cyan-600 to-blue-600 rounded-3xl p-4 text-white shadow-2xl">
                         <h2 className="text-4xl lg:text-5xl font-black mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                            Ready to Transform Your Customer Relationships?
+                            Ready to Transform Your Customer Relationships
                         </h2>
                         <p className="text-xl text-cyan-50 mb-8 max-w-2xl mx-auto">
                             Join thousands of businesses that chose simplicity over complexity. 
@@ -579,7 +583,7 @@ export default function AboutPage() {
 
 
             {/* Footer */}
-            <footer className="py-12 px-6 border-t border-gray-200 bg-white">
+            <footer className="py-12 px-4 border-t border-gray-200 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid md:grid-cols-4 gap-8 mb-8">
                         <div>

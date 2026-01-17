@@ -27,7 +27,7 @@ export function FAQSection({
 
   return (
     <section
-      className={`py-32 px-6 max-md:px-1 bg-gradient-to-br from-cyan-50 via-white to-blue-50 ${className}`}
+      className={`py-32 px-4 max-md:px-3 bg-gradient-to-br from-cyan-50 via-white to-blue-50 ${className}`}
     >
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-20 max-md:mb-10">
@@ -53,7 +53,7 @@ export function FAQSection({
                 onClick={() => toggleFAQ(i)}
                 className="w-full p-8 max-md:p-6 text-left flex items-center justify-between gap-4 cursor-pointer"
               >
-                <h3 className="text-xl font-bold text-gray-900 pr-2">
+                <h3 className="md:text-xl  md:font-bold text-gray-900 pr-2">
                   {faq.q}
                 </h3>
 

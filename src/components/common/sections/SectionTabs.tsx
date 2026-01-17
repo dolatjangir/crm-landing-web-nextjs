@@ -5,7 +5,7 @@ import { useState } from "react";
 interface TabItem {
   id: string;
   label: string;
-  icon?: string;
+  icon?: string | React.ReactNode;
   content: React.ReactNode;
 }
 
@@ -39,7 +39,7 @@ export default function SectionTabs({
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+              className={`px-6 flex items-center py-3 rounded-xl font-semibold transition-all duration-300 ${
                 activeTab === tab.id
                   ? "bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-lg shadow-cyan-600/30"
                   : "bg-white text-gray-700 hover:bg-gray-50 border-2 border-gray-200"

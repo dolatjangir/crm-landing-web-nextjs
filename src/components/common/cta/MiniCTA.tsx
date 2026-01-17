@@ -15,7 +15,7 @@ export function MiniCTA({
 }: CTAProps) {
   return (
     <div
-      className={`mt-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-3xl p-12 text-center shadow-xl ${className}`}
+      className={`mt-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-3xl p-4 md:p-12 text-center shadow-xl ${className}`}
     >
       <h3 className="text-3xl font-bold text-white mb-4">{title}</h3>
 

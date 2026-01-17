@@ -544,7 +544,7 @@ const AnimatedRobot = () => {
 const SecurityBadge = ({ icon : Icon, title, subtitle, color } : any) => (
     <div className={`relative group cursor-pointer`}>
         <div className={`absolute inset-0 bg-gradient-to-br ${color} rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity`} />
-        <div className="relative bg-white border-2 border-gray-200 rounded-2xl p-6 hover:border-cyan-300 hover:shadow-2xl transition-all">
+        <div className="relative bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-6 hover:border-cyan-300 hover:shadow-2xl transition-all">
             <div className="text-5xl mb-4 group-hover:scale-110 transition-transform"><Icon className="text-blue-500 text-3xl"/></div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
             <p className="text-sm text-gray-600">{subtitle}</p>
@@ -554,7 +554,7 @@ const SecurityBadge = ({ icon : Icon, title, subtitle, color } : any) => (
 
 // Compliance Certificate Component
 const ComplianceCertificate = ({ name, description, verified } : any) => (
-    <div className="bg-gradient-to-br from-cyan-50 to-blue-50 border-2 border-cyan-200 rounded-2xl p-6 hover:shadow-xl transition-all group">
+    <div className="bg-gradient-to-br from-cyan-50 to-blue-50 border-2 border-cyan-200 rounded-2xl p-4 md:p-6 hover:shadow-xl transition-all group">
         <div className="flex items-start justify-between mb-4">
             <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <span className="text-2xl">✓</span>
@@ -621,8 +621,9 @@ export default function SecurityCompliancePage() {
                     }} />
                 </div>
 
-                <div className="relative max-w-7xl mx-auto px-6 py-32 flex flex-col lg:flex-row items-center justify-between gap-12">
+                <div className="relative max-w-7xl mx-auto px-4 md:px-6 py-32 flex flex-col lg:flex-row items-center justify-between gap-12">
                     {/* Left Content */}
+                    
                     <div className="flex-1 text-center lg:text-left">
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-8 animate-fade-in">
                             <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
@@ -649,9 +650,9 @@ export default function SecurityCompliancePage() {
                             ].map((stat, i) => (
                                 <div
                                     key={i}
-                                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all group"
+                                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 md:p-6 hover:bg-white/10 transition-all group"
                                 >
-                                    <div className="text-4xl mb-3 group-hover:scale-110 text-cyan-200 transition-transform">{stat.icon}</div>
+                                    <div className="text-4xl mb-3 group-hover:scale-110 text-cyan-200 flex items-center justify-center transition-transform">{stat.icon}</div>
                                     <div className="text-4xl font-bold text-cyan-400 mb-2">{stat.value}</div>
                                     <div className="text-sm text-gray-300">{stat.label}</div>
                                 </div>
@@ -660,14 +661,14 @@ export default function SecurityCompliancePage() {
                     </div>
 
                     {/* Right Content - Animated Robot */}
-                    <div className="flex-1 flex justify-center items-center">
+                    <div className="flex-1 hidden md:flex justify-center items-center">
                         <AnimatedRobot />
                     </div>
                 </div>
             </section>
 
             {/* Security Layers Section - LIGHT THEME */}
-            <section className="py-32 px-6 relative bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+            <section className="py-32 px-4 md:px-6 relative bg-gradient-to-br from-cyan-50 via-white to-blue-50">
                 <div className="max-w-7xl mx-auto relative">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -692,7 +693,7 @@ export default function SecurityCompliancePage() {
                                 ].map((item, i) => (
                                     <div 
                                         key={i} 
-                                        className={`bg-white border-2 rounded-2xl p-6 transition-all duration-500 ${
+                                        className={`bg-white border-2 rounded-2xl p-4 md:p-6 transition-all duration-500 ${
                                             activeFeature === i 
                                                 ? 'border-cyan-400 shadow-2xl scale-105' 
                                                 : 'border-gray-200 hover:border-cyan-300'
@@ -751,7 +752,7 @@ export default function SecurityCompliancePage() {
                                     description: "Every action is logged and tracked. Complete audit trails for compliance and forensic analysis."
                                 }
                             ].map((feature, i) => (
-                                <div key={i} className="flex gap-4 p-6 bg-white border-2 border-cyan-100 rounded-2xl hover:border-cyan-300 hover:shadow-lg transition-all group">
+                                <div key={i} className="flex gap-4 p-4 md:p-6 bg-white border-2 border-cyan-100 rounded-2xl hover:border-cyan-300 hover:shadow-lg transition-all group">
                                     <div className="text-4xl group-hover:scale-110 transition-transform text-cyan-600">{feature.icon}</div>
                                     <div>
                                         <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
@@ -765,7 +766,7 @@ export default function SecurityCompliancePage() {
             </section>
 
             {/* Compliance Certifications - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -821,7 +822,7 @@ export default function SecurityCompliancePage() {
             </section>
 
             {/* Real-World Examples Section - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+            <section className="py-32 px-4 md:px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -881,7 +882,7 @@ export default function SecurityCompliancePage() {
             </section>
 
             {/* Security Features Deep Dive - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -938,7 +939,7 @@ export default function SecurityCompliancePage() {
             </section>
 
             {/* Security Process Timeline - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+            <section className="py-32 px-4 md:px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -982,7 +983,7 @@ export default function SecurityCompliancePage() {
                                         {item.step}
                                     </div>
                                 </div>
-                                <div className="flex-1 bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-lg transition-all">
+                                <div className="flex-1 bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 hover:border-cyan-300 hover:shadow-lg transition-all">
                                     <div className="flex items-center gap-4 mb-4">
                                         <span className="text-4xl text-blue-600">{item.icon}</span>
                                         <h3 className="text-2xl font-bold text-gray-900">{item.title}</h3>
@@ -996,7 +997,7 @@ export default function SecurityCompliancePage() {
             </section>
 
             {/* Comparison Section - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -1009,7 +1010,7 @@ export default function SecurityCompliancePage() {
 
                     <div className="grid lg:grid-cols-2 gap-8">
                         {/* Standard */}
-                        <div className="bg-red-50 border-2 border-red-300 rounded-3xl p-8">
+                        <div className="bg-red-50 border-2 border-red-300 rounded-3xl p-4 md:p-8">
                             <div className="flex items-center gap-3 mb-8">
                                 <div className="w-12 h-12 rounded-xl bg-red-200 flex items-center justify-center">
                                     <span className="text-2xl">⚠️</span>
@@ -1036,7 +1037,7 @@ export default function SecurityCompliancePage() {
                         </div>
 
                         {/* Enterprise */}
-                        <div className="bg-green-50 border-2 border-green-300 rounded-3xl p-8">
+                        <div className="bg-green-50 border-2 border-green-300 rounded-3xl p-4 md:p-8">
                             <div className="flex items-center gap-3 mb-8">
                                 <div className="w-12 h-12 rounded-xl bg-green-200 flex items-center justify-center">
                                     <span className="text-2xl">🛡️</span>
@@ -1078,7 +1079,7 @@ export default function SecurityCompliancePage() {
             </section>
 
             {/* Technical Specifications - DARK THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
+            <section className="py-32 px-4 md:px-6 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -1113,7 +1114,7 @@ export default function SecurityCompliancePage() {
                         <h3 className="text-2xl font-bold text-white text-center mb-8">Security Certifications</h3>
                         <div className="flex flex-wrap justify-center gap-6">
                             {["SOC 2 Type II", "ISO 27001", "GDPR", "HIPAA", "PCI DSS", "CCPA", "FedRAMP", "CSA STAR"].map((cert, i) => (
-                                <div key={i} className="px-6 py-3 bg-white/5 border border-white/10 rounded-xl text-sm font-semibold text-gray-300 hover:bg-white/10 transition-all">
+                                <div key={i} className="px-4 md:px-6 py-3 bg-white/5 border border-white/10 rounded-xl text-sm font-semibold text-gray-300 hover:bg-white/10 transition-all">
                                     {cert}
                                 </div>
                             ))}
@@ -1123,7 +1124,7 @@ export default function SecurityCompliancePage() {
             </section>
 
             {/* Testimonials Section - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -1155,7 +1156,7 @@ export default function SecurityCompliancePage() {
                                 avatar: <FaUser/>
                             }
                         ].map((testimonial, i) => (
-                            <div key={i} className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all">
+                            <div key={i} className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 hover:border-cyan-300 hover:shadow-xl transition-all">
                                 <div className="text-6xl opacity-30 text-cyan-600">"</div>
                                 <div>
                                     {
@@ -1185,7 +1186,7 @@ export default function SecurityCompliancePage() {
             <FAQSection items={securityFAQ} />
 
             {/* Final CTA Section - DARK THEME */}
-            <section className="py-32 px-6 relative overflow-hidden bg-gradient-to-br from-cyan-600 to-blue-600">
+            <section className="py-32 px-4 md:px-6 relative overflow-hidden bg-gradient-to-br from-cyan-600 to-blue-600">
                 <div className="absolute inset-0 opacity-10"
                     style={{
                         backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
@@ -1234,7 +1235,7 @@ export default function SecurityCompliancePage() {
             </section>
 
             {/* Footer */}
-            <footer className="py-12 px-6 border-t border-gray-200 bg-white">
+            <footer className="py-12 px-4 md:px-6 border-t border-gray-200 bg-white">
                 <div className="max-w-7xl mx-auto text-center text-gray-500 text-sm">
                     <p>© 2024 ibigdata. All rights reserved.</p>
                 </div>

@@ -9,10 +9,10 @@ import DarkHeroSection from "@/components/common/sections/DarkHeroSection";
 import { useNavigate } from "@/hooks/useNavigate";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { BiSolidCustomize } from "react-icons/bi";
+import { BiBuildingHouse, BiSolidCustomize } from "react-icons/bi";
 import { BsPlugFill, BsTools } from "react-icons/bs";
 import { CgNotes } from "react-icons/cg";
-import { FaLock, FaUser } from "react-icons/fa6";
+import { FaBagShopping, FaLock, FaRegHospital, FaUser } from "react-icons/fa6";
 import { GiArcheryTarget, GiCrossedChains, GiRobotAntennas } from "react-icons/gi";
 import { GoWorkflow } from "react-icons/go";
 import { IoIosFlash } from "react-icons/io";
@@ -55,7 +55,7 @@ export default function CustomizableWorkflowsPage() {
     const industries = [
         {
             name: "Healthcare",
-            icon: "🏥",
+            icon: <FaRegHospital />,
             color: "from-green-500 to-emerald-500",
             workflows: [
                 { name: "Patient Intake", automation: "85%", time: "75% faster" },
@@ -66,7 +66,7 @@ export default function CustomizableWorkflowsPage() {
         },
         {
             name: "Real Estate",
-            icon: "🏢",
+            icon: <BiBuildingHouse />,
             color: "from-blue-500 to-indigo-500",
             workflows: [
                 { name: "Lead Nurturing", automation: "88%", time: "70% faster" },
@@ -77,7 +77,7 @@ export default function CustomizableWorkflowsPage() {
         },
         {
             name: "Finance",
-            icon: "💼",
+            icon: <FaBagShopping />,
             color: "from-purple-500 to-pink-500",
             workflows: [
                 { name: "Loan Processing", automation: "90%", time: "85% faster" },
@@ -88,7 +88,7 @@ export default function CustomizableWorkflowsPage() {
         },
         {
             name: "Manufacturing",
-            icon: "🏭",
+            icon: <LiaIndustrySolid />,
             color: "from-orange-500 to-red-500",
             workflows: [
                 { name: "Supply Chain", automation: "83%", time: "70% faster" },
@@ -140,7 +140,7 @@ export default function CustomizableWorkflowsPage() {
                             key={i}
                             className={`
         bg-white/5 text-4xl max-md:text-2xl backdrop-blur-sm
-        border border-white/10 rounded-2xl p-6
+        border border-white/10 rounded-2xl p-4 md:p-6
         hover:bg-white/10 transition-all group
         ${i === 2 ? "max-md:col-span-2" : ""}
       `}
@@ -155,7 +155,7 @@ export default function CustomizableWorkflowsPage() {
 
 
             {/* Industry-Specific Solutions - LIGHT THEME */}
-            <section className="py-32 px-6 relative bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+            <section className="py-32 px-4 md:px-6 relative bg-gradient-to-br from-cyan-50 via-white to-blue-50">
                 <div className="max-w-7xl mx-auto relative">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -173,28 +173,28 @@ export default function CustomizableWorkflowsPage() {
                             <button
                                 key={i}
                                 onClick={() => setSelectedIndustry(i)}
-                                className={`px-6 py-3 rounded-xl font-semibold transition-all ${selectedIndustry === i
+                                className={`px-4 md:px-6 py-3 flex rounded-xl font-semibold transition-all ${selectedIndustry === i
                                     ? 'bg-cyan-600 text-white shadow-lg'
-                                    : 'bg-white border-2 border-gray-200 text-gray-600 hover:border-cyan-300 hover:shadow-md'
+                                    : 'bg-white border-2 border-gray-200  hover:border-cyan-300 hover:shadow-md'
                                     }`}
                             >
-                                <span className="mr-2">{industry.icon}</span>
+                                <span className={`mr-2 text-xl md:text-2xl ${selectedIndustry === i ? "text-white " : "text-cyan-600"}`}>{industry.icon}</span>
                                 {industry.name}
                             </button>
                         ))}
                     </div>
 
                     {/* Selected Industry Showcase */}
-                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-2xl">
+                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 shadow-2xl">
                         <div className="grid lg:grid-cols-2 gap-12 items-center">
                             <div>
                                 <div className="flex items-center gap-4 mb-6">
-                                    <div className="text-6xl">{industries[selectedIndustry].icon}</div>
+                                    <div className="text-5xl md:text-6xl text-cyan-600">{industries[selectedIndustry].icon}</div>
                                     <div>
-                                        <h3 className="text-3xl font-black text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                                        <h3 className="text-2xl md:text-3xl font-black text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                                             {industries[selectedIndustry].name}
                                         </h3>
-                                        <p className="text-gray-600">Industry-specific workflows</p>
+                                        <p className="text-sm md:text-xl text-gray-600">Industry-specific workflows</p>
                                     </div>
                                 </div>
 
@@ -224,7 +224,7 @@ export default function CustomizableWorkflowsPage() {
 
                             <div className="relative">
                                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-3xl blur-3xl" />
-                                <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 text-white">
+                                <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-4 md:p-6 text-white">
                                     <div className="flex items-center gap-3 mb-6">
                                         <div className="w-3 h-3 rounded-full bg-red-500" />
                                         <div className="w-3 h-3 rounded-full bg-yellow-500" />
@@ -254,10 +254,10 @@ export default function CustomizableWorkflowsPage() {
 
 
             {/* Customization Features - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Unlimited <span className="text-cyan-600">Customization</span>
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -290,7 +290,7 @@ export default function CustomizableWorkflowsPage() {
                                     description: "Our AI analyzes your business patterns and suggests workflow optimizations automatically."
                                 }
                             ].map((feature, i) => (
-                                <div key={i} className="flex gap-4 p-6 bg-white border-2 border-cyan-100 rounded-2xl hover:border-cyan-300 hover:shadow-lg transition-all group">
+                                <div key={i} className="flex gap-4 p-4 md:p-6 bg-white border-2 border-cyan-100 rounded-2xl hover:border-cyan-300 hover:shadow-lg transition-all group">
                                     <div className="text-4xl group-hover:scale-110 transition-transform text-cyan-500">{feature.icon}</div>
                                     <div>
                                         <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
@@ -302,7 +302,7 @@ export default function CustomizableWorkflowsPage() {
 
                         <div className="relative">
                             <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-purple-400/20 rounded-3xl blur-3xl" />
-                            <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-2xl">
+                            <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 shadow-2xl">
                                 <h3 className="text-2xl font-black text-gray-900 mb-6">Customization Levels</h3>
                                 <div className="space-y-4">
                                     {[
@@ -328,10 +328,10 @@ export default function CustomizableWorkflowsPage() {
 
 
             {/* Real-World Examples Section - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+            <section className="py-32 px-4 md:px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Customization <span className="text-cyan-600">Examples</span>
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -390,10 +390,10 @@ export default function CustomizableWorkflowsPage() {
 
 
             {/* Features Deep Dive Section - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Customization <span className="text-cyan-600">Features</span>
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -449,10 +449,10 @@ export default function CustomizableWorkflowsPage() {
 
 
             {/* Before vs After Comparison - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+            <section className="py-32 px-4 md:px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Generic vs <span className="text-cyan-600">Customized</span>
                         </h2>
                         <p className="text-xl text-gray-600">
@@ -462,7 +462,7 @@ export default function CustomizableWorkflowsPage() {
 
                     <div className="grid lg:grid-cols-2 gap-8">
                         {/* Generic Workflows */}
-                        <div className="bg-red-50 border-2 border-red-300 rounded-3xl p-8">
+                        <div className="bg-red-50 border-2 border-red-300 rounded-3xl p-4 md:p-8">
                             <div className="flex items-center gap-3 mb-8">
                                 <div className="w-12 h-12 rounded-xl bg-red-200 flex items-center justify-center">
                                     <span className="text-2xl">❌</span>
@@ -491,7 +491,7 @@ export default function CustomizableWorkflowsPage() {
                         </div>
 
                         {/* Customized Workflows */}
-                        <div className="bg-green-50 border-2 border-green-300 rounded-3xl p-8">
+                        <div className="bg-green-50 border-2 border-green-300 rounded-3xl p-4 md:p-8">
                             <div className="flex items-center gap-3 mb-8">
                                 <div className="w-12 h-12 rounded-xl bg-green-200 flex items-center justify-center">
                                     <span className="text-2xl">✓</span>
@@ -537,10 +537,10 @@ export default function CustomizableWorkflowsPage() {
 
 
             {/* Technical Specifications - DARK THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
+            <section className="py-32 px-4 md:px-6 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Customization <span className="text-cyan-400">Specs</span>
                         </h2>
                         <p className="text-xl text-gray-300">
@@ -559,7 +559,7 @@ export default function CustomizableWorkflowsPage() {
                             { label: "Custom Code", value: "Full Access", icon: <RiComputerLine /> },
                             { label: "White Label", value: "Available", icon: <TbLabelImportantFilled /> }
                         ].map((spec, i) => (
-                            <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all group">
+                            <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-4 md:p-6 hover:bg-white/10 transition-all group">
                                 <div className="text-4xl mb-4 group-hover:scale-110 text-cyan-400 transition-transform">{spec.icon}</div>
                                 <div className="text-sm text-gray-400 mb-2">{spec.label}</div>
                                 <div className="text-3xl font-black text-cyan-400">{spec.value}</div>
@@ -570,7 +570,7 @@ export default function CustomizableWorkflowsPage() {
                     {/* Certifications */}
                     <div className="mt-16 flex flex-wrap justify-center gap-6">
                         {["SOC 2 Type II", "ISO 27001", "GDPR", "HIPAA", "PCI DSS", "Custom Compliance"].map((cert, i) => (
-                            <div key={i} className="px-6 py-3 bg-white/5 border border-white/10 rounded-xl text-sm font-semibold text-gray-300">
+                            <div key={i} className="px-4 md:px-6 py-3 bg-white/5 border border-white/10 rounded-xl text-sm font-semibold text-gray-300">
                                 {cert}
                             </div>
                         ))}
@@ -581,10 +581,10 @@ export default function CustomizableWorkflowsPage() {
 
 
             {/* Testimonials Section - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Customization <span className="text-cyan-600">Success</span> Stories
                         </h2>
                     </div>
@@ -613,7 +613,7 @@ export default function CustomizableWorkflowsPage() {
                                 avatar: <FaUser/>
                             }
                         ].map((testimonial, i) => (
-                            <div key={i} className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all">
+                            <div key={i} className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 hover:border-cyan-300 hover:shadow-xl transition-all">
                                 <div className="text-6xl mb-6 opacity-30 text-cyan-600">"</div>
                                 <p className="text-gray-700 text-lg mb-8 leading-relaxed">{testimonial.quote}</p>
                                 <div className="flex items-center gap-4">
@@ -640,7 +640,7 @@ export default function CustomizableWorkflowsPage() {
 
 
             {/* Final CTA Section - DARK THEME */}
-            <section className="py-32 px-6 relative overflow-hidden bg-gradient-to-br from-cyan-600 to-blue-600">
+            <section className="py-32 px-4 md:px-6 relative overflow-hidden bg-gradient-to-br from-cyan-600 to-blue-600">
                 <div className="absolute inset-0 opacity-10"
                     style={{
                         backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
@@ -649,7 +649,7 @@ export default function CustomizableWorkflowsPage() {
                 />
 
                 <div className="max-w-4xl mx-auto relative text-center">
-                    <h2 className="text-5xl lg:text-7xl font-black text-white mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                    <h2 className="text-3xl md:text-5xl lg:text-7xl font-black text-white mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         Build Your Perfect Workflows
                     </h2>
                     <p className="text-2xl text-cyan-50 mb-12">
@@ -691,7 +691,7 @@ export default function CustomizableWorkflowsPage() {
 
 
             {/* Footer */}
-            <footer className="py-12 px-6 border-t border-gray-200 bg-white">
+            <footer className="py-12 px-4 md:px-6 border-t border-gray-200 bg-white">
                 <div className="max-w-7xl mx-auto text-center text-gray-500 text-sm">
                     <p>© 2024 ibigdata. All rights reserved.</p>
                 </div>

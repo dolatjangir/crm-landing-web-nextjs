@@ -34,7 +34,7 @@ export default function IntegrationsFinder({
   return (
     <>
       {/* Search & Filter Bar */}
-      <section className="py-16 px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+      <section className="py-16 px-4 md:px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
             
@@ -71,7 +71,7 @@ export default function IntegrationsFinder({
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-6 py-3 rounded-xl font-semibold transition-all ${
+                  className={`px-4 md:px-6 py-3 rounded-xl font-semibold transition-all ${
                     selectedCategory === category
                       ? "bg-cyan-600 text-white shadow-lg"
                       : "bg-white border-2 border-gray-200 text-gray-600 hover:border-cyan-300 hover:shadow-md"
@@ -99,7 +99,7 @@ export default function IntegrationsFinder({
       </section>
 
       {/* Grid */}
-      <section className="py-12 px-6 bg-white">
+      <section className="py-12 px-4 md:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           {filteredIntegrations.length ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

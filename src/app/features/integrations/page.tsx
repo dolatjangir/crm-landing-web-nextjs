@@ -253,7 +253,7 @@ import { VscGraph } from "react-icons/vsc";
                                 key={i}
                                 className={`
             bg-white/5 text-4xl max-md:text-2xl backdrop-blur-sm
-            border border-white/10 rounded-2xl p-6
+            border border-white/10 rounded-2xl p-4 md:p-6
             hover:bg-white/10 transition-all group
             ${i === 2 ? "max-md:col-span-2" : ""}
         `}
@@ -266,10 +266,10 @@ import { VscGraph } from "react-icons/vsc";
                     </div>
 {/* 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animation-delay-1500">
-                        <button className="px-8 py-4 bg-white text-cyan-600 rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105">
+                        <button className="px-4 md:px-8 py-4 bg-white text-cyan-600 rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105">
                             Browse Integrations
                         </button>
-                        <button className="px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-xl font-black text-lg hover:bg-white/20 transition-all">
+                        <button className="px-4 md:px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-xl font-black text-lg hover:bg-white/20 transition-all">
                             Schedule Demo
                         </button>
                     </div> */}
@@ -293,10 +293,10 @@ import { VscGraph } from "react-icons/vsc";
 
 
                 {/* Popular Integrations Showcase - LIGHT THEME */}
-                <section className="py-32 px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+                <section className="py-32 px-4 md:px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-20">
-                            <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                            <h2 className="text-4xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                                 Most Popular <span className="text-cyan-600">Connections</span>
                             </h2>
                             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -330,7 +330,7 @@ import { VscGraph } from "react-icons/vsc";
                                         description: "Track integration performance and ROI with built-in analytics dashboards"
                                     }
                                 ].map((benefit, i) => (
-                                    <div key={i} className="flex gap-4 p-6 bg-white border-2 border-cyan-100 rounded-2xl hover:border-cyan-300 hover:shadow-lg transition-all group">
+                                    <div key={i} className="flex gap-4 p-4 md:p-6 bg-white border-2 border-cyan-100 rounded-2xl hover:border-cyan-300 hover:shadow-lg transition-all group">
                                         <div className="text-4xl group-hover:scale-110 text-cyan-600 transition-transform">{benefit.icon}</div>
                                         <div>
                                             <h3 className="text-xl font-bold text-gray-900 mb-2">{benefit.title}</h3>
@@ -342,7 +342,7 @@ import { VscGraph } from "react-icons/vsc";
 
                             <div className="relative">
                                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-3xl blur-3xl" />
-                                <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-2xl">
+                                <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 shadow-2xl">
                                     <h3 className="text-2xl font-black text-gray-900 mb-6">Integration Success Metrics</h3>
                                     
                                     <div className="space-y-6">
@@ -375,7 +375,7 @@ import { VscGraph } from "react-icons/vsc";
 
 
                 {/* Use Cases by Role - LIGHT THEME */}
-                <section className="py-32 px-6 bg-white">
+                <section className="py-32 px-4 md:px-6 bg-white">
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-20">
                             <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -417,7 +417,7 @@ import { VscGraph } from "react-icons/vsc";
                                     benefits: ["Automate reporting", "Sync financial data", "Track inventory", "Manage projects"]
                                 }
                             ].map((team, i) => (
-                                <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all group">
+                                <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 hover:border-cyan-300 hover:shadow-xl transition-all group">
                                     <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${team.color} flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform`}>
                                         {team.icon}
                                     </div>
@@ -451,7 +451,7 @@ import { VscGraph } from "react-icons/vsc";
 
 
                 {/* Trust & Social Proof - LIGHT THEME */}
-                <section className="py-32 px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+                <section className="py-32 px-4 md:px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-20">
                             <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -465,7 +465,7 @@ import { VscGraph } from "react-icons/vsc";
                         {/* Company Logos */}
                         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-20">
                             {["Shopify", "Slack", "Google", "Microsoft", "Salesforce", "HubSpot"].map((company, i) => (
-                                <div key={i} className="bg-white border-2 border-gray-200 rounded-xl p-6 flex items-center justify-center hover:border-cyan-300 hover:shadow-lg transition-all group">
+                                <div key={i} className="bg-white border-2 border-gray-200 rounded-xl p-4 md:p-6 flex items-center justify-center hover:border-cyan-300 hover:shadow-lg transition-all group">
                                     <div className="text-2xl font-bold text-gray-400 group-hover:text-cyan-600 transition-colors">
                                         {company}
                                     </div>
@@ -501,7 +501,7 @@ import { VscGraph } from "react-icons/vsc";
                                     rating: 5
                                 }
                             ].map((testimonial, i) => (
-                                <div key={i} className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all">
+                                <div key={i} className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 hover:border-cyan-300 hover:shadow-xl transition-all">
                                     <div className="flex mb-4">
                                         {[...Array(testimonial.rating)].map((_, i) => (
                                             <span key={i} className="text-yellow-400 text-xl">⭐</span>
@@ -527,7 +527,7 @@ import { VscGraph } from "react-icons/vsc";
 
 
                 {/* Support & Documentation - LIGHT THEME */}
-                <section className="py-32 px-6 bg-white">
+                <section className="py-32 px-4 md:px-6 bg-white">
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-20">
                             <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -569,7 +569,7 @@ import { VscGraph } from "react-icons/vsc";
                                     href: "/best-practices"
                                 }
                             ].map((resource, i) => (
-                                <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all group">
+                                <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 hover:border-cyan-300 hover:shadow-xl transition-all group">
                                     <div className="text-5xl mb-6 group-hover:scale-110 text-cyan-600 transition-transform">{resource.icon}</div>
                                     <h3 className="text-xl font-bold text-gray-900 mb-4">{resource.title}</h3>
                                     <p className="text-gray-600 mb-6">{resource.description}</p>
@@ -590,7 +590,7 @@ import { VscGraph } from "react-icons/vsc";
 
 
                 {/* Final CTA Section - DARK THEME */}
-                <section className="py-32 px-6 relative overflow-hidden bg-gradient-to-br from-cyan-600 to-blue-600">
+                <section className="py-32 px-4 md:px-6 relative overflow-hidden bg-gradient-to-br from-cyan-600 to-blue-600">
                     <div className="absolute inset-0 opacity-10"
                         style={{
                             backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
@@ -643,7 +643,7 @@ import { VscGraph } from "react-icons/vsc";
 
 
                 {/* Footer */}
-                <footer className="py-12 px-6 border-t border-gray-200 bg-white">
+                <footer className="py-12 px-4 md:px-6 border-t border-gray-200 bg-white">
                     <div className="max-w-7xl mx-auto text-center text-gray-500 text-sm">
                         <p>© 2024 ibigdata. All rights reserved.</p>
                     </div>
@@ -707,7 +707,7 @@ import { VscGraph } from "react-icons/vsc";
         return (
             <div 
                 onClick={onClick}
-                className="bg-white border-2 border-gray-200 rounded-2xl p-6 hover:border-cyan-300 hover:shadow-xl transition-all group cursor-pointer"
+                className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-6 hover:border-cyan-300 hover:shadow-xl transition-all group cursor-pointer"
             >
                 {/* Header with logos and status */}
                 <div className="flex items-start justify-between mb-4">
@@ -760,16 +760,16 @@ import { VscGraph } from "react-icons/vsc";
             <div className="fixed pt-20 inset-0 bg-black/90  bg-opacity-50 flex items-center justify-center p-4 z-50">
                 <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
                     {/* Modal Header */}
-                    <div className="p-8 border-b border-gray-200">
+                    <div className="p-4 md:p-8 border-b border-gray-200">
                         <div className="flex items-start justify-between">
                             <div className="flex items-center gap-4">
                                 <div className="flex items-center gap-3">
-                                    <div className="text-4xl">{integration.logo}</div>
-                                    <div className="text-3xl">{integration.partnerLogo}</div>
+                                    <div className="text-xl md:text-4xl">{integration.logo}</div>
+                                    <div className="text-xl md:text-3xl">{integration.partnerLogo}</div>
                                 </div>
                                 <div>
-                                    <h2 className="text-3xl font-black text-gray-900">{integration.name}</h2>
-                                    <p className="text-lg text-gray-600">{integration.headline}</p>
+                                    <h2 className="text-cl md:text-3xl font-black text-gray-900">{integration.name}</h2>
+                                    <p className="hidden text-lg text-gray-600">{integration.headline}</p>
                                 </div>
                             </div>
                             <button 
@@ -782,9 +782,9 @@ import { VscGraph } from "react-icons/vsc";
                     </div>
 
                     {/* Modal Content */}
-                    <div className="p-8">
+                    <div className="p-4 md:p-8">
                         {/* Status and Rating */}
-                        <div className="flex items-center gap-6 mb-8">
+                        <div className="flex flex-col md:flex-row items-center gap-6 mb-8">
                             <span className={`px-4 py-2 rounded-full text-sm font-semibold ${integration.statusColor}`}>
                                 {integration.status}
                             </span>
@@ -838,7 +838,7 @@ import { VscGraph } from "react-icons/vsc";
                             <h3 className="text-xl font-black text-gray-900 mb-4">Use Cases by Role</h3>
                             <div className="grid md:grid-cols-3 gap-6">
                                 {integration.useCases.map((useCase: any, i: number) => (
-                                    <div key={i} className="bg-gray-50 rounded-xl p-6">
+                                    <div key={i} className="bg-gray-50 rounded-xl p-4 md:p-6">
                                         <div className="font-bold text-gray-900 mb-2">{useCase.role}</div>
                                         <div className="text-sm text-gray-600">{useCase.benefit}</div>
                                     </div>
@@ -849,7 +849,7 @@ import { VscGraph } from "react-icons/vsc";
                         {/* Requirements */}
                         <div className="mb-8">
                             <h3 className="text-xl font-black text-gray-900 mb-4">Requirements</h3>
-                            <div className="bg-gray-50 rounded-xl p-6">
+                            <div className="bg-gray-50 rounded-xl p-4 md:p-6">
                                 <div className="grid md:grid-cols-2 gap-6">
                                     <div>
                                         <div className="font-semibold text-gray-900 mb-2">Plan Requirements</div>
@@ -865,10 +865,10 @@ import { VscGraph } from "react-icons/vsc";
 
                         {/* Actions */}
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <button className="px-8 py-4 bg-cyan-600 text-white rounded-xl font-black text-lg hover:bg-cyan-700 transition-all">
+                            <button className="px-4 md:px-8 py-4 bg-cyan-600 text-white rounded-xl font-black text-lg hover:bg-cyan-700 transition-all">
                                 Connect {integration.name}
                             </button>
-                            <button className="px-8 py-4 bg-white border-2 border-gray-200 text-gray-700 rounded-xl font-semibold hover:border-gray-300 transition-all">
+                            <button className="px-4 md:px-8 py-4 bg-white border-2 border-gray-200 text-gray-700 rounded-xl font-semibold hover:border-gray-300 transition-all">
                                 View Documentation
                             </button>
                         </div>
