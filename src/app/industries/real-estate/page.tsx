@@ -6,6 +6,7 @@ import { MiniCTA } from "@/components/common/cta/MiniCTA";
 import { FAQSection } from "@/components/common/FAQ/FAQSection";
 import Scrollindicator from "@/components/common/indicators/Scrollindicator";
 import DarkHeroSection from "@/components/common/sections/DarkHeroSection";
+import SuccessStoryForAll from "@/components/common/successStory/SuccessStoryForAll";
 import { useNavigate } from "@/hooks/useNavigate";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -131,7 +132,7 @@ export default function RealEstateCRMLanding() {
                     <span className="text-sm font-medium text-cyan-400">Real Estate CRM</span>
                 </div>
 
-                <h1 className="text-6xl lg:text-8xl max-md:text-4xl font-black mb-6 animate-slide-up text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                <h1 className="text-4xl md:text-6xl lg:text-8xl max-md:text-4xl font-black mb-6 animate-slide-up text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                     Get Your Instant
                     <br />
                     <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
@@ -154,7 +155,7 @@ export default function RealEstateCRMLanding() {
                             key={i}
                             className={`
         bg-white/5 text-4xl max-md:text-2xl backdrop-blur-sm
-        border border-white/10 rounded-2xl p-6
+        border border-white/10 rounded-2xl p-4 md:p-6
         hover:bg-white/10 transition-all group
         ${i === 2 ? "max-md:col-span-2" : ""}
       `}
@@ -182,13 +183,13 @@ export default function RealEstateCRMLanding() {
 
 
             {/* Lead Magnet Section with Form - LIGHT THEME */}
-            <section id="lead-form" className="py-32 px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+            <section id="lead-form" className="py-16 md:py-32 px-4 md:px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
                 <div className="max-w-6xl mx-auto">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         {/* Left Column - Value Proposition */}
                         <div className="space-y-8">
                             <div className="space-y-4">
-                                <h2 className="text-4xl lg:text-5xl font-black text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                                     Unlock Exclusive Real Estate Opportunities
                                 </h2>
                                 <p className="text-xl text-gray-600 leading-relaxed">
@@ -230,9 +231,9 @@ export default function RealEstateCRMLanding() {
                             </div>
 
                             {/* Trust Indicators */}
-                            <div className="bg-white border-2 border-gray-200 rounded-xl p-6">
+                            <div className="bg-white border-2 border-gray-200 rounded-xl p-4 md:p-6">
                                 <h4 className="font-bold text-gray-900 mb-4">Why Thousands Choose Us</h4>
-                                <div className="grid grid-cols-2 gap-4 text-sm">
+                                <div className="grid md:grid-cols-2 gap-4 text-sm">
                                     <div className="flex items-center gap-2">
                                         <span className="text-green-600">✓</span>
                                         <span className="text-gray-600">No commitment required</span>
@@ -254,7 +255,7 @@ export default function RealEstateCRMLanding() {
                         </div>
 
                         {/* Right Column - Lead Form */}
-                        <div className="bg-white rounded-2xl p-8 shadow-2xl border border-gray-200">
+                        <div className="bg-white rounded-2xl p-4 md:p-8 shadow-2xl border border-gray-200">
                             <div className="text-center mb-6">
                                 <h3 className="text-2xl font-black text-gray-900 mb-2">Get Started Now</h3>
                                 <p className="text-gray-600">Takes 2 minutes • Instant access</p>
@@ -358,10 +359,10 @@ export default function RealEstateCRMLanding() {
 
 
             {/* Value & Benefits - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Why Top Agents Choose
                             <br />
                             <span className="text-cyan-600">ibigdata</span>
@@ -415,7 +416,7 @@ export default function RealEstateCRMLanding() {
                     </div>
 
                     {/* CRM Automation Highlight */}
-                    <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-3xl p-12 text-center">
+                    <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-3xl p-4 md:p-12 text-center">
                         <h3 className="text-3xl font-black text-gray-900 mb-6">CRM Automation That Works 24/7</h3>
                         <div className="grid md:grid-cols-3 gap-8">
                             <div className="text-center">
@@ -441,10 +442,10 @@ export default function RealEstateCRMLanding() {
 
 
             {/* Lead Magnets Section - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Everything You Need to
                             <br />
                             <span className="text-cyan-600">Succeed in Real Estate</span>
@@ -456,8 +457,8 @@ export default function RealEstateCRMLanding() {
 
                     <div className="grid md:grid-cols-3 gap-8">
                         {/* Lead Magnet 1: Home Valuation */}
-                        <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all group">
-                            <div className="text-5xl mb-6 group-hover:scale-110 transition-transform text-cyan-500"><IoHome /></div>
+                        <div className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 hover:border-cyan-300 hover:shadow-xl transition-all group">
+                            <div className="text-3xl md:text-5xl mb-6 group-hover:scale-110 transition-transform text-cyan-500"><IoHome /></div>
                             <h3 className="text-xl font-black text-gray-900 mb-4">Instant Home Valuation</h3>
                             <p className="text-gray-600 mb-6">
                                 Get your home's true market value in minutes with our AI-powered analysis that considers recent sales, market trends, and property features.
@@ -485,8 +486,8 @@ export default function RealEstateCRMLanding() {
                         </div>
 
                         {/* Lead Magnet 2: Exclusive Listings */}
-                        <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all group">
-                            <div className="text-5xl mb-6 group-hover:scale-110 transition-transform text-cyan-500"><IoKeyOutline /></div>
+                        <div className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 hover:border-cyan-300 hover:shadow-xl transition-all group">
+                            <div className="text-3xl md:text-5xl mb-6 group-hover:scale-110 transition-transform text-cyan-500"><IoKeyOutline /></div>
                             <h3 className="text-xl font-black text-gray-900 mb-4">Exclusive Listings</h3>
                             <p className="text-gray-600 mb-6">
                                 Access off-market properties and exclusive listings before they go public. Get first dibs on the best deals in your area.
@@ -514,8 +515,8 @@ export default function RealEstateCRMLanding() {
                         </div>
 
                         {/* Lead Magnet 3: Market Insights */}
-                        <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all group">
-                            <div className="text-5xl mb-6 group-hover:scale-110 transition-transform text-cyan-500"><FaRegChartBar /></div>
+                        <div className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 hover:border-cyan-300 hover:shadow-xl transition-all group">
+                            <div className="text-3xl md:text-5xl mb-6 group-hover:scale-110 transition-transform text-cyan-500"><FaRegChartBar /></div>
                             <h3 className="text-xl font-black text-gray-900 mb-4">Market Insights</h3>
                             <p className="text-gray-600 mb-6">
                                 Receive personalized market reports, price trends, and investment opportunities tailored to your specific interests and areas.
@@ -544,7 +545,7 @@ export default function RealEstateCRMLanding() {
                     </div>
 
                     {/* CRM Automation Benefits */}
-                    <div className="mt-16 bg-white border-2 border-gray-200 rounded-2xl p-8">
+                    <div className="mt-16 bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8">
                         <h3 className="text-2xl font-black text-gray-900 mb-6 text-center">Plus: CRM Automation That Works 24/7</h3>
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
@@ -589,63 +590,32 @@ export default function RealEstateCRMLanding() {
 
 
             {/* Testimonials Section - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Success Stories from
                             <br />
                             <span className="text-cyan-600">Real Estate Professionals</span>
                         </h2>
                     </div>
 
-                    <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-3xl p-12 shadow-xl">
-                        <div className="text-center mb-8">
-                            <div className="text-8xl mb-6 opacity-30 text-start pl-40">"</div>
-                            <blockquote className="text-2xl text-gray-700 italic leading-relaxed mb-8">
-                                {testimonials[activeTestimonial].quote}
-                            </blockquote>
-                        </div>
-
-                        <div className="flex items-center justify-center gap-8">
-                            <div className="flex items-center gap-4">
-                                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-3xl">
-                                    {testimonials[activeTestimonial].avatar}
-                                </div>
-                                <div>
-                                    <div className="font-bold text-gray-900 text-lg">{testimonials[activeTestimonial].author}</div>
-                                    <div className="text-gray-600">{testimonials[activeTestimonial].role}</div>
-                                    <div className="text-cyan-600 font-semibold">{testimonials[activeTestimonial].company}</div>
-                                </div>
-                            </div>
-                            <div className="text-right">
-                                <div className="text-2xl font-bold text-green-600">{testimonials[activeTestimonial].metric}</div>
-                            </div>
-                        </div>
-
-                        {/* Testimonial Indicators */}
-                        <div className="flex justify-center gap-2 mt-8">
-                            {testimonials.map((_, i) => (
-                                <button
-                                    key={i}
-                                    onClick={() => setActiveTestimonial(i)}
-                                    className={`w-3 h-3 rounded-full transition-all ${
-                                        i === activeTestimonial ? 'bg-cyan-500' : 'bg-gray-300'
-                                    }`}
-                                />
-                            ))}
-                        </div>
-                    </div>
+                       <SuccessStoryForAll
+                             testimonials={testimonials}
+                            activeIndex={activeTestimonial}
+                             onChange={setActiveTestimonial}
+                             quoteIcon={<div className="">"</div>}
+                            />
                 </div>
             </section>
 
 
 
             {/* Market Insights - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-green-50 via-white to-blue-50">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-gradient-to-br from-green-50 via-white to-blue-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Market Intelligence That
                             <br />
                             <span className="text-cyan-600">Gives You the Edge</span>
@@ -682,8 +652,8 @@ export default function RealEstateCRMLanding() {
                                 icon: <GiRobotAntennas />
                             }
                         ].map((stat, i) => (
-                            <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-cyan-300 hover:shadow-xl transition-all group">
-                                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform flex items-center justify-center text-cyan-500">{stat.icon}</div>
+                            <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 text-center hover:border-cyan-300 hover:shadow-xl transition-all group">
+                                <div className="text-3xl md:text-5xl mb-4 group-hover:scale-110 transition-transform flex items-center justify-center text-cyan-500">{stat.icon}</div>
                                 <div className="text-3xl font-black text-gray-900 mb-2">{stat.value}</div>
                                 <div className="text-lg font-semibold text-gray-700 mb-2">{stat.label}</div>
                                 <div className="text-sm text-gray-600">{stat.detail}</div>
@@ -692,7 +662,7 @@ export default function RealEstateCRMLanding() {
                     </div>
 
                     {/* Market Trends */}
-                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-xl">
+                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 shadow-xl">
                         <h3 className="text-3xl font-black text-gray-900 mb-8 text-center">Real-Time Market Insights</h3>
                         <div className="grid md:grid-cols-3 gap-8">
                             <div className="text-center">
@@ -715,16 +685,16 @@ export default function RealEstateCRMLanding() {
 
 
             {/* Final Lead Capture Form - LIGHT THEME */}
-            <section id="final-form" className="py-32 px-6 bg-white">
+            <section id="final-form" className="py-16 md:py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-12">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Start Closing More Deals Today
                         </h2>
                         <p className="text-xl text-gray-600 mb-8">Join thousands of successful real estate professionals</p>
                     </div>
 
-                    <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-3xl p-8 shadow-xl border border-gray-200">
+                    <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-3xl p-4 md:p-8 shadow-xl border border-gray-200">
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div className="grid md:grid-cols-3 gap-6">
                                 <div>
@@ -806,7 +776,7 @@ export default function RealEstateCRMLanding() {
 
                             {/* Trust Indicators */}
                             <div className="bg-white border-2 border-gray-200 rounded-lg p-4">
-                                <div className="flex items-center justify-between">
+                                <div className="flex flex-col md:flex-row gap-3 md:gap-0 md:items-center justify-between">
                                     <div className="flex items-center gap-3">
                                         <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
                                             <span className="text-green-600 text-xs">✓</span>
@@ -862,7 +832,7 @@ export default function RealEstateCRMLanding() {
                             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                                 <a 
                                     href="tel:+1-555-123-4567" 
-                                    className="flex items-center gap-2 px-6 py-3 bg-white border-2 border-cyan-200 text-cyan-600 rounded-lg font-semibold hover:border-cyan-300 transition-all"
+                                    className="flex items-center gap-2 px-4 md:px-6 py-3 bg-white border-2 border-cyan-200 text-cyan-600 rounded-lg font-semibold hover:border-cyan-300 transition-all"
                                 >
                                     <span>📞</span>
                                     <span>Call (555) 123-4567</span>
@@ -884,7 +854,7 @@ export default function RealEstateCRMLanding() {
 
 
             {/* Final CTA Section - DARK THEME */}
-            <section className="py-32 px-6 relative overflow-hidden bg-gradient-to-br from-cyan-600 to-blue-600">
+            <section className="py-16 md:py-32 px-4 md:px-6 relative overflow-hidden bg-gradient-to-br from-cyan-600 to-blue-600">
                 <div className="absolute inset-0 opacity-10"
                     style={{
                         backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
@@ -893,7 +863,7 @@ export default function RealEstateCRMLanding() {
                 />
 
                 <div className="max-w-4xl mx-auto relative text-center">
-                    <h2 className="text-5xl lg:text-7xl font-black text-white mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                    <h2 className="text-3xl md:text-5xl lg:text-7xl font-black text-white mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         Transform Your Real Estate Business
                     </h2>
                     <p className="text-2xl text-cyan-50 mb-12">
@@ -938,9 +908,9 @@ export default function RealEstateCRMLanding() {
 
 
             {/* Footer */}
-            <footer className="py-12 px-6 border-t border-gray-200 bg-white">
+            <footer className="py-12 px-4 md:px-6 border-t border-gray-200 bg-white">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid md:grid-cols-4 gap-8 mb-8">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
                         <div>
                             <h4 className="font-bold text-gray-900 mb-4">For Agents</h4>
                             <div className="space-y-2 text-sm text-gray-600">

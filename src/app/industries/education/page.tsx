@@ -6,6 +6,7 @@ import { MiniCTA } from "@/components/common/cta/MiniCTA";
 import { FAQSection } from "@/components/common/FAQ/FAQSection";
 import Scrollindicator from "@/components/common/indicators/Scrollindicator";
 import DarkHeroSection from "@/components/common/sections/DarkHeroSection";
+import SuccessStoryForAll from "@/components/common/successStory/SuccessStoryForAll";
 import { useNavigate } from "@/hooks/useNavigate";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -239,7 +240,7 @@ export default function EducationCRMLanding() {
                             key={i}
                             className={`
         bg-white/5 text-4xl max-md:text-2xl backdrop-blur-sm
-        border border-white/10 rounded-2xl p-6
+        border border-white/10 rounded-2xl p-4 md:p-6
         hover:bg-white/10 transition-all group
         ${i === 2 ? "max-md:col-span-2" : ""}
       `}
@@ -254,11 +255,11 @@ export default function EducationCRMLanding() {
                 {/* <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animation-delay-1500">
                     <button 
                         onClick={() => document.getElementById('education-form')?.scrollIntoView({ behavior: 'smooth' })}
-                        className="px-8 py-4 bg-white text-blue-600 rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105"
+                        className="px-4 md:px-4 md:px-8 py-4 bg-white text-blue-600 rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105"
                     >
                         Start Learning Today
                     </button>
-                    <button className="px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-xl font-black text-lg hover:bg-white/20 transition-all">
+                    <button className="px-4 md:px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-xl font-black text-lg hover:bg-white/20 transition-all">
                         Download Syllabus
                     </button>
                 </div> */}
@@ -267,10 +268,10 @@ export default function EducationCRMLanding() {
 
 
             {/* Learning Outcomes & Benefits - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-gradient-to-br from-blue-50 via-white to-purple-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Learn Skills That
                             <br />
                             <span className="text-cyan-600">Get You Hired</span>
@@ -318,10 +319,10 @@ export default function EducationCRMLanding() {
 
 
             {/* Program Details - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Choose Your Path to
                             <br />
                             <span className="text-cyan-600">Success</span>
@@ -333,14 +334,14 @@ export default function EducationCRMLanding() {
 
                     <div className="space-y-8">
                         {programs.map((program, i) => (
-                            <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all group">
+                            <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 hover:border-cyan-300 hover:shadow-xl transition-all group">
                                 <div className="grid lg:grid-cols-3 gap-8 items-center">
-                                    <div className="flex items-center gap-4">
+                                    <div className="flex flex-row items-center gap-4">
                                         <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${program.color} flex items-center justify-center text-2xl text-white`}>
                                             {i === 0 ? <FaRegChartBar /> : i === 1 ? <FaChartLine /> : i === 2 ? <IoStatsChartSharp /> : <IoIosColorPalette />}
                                         </div>
                                         <div>
-                                            <h3 className="text-2xl font-black text-gray-900">{program.name}</h3>
+                                            <h3 className="text-md md:text-2xl font-black text-gray-900">{program.name}</h3>
                                             <div className="text-gray-600">{program.level} • {program.duration}</div>
                                         </div>
                                     </div>
@@ -365,7 +366,7 @@ export default function EducationCRMLanding() {
                                                 setFormData(prev => ({ ...prev, programType: program.name.toLowerCase().replace(/\s+/g, '-') }));
                                                 document.getElementById('education-form')?.scrollIntoView({ behavior: 'smooth' });
                                             }}
-                                            className="mt-4 px-6 py-2 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-700 transition-all"
+                                            className="mt-4 px-4 md:px-6 py-2 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-700 transition-all"
                                         >
                                             Learn More
                                         </button>
@@ -380,10 +381,10 @@ export default function EducationCRMLanding() {
 
 
             {/* Student Success Stories - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Student Success
                             <br />
                             <span className="text-cyan-600">Stories</span>
@@ -393,53 +394,22 @@ export default function EducationCRMLanding() {
                         </p>
                     </div>
 
-                    <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-3xl p-12 shadow-xl">
-                        <div className="text-center mb-8">
-                            <div className="text-8xl mb-6 opacity-30">"</div>
-                            <blockquote className="text-2xl text-gray-700 italic leading-relaxed mb-8">
-                                "{testimonials[activeTestimonial].quote}"
-                            </blockquote>
-                        </div>
-
-                        <div className="flex items-center justify-center gap-8">
-                            <div className="flex items-center gap-4">
-                                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-3xl">
-                                    {testimonials[activeTestimonial].avatar}
-                                </div>
-                                <div>
-                                    <div className="font-bold text-gray-900 text-lg">{testimonials[activeTestimonial].author}</div>
-                                    <div className="text-gray-600">{testimonials[activeTestimonial].role}</div>
-                                    <div className="text-cyan-600 font-semibold">{testimonials[activeTestimonial].company}</div>
-                                </div>
-                            </div>
-                            <div className="text-right">
-                                <div className="text-2xl font-bold text-green-600">{testimonials[activeTestimonial].metric}</div>
-                            </div>
-                        </div>
-
-                        {/* Testimonial Indicators */}
-                        <div className="flex justify-center gap-2 mt-8">
-                            {testimonials.map((_, i) => (
-                                <button
-                                    key={i}
-                                    onClick={() => setActiveTestimonial(i)}
-                                    className={`w-3 h-3 rounded-full transition-all ${
-                                        i === activeTestimonial ? 'bg-cyan-500' : 'bg-gray-300'
-                                    }`}
-                                />
-                            ))}
-                        </div>
-                    </div>
+                     <SuccessStoryForAll
+                                       testimonials={testimonials}
+                                       activeIndex={activeTestimonial}
+                                       onChange={setActiveTestimonial}
+                                       quoteIcon={<div className="">"</div>}
+                                       />
                 </div>
             </section>
 
 
 
             {/* Instructor & Curriculum - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-green-50 via-white to-blue-50">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-gradient-to-br from-green-50 via-white to-blue-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Learn from Industry
                             <br />
                             <span className="text-cyan-600">Experts</span>
@@ -452,7 +422,7 @@ export default function EducationCRMLanding() {
                     <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
                         {/* Left Column - Instructor Bios */}
                         <div className="space-y-8">
-                            <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 shadow-sm">
+                            <div className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 shadow-sm">
                                 <div className="flex items-center gap-6 mb-6">
                                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-3xl">
                                         <FaUserCog />
@@ -469,7 +439,7 @@ export default function EducationCRMLanding() {
                                 </p>
                             </div>
 
-                            <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 shadow-sm">
+                            <div className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 shadow-sm">
                                 <div className="flex items-center gap-6 mb-6">
                                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-3xl">
                                         <FaUser/>
@@ -490,7 +460,7 @@ export default function EducationCRMLanding() {
                         {/* Right Column - Curriculum Highlights */}
                         <div className="relative">
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-3xl blur-3xl" />
-                            <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-2xl">
+                            <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 shadow-2xl">
                                 <h3 className="text-2xl font-black text-gray-900 mb-6">Curriculum Highlights</h3>
                                 <div className="space-y-4">
                                     <div className="flex items-center justify-between p-4 bg-blue-50 rounded-xl">
@@ -511,7 +481,7 @@ export default function EducationCRMLanding() {
                     </div>
 
                     {/* Curriculum Details */}
-                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-xl">
+                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 shadow-xl">
                         <h3 className="text-3xl font-black text-gray-900 mb-8 text-center">Sample Curriculum</h3>
                         <div className="grid md:grid-cols-2 gap-8">
                             <div>
@@ -540,10 +510,10 @@ export default function EducationCRMLanding() {
 
 
             {/* CRM Integration Benefits - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             CRM-Powered Learning That
                             <br />
                             <span className="text-cyan-600">Adapts to You</span>
@@ -628,16 +598,16 @@ export default function EducationCRMLanding() {
 
 
             {/* Education Form Section - LIGHT THEME */}
-            <section id="education-form" className="py-32 px-6 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+            <section id="education-form" className="py-16 md:py-32 px-4 md:px-6 bg-gradient-to-br from-blue-50 via-white to-purple-50">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-12">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Start Your Learning Journey Today
                         </h2>
                         <p className="text-xl text-gray-600 mb-8">Apply now • No commitment required • Start learning in 2 weeks</p>
                     </div>
 
-                    <div className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-200">
+                    <div className="bg-white rounded-3xl p-4 md:p-8 shadow-2xl border border-gray-200">
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div className="grid md:grid-cols-3 gap-6">
                                 <div>
@@ -807,13 +777,13 @@ export default function EducationCRMLanding() {
                         <div className="text-center mt-12">
                             <p className="text-gray-600 mb-4">Need help choosing the right program? We're here for you.</p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                                <button className="flex items-center gap-2 px-6 py-3 bg-white border-2 border-blue-200 text-blue-600 rounded-lg font-semibold hover:border-blue-300 transition-all">
+                                <button className="flex items-center gap-2 px-4 md:px-6 py-3 bg-white border-2 border-blue-200 text-blue-600 rounded-lg font-semibold hover:border-blue-300 transition-all">
                                     <span>💬</span>
                                     <span>Program Advisor</span>
                                 </button>
                                 <a 
                                     href="tel:+1-555-123-4567" 
-                                    className="flex items-center gap-2 px-6 py-3 bg-white border-2 border-blue-200 text-blue-600 rounded-lg font-semibold hover:border-blue-300 transition-all"
+                                    className="flex items-center gap-2 px-4 md:px-6 py-3 bg-white border-2 border-blue-200 text-blue-600 rounded-lg font-semibold hover:border-blue-300 transition-all"
                                 >
                                     <span>📞</span>
                                     <span>Call Admissions</span>
@@ -835,7 +805,7 @@ export default function EducationCRMLanding() {
 
 
             {/* Final CTA Section - DARK THEME */}
-            <section className="py-32 px-6 relative overflow-hidden bg-gradient-to-br from-blue-600 to-purple-600">
+            <section className="py-16 md:py-32 px-4 md:px-6 relative overflow-hidden bg-gradient-to-br from-blue-600 to-purple-600">
                 <div className="absolute inset-0 opacity-10"
                     style={{
                         backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
@@ -844,7 +814,7 @@ export default function EducationCRMLanding() {
                 />
 
                 <div className="max-w-4xl mx-auto relative text-center">
-                    <h2 className="text-5xl lg:text-7xl font-black text-white mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                    <h2 className="text-3xl md:text-5xl lg:text-7xl font-black text-white mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         Transform Your Career Today
                     </h2>
                     <p className="text-2xl text-blue-50 mb-12">
@@ -889,7 +859,7 @@ export default function EducationCRMLanding() {
 
 
             {/* Footer */}
-            <footer className="py-12 px-6 border-t border-gray-200 bg-white">
+            <footer className="py-12 px-4 md:px-6 border-t border-gray-200 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid md:grid-cols-4 gap-8 mb-8">
                         <div>

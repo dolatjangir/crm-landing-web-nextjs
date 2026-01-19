@@ -145,7 +145,7 @@ export default function FinanceLandingPage() {
                     <span className="text-sm font-medium text-cyan-400">Fast Approval • No Hidden Fees</span>
                 </div>
 
-                <h1 className="text-6xl lg:text-8xl max-md:text-4xl font-black mb-6 animate-slide-up text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                <h1 className="text-4xl md:text-6xl lg:text-8xl max-md:text-4xl font-black mb-6 animate-slide-up text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                     Get Pre-Approved
                     <br />
                     <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
@@ -168,7 +168,7 @@ export default function FinanceLandingPage() {
                             key={i}
                             className={`
         bg-white/5 text-4xl max-md:text-2xl backdrop-blur-sm
-        border border-white/10 rounded-2xl p-6
+        border border-white/10 rounded-2xl p-4 md:p-6
         hover:bg-white/10 transition-all group
         ${i === 2 ? "max-md:col-span-2" : ""}
       `}
@@ -196,14 +196,14 @@ export default function FinanceLandingPage() {
 
 
             {/* Problem → Solution Section - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-red-50 via-white to-orange-50">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-gradient-to-br from-red-50 via-white to-orange-50">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-4xl lg:text-5xl font-black mb-8 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                    <h2 className= "text-3xl md:text-4xl lg:text-5xl font-black mb-8 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         Tired of Financial Frustration?
                     </h2>
                     
                     <div className="space-y-8 text-left">
-                        <div className="bg-white border-l-4 border-red-500 p-6 rounded-r-xl shadow-sm">
+                        <div className="bg-white border-l-4 border-red-500 p-4 md:p-6 rounded-r-xl shadow-sm">
                             <p className="text-lg text-gray-700 mb-2">
                                 <strong>"I'm paying way too much interest on my loans."</strong>
                             </p>
@@ -212,7 +212,7 @@ export default function FinanceLandingPage() {
                             </p>
                         </div>
 
-                        <div className="bg-white border-l-4 border-orange-500 p-6 rounded-r-xl shadow-sm">
+                        <div className="bg-white border-l-4 border-orange-500 p-4 md:p-6 rounded-r-xl shadow-sm">
                             <p className="text-lg text-gray-700 mb-2">
                                 <strong>"The approval process takes forever and requires tons of paperwork."</strong>
                             </p>
@@ -221,7 +221,7 @@ export default function FinanceLandingPage() {
                             </p>
                         </div>
 
-                        <div className="bg-white border-l-4 border-yellow-500 p-6 rounded-r-xl shadow-sm">
+                        <div className="bg-white border-l-4 border-yellow-500 p-4 md:p-6 rounded-r-xl shadow-sm">
                             <p className="text-lg text-gray-700 mb-2">
                                 <strong>"I can't find competitive rates that actually save me money."</strong>
                             </p>
@@ -230,7 +230,7 @@ export default function FinanceLandingPage() {
                             </p>
                         </div>
 
-                        <div className="bg-white border-l-4 border-blue-500 p-6 rounded-r-xl shadow-sm">
+                        <div className="bg-white border-l-4 border-blue-500 p-4 md:p-6 rounded-r-xl shadow-sm">
                             <p className="text-lg text-gray-700 mb-2">
                                 <strong>"I'm confused by all the financial options and don't know what's best for me."</strong>
                             </p>
@@ -240,7 +240,7 @@ export default function FinanceLandingPage() {
                         </div>
                     </div>
 
-                    <div className="mt-12 p-8 bg-gradient-to-r from-green-100 to-blue-100 rounded-2xl">
+                    <div className="mt-12 p-4 md:p-8 bg-gradient-to-r from-green-100 to-blue-100 rounded-2xl">
                         <p className="text-xl font-bold text-gray-900 mb-4">
                             The average person loses $3,200 annually to high interest rates and hidden fees.
                         </p>
@@ -254,10 +254,10 @@ export default function FinanceLandingPage() {
 
 
             {/* Value Proposition - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Finance That Actually
                             <br />
                             <span className="text-cyan-600">Works for You</span>
@@ -337,10 +337,10 @@ export default function FinanceLandingPage() {
 
 
             {/* Trust & Credibility - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-gradient-to-br from-gray-50 via-white to-blue-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Trusted by Thousands of
                             <br />
                             <span className="text-cyan-600">Satisfied Customers</span>
@@ -352,7 +352,7 @@ export default function FinanceLandingPage() {
 
                     <div className="grid lg:grid-cols-3 gap-8 mb-16">
                         {testimonials.map((testimonial, i) => (
-                            <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all">
+                            <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 hover:border-cyan-300 hover:shadow-xl transition-all">
                                 <div className="flex items-center gap-4 mb-6">
                                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-2xl">
                                         {testimonial.avatar}
@@ -374,7 +374,7 @@ export default function FinanceLandingPage() {
                     </div>
 
                     {/* Trust Indicators */}
-                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 text-center">
+                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 text-center">
                         <h3 className="text-2xl font-black text-gray-900 mb-8">Trusted & Secure</h3>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                             <div>
@@ -405,16 +405,16 @@ export default function FinanceLandingPage() {
 
 
             {/* Finance Form Section - LIGHT THEME */}
-            <section id="finance-form" className="py-32 px-6 bg-white">
+            <section id="finance-form" className="py-16 md:py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-12">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Take Control of Your Finances Today
                         </h2>
                         <p className="text-xl text-gray-600 mb-8">Start saving money in minutes • No commitment required</p>
                     </div>
 
-                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-xl">
+                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 shadow-xl">
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div className="grid md:grid-cols-3 gap-6">
                                 <div>
@@ -508,7 +508,7 @@ export default function FinanceLandingPage() {
 
                             {/* Trust Indicators */}
                             <div className="bg-cyan-50 rounded-lg p-4">
-                                <div className="flex items-center justify-between">
+                                <div className="flex flex-col md:flex-row gap-3 md:gap-0 md:items-center justify-between">
                                     <div className="flex items-center gap-3">
                                         <div className="w-5 h-5 rounded-full bg-cyan-100 flex items-center justify-center">
                                             <span className="text-cyan-600 text-xs">✓</span>
@@ -564,7 +564,7 @@ export default function FinanceLandingPage() {
                             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                                 <a 
                                     href="tel:+1-555-123-4567" 
-                                    className="flex items-center gap-2 px-6 py-3 bg-white border-2 border-green-200 text-cyan-600 rounded-lg font-semibold hover:border-green-300 transition-all"
+                                    className="flex items-center gap-2 px-4 md:px-6 py-3 bg-white border-2 border-green-200 text-cyan-600 rounded-lg font-semibold hover:border-green-300 transition-all"
                                 >
                                     <span>📞</span>
                                     <span>Call (555) 123-4567</span>
@@ -586,7 +586,7 @@ export default function FinanceLandingPage() {
 
 
             {/* Final CTA Section - DARK THEME */}
-            <section className="py-32 px-6 relative overflow-hidden bg-gradient-to-br from-cyan-500 to-blue-600">
+            <section className="py-16 md:py-32 px-4 md:px-6 relative overflow-hidden bg-gradient-to-br from-cyan-500 to-blue-600">
                 <div className="absolute inset-0 opacity-10"
                     style={{
                         backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
@@ -595,7 +595,7 @@ export default function FinanceLandingPage() {
                 />
 
                 <div className="max-w-4xl mx-auto relative text-center">
-                    <h2 className="text-5xl lg:text-7xl font-black text-white mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                    <h2 className="text-3xl md:text-5xl lg:text-7xl font-black text-white mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         Take Control of Your Finances Today
                     </h2>
                     <p className="text-2xl text-green-50 mb-12">
@@ -640,9 +640,9 @@ export default function FinanceLandingPage() {
 
 
             {/* Footer */}
-            <footer className="py-12 px-6 border-t border-gray-200 bg-white">
+            <footer className="py-12 px-4 md:px-6 border-t border-gray-200 bg-white">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid md:grid-cols-4 gap-8 mb-8">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
                         <div>
                             <h4 className="font-bold text-gray-900 mb-4">For Individuals</h4>
                             <div className="space-y-2 text-sm text-gray-600">

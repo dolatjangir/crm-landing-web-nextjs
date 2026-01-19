@@ -78,7 +78,7 @@ export default function Footer() {
               ))}
             </div>
           </div>
-                <div></div>
+                <div className="grid grid-cols-2 gap-8 md:col-span-2">
           {/* Navigation */}
           <div>
             <h4 className="text-gray-900 font-bold text-sm uppercase tracking-wider mb-4">
@@ -123,7 +123,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div></div>
         </div>
 
         {/* Newsletter Section */}

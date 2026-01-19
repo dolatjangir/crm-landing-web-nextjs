@@ -15,6 +15,7 @@ import { IoCart, IoHome } from "react-icons/io5";
 import { IoIosFlash, IoIosRocket } from "react-icons/io";
 import { GiCrossedChains, GiFamilyHouse, GiRobotAntennas } from "react-icons/gi";
 import { BsTools } from "react-icons/bs";
+import SuccessStoryForAll from "@/components/common/successStory/SuccessStoryForAll";
 
 export default function AboutPage() {
     const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -413,7 +414,7 @@ export default function AboutPage() {
                             Real stories from businesses growing with ibigdata
                         </p>
                     </div>
-
+{/* 
                     <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-3xl py-12 px-4 shadow-xl">
                         <div className="text-center mb-8">
                             <div className="text-8xl mb-6 text-start md:ml-40 opacity-20">"</div>
@@ -434,11 +435,11 @@ export default function AboutPage() {
                                 </div>
                             </div>
                             <div className="md:text-right">
-                                <div className="text-2xl font-bold text-green-600">{testimonials[activeTestimonial].metric}</div>
+                                <div className="text-2xl font-bold  text-green-600">{testimonials[activeTestimonial].metric}</div>
                             </div>
                         </div>
 
-                        {/* Testimonial Indicators */}
+                        
                         <div className="flex justify-center gap-2 mt-8">
                             {testimonials.map((_, i) => (
                                 <button
@@ -450,7 +451,13 @@ export default function AboutPage() {
                                 />
                             ))}
                         </div>
-                    </div>
+                    </div> */}
+                    <SuccessStoryForAll
+                    testimonials={testimonials}
+                    activeIndex={activeTestimonial}
+                    onChange={setActiveTestimonial}
+                    quoteIcon={<div className="">"</div>}
+                    />
                 </div>
             </section>
 

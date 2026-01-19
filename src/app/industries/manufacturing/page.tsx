@@ -6,6 +6,7 @@ import { MiniCTA } from "@/components/common/cta/MiniCTA";
 import { FAQSection } from "@/components/common/FAQ/FAQSection";
 import Scrollindicator from "@/components/common/indicators/Scrollindicator";
 import DarkHeroSection from "@/components/common/sections/DarkHeroSection";
+import SuccessStoryForAll from "@/components/common/successStory/SuccessStoryForAll";
 import { useNavigate } from "@/hooks/useNavigate";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -204,7 +205,7 @@ export default function ManufacturingCRMLanding() {
                             key={i}
                             className={`
                                 bg-white/5 text-4xl max-md:text-2xl backdrop-blur-sm
-                                border border-white/10 rounded-2xl p-6
+                                border border-white/10 rounded-2xl p-4 md:p-6
                                 hover:bg-white/10 transition-all group
                                 ${i === 2 ? "max-md:col-span-2" : ""}
                             `}
@@ -219,25 +220,25 @@ export default function ManufacturingCRMLanding() {
                 {/* <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animation-delay-1500">
                     <button 
                         onClick={() => document.getElementById('manufacturing-form')?.scrollIntoView({ behavior: 'smooth' })}
-                        className="px-8 py-4 bg-white text-orange-600 rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105"
+                        className="px-4 md:px-8 py-4 bg-white text-orange-600 rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105"
                     >
                         Request Demo Now
                     </button>
-                    <button className="px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-xl font-black text-lg hover:bg-white/20 transition-all">
+                    <button className="px-4 md:px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-xl font-black text-lg hover:bg-white/20 transition-all">
                         See It in Action
                     </button>
                 </div> */}
             </DarkHeroSection>
 
             {/* Manufacturing Challenges → Solutions - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-orange-50 via-white to-red-50">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-gradient-to-br from-orange-50 via-white to-red-50">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-4xl lg:text-5xl font-black mb-8 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-8 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         Manufacturing Pain Points We Solve
                     </h2>
                     
                     <div className="space-y-8 text-left">
-                        <div className="bg-white border-l-4 border-orange-500 p-6 rounded-r-xl shadow-sm">
+                        <div className="bg-white border-l-4 border-orange-500 p-4 md:p-6 rounded-r-xl shadow-sm">
                             <p className="text-lg text-gray-700 mb-2">
                                 <strong>"Our sales team has no visibility into production schedules or inventory levels."</strong>
                             </p>
@@ -246,7 +247,7 @@ export default function ManufacturingCRMLanding() {
                             </p>
                         </div>
 
-                        <div className="bg-white border-l-4 border-red-500 p-6 rounded-r-xl shadow-sm">
+                        <div className="bg-white border-l-4 border-red-500 p-4 md:p-6 rounded-r-xl shadow-sm">
                             <p className="text-lg text-gray-700 mb-2">
                                 <strong>"Custom orders get lost in translation between sales and production."</strong>
                             </p>
@@ -255,7 +256,7 @@ export default function ManufacturingCRMLanding() {
                             </p>
                         </div>
 
-                        <div className="bg-white border-l-4 border-purple-500 p-6 rounded-r-xl shadow-sm">
+                        <div className="bg-white border-l-4 border-purple-500 p-4 md:p-6 rounded-r-xl shadow-sm">
                             <p className="text-lg text-gray-700 mb-2">
                                 <strong>"We can't track orders through our 6-month production cycle."</strong>
                             </p>
@@ -264,7 +265,7 @@ export default function ManufacturingCRMLanding() {
                             </p>
                         </div>
 
-                        <div className="bg-white border-l-4 border-blue-500 p-6 rounded-r-xl shadow-sm">
+                        <div className="bg-white border-l-4 border-blue-500 p-4 md:p-6 rounded-r-xl shadow-sm">
                             <p className="text-lg text-gray-700 mb-2">
                                 <strong>"Our CRM doesn't connect to ERP/MES systems - everything is manual."</strong>
                             </p>
@@ -274,7 +275,7 @@ export default function ManufacturingCRMLanding() {
                         </div>
                     </div>
 
-                    <div className="mt-12 p-8 bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl">
+                    <div className="mt-12 p-4 md:p-8 bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl">
                         <p className="text-xl font-bold text-gray-900 mb-4">
                             The average manufacturer loses 23% of revenue to operational inefficiencies.
                         </p>
@@ -286,10 +287,10 @@ export default function ManufacturingCRMLanding() {
             </section>
 
             {/* Manufacturing Features as Benefits - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Built for Manufacturing,
                             <br />
                             <span className="text-cyan-600">Not Retrofitted</span>
@@ -306,9 +307,9 @@ export default function ManufacturingCRMLanding() {
                     </div>
 
                     {/* Manufacturing Workflow Visualization */}
-                    <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-12 text-center">
+                    <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-4 md:p-12 text-center">
                         <h3 className="text-3xl font-black text-gray-900 mb-6">Your Complete Manufacturing Workflow</h3>
-                        <div className="grid md:grid-cols-5 gap-8">
+                        <div className="grid grid-cols-1 min-sm:grid-cols-2 min-md:grid-cols-5 gap-8">
                             <div className="text-center">
                                 <div className="text-4xl mb-4 flex justify-center items-center text-cyan-500"><CgNotes /></div>
                                 <div className="text-2xl font-bold text-gray-900 mb-2">Lead</div>
@@ -340,10 +341,10 @@ export default function ManufacturingCRMLanding() {
             </section>
 
             {/* Success Stories - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Manufacturing Success
                             <br />
                             <span className="text-cyan-600">Stories</span>
@@ -402,10 +403,10 @@ export default function ManufacturingCRMLanding() {
             </section>
 
             {/* Technical Integration - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-green-50 via-white to-blue-50">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-gradient-to-br from-green-50 via-white to-blue-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Seamless Integration with
                             <br />
                             <span className="text-cyan-600">Your Systems</span>
@@ -422,8 +423,8 @@ export default function ManufacturingCRMLanding() {
                             { name: "Microsoft Dynamics", icon: <TfiMicrosoftAlt />, description: "Seamless workflow" },
                             { name: "50+ Systems", icon: <GiCrossedChains />, description: "Full compatibility" }
                         ].map((system, i) => (
-                            <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-cyan-300 hover:shadow-xl transition-all group">
-                                <div className="text-5xl mb-6 group-hover:scale-110 transition-transform  flex items-center justify-center text-cyan-600">{system.icon}</div>
+                            <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 text-center hover:border-cyan-300 hover:shadow-xl transition-all group">
+                                <div className="text-3xl md:text-5xl mb-6 group-hover:scale-110 transition-transform  flex items-center justify-center text-cyan-600">{system.icon}</div>
                                 <div className="text-xl font-bold text-gray-900 mb-2">{system.name}</div>
                                 <div className="text-gray-600">{system.description}</div>
                             </div>
@@ -431,7 +432,7 @@ export default function ManufacturingCRMLanding() {
                     </div>
 
                     {/* Integration Process */}
-                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-xl">
+                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 shadow-xl">
                         <h3 className="text-3xl font-black text-gray-900 mb-8 text-center">Integration Process</h3>
                         <div className="grid md:grid-cols-4 gap-8">
                             <div className="text-center">
@@ -460,58 +461,36 @@ export default function ManufacturingCRMLanding() {
             </section>
 
             {/* Testimonials - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             What Manufacturing
                             <br />
                             <span className="text-cyan-600">Leaders Say</span>
                         </h2>
                     </div>
 
-                    <div className="bg-gradient-to-br from-cyan-50 to-red-50 rounded-3xl p-12 mb-8">
-                        <div className="text-6xl mb-6 text-center">💬</div>
-                        <blockquote className="text-2xl lg:text-3xl font-bold text-gray-900 mb-8 text-center italic">
-                            "{testimonials[activeTestimonial].quote}"
-                        </blockquote>
-                        <div className="flex items-center justify-center gap-4">
-                            <div className="text-4xl bg-cyan-100 p-4 rounded-full">{testimonials[activeTestimonial].avatar}</div>
-                            <div>
-                                <div className="font-bold text-lg text-gray-900">{testimonials[activeTestimonial].author}</div>
-                                <div className="text-gray-600">{testimonials[activeTestimonial].role}, {testimonials[activeTestimonial].company}</div>
-                            </div>
-                        </div>
-                        <div className="mt-6 text-center">
-                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border-2 border-cyan-200">
-                                <div className="text-cyan-500 font-bold">{testimonials[activeTestimonial].metric}</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="flex justify-center gap-2">
-                        {testimonials.map((_, i) => (
-                            <button
-                                key={i}
-                                onClick={() => setActiveTestimonial(i)}
-                                className={`w-3 h-3 rounded-full transition-all ${
-                                    i === activeTestimonial ? 'bg-cyan-500' : 'bg-gray-300'
-                                }`}
-                            />
-                        ))}
-                    </div>
+          
+                           <SuccessStoryForAll
+                                                                                   testimonials={testimonials}
+                                                                                   activeIndex={activeTestimonial}
+                                                                                   onChange={setActiveTestimonial}
+                                                                                   quoteIcon={<div className="text-4xl">💬</div>}
+                                                                                   />
+               
                 </div>
             </section>
 
             {/* CTA Section - DARK THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
                 <div className="max-w-4xl mx-auto text-center">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-8">
                         <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
                         <span className="text-sm font-medium text-cyan-400">Limited Time Offer</span>
                     </div>
 
-                    <h2 className="text-5xl lg:text-6xl font-black mb-6 text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         Ready to Transform Your
                         <br />
                         <span className="bg-gradient-to-r from-cyan-400 via-cyan-500 to-purple-500 bg-clip-text text-transparent">
@@ -527,16 +506,16 @@ export default function ManufacturingCRMLanding() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                         <button 
                             onClick={() => document.getElementById('manufacturing-form')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="px-8 py-4 bg-cyan-500 text-white rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105"
+                            className="px-4 md:px-8 py-4 bg-cyan-500 text-white rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105"
                         >
                             Book Free Consultation
                         </button>
-                        <button className="px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-xl font-black text-lg hover:bg-white/20 transition-all">
+                        <button className="px-4 md:px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-xl font-black text-lg hover:bg-white/20 transition-all">
                             Schedule Demo
                         </button>
                     </div>
 
-                    <div className="flex justify-center gap-8 text-sm text-gray-400">
+                    <div className="flex flex-col md:flex-row justify-center gap-8 text-sm text-gray-400">
                         <div className="flex items-center gap-2">
                             <div className="w-2 h-2 rounded-full bg-cyan-400" />
                             <span>Free Setup Included</span>
@@ -554,10 +533,10 @@ export default function ManufacturingCRMLanding() {
             </section>
 
             {/* Lead Capture Form - LIGHT THEME */}
-            <section id="manufacturing-form" className="py-32 px-6 bg-white">
+            <section id="manufacturing-form" className="py-16 md:py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl lg:text-5xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Get Your Free Manufacturing
                             <br />
                             <span className="text-cyan-600">CRM Assessment</span>
@@ -568,7 +547,7 @@ export default function ManufacturingCRMLanding() {
                         </p>
                     </div>
 
-                    <div className="bg-gradient-to-br from-cyan-50 via-white to-cyan-50 rounded-3xl p-8 lg:p-12 border-2 border-cyan-100">
+                    <div className="bg-gradient-to-br from-cyan-50 via-white to-cyan-50 rounded-3xl p-4 md:p-8 lg:p-12 border-2 border-cyan-100">
                         {showSuccess ? (
                             <div className="text-center py-12">
                                 <div className="text-6xl mb-6">🎉</div>
@@ -576,7 +555,7 @@ export default function ManufacturingCRMLanding() {
                                 <p className="text-xl text-gray-600 mb-6">
                                     Your consultation request has been received. Our manufacturing expert will contact you within 24 hours.
                                 </p>
-                                <div className="bg-white rounded-2xl p-6 border-2 border-green-200">
+                                <div className="bg-white rounded-2xl p-4 md:p-6 border-2 border-green-200">
                                     <div className="text-cyan-600 font-bold mb-2">What happens next:</div>
                                     <ul className="text-left text-gray-700 space-y-2">
                                         <li>• 30-minute discovery call scheduled</li>
@@ -731,10 +710,10 @@ export default function ManufacturingCRMLanding() {
             </section>
 
             {/* FAQ Section - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-gray-50 to-white">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-gradient-to-br from-gray-50 to-white">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Frequently Asked
                             <br />
                             <span className="text-cyan-600">Questions</span>
@@ -749,14 +728,14 @@ export default function ManufacturingCRMLanding() {
             </section>
 
             {/* Final CTA - DARK THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-black via-gray-900 to-purple-900">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-gradient-to-br from-black via-gray-900 to-purple-900">
                 <div className="max-w-4xl mx-auto text-center">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-8">
                         <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
                         <span className="text-sm font-medium text-cyan-400">Last Chance</span>
                     </div>
 
-                    <h2 className="text-5xl lg:text-6xl font-black mb-6 text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         Don't Let Another Day
                         <br />
                         <span className="bg-gradient-to-r from-cyan-400 via-cyan-500 to-purple-500 bg-clip-text text-transparent">
@@ -772,11 +751,11 @@ export default function ManufacturingCRMLanding() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                         <button 
                             onClick={() => document.getElementById('manufacturing-form')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="px-8 py-4 bg-cyan-500 text-white rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105"
+                            className="px-4 md:px-8 py-4 bg-cyan-500 text-white rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105"
                         >
                             Start Your Transformation
                         </button>
-                        <button className="px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-xl font-black text-lg hover:bg-white/20 transition-all">
+                        <button className="px-4 md:px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-xl font-black text-lg hover:bg-white/20 transition-all">
                             Download ROI Calculator
                         </button>
                     </div>

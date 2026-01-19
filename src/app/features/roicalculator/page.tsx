@@ -130,7 +130,7 @@ const calculateROI = () => {
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Input Section */}
-          <div className="bg-white rounded-3xl p-8 shadow-xl">
+          <div className="bg-white rounded-3xl p-4 md:p-8 shadow-xl">
             <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center">
               <DollarSign className="w-6 h-6 mr-2 text-cyan-500" />
               Your Business Metrics
@@ -205,7 +205,7 @@ const calculateROI = () => {
 
               <button
                 onClick={calculateROI}
-                className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-bold hover:shadow-2xl transition-all hover:scale-105 flex items-center justify-center"
+                className="w-full px-4 md:px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-bold hover:shadow-2xl transition-all hover:scale-105 flex items-center justify-center"
               >
                 Calculate ROI
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -216,7 +216,7 @@ const calculateROI = () => {
           {/* Results Section */}
           <div className="space-y-6">
             {!results ? (
-              <div className="bg-white rounded-3xl p-8 shadow-xl flex items-center justify-center min-h-[600px]">
+              <div className="bg-white rounded-3xl p-4 md:p-8 shadow-xl flex items-center justify-center min-h-[600px]">
                 <div className="text-center">
                   <TrendingUp className="w-16 h-16 text-slate-300 mx-auto mb-4" />
                   <p className="text-slate-400 text-lg">
@@ -227,7 +227,7 @@ const calculateROI = () => {
             ) : (
               <>
                 {/* Main ROI Card */}
-                <div className="bg-gradient-to-r from-cyan-500 to-blue-500 rounded-3xl p-8 text-white shadow-xl">
+                <div className="bg-gradient-to-r from-cyan-500 to-blue-500 rounded-3xl p-4 md:p-8 text-white shadow-xl">
                   <h2 className="text-2xl font-bold mb-2">Your Potential ROI</h2>
                   <div className="text-6xl font-bold mb-4">{results.roi}%</div>
                   <p className="text-cyan-50 text-lg">
@@ -236,7 +236,7 @@ const calculateROI = () => {
                 </div>
 
                 {/* Detailed Breakdown */}
-                <div className="bg-white rounded-3xl p-8 shadow-xl">
+                <div className="bg-white rounded-3xl p-4 md:p-8 shadow-xl">
                   <h3 className="text-xl font-bold text-slate-900 mb-6">Breakdown</h3>
 
                   <div className="space-y-4">
@@ -288,7 +288,7 @@ const calculateROI = () => {
                 </div>
 
                 {/* Key Benefits */}
-                <div className="bg-white rounded-3xl p-8 shadow-xl">
+                <div className="bg-white rounded-3xl p-4 md:p-8 shadow-xl">
                   <h3 className="text-xl font-bold text-slate-900 mb-4">Key Benefits</h3>
                   <div className="space-y-3">
                     {[

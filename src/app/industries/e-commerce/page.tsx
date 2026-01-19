@@ -6,6 +6,7 @@ import { MiniCTA } from "@/components/common/cta/MiniCTA";
 import { FAQSection } from "@/components/common/FAQ/FAQSection";
 import Scrollindicator from "@/components/common/indicators/Scrollindicator";
 import DarkHeroSection from "@/components/common/sections/DarkHeroSection";
+import SuccessStoryForAll from "@/components/common/successStory/SuccessStoryForAll";
 import { useNavigate } from "@/hooks/useNavigate";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -205,7 +206,7 @@ export default function EcommerceProductLanding() {
                             key={i}
                             className={`
         bg-white/5 text-4xl max-md:text-2xl backdrop-blur-sm
-        border border-white/10 rounded-2xl p-6
+        border border-white/10 rounded-2xl p-4 md:p-6
         hover:bg-white/10 transition-all group
         ${i === 2 ? "max-md:col-span-2" : ""}
       `}
@@ -220,22 +221,22 @@ export default function EcommerceProductLanding() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animation-delay-1500">
                     <button 
                         onClick={() => document.getElementById('product-form')?.scrollIntoView({ behavior: 'smooth' })}
-                        className="px-8 py-4 bg-white text-orange-600 rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105"
+                        className="px-4 md:px-8 py-4 bg-white text-orange-600 rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105"
                     >
                         Buy Now - 25% Off
                     </button>
-                    <button className="px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-xl font-black text-lg hover:bg-white/20 transition-all">
+                    <button className="px-4 md:px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-xl font-black text-lg hover:bg-white/20 transition-all">
                         Watch Demo
                     </button>
                 </div>
 
                 {/* Urgency Indicator */}
-                <div className="mt-4 flex items-center justify-center gap-4">
+                <div className="mt-4 flex flex-col  md:flex-row items-center justify-center gap-2 md:gap-4">
                     <div className="flex items-center gap-2 text-orange-400">
                         <span className="text-3xl text-red-500"><FcAlarmClock /></span>
                         <span className="text-xl text-cyan-400 font-semibold animate-pulse">Offer ends in: {formatTime(timeLeft)}</span>
                     </div>
-                    <div className="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></div>
+                    <div className="w-2 h-2 hidden md:flex rounded-full bg-orange-400 animate-pulse"></div>
                     <div className="flex items-center gap-2 text-red-500 py-4">
                         <span className="text-3xl text-orange-500 "><MdLocalFireDepartment /></span>
                         <span className="text-xl font-semibold animate-pulse">Only {stockCount} left!</span>
@@ -246,13 +247,13 @@ export default function EcommerceProductLanding() {
 
 
             {/* Product Value & Benefits - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-orange-50 via-white to-pink-50">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-gradient-to-br from-orange-50 via-white to-pink-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
                         {/* Left Column - Product Images */}
                         <div className="relative">
                             <div className="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-pink-400/20 rounded-3xl blur-3xl" />
-                            <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-2xl">
+                            <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 shadow-2xl">
                                 <div className="aspect-square bg-gradient-to-br from-cyan-400 to-pink-500  rounded-2xl flex items-center justify-center text-white text-8xl">
                                     <GiArcheryTarget />
                                 </div>
@@ -307,7 +308,7 @@ export default function EcommerceProductLanding() {
                             </div>
 
                             {/* Value Proposition */}
-                            <div className="bg-white border-2 border-gray-200 rounded-xl p-6">
+                            <div className="bg-white border-2 border-gray-200 rounded-xl p-4 md:p-6">
                                 <h4 className="font-bold text-gray-900 mb-4">Your Investment Includes:</h4>
                                 <div className="grid grid-cols-2 gap-4 text-sm">
                                     <div className="flex items-center gap-2">
@@ -330,7 +331,7 @@ export default function EcommerceProductLanding() {
                             </div>
 
                             {/* Price and CTA */}
-                            <div className="bg-gradient-to-r from-orange-100 to-pink-100 rounded-xl p-6">
+                            <div className="bg-gradient-to-r from-orange-100 to-pink-100 rounded-xl p-4 md:p-6">
                                 <div className="flex items-center justify-between mb-4">
                                     <div>
                                         <span className="text-lg text-gray-600 line-through">$199.99</span>
@@ -344,7 +345,7 @@ export default function EcommerceProductLanding() {
                                 </div>
                                 <button 
                                     onClick={() => document.getElementById('product-form')?.scrollIntoView({ behavior: 'smooth' })}
-                                    className="w-full px-6 py-3 bg-orange-600 text-white rounded-lg font-black text-lg hover:bg-orange-700 hover:shadow-lg transition-all"
+                                    className="w-full px-4 md:px-6 py-3 bg-orange-600 text-white rounded-lg font-black text-lg hover:bg-orange-700 hover:shadow-lg transition-all"
                                 >
                                     Add to Cart - 25% Off
                                 </button>
@@ -357,10 +358,10 @@ export default function EcommerceProductLanding() {
 
 
             {/* Social Proof & Trust - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             What Our Customers
                             <br />
                             <span className="text-cyan-600">Are Saying</span>
@@ -370,53 +371,22 @@ export default function EcommerceProductLanding() {
                         </p>
                     </div>
 
-                    <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-3xl p-12 shadow-xl">
-                        <div className="text-center mb-8">
-                            <div className="text-8xl mb-6 text-start pl-40 opacity-20">"</div>
-                            <blockquote className="text-2xl text-gray-700 italic leading-relaxed mb-8">
-                                "{testimonials[activeTestimonial].quote}"
-                            </blockquote>
-                        </div>
-
-                        <div className="flex items-center justify-center gap-8">
-                            <div className="flex items-center gap-4">
-                                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-3xl">
-                                    {testimonials[activeTestimonial].avatar}
-                                </div>
-                                <div>
-                                    <div className="font-bold text-gray-900 text-lg">{testimonials[activeTestimonial].author}</div>
-                                    <div className="text-gray-600">{testimonials[activeTestimonial].role}</div>
-                                    <div className="text-cyan-600 font-semibold">{testimonials[activeTestimonial].company}</div>
-                                </div>
-                            </div>
-                            <div className="text-right">
-                                <div className="text-2xl font-bold text-green-600">{testimonials[activeTestimonial].metric}</div>
-                            </div>
-                        </div>
-
-                        {/* Testimonial Indicators */}
-                        <div className="flex justify-center gap-2 mt-8">
-                            {testimonials.map((_, i) => (
-                                <button
-                                    key={i}
-                                    onClick={() => setActiveTestimonial(i)}
-                                    className={`w-3 h-3 rounded-full transition-all ${
-                                        i === activeTestimonial ? 'bg-cyan-500' : 'bg-gray-300'
-                                    }`}
-                                />
-                            ))}
-                        </div>
-                    </div>
+                      <SuccessStoryForAll
+                                                            testimonials={testimonials}
+                                                            activeIndex={activeTestimonial}
+                                                            onChange={setActiveTestimonial}
+                                                            quoteIcon={<div className="">"</div>}
+                                                            />
                 </div>
             </section>
 
 
 
             {/* CRM Integration Benefits - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-gradient-to-br from-blue-50 via-white to-purple-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             More Than Just a Purchase
                             <br />
                             <span className="text-cyan-600">Lifetime Value</span>
@@ -473,7 +443,7 @@ export default function EcommerceProductLanding() {
                         {/* Right Column - CRM Features */}
                         <div className="relative">
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-3xl blur-3xl" />
-                            <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-2xl">
+                            <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 shadow-2xl">
                                 <h3 className="text-2xl font-black text-gray-900 mb-6">CRM-Powered Experience</h3>
                                 <div className="space-y-4">
                                     <div className="flex items-center justify-between p-4 bg-blue-50 rounded-xl">
@@ -498,10 +468,10 @@ export default function EcommerceProductLanding() {
 
 
             {/* Objection Handling - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-16 md:py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Your Questions,
                             <br />
                             <span className="text-cyan-600">Answered</span>
@@ -538,7 +508,7 @@ export default function EcommerceProductLanding() {
                                 color: "from-orange-500 to-red-500"
                             }
                         ].map((item, i) => (
-                            <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-cyan-300 hover:shadow-xl transition-all">
+                            <div key={i} className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 hover:border-cyan-300 hover:shadow-xl transition-all">
                                 <div className="flex items-start gap-4">
                                     <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${item.color} flex items-center justify-center text-2xl text-white flex-shrink-0`}>
                                         {item.icon}
@@ -553,14 +523,14 @@ export default function EcommerceProductLanding() {
                     </div>
 
                     <div className="mt-16 text-center">
-                        <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 inline-block">
+                        <div className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 inline-block">
                             <h3 className="text-2xl font-black text-gray-900 mb-4">Still Have Questions?</h3>
                             <p className="text-gray-600 mb-6">Talk to a real human who can help you decide.</p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <button className="px-6 py-3 bg-cyan-600 text-white rounded-xl font-semibold hover:bg-cyan-700 transition-all">
+                                <button className="px-4 md:px-6 py-3 bg-cyan-600 text-white rounded-xl font-semibold hover:bg-cyan-700 transition-all">
                                     Chat with Expert
                                 </button>
-                                <button className="px-6 py-3 bg-white border-2 border-gray-200 text-gray-700 rounded-xl font-semibold hover:border-gray-300 transition-all">
+                                <button className="px-4 md:px-6 py-3 bg-white border-2 border-gray-200 text-gray-700 rounded-xl font-semibold hover:border-gray-300 transition-all">
                                     Email Us
                                 </button>
                             </div>
@@ -572,16 +542,16 @@ export default function EcommerceProductLanding() {
 
 
             {/* Final Product Form - LIGHT THEME */}
-            <section id="product-form" className="py-32 px-6 bg-white">
+            <section id="product-form" className="py-16 md:py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-12">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Secure Your Order Now
                         </h2>
                         <p className="text-xl text-gray-600 mb-8">Complete your purchase in 2 minutes • Secure checkout</p>
                         
                         {/* Urgency Banner */}
-                        <div className="bg-gradient-to-r from-pink-400 to-cyan-500 text-white rounded-2xl p-6 mb-8">
+                        <div className="bg-gradient-to-r from-pink-400 to-cyan-500 text-white rounded-2xl p-4 md:p-6 mb-8">
                             <div className="flex items-center justify-between">
                                 <div className="flex items-center gap-4">
                                     <div className="text-4xl text-red-500"><FcAlarmClock /></div>
@@ -598,7 +568,7 @@ export default function EcommerceProductLanding() {
                         </div>
                     </div>
 
-                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-xl">
+                    <div className="bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 shadow-xl">
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div className="grid md:grid-cols-3 gap-6">
                                 <div>
@@ -690,8 +660,8 @@ export default function EcommerceProductLanding() {
 
                             {/* Trust Indicators */}
                             <div className="bg-orange-50 rounded-lg p-4">
-                                <div className="flex items-center justify-between">
-                                    <div className="flex items-center gap-3">
+                                <div className="flex flex-col md:flex-row gap-2 md:gap-0 md:items-center justify-between">
+                                    <div className="flex  items-center gap-3">
                                         <div className="w-5 h-5 rounded-full bg-orange-100 flex items-center justify-center">
                                             <span className="text-cyan-600 text-xs">✓</span>
                                         </div>
@@ -759,13 +729,13 @@ export default function EcommerceProductLanding() {
                         <div className="text-center mt-12">
                             <p className="text-gray-600 mb-4">Need help with your order? We're here for you.</p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                                <button className="flex items-center gap-2 px-6 py-3 bg-white border-2 border-cyan-200 text-cyan-600 rounded-lg font-semibold hover:border-cyan-300 transition-all">
+                                <button className="flex items-center gap-2 px-4 md:px-6 py-3 bg-white border-2 border-cyan-200 text-cyan-600 rounded-lg font-semibold hover:border-cyan-300 transition-all">
                                     <span>💬</span>
                                     <span>Live Chat</span>
                                 </button>
                                 <a 
                                     href="tel:+1-555-123-4567" 
-                                    className="flex items-center gap-2 px-6 py-3 bg-white border-2 border-cyan-200 text-cyan-600 rounded-lg font-semibold hover:border-cyan-300 transition-all"
+                                    className="flex items-center gap-2 px-4 md:px-6 py-3 bg-white border-2 border-cyan-200 text-cyan-600 rounded-lg font-semibold hover:border-cyan-300 transition-all"
                                 >
                                     <span>📞</span>
                                     <span>Call Support</span>
@@ -787,7 +757,7 @@ export default function EcommerceProductLanding() {
 
 
             {/* Final CTA Section - DARK THEME */}
-            <section className="py-32 px-6 relative overflow-hidden bg-gradient-to-br from-cyan-600 via-cyan-500  to-pink-300">
+            <section className="py-16 md:py-32 px-4 md:px-6 relative overflow-hidden bg-gradient-to-br from-cyan-600 via-cyan-500  to-pink-300">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.25),transparent_40%),radial-gradient(circle_at_80%_40%,rgba(16,185,129,0.45),transparent_45%),radial-gradient(circle_at_50%_80%,rgba(34,197,94,0.5),transparent_50%)]"
                    /><div  className="absolute inset-0 opacity-20 pointer-events-none" style={{
                         backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
@@ -796,7 +766,7 @@ export default function EcommerceProductLanding() {
                 />
 
                 <div className="max-w-4xl mx-auto relative text-center z-10">
-                    <h2 className="text-5xl lg:text-7xl font-black text-white mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                    <h2 className="text-3xl md:text-5xl lg:text-7xl font-black text-white mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         Don't Miss Out on This Deal
                     </h2>
                     <p className="text-2xl text-orange-50 mb-12">
@@ -841,9 +811,9 @@ export default function EcommerceProductLanding() {
 
 
             {/* Footer */}
-            <footer className="py-12 px-6 border-t border-gray-200 bg-white">
+            <footer className="py-12 px-4 md:px-6 border-t border-gray-200 bg-white">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid md:grid-cols-4 gap-8 mb-8">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
                         <div>
                             <h4 className="font-bold text-gray-900 mb-4">Shop</h4>
                             <div className="space-y-2 text-sm text-gray-600">

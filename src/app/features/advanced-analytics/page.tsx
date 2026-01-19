@@ -88,7 +88,7 @@ export default function AdvancedAnalyticsPage() {
                             key={i}
                             className={`
                                 bg-white/5 text-4xl max-md:text-2xl backdrop-blur-sm
-                                border border-white/10 rounded-2xl p-6
+                                border border-white/10 rounded-2xl p-4 md:p-6
                                 hover:bg-white/10 transition-all group
                                 ${i === 2 ? "max-md:col-span-2" : ""}
                             `}
@@ -102,10 +102,10 @@ export default function AdvancedAnalyticsPage() {
             </DarkHeroSection>
 
             {/* What It Does Section - LIGHT THEME */}
-            <section className="py-32 px-6 relative bg-gradient-to-br from-purple-50 via-white to-pink-50">
+            <section className="py-32 px-4 md:px-6 relative bg-gradient-to-br from-purple-50 via-white to-pink-50">
                 <div className="max-w-7xl mx-auto relative">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             What It <span className="text-cyan-600">Does</span>
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -118,7 +118,7 @@ export default function AdvancedAnalyticsPage() {
                         {/* Visual Demo - Analytics Dashboard */}
                         <div className="relative">
                             <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-3xl blur-3xl" />
-                            <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-2xl">
+                            <div className="relative bg-white border-2 border-gray-200 rounded-3xl p-4 md:p-8 shadow-2xl">
                                 {/* Dashboard Header */}
                                 <div className="flex items-center justify-between mb-6">
                                     <h3 className="text-lg font-bold text-gray-900">Real-Time Dashboard</h3>
@@ -215,7 +215,7 @@ export default function AdvancedAnalyticsPage() {
                                     description: "Build unlimited custom reports with drag-and-drop simplicity. Schedule automatic delivery and share insights across teams."
                                 }
                             ].map((feature, i) => (
-                                <div key={i} className="flex gap-4 p-6 bg-white border-2 border-purple-100 rounded-2xl hover:border-purple-300 hover:shadow-lg transition-all group">
+                                <div key={i} className="flex gap-4 p-4 md:p-6 bg-white border-2 border-purple-100 rounded-2xl hover:border-purple-300 hover:shadow-lg transition-all group">
                                     <div className="text-4xl group-hover:scale-110 transition-transform text-purple-500">{feature.icon}</div>
                                     <div>
                                         <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
@@ -229,10 +229,10 @@ export default function AdvancedAnalyticsPage() {
             </section>
 
             {/* Real-World Examples Section - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Real-World <span className="text-cyan-600">Success Stories</span>
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -289,10 +289,10 @@ export default function AdvancedAnalyticsPage() {
             </section>
 
             {/* Analytics Capabilities - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-purple-50 via-white to-pink-50">
+            <section className="py-32 px-4 md:px-6 bg-gradient-to-br from-purple-50 via-white to-pink-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Powerful <span className="text-cyan-600">Capabilities</span>
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -346,10 +346,10 @@ export default function AdvancedAnalyticsPage() {
             </section>
 
             {/* Data Visualization Types - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Visualize <span className="text-cyan-600">Any Metric</span>
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -369,8 +369,8 @@ export default function AdvancedAnalyticsPage() {
                             { type: "Gauges", icon: <FiTarget/>, color: "from-pink-500 to-rose-500" }
                         ].map((viz, i) => (
                             <div key={i} className="group cursor-pointer">
-                                <div className={`bg-gradient-to-br ${viz.color} rounded-2xl p-8 text-center hover:shadow-2xl transition-all hover:scale-105`}>
-                                    <div className="text-5xl mb-3 group-hover:scale-110 flex justify-center items-center text-gray-100 transition-transform">{viz.icon}</div>
+                                <div className={`bg-gradient-to-br ${viz.color} rounded-2xl p-4 md:p-8 text-center hover:shadow-2xl transition-all hover:scale-105`}>
+                                    <div className="text-3xl md:text-5xl mb-3 group-hover:scale-110 flex justify-center items-center text-gray-100 transition-transform">{viz.icon}</div>
                                     <h3 className="text-xl font-bold text-white">{viz.type}</h3>
                                 </div>
                             </div>
@@ -380,10 +380,10 @@ export default function AdvancedAnalyticsPage() {
             </section>
 
             {/* Comparison Section - LIGHT THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-purple-50 via-white to-pink-50">
+            <section className="py-32 px-4 md:px-6 bg-gradient-to-br from-purple-50 via-white to-pink-50">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Before vs <span className="text-cyan-600">After</span>
                         </h2>
                         <p className="text-xl text-gray-600">
@@ -393,7 +393,7 @@ export default function AdvancedAnalyticsPage() {
 
                     <div className="grid lg:grid-cols-2 gap-8">
                         {/* Before */}
-                        <div className="bg-red-50 border-2 border-red-300 rounded-3xl p-8">
+                        <div className="bg-red-50 border-2 border-red-300 rounded-3xl p-4 md:p-8">
                             <div className="flex items-center gap-3 mb-8">
                                 <div className="w-12 h-12 rounded-xl bg-red-200 flex items-center justify-center">
                                     <span className="text-2xl">❌</span>
@@ -420,7 +420,7 @@ export default function AdvancedAnalyticsPage() {
                         </div>
 
                         {/* After */}
-                        <div className="bg-green-50 border-2 border-green-300 rounded-3xl p-8">
+                        <div className="bg-green-50 border-2 border-green-300 rounded-3xl p-4 md:p-8">
                             <div className="flex items-center gap-3 mb-8">
                                 <div className="w-12 h-12 rounded-xl bg-green-200 flex items-center justify-center">
                                     <span className="text-2xl">✓</span>
@@ -462,10 +462,10 @@ export default function AdvancedAnalyticsPage() {
             </section>
 
             {/* Technical Specifications - DARK THEME */}
-            <section className="py-32 px-6 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
+            <section className="py-32 px-4 md:px-6 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             Technical <span className="text-purple-400">Specs</span>
                         </h2>
                         <p className="text-xl text-gray-300">
@@ -484,7 +484,7 @@ export default function AdvancedAnalyticsPage() {
                             { label: "CRM Integrations", value: "50+", icon: <BsPlugFill /> },
                             { label: "Export Formats", value: "10+", icon: <RiExportFill /> }
                         ].map((spec, i) => (
-                            <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all group">
+                            <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-4 md:p-6 hover:bg-white/10 transition-all group">
                                 <div className="text-4xl mb-4 group-hover:scale-110 text-purple-400 transition-transform">{spec.icon}</div>
                                 <div className="text-sm text-gray-200 mb-2">{spec.label}</div>
                                 <div className="text-3xl font-black text-purple-400">{spec.value}</div>
@@ -497,7 +497,7 @@ export default function AdvancedAnalyticsPage() {
                         <h3 className="text-2xl font-bold text-white text-center mb-8">Supported CRM Platforms</h3>
                         <div className="flex flex-wrap justify-center gap-6">
                             {["Salesforce", "HubSpot", "Zoho CRM", "Pipedrive", "Microsoft Dynamics", "Freshsales", "Monday.com", "Copper"].map((crm, i) => (
-                                <div key={i} className="px-6 py-3 bg-white/5 border border-white/10 rounded-xl text-sm font-semibold text-gray-300 hover:bg-white/10 transition-all">
+                                <div key={i} className="px-4 md:px-6 py-3 bg-white/5 border border-white/10 rounded-xl text-sm font-semibold text-gray-300 hover:bg-white/10 transition-all">
                                     {crm}
                                 </div>
                             ))}
@@ -507,10 +507,10 @@ export default function AdvancedAnalyticsPage() {
             </section>
 
             {/* Testimonials Section - LIGHT THEME */}
-            <section className="py-32 px-6 bg-white">
+            <section className="py-32 px-4 md:px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
-                        <h2 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             What <span className="text-cyan-600">Customers</span> Say
                         </h2>
                     </div>
@@ -539,7 +539,7 @@ export default function AdvancedAnalyticsPage() {
                                 avatar: <FaUser />
                             }
                         ].map((testimonial, i) => (
-                            <div key={i} className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-8 hover:border-purple-300 hover:shadow-xl transition-all">
+                            <div key={i} className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-2xl p-4 md:p-8 hover:border-purple-300 hover:shadow-xl transition-all">
                                 <div className="text-6xl  opacity-30 text-cyan-600">"</div>
                                 <div>
                                     {
@@ -569,7 +569,7 @@ export default function AdvancedAnalyticsPage() {
             <FAQSection items={analyticsFAQ} />
 
             {/* Final CTA Section - DARK THEME */}
-            <section className="py-32 px-6 relative overflow-hidden bg-gradient-to-br from-purple-600 to-pink-600">
+            <section className="py-32 px-4 md:px-6 relative overflow-hidden bg-gradient-to-br from-purple-600 to-pink-600">
                 <div className="absolute inset-0 opacity-10"
                     style={{
                         backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
@@ -578,7 +578,7 @@ export default function AdvancedAnalyticsPage() {
                 />
 
                 <div className="max-w-4xl mx-auto relative text-center">
-                    <h2 className="text-5xl lg:text-7xl font-black text-white mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                    <h2 className="text-3xl md:text-5xl lg:text-7xl font-black text-white mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         Start Making Data-Driven Decisions
                     </h2>
                     <p className="text-2xl text-purple-50 mb-12">
@@ -618,7 +618,7 @@ export default function AdvancedAnalyticsPage() {
             </section>
 
             {/* Footer */}
-            <footer className="py-12 px-6 border-t border-gray-200 bg-white">
+            <footer className="py-12 px-4 md:px-6 border-t border-gray-200 bg-white">
                 <div className="max-w-7xl mx-auto text-center text-gray-500 text-sm">
                     <p>© 2024 ibigdata. All rights reserved.</p>
                 </div>
