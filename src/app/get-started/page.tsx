@@ -2,6 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { ChevronRight, Clock, Shield, CreditCard, Users, Zap, Play, Check, ArrowRight, Star } from "lucide-react";
+import { FaChartLine, FaGraduationCap, FaSackDollar, FaUser, FaUsers } from "react-icons/fa6";
+import { GiArcheryTarget } from "react-icons/gi";
+import { CgNotes } from "react-icons/cg";
+import { IoIosRocket, IoIosSearch } from "react-icons/io";
+import { IoCart, IoHome } from "react-icons/io5";
+import { LiaIndustrySolid } from "react-icons/lia";
+import { BsCameraReelsFill } from "react-icons/bs";
 
 export default function GetStartedPage() {
   const [selectedOption, setSelectedOption] = useState("trial");
@@ -16,12 +23,12 @@ export default function GetStartedPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const industries = [
-    { id: "sales", name: "Sales & Marketing", icon: "📈", description: "Lead management & conversion tracking" },
-    { id: "real-estate", name: "Real Estate", icon: "🏠", description: "Property listings & client management" },
-    { id: "ecommerce", name: "E-commerce", icon: "🛒", description: "Customer lifecycle & order tracking" },
-    { id: "manufacturing", name: "Manufacturing", icon: "🏭", description: "B2B sales & production pipeline" },
-    { id: "finance", name: "Finance", icon: "💰", description: "Client portfolios & compliance" },
-    { id: "education", name: "Education", icon: "🎓", description: "Student enrollment & engagement" }
+    { id: "sales", name: "Sales & Marketing", icon: <FaChartLine />, description: "Lead management & conversion tracking" },
+    { id: "real-estate", name: "Real Estate", icon: <IoHome />, description: "Property listings & client management" },
+    { id: "ecommerce", name: "E-commerce", icon: <IoCart />, description: "Customer lifecycle & order tracking" },
+    { id: "manufacturing", name: "Manufacturing", icon: <LiaIndustrySolid />, description: "B2B sales & production pipeline" },
+    { id: "finance", name: "Finance", icon: <FaSackDollar />, description: "Client portfolios & compliance" },
+    { id: "education", name: "Education", icon: <FaGraduationCap />, description: "Student enrollment & engagement" }
   ];
 
   const roles = [
@@ -39,7 +46,7 @@ export default function GetStartedPage() {
       id: "trial",
       title: "Start Free Trial",
       description: "Full access for 14 days",
-      icon: "🚀",
+      icon: <IoIosRocket />,
       timeframe: "2 minutes to setup",
       primary: true
     },
@@ -47,7 +54,7 @@ export default function GetStartedPage() {
       id: "demo",
       title: "Book Live Demo",
       description: "Personalized 30-min walkthrough",
-      icon: "👥",
+      icon: <FaUsers/>,
       timeframe: "Schedule for later",
       primary: false
     },
@@ -55,17 +62,17 @@ export default function GetStartedPage() {
       id: "explore",
       title: "Explore Sample Data",
       description: "Test drive with dummy data",
-      icon: "🔍",
+      icon: <IoIosSearch />,
       timeframe: "No signup required",
       primary: false
     }
   ];
 
   const onboardingSteps = [
-    { step: 1, title: "Create Account", description: "30 seconds", icon: "👤" },
-    { step: 2, title: "Choose Industry", description: "Personalize experience", icon: "🎯" },
-    { step: 3, title: "Add First Lead", description: "Import or create", icon: "📋" },
-    { step: 4, title: "Launch Automation", description: "Start growing", icon: "🚀" }
+    { step: 1, title: "Create Account", description: "30 seconds", icon: <FaUser/> },
+    { step: 2, title: "Choose Industry", description: "Personalize experience", icon: <GiArcheryTarget /> },
+    { step: 3, title: "Add First Lead", description: "Import or create", icon: <CgNotes /> },
+    { step: 4, title: "Launch Automation", description: "Start growing", icon: <IoIosRocket /> }
   ];
 
   const testimonials = [
@@ -73,14 +80,14 @@ export default function GetStartedPage() {
       name: "Sarah Chen",
       role: "Sales Director",
       company: "TechFlow Solutions",
-      avatar: "👩‍💼",
+      avatar: <FaUser/>,
       text: "Setup took literally 5 minutes. Had my first automation running before lunch!"
     },
     {
       name: "Mike Rodriguez", 
       role: "Real Estate Broker",
       company: "Premier Properties",
-      avatar: "👨‍💼",
+      avatar: <FaUser/>,
       text: "Closed 3 deals in first month using the pre-built real estate pipeline."
     }
   ];
@@ -105,14 +112,14 @@ export default function GetStartedPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 px-6 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+      <section className="relative py-20 px-4 md:px-6 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
         <div className="max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 border border-green-200 mb-8">
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             <span className="text-sm font-medium text-green-700">Free 14-Day Trial</span>
           </div>
 
-          <h1 className="text-5xl lg:text-7xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          <h1 className="text-3xl md:text-5xl lg:text-7xl font-black mb-6 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Launch Your CRM in
             <br />
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
@@ -146,18 +153,24 @@ export default function GetStartedPage() {
               <button
                 key={option.id}
                 onClick={() => setSelectedOption(option.id)}
-                className={`p-6 rounded-2xl border-2 transition-all hover:scale-105 ${
+                className={`p-4 md:p-6 rounded-2xl border-2 transition-all hover:scale-105 ${
                   selectedOption === option.id
                     ? option.primary 
                       ? 'border-blue-500 bg-blue-50 shadow-lg'
-                      : 'border-purple-500 bg-purple-50 shadow-lg'
+                      : 'border-blue-500 bg-purple-50 shadow-lg'
                     : 'border-gray-200 bg-white hover:border-gray-300'
                 }`}
               >
-                <div className="text-4xl mb-3">{option.icon}</div>
+                <div className={`text-4xl flex items-center justify-center ${
+                  selectedOption === option.id
+                    ? option.primary 
+                      ? 'text-blue-500 '
+                      : 'text-blue-500 '
+                    : 'text-gray-800  hover:text-gray-600'
+                } mb-3`}>{option.icon}</div>
                 <h3 className={`text-lg font-bold mb-2 ${
                   selectedOption === option.id && option.primary ? 'text-blue-700' : 
-                  selectedOption === option.id ? 'text-purple-700' : 'text-gray-900'
+                  selectedOption === option.id ? 'text-blue-700' : 'text-gray-900'
                 }`}>
                   {option.title}
                 </h3>
@@ -173,7 +186,7 @@ export default function GetStartedPage() {
           {/* Primary CTA */}
           <button
             onClick={() => document.getElementById('signup-form')?.scrollIntoView({ behavior: 'smooth' })}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 px-4 md:px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105"
           >
             Start Free – Takes 2 Minutes
             <ArrowRight className="w-5 h-5" />
@@ -182,7 +195,7 @@ export default function GetStartedPage() {
       </section>
 
       {/* Onboarding Steps Visualization */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-4 md:px-6 bg-white ">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-black mb-4 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -193,18 +206,18 @@ export default function GetStartedPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8 relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8  relative">
             {onboardingSteps.map((step, index) => (
               <div key={step.step} className="text-center relative">
-                <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-8 mb-4 hover:scale-105 transition-transform">
-                  <div className="text-4xl mb-4">{step.icon}</div>
+                <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-4 md:p-8 mb-4 hover:scale-105 transition-transform">
+                  <div className="text-4xl flex items-center justify-center text-blue-500 mb-4">{step.icon}</div>
                   <div className="text-2xl font-bold text-blue-600 mb-2">0{step.step}</div>
                   <h3 className="font-bold text-gray-900 mb-2">{step.title}</h3>
                   <p className="text-sm text-gray-600">{step.description}</p>
                 </div>
-                {index < onboardingSteps.length  && (
+                {/* {index < onboardingSteps.length  && (
                   <div className="hidden md:block absolute -top-2 left-1/2  w-8 h-0.5 bg-blue-300 transform -translate-y-1/2" />
-                )}
+                )} */}
               </div>
             ))}
           </div>
@@ -212,7 +225,7 @@ export default function GetStartedPage() {
       </section>
 
       {/* Instant Value Preview */}
-      <section className="py-20 px-6 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-20 px-4 md:px-6 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-black mb-4 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -256,8 +269,8 @@ export default function GetStartedPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-2xl">
-              <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl p-6 text-white mb-6">
+            <div className="bg-white rounded-2xl p-4 md:p-8 shadow-2xl">
+              <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl p-4 md:p-6 text-white mb-6">
                 <div className="flex justify-between items-center mb-4">
                   <span className="text-sm opacity-75">Total Revenue</span>
                   <span className="text-2xl font-bold">$127,450</span>
@@ -284,7 +297,7 @@ export default function GetStartedPage() {
               </div>
               
               <div className="bg-gray-100 rounded-lg p-4 text-center">
-                <div className="text-2xl mb-2">🎥</div>
+                <div className="text-2xl mb-2"><BsCameraReelsFill /></div>
                 <p className="text-sm text-gray-600">See how easy it is to add your first lead and close your first deal</p>
               </div>
             </div>
@@ -293,7 +306,7 @@ export default function GetStartedPage() {
       </section>
 
       {/* Signup Form Section */}
-      <section id="signup-form" className="py-20 px-6 bg-white">
+      <section id="signup-form" className="py-20 px-4 md:px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-black mb-4 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -304,7 +317,7 @@ export default function GetStartedPage() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-blue-50 via-white to-purple-50 rounded-3xl p-8 lg:p-12 border-2 border-blue-100">
+          <div className="bg-gradient-to-br from-blue-50 via-white to-purple-50 rounded-3xl p-4 md:p-8 lg:p-12 border-2 border-blue-100">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -414,7 +427,7 @@ export default function GetStartedPage() {
                 )}
               </button>
 
-              <div className="flex justify-center gap-6 text-sm text-gray-500">
+              <div className="flex flex-col md:flex-row  justify-center gap-6 text-sm text-gray-500">
                 <div className="flex items-center gap-1">
                   <Shield className="w-4 h-4" />
                   <span>256-bit SSL</span>
@@ -434,7 +447,7 @@ export default function GetStartedPage() {
       </section>
 
       {/* Trust & Testimonials */}
-      <section className="py-20 px-6 bg-gray-50">
+      <section className="py-20 px-4 md:px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-black mb-4 text-gray-900" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -447,14 +460,18 @@ export default function GetStartedPage() {
 
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg">
-                <div className="flex items-center gap-4 mb-4">
+              <div key={index} className="bg-white  rounded-2xl p-4 md:p-8 shadow-lg">
+                <div className="flex flex-col md:flex-row items-center gap-4 mb-4">
                   <div className="text-3xl">{testimonial.avatar}</div>
-                  <div>
+                  <div> <div className="ml-auto flex md:hidden">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
                     <div className="font-bold text-gray-900">{testimonial.name}</div>
                     <div className="text-sm text-gray-600">{testimonial.role}, {testimonial.company}</div>
                   </div>
-                  <div className="ml-auto flex">
+                  <div className="ml-auto hidden md:flex">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                     ))}
@@ -480,9 +497,9 @@ export default function GetStartedPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 px-6 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600">
+      <section className="py-20 px-4 md:px-6 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl lg:text-5xl font-black mb-6 text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Ready to Close More Deals?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
@@ -491,22 +508,22 @@ export default function GetStartedPage() {
           </p>
           <button
             onClick={() => document.getElementById('signup-form')?.scrollIntoView({ behavior: 'smooth' })}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 px-4 md:px-8 py-4 bg-white text-blue-600 rounded-xl font-black text-lg hover:shadow-2xl transition-all hover:scale-105"
           >
             Start Free Trial Now
             <ArrowRight className="w-5 h-5" />
           </button>
           
           <div className="mt-8 flex justify-center gap-6 text-sm text-white/80">
-            <div className="flex items-center gap-1">
+            <div className="flex  flex-col md:flex-row items-center gap-1">
               <Clock className="w-4 h-4" />
               <span>2-minute setup</span>
             </div>
-            <div className="flex items-center gap-1">
+            <div className="flex flex-col md:flex-row items-center gap-1">
               <Shield className="w-4 h-4" />
               <span>SSL secured</span>
             </div>
-            <div className="flex items-center gap-1">
+            <div className="flex flex-col md:flex-row items-center gap-1">
               <Users className="w-4 h-4" />
               <span>24/7 support</span>
             </div>

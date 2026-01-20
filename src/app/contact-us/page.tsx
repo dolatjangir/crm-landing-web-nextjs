@@ -9,22 +9,24 @@ import { HiOutlineHomeModern } from "react-icons/hi2";
 import { IoChatboxEllipsesOutline, IoStatsChartSharp } from "react-icons/io5";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { IoMdCall } from "react-icons/io";
-
+import {contactUsapi} from "@/api/contact.api"
+ 
 export default function ContactUsPage() {
   const [selectedPath, setSelectedPath] = useState<"sales" | "support" | "partnerships" | "general">("general");
   const [formData, setFormData] = useState({
-    fullName: "",
+    name: "",
     email: "",
     companyName: "",
-    subject: "",
+    phone: "",
     message: "",
-    aiAssist: false
+   
   });
+  //  aiAssist: false
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [aiGeneratedMessage, setAiGeneratedMessage] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
-
+  const [error , setError] = useState("");
   const contactPaths = [
     {
       id: "sales",
@@ -147,7 +149,7 @@ export default function ContactUsPage() {
   };
 
   const generateAIMessage = async () => {
-    if (!formData.fullName || !formData.subject) return;
+    if (!formData.name || !formData.phone) return;
     
     setIsGenerating(true);
     
@@ -157,7 +159,7 @@ export default function ContactUsPage() {
     const aiTemplates = {
       sales: `Hi team,
 
-I'm ${formData.fullName} from ${formData.companyName || '[Company]'} and I'm interested in learning more about your CRM solution for ${formData.subject.toLowerCase()}.
+I'm ${formData.name} from ${formData.companyName || '[Company]'} and I'm interested in learning more about your CRM solution for ${formData.phone.toLowerCase()}.
 
 Could we schedule a brief call to discuss:
 - Pricing and features
@@ -165,11 +167,11 @@ Could we schedule a brief call to discuss:
 - ROI expectations
 
 Best regards,
-${formData.fullName}`,
+${formData.name}`,
       
       support: `Hello Support,
 
-I'm experiencing an issue with ${formData.subject.toLowerCase()} in my CRM account.
+I'm experiencing an issue with ${formData.phone.toLowerCase()} in my CRM account.
 
 Here are the details:
 - Account: ${formData.email}
@@ -180,11 +182,11 @@ Here are the details:
 Any help would be appreciated.
 
 Thanks,
-${formData.fullName}`,
+${formData.name}`,
       
       partnerships: `Hi Partnerships Team,
 
-I'm ${formData.fullName} from ${formData.companyName || '[Company]'} exploring ${formData.subject.toLowerCase()} opportunities with your platform.
+I'm ${formData.name} from ${formData.companyName || '[Company]'} exploring ${formData.phone.toLowerCase()} opportunities with your platform.
 
 I'd love to discuss:
 - Partnership requirements
@@ -194,18 +196,18 @@ I'd love to discuss:
 Looking forward to connecting.
 
 Best,
-${formData.fullName}`,
+${formData.name}`,
       
       general: `Hello,
 
-I'm ${formData.fullName} reaching out regarding ${formData.subject.toLowerCase()}.
+I'm ${formData.name} reaching out regarding ${formData.phone.toLowerCase()}.
 
 [Please provide more details about your inquiry]
 
 Thank you for your time.
 
 Best regards,
-${formData.fullName}`
+${formData.name}`
     };
     
     setAiGeneratedMessage(aiTemplates[selectedPath]);
@@ -214,27 +216,47 @@ ${formData.fullName}`
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setShowSuccess(true);
-    setIsSubmitting(false);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
+
+    try{
+      setIsSubmitting(true);
+      setError("");
+
+      const payload ={
+        name:formData.name,
+        email:formData.email,
+        companyname:formData.companyName,
+        phone: formData.phone,
+        message: formData.message,
+      }
+      await contactUsapi(payload)
+      alert("successfuly data stored");
+         setTimeout(() => {
       setShowSuccess(false);
       setFormData({
-        fullName: "",
+        name: "",
         email: "",
         companyName: "",
-        subject: "",
+        phone: "",
         message: "",
-        aiAssist: false
+        // aiAssist: false
       });
       setAiGeneratedMessage("");
     }, 3000);
+    }catch(err:any){
+        const msg =
+      err.response?.data?.message || "Something went wrong";
+    setError(msg);
+    console.error(msg);
+
+    }finally{
+      setShowSuccess(true);
+      setIsSubmitting(false);
+    }
+   
+    
+    
+    // Reset form after 3 seconds
+ 
   };
 
   return (
@@ -344,8 +366,8 @@ ${formData.fullName}`
                       type="text"
                       placeholder="Name *"
                       required
-                      value={formData.fullName}
-                      onChange={(e) => handleInputChange('fullName', e.target.value)}
+                      value={formData.name}
+                      onChange={(e) => handleInputChange('name', e.target.value)}
                       className="w-full rounded-md border border-gray-300 px-4 py-3 text-sm focus:border-[#1E88E5] focus:outline-none"
                     />
 
@@ -367,7 +389,14 @@ ${formData.fullName}`
                     className="w-full rounded-md border border-gray-300 px-4 py-3 text-sm focus:border-[#1E88E5] focus:outline-none"
                   />
 
-                  <select
+                    <input
+                    type = "text"
+                    placeholder="phone No."
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange('phone',e.target.value)}
+                     className="w-full rounded-md border border-gray-300 px-4 py-3 text-sm focus:border-[#1E88E5] focus:outline-none"
+                    />
+                  {/* <select
                     required
                     value={formData.subject}
                     onChange={(e) => handleInputChange('subject', e.target.value)}
@@ -377,7 +406,7 @@ ${formData.fullName}`
                     {inquiryTypes[selectedPath]?.map(type => (
                       <option key={type} value={type}>{type}</option>
                     ))}
-                  </select>
+                  </select> */}
 
                   <textarea
                     rows={5}
