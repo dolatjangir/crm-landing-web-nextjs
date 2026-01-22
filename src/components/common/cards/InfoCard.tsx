@@ -48,10 +48,10 @@ export function InfoCard({
 
       {/* Optional Learn More */}
       {learnMoreHref && (
-        <div className="absolute bottom-0 left-0 right-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
+        <div className="absolute bottom-0 left-0 right-0 translate-y-0 md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-300 ease-out">
           <Link
             href={learnMoreHref}
-            className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-semibold py-4 px-6 flex items-center justify-center hover:from-cyan-700 hover:to-blue-700 transition-colors"
+            className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-semibold py-4 px-6 flex items-center justify-center  hover:from-cyan-700 hover:to-blue-700 transition-colors"
           >
             <span>Learn More</span>
           </Link>
