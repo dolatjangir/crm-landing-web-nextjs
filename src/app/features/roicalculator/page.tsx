@@ -30,6 +30,10 @@ type ResultsState = {
   hoursSavedPerYear: number;
 };
 
+const round3values = (value : number) =>{
+  return Number(value.toFixed(3));
+};
+
 export default function ROICalculator() {
   const [inputs, setInputs] = useState<InputsState>({
     monthlyRevenue: 100000,
@@ -40,6 +44,7 @@ export default function ROICalculator() {
   });
 
   const [results, setResults] = useState<ResultsState | null>(null);
+
 
   const handleInputChange = (
     field: keyof InputsState,
@@ -99,16 +104,16 @@ const calculateROI = () => {
     (1 + conversionUpliftPercent / 100);
 
   setResults({
-    annualRevenueIncrease,
-    timeSavingsValue,
-    totalBenefit,
+    annualRevenueIncrease: round3values(annualRevenueIncrease),
+    timeSavingsValue: round3values(timeSavingsValue),
+    totalBenefit : round3values(totalBenefit),
     annualInvestment,
-    netBenefit,
+    netBenefit : round3values(netBenefit),
     roi,
     paybackMonths,
     conversionBoost: conversionUpliftPercent,
-    newConversionRate,
-    hoursSavedPerYear,
+    newConversionRate : round3values(newConversionRate),
+    hoursSavedPerYear : round3values(hoursSavedPerYear),
   });
 };
 
@@ -227,60 +232,60 @@ const calculateROI = () => {
             ) : (
               <>
                 {/* Main ROI Card */}
-                <div className="bg-gradient-to-r from-cyan-500 to-blue-500 rounded-3xl p-4 md:p-8 text-white shadow-xl">
-                  <h2 className="text-2xl font-bold mb-2">Your Potential ROI</h2>
-                  <div className="text-6xl font-bold mb-4">{results.roi}%</div>
+                <div className="bg-gradient-to-r from-cyan-500 to-blue-500 rounded-3xl p-4 md:p-8  text-white shadow-xl overflow-hidden">
+                  <h2 className="text-xl md:text-2xl font-bold mb-2">Your Potential ROI</h2>
+                  <div className="text-xl md:text-5xl lg:text-6xl break-all overflow-hidden text-ellipsis font-bold mb-4">{results.roi}%</div>
                   <p className="text-cyan-50 text-lg">
                     Payback period: <span className="font-bold">{results.paybackMonths} months</span>
                   </p>
                 </div>
 
                 {/* Detailed Breakdown */}
-                <div className="bg-white rounded-3xl p-4 md:p-8 shadow-xl">
+                <div className="bg-white rounded-3xl p-4 md:p-8 shadow-xl overflow-hidden">
                   <h3 className="text-xl font-bold text-slate-900 mb-6">Breakdown</h3>
 
                   <div className="space-y-4">
-                    <div className="flex justify-between items-center pb-4 border-b border-slate-200">
+                    <div className="flex flex-col-reverse  md:flex-row justify-between md:items-center pb-4 border-b border-slate-200">
                       <div>
                         <p className="text-sm text-slate-600">Annual Revenue Increase</p>
                         <p className="text-xs text-slate-500 mt-1">
                           Conversion: {inputs.currentConversionRate}% → {results.newConversionRate.toFixed(1)}%
                         </p>
                       </div>
-                      <p className="text-2xl font-bold text-green-600">
+                      <p className="text-md md:text-xl lg:text-3xl break-all overflow-hidden text-ellipsis font-bold text-green-600">
                         ${results.annualRevenueIncrease.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                       </p>
                     </div>
 
-                    <div className="flex justify-between items-center pb-4 border-b border-slate-200">
+                    <div className="flex flex-col-reverse  md:flex-row justify-between md:items-center  pb-4 border-b border-slate-200">
                       <div>
                         <p className="text-sm text-slate-600">Time Savings Value</p>
                         <p className="text-xs text-slate-500 mt-1">
                           {results.hoursSavedPerYear.toFixed(0)} hours saved annually
                         </p>
                       </div>
-                      <p className="text-2xl font-bold text-green-600">
+                      <p className="text-md md:text-xl lg:text-3xl break-all overflow-hidden text-ellipsis font-bold text-green-600">
                         ${results.timeSavingsValue.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                       </p>
                     </div>
 
-                    <div className="flex justify-between items-center pb-4 border-b border-slate-200">
+                    <div className="flex flex-col-reverse  md:flex-row justify-between md:items-center  pb-4 border-b border-slate-200">
                       <p className="text-sm text-slate-600">Total Annual Benefit</p>
-                      <p className="text-2xl font-bold text-cyan-600">
+                      <p className="text-md md:text-xl lg:text-2xl break-all overflow-hidden text-ellipsis font-bold text-cyan-600">
                         ${results.totalBenefit.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                       </p>
                     </div>
 
-                    <div className="flex justify-between items-center pb-4 border-b border-slate-200">
+                    <div className="flex flex-col-reverse  md:flex-row justify-between md:items-center  pb-4 border-b border-slate-200">
                       <p className="text-sm text-slate-600">Annual Investment</p>
-                      <p className="text-2xl font-bold text-slate-600">
+                      <p className="text-md md:text-xl lg:text-2xl break-all overflow-hidden text-ellipsis font-bold text-slate-600">
                         ${results.annualInvestment.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                       </p>
                     </div>
 
-                    <div className="flex justify-between items-center pt-2">
+                    <div className="flex flex-col-reverse  md:flex-row justify-between md:items-center  pt-2">
                       <p className="text-sm font-bold text-slate-900">Net Annual Benefit</p>
-                      <p className="text-3xl font-bold text-cyan-600">
+                      <p className="text-md md:text-xl lg:text-3xl break-all overflow-hidden text-ellipsis font-bold text-cyan-600">
                         ${results.netBenefit.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                       </p>
                     </div>

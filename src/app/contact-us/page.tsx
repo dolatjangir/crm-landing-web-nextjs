@@ -310,8 +310,8 @@ ${formData.name}`
             <div className="space-y-8">
               <div className="h-6" />
               
-              <h3 className="text-2xl md:text-3xl font-semibold leading-snug relative pl-6">
-                <span className="absolute left-0 top-1 h-8 w-[3px] bg-[#1E88E5]" />
+              <h3 className="text-2xl md:text-3xl text-black font-semibold leading-snug relative pl-6">
+                <span className="absolute left-0  top-1 h-8 w-[3px] bg-[#1E88E5]" />
                 To make requests for further information,{" "}
                 <mark className="bg-transparent text-[#1E88E5] font-semibold">
                   contact us

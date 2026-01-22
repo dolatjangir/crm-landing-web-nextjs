@@ -63,7 +63,7 @@ export default function NewsletterPopup({ delay = 2000 }: NewsletterPopupProps) 
       className="fixed inset-0 z-50 flex items-center justify-center  animate-fade-in"
      
     >
-        <div className='absolute inset-0 bg-black/90'
+        <div className='absolute inset-0 bg-black/20'
          onClick={handleOverlayClick}/>
       <div className="relative bg-white  top-7  rounded-2xl shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300 scale-100 animate-slide-up">
         {/* Close Button */}
@@ -87,7 +87,7 @@ export default function NewsletterPopup({ delay = 2000 }: NewsletterPopupProps) 
                   </svg>
                 </div>
                 <h2 className="text-3xl font-black text-gray-900 mb-3" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                  Stay in the Loop
+                 NewsLetter
                 </h2>
                 <p className="text-gray-600 text-lg leading-relaxed">
                   Get exclusive insights, industry trends, and CRM tips delivered straight to your inbox.
@@ -113,7 +113,7 @@ export default function NewsletterPopup({ delay = 2000 }: NewsletterPopupProps) 
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-bold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-200"
+                  className="w-full py-4 cursor-pointer bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-bold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-200"
                 >
                     {loading ? "subscribing..." : "Subscribe to Newsletter"}
                   
