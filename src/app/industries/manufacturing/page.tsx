@@ -473,11 +473,11 @@ export default function ManufacturingCRMLanding() {
 
           
                            <SuccessStoryForAll
-                                                                                   testimonials={testimonials}
-                                                                                   activeIndex={activeTestimonial}
-                                                                                   onChange={setActiveTestimonial}
-                                                                                   quoteIcon={<div className="text-4xl">💬</div>}
-                                                                                   />
+                         testimonials={testimonials}
+                         activeIndex={activeTestimonial}
+                        onChange={setActiveTestimonial}
+                         quoteIcon={<div className="text-4xl">💬</div>}
+                         />
                
                 </div>
             </section>

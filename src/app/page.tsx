@@ -7,7 +7,7 @@ import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
 import Industries from "@/components/Industries/Industries";
-import NewsletterPopup from "@/components/newsletter/Popup";
+// import NewsletterPopup from "@/components/newsletter/Popup";
 import ProductGrid from "@/components/Products/ProductGrid";
 import Whyus from "@/components/Whyus/Whyus";
 
@@ -17,7 +17,7 @@ export default function HomePage() {
     <div className="">
       
       <main className="flex flex-col pt-[64px] ">
-        <NewsletterPopup/>
+        {/* <NewsletterPopup/> */}
         {/* Hero Section */}
         <Hero />
 
