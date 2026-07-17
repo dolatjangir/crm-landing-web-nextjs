@@ -42,6 +42,7 @@ export default function Header() {
         { name: "Security & Compliance", href: "/features/security-compilance" },
         
         { name: "ROI Calculator", href: "/features/roicalculator" },
+        {name:"Product Price Compare", href:"/features/price-compare"},
       ]
     },
     { 
