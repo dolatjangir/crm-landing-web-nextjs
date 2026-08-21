@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Ecosystem() {
   return (
     <section
-      className="relative  py-10 sm:py-16 overflow-hidden"
+      className="relative  py-6 sm:py-10 overflow-hidden"
      
     >
       {/* Animated Background Elements */}
@@ -46,11 +46,7 @@ export default function Ecosystem() {
           data-aos="fade-up"
           data-aos-delay="350"
         >
-          ibigdata is not just a CRM — it is a living ecosystem of intelligent AI agents 
-          working together through one unified command center. From lead qualification 
-          and property matching to content creation and campaign automation, every agent 
-          is connected, synchronized, and continuously learning to drive your growth 
-          without limits.
+        ibigdata is more than a CRM—it’s an intelligent AI ecosystem where connected agents work together to automate leads, property matching, content, campaigns, and growth from one unified command center.
 
         </p>
 

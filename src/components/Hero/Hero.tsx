@@ -56,8 +56,8 @@ export default function Hero() {
             >
               Deploy intelligent AI agents that handle lead qualification, property matching, 
               content creation, calling, follow-ups, data mining, SEO, social media, and campaign 
-              automation — all on autopilot. ibigdata puts a full team of AI agents to work 
-              for your business, so you scale faster with zero manual effort.
+              with ai agents — all on autopilot. ibigdata puts a full team of AI agents to work 
+              for your business, so you scale faster with less manual effort.
             </p>
 
             {/* CTA */}

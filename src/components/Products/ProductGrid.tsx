@@ -72,7 +72,7 @@ export default function ProductGrid() {
   return (
     <section
       id="platform"
-      className="relative scroll-mt-20 py-16 overflow-hidden"
+      className="relative scroll-mt-20 py-6 sm:py-10 overflow-hidden"
       data-aos="fade-up"
     >
       {/* Animated Background Elements */}

@@ -60,7 +60,7 @@ export default function CoreFeatures() {
   const duplicatedCards = [...cards, ...cards];
 
   return (
-    <section id="feature" className="relative scroll-mt-20 py-10 sm:py-16 overflow-hidden">
+    <section id="ai-agents" className="relative scroll-mt-20 py-6 sm:py-10 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center relative">
         <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl mb-10">
           Meet Your{" "}

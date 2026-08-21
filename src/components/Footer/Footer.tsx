@@ -6,13 +6,29 @@ export default function Footer() {
     { name: "WBH CRM", link: "https://wbh.ibigdata.in" },
   ];
 
-  const navigation = [
-    { name: "Products", href: "#products" },
-    { name: "Platform", href: "#platform" },
-    { name: "Industries", href: "#industries" },
-    { name: "Contact", href: "#contact" },
+  const features = [
+     { name: "Workflow Automation", href: "/features/workflowautomation" },
+        { name: "customize workflow", href: "/features/customize-workflow" },
+        { name: "scalability", href: "/features/scalability" },
+        { name: "integration", href: "/features/integrations" },
+        { name: "Advanced Analytics", href: "/features/advanced-analytics" },
+        { name: "Security & Compliance", href: "/features/security-compilance" },
+        { name: "ROI Calculator", href: "/features/roicalculator" },
+        { name: "Product Price Compare", href: "/features/price-compare" },
   ];
 
+
+    const industries = [
+      
+        { name: "Healthcare", href: "/industries/health-care" },
+        { name: "Real Estate", href: "/industries/real-estate" },
+        { name: "Finance", href: "/industries/finance" },
+        { name: "E-commerce", href: "/industries/e-commerce" },
+        { name: "Education", href: "/industries/education" },
+        { name: "Manufacturing", href: "/industries/manufacturing" },
+      ]
+    
+   
   const social = [
     {
       name: "Twitter",
@@ -45,7 +61,7 @@ export default function Footer() {
 
   return (
     <footer className="relative bg-gradient-to-br from-gray-50 via-white to-cyan-50 border-t border-gray-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+      <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           
@@ -73,14 +89,14 @@ export default function Footer() {
               ))}
             </div>
           </div>
-                <div className="grid grid-cols-2 gap-8 md:col-span-2">
-          {/* Navigation */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 md:col-span-2">
+          {/* features */}
           <div>
             <h4 className="text-gray-900 font-bold text-sm uppercase tracking-wider mb-4">
-              Navigation
+              Features
             </h4>
             <ul className="space-y-3">
-              {navigation.map((item) => (
+              {features.map((item) => (
                 <li key={item.name}>
                   <a
                     href={item.href}
@@ -96,6 +112,27 @@ export default function Footer() {
             </ul>
           </div>
 
+               {/* industries */}
+          <div>
+            <h4 className="text-gray-900 font-bold text-sm uppercase tracking-wider mb-4">
+              Industries
+            </h4>
+            <ul className="space-y-3">
+              {industries.map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    className="text-gray-600 hover:text-cyan-600 transition-colors text-sm flex items-center gap-2 group"
+                  >
+                    <svg className="w-4 h-4 text-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                    <span>{item.name}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
           {/* Sub-CRM Links */}
           <div>
             <h4 className="text-gray-900 font-bold text-sm uppercase tracking-wider mb-4">

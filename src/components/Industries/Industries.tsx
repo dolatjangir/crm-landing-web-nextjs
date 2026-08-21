@@ -1,4 +1,7 @@
 "use client";
+
+import Link from "next/link";
+
 export default function Industries() {
  const industries = [
     {
@@ -71,7 +74,7 @@ export default function Industries() {
     <section
       id="industries"
       data-aos="fade-up"
-      className="relative scroll-mt-20  py-10 sm:py-16 overflow-hidden"
+      className="relative scroll-mt-20  py-6 sm:py-10 overflow-hidden"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -134,9 +137,9 @@ export default function Industries() {
          className="mt-16 max-w-2xl mx-auto">
           <p className="text-gray-600 text-lg">
             Need a custom AI agent?{" "}
-            <a href="#contact" className="font-semibold text-cyan-700 hover:text-cyan-800 transition-colors">
+            <Link href="/contact-us" className="font-semibold text-cyan-700 hover:text-cyan-800 transition-colors">
               Let's build one for your workflow →
-            </a>
+            </Link>
           </p>
         </div>
       </div>
