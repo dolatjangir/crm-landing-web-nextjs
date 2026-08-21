@@ -273,7 +273,7 @@ export default function GetStartedPage() {
               <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl p-4 md:p-6 text-white mb-6">
                 <div className="flex justify-between items-center mb-4">
                   <span className="text-sm opacity-75">Total Revenue</span>
-                  <span className="text-2xl font-bold">$127,450</span>
+                  <span className="text-2xl font-bold">₹ 127,450</span>
                 </div>
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div>

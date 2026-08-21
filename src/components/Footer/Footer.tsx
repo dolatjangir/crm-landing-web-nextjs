@@ -52,12 +52,7 @@ export default function Footer() {
           {/* Branding */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 flex items-center justify-center">
-                <span className="text-white font-bold text-lg">iB</span>
-              </div>
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-                ibigdata
-              </h3>
+              <img src="/ibigdata-logo.png" alt="ibigdata-logo" className="w-50"/>
             </div>
             <p className="mt-4 text-gray-600 text-base leading-relaxed max-w-md">
               Unified CRM platform for industry-specific solutions. Empowering businesses with scalable, secure, and intelligent customer relationship management.

@@ -5,39 +5,39 @@ import Counter from "@/utils/Counter";
 export default function Whyus() {
   const reasons = [
     {
-      title: "Built for Scale",
+      title: "AI Agents That Never Sleep",
       description:
-        "Handle multiple sub-CRMs effortlessly as your business grows, without compromising performance.",
+        "Deploy intelligent agents that qualify leads, match properties, create content, and follow up 24/7 — so your business grows even when your team is offline.",
       number: "1",
     },
     {
-      title: "Industry-Specific Logic",
+      title: "Industry-Tailored Intelligence",
       description:
-        "Each CRM is tailored to its vertical, ensuring workflows, reporting, and features fit your industry.",
+        "Every AI agent is trained for your vertical. Whether it's real estate, consultancy, or travel, the automation logic fits your exact business language.",
       number: "2",
     },
     {
-      title: "Centralized Data",
+      title: "One Command Center",
       description:
-        "All CRMs are powered by a shared platform, giving you unified analytics and seamless reporting.",
+        "All AI agents feed into a unified dashboard. Track performance, manage workflows, and get real-time insights across every automation layer in one place.",
       number: "3",
     },
     {
-      title: "Faster Adoption",
+      title: "Zero-Setup Deployment",
       description:
-        "Intuitive, clean UI ensures your team can quickly learn and start using the platform.",
+        "Start automating in minutes, not months. Our AI agents are pre-trained and ready to run — no coding, no complex onboarding, no IT dependency.",
       number: "4",
     },
     {
-      title: "Customizable Workflows",
+      title: "Adaptive AI Workflows",
       description:
-        "Adapt the platform to your business processes without relying on developers or IT teams.",
+        "Your AI agents learn and evolve. Customize triggers, rules, and responses on the fly to match how your business actually operates.",
       number: "5",
     },
     {
-      title: "Enterprise-Ready Security",
+      title: "Enterprise-Grade Trust",
       description:
-        "Role-based access, encryption, and compliance standards built-in to protect your data.",
+        "End-to-end encryption, role-based access, and compliance-ready architecture keep your data and your customers protected around the clock.",
       number: "6",
     },
   ];
@@ -46,7 +46,7 @@ export default function Whyus() {
     <section
       id="why-us"
       data-aos="fade-up"
-      className="relative  py-20  overflow-hidden"
+      className="relative  py-16  overflow-hidden"
     >
       {/* Decorative Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -63,19 +63,19 @@ export default function Whyus() {
         <div className="mb-16">
           <div className="inline-flex items-center rounded-full border-2 border-cyan-600 px-4 py-1.5 mb-6">
             <span className="text-xs font-semibold text-cyan-700 tracking-wide">
-              💡 THE IBIGDATA ADVANTAGE
+              💡 WHY LEADERS CHOOSE IBIGDATA
             </span>
           </div>
 
-          <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl mb-6">
-            Why Choose{" "}
+          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl mb-6">
+            Why the Best Teams Trust{" "}
             <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
               ibigdata
             </span>
           </h2>
 
           <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8">
-            Designed for businesses that need scalable, industry-specific CRM solutions, ibigdata delivers unmatched value and flexibility.
+            Stop managing CRMs manually. ibigdata puts a full army of AI agents to work — automating leads, tasks, content, and growth while you focus on strategy.
           </p>
 
           {/* Stats */}
@@ -84,19 +84,19 @@ export default function Whyus() {
               <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
                 <Counter end={500} duration={3} suffix="+"/>
               </div>
-              <div className="text-sm text-gray-600 mt-1">Active Users</div>
+              <div className="text-sm text-gray-600 mt-1">Businesses Automated</div>
             </div>
             <div>
               <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
                 <Counter end={99.9} duration={3} suffix="%" />
               </div>
-              <div className="text-sm text-gray-600 mt-1">Uptime</div>
+              <div className="text-sm text-gray-600 mt-1">Agent Uptime</div>
             </div>
             <div>
               <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
                  <Counter end={24} duration={3} />/<Counter end={7} duration={3} />
               </div>
-              <div className="text-sm text-gray-600 mt-1">Support</div>
+              <div className="text-sm text-gray-600 mt-1">AI Agent Availability</div>
             </div>
           </div>
         </div>

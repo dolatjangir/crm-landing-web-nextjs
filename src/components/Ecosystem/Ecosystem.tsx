@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Ecosystem() {
   return (
     <section
-      className="relative  py-20 sm:py-28 lg:py-32 overflow-hidden"
+      className="relative  py-10 sm:py-16 overflow-hidden"
      
     >
       {/* Animated Background Elements */}
@@ -24,19 +24,19 @@ export default function Ecosystem() {
           data-aos-delay="100"
         >
           <span className="text-xs font-semibold text-white tracking-wide">
-           ⚡ CRM, Powered by Intelligence
+           ⚡ One Platform. Infinite AI Agents.
           </span>
         </div>
 
         {/* Section Header */}
         <h2
-          className="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl"
+          className="text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl"
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          An Intelligent CRM{" "}
+          The AI Agent Ecosystem{" "}
           <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-            Ecosystem
+            That Scales Your Business
           </span>
 
         </h2>
@@ -46,11 +46,11 @@ export default function Ecosystem() {
           data-aos="fade-up"
           data-aos-delay="350"
         >
-          ibigdata is an AI-powered CRM ecosystem where a single intelligent core
-automates leads, tasks, and data across every industry. Each
-AI-enhanced sub-CRM is connected to a centralized platform and guided
-by a built-in AI virtual assistant that continuously optimizes your
-business operations.
+          ibigdata is not just a CRM — it is a living ecosystem of intelligent AI agents 
+          working together through one unified command center. From lead qualification 
+          and property matching to content creation and campaign automation, every agent 
+          is connected, synchronized, and continuously learning to drive your growth 
+          without limits.
 
         </p>
 
@@ -59,8 +59,8 @@ business operations.
 
           {[
             {
-              title: "AI-Powered Core",
-    desc: "A centralized AI engine that automatically manages users, data, insights, and workflows across all CRMs.",
+              title: "Central AI Command",
+    desc: "A unified intelligence hub that orchestrates every AI agent, synchronizes data, and optimizes workflows across your entire business in real time.",
               delay: 100,
               icon: (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -68,8 +68,8 @@ business operations.
               )
             },
             {
-              title: "AI Industry Intelligence",
-    desc: "Industry-specific CRMs trained with AI to automate leads, tasks, and decisions for each vertical.",
+              title: "Industry-Tailored Agents",
+    desc: "Specialized AI agents built for your vertical — real estate, healthcare, finance, education, travel, and more — each trained to automate what matters most.",
               delay: 200,
               icon: (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -77,8 +77,8 @@ business operations.
               )
             },
             {
-              title: "Self-Scaling Architecture",
-    desc: "AI-ready infrastructure that grows with your business and adapts automatically as you scale.",
+              title: "Auto-Scaling Infrastructure",
+    desc: "The ecosystem grows as you grow. Add new agents, expand to new markets, and handle millions of interactions — all without touching a single server.",
               delay: 300,
               icon: (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -86,8 +86,8 @@ business operations.
               )
             },
             {
-             title: "Secure by AI Design",
-    desc: "AI-monitored security with role-based access, encrypted data, and compliance built in.",
+             title: "Enterprise-Grade Security",
+    desc: "End-to-end encryption, role-based access control, and AI-monitored threat detection keep your data and your customers protected around the clock.",
               delay: 400,
               icon: (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -118,7 +118,7 @@ business operations.
           data-aos="fade-up"
           data-aos-delay="500"
         >
-          <Link href={"/ecosystem"} className="text-lg">Discover how it all connects</Link>
+          <Link href={"/ecosystem"} className="text-lg">Explore the full ecosystem</Link>
           <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>

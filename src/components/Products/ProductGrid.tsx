@@ -5,12 +5,12 @@ export default function ProductGrid() {
   const products = [
     {
       title: "Property CRM",
-      description: "Complete CRM for real estate sales, inventory, and lead management.",
+      description: "AI-driven real estate CRM that automates lead qualification, property matching, and deal closures end-to-end.",
       features: [
-        "Lead & inquiry management",
-        "Property inventory tracking",
-        "Broker & channel partner CRM",
-        "Site visit & deal pipeline",
+        "AI Lead Qualification Agent",
+        "Smart Property Matching",
+        "Broker & Channel Partner CRM",
+        "Automated Follow-Ups & Pipeline",
       ],
       link: "https://property.ibigdata.in",
       icon: (
@@ -21,12 +21,12 @@ export default function ProductGrid() {
     },
     {
       title: "Consultancy CRM",
-      description: "Optimized CRM for consulting firms to manage clients and projects.",
+      description: "Intelligent CRM for consulting firms with AI agents that manage clients, projects, and billing effortlessly.",
       features: [
-        "Client management",
-        "Project tracking",
-        "Invoices & billing",
-        "Consultant performance metrics",
+        "AI Client Management",
+        "Project & Task Automation",
+        "Smart Invoicing & Billing",
+        "Performance Analytics",
       ],
       link: "https://consult.ibigdata.in",
       icon: (
@@ -37,12 +37,12 @@ export default function ProductGrid() {
     },
     {
       title: "Travel CRM",
-      description: "Streamline travel bookings, itineraries, and customer relations.",
+      description: "AI-powered travel CRM that automates bookings, itineraries, and customer engagement at scale.",
       features: [
-        "Tour & package management",
-        "Customer booking lifecycle",
-        "Payments & invoices",
-        "Travel agent dashboard",
+        "AI Tour & Package Management",
+        "Customer Lifecycle Automation",
+        "Payment & Invoice Tracking",
+        "Agent Performance Dashboard",
       ],
       link: "https://travel.ibigdata.in",
       icon: (
@@ -53,12 +53,12 @@ export default function ProductGrid() {
     },
     {
       title: "WBH CRM",
-      description: "Industry-specific CRM solution for WBH enterprises.",
+      description: "Enterprise-grade CRM with custom AI workflows designed for WBH operations and scalable growth.",
       features: [
-        "Custom workflow automation",
-        "Client & partner management",
-        "Analytics & reporting",
-        "Scalable architecture",
+        "AI Workflow Automation",
+        "Client & Partner Intelligence",
+        "Advanced Analytics & Reporting",
+        "Scalable Cloud Architecture",
       ],
       link: "https://wbh.ibigdata.in",
       icon: (
@@ -72,7 +72,7 @@ export default function ProductGrid() {
   return (
     <section
       id="platform"
-      className="relative scroll-mt-20 py-20 overflow-hidden"
+      className="relative scroll-mt-20 py-16 overflow-hidden"
       data-aos="fade-up"
     >
       {/* Animated Background Elements */}
@@ -89,19 +89,19 @@ export default function ProductGrid() {
           data-aos-delay="100"
         >
           <span className="text-xs font-semibold text-white tracking-wide">
-            🚀 INDUSTRY SOLUTIONS
+            🚀 AI-POWERED INDUSTRY CRMs
           </span>
         </div>
 
         {/* Section Header */}
         <h2
-          className="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl"
+          className="text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl"
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          Explore Our{" "}
+          Industry CRMs Supercharged by{" "}
           <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-            Industry-Specific CRMs
+            AI Agents
           </span>
         </h2>
 
@@ -110,7 +110,7 @@ export default function ProductGrid() {
           data-aos="fade-up"
           data-aos-delay="350"
         >
-          Each sub-CRM is tailored to its industry while powered by the same core platform.
+          Purpose-built CRM solutions for real estate, consultancy, travel, and enterprise — each infused with intelligent AI agents that automate leads, tasks, and growth.
         </p>
 
         {/* Products Grid */}

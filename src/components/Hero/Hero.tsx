@@ -1,9 +1,11 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Hero() {
 
   return (
-    <section id="home"  className="relative   overflow-hidden">
+    <section id="home" className="relative overflow-hidden">
 
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -13,7 +15,7 @@ export default function Hero() {
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
-        <div className=" py-14 flex flex-col-reverse lg:flex-row items-center gap-12">
+        <div className="py-14 flex flex-col-reverse lg:flex-row items-center gap-12">
 
           {/* Left Content */}
           <div
@@ -29,23 +31,21 @@ export default function Hero() {
               data-aos-once="true"
             >
               <span className="text-xs font-semibold text-white tracking-wide">
-                ✨ AI-POWERED CRM AUTOMATION
-
+                🤖 10+ AI AGENTS WORKING 24/7 FOR YOU
               </span>
             </div>
 
             <h1
-              className="text-4xl font-bold leading-tight tracking-tight text-gray-900 sm:text-5xl lg:text-6xl"
+              className="text-3xl font-bold leading-tight tracking-tight text-gray-900 sm:text-4xl lg:text-5xl"
               data-aos="fade-up"
               data-aos-delay="200"
               data-aos-once="true"
             >
-              AI That Runs Your CRM.
+              Your AI Agent Army
               <br className="hidden sm:block" />
               <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-                Automate Leads, Tasks & Growth.
+                Automate. Qualify. Grow.
               </span>
-
             </h1>
 
             <p
@@ -54,11 +54,10 @@ export default function Hero() {
               data-aos-delay="350"
               data-aos-once="true"
             >
-              ibigdata is an AI-powered CRM platform that automatically captures,
-qualifies, and manages your leads while handling tasks, follow-ups,
-and data workflows. With an intelligent AI virtual assistant working
-24/7, your business grows faster — with less manual effort.
-
+              Deploy intelligent AI agents that handle lead qualification, property matching, 
+              content creation, calling, follow-ups, data mining, SEO, social media, and campaign 
+              automation — all on autopilot. ibigdata puts a full team of AI agents to work 
+              for your business, so you scale faster with zero manual effort.
             </p>
 
             {/* CTA */}
@@ -68,11 +67,11 @@ and data workflows. With an intelligent AI virtual assistant working
               data-aos-delay="500"
               data-aos-once="true"
             >
-              <a
-                href="#get-started"
+              <Link
+                href="/get-started"
                 className="group inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 px-8 py-4 font-semibold text-white shadow-lg shadow-cyan-600/30 transition-all hover:scale-105"
               >
-                Get Started
+                Get Started With AI Agents
                 <svg
                   className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
                   fill="none"
@@ -81,13 +80,13 @@ and data workflows. With an intelligent AI virtual assistant working
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </a>
+              </Link>
 
               <a
-                href="#products"
+                href="#ai-agents"
                 className="inline-flex items-center justify-center rounded-xl border-2 border-cyan-600 px-8 py-4 font-semibold text-cyan-700 hover:bg-cyan-50 transition-all"
               >
-                Explore Solutions
+                Explore All Agents
               </a>
             </div>
           </div>
@@ -100,9 +99,9 @@ and data workflows. With an intelligent AI virtual assistant working
             data-aos-once="true"
           >
             <img
-              src="/heroImage.png"
-              alt="CRM Dashboard Illustration"
-              className="w-full max-w-md lg:max-w-full rounded-2xl shadow-2xl"
+              src="/robot-with-crm.png"
+              alt="AI Agents Illustration"
+              className="w-full max-w-md lg:max-w-full"
             />
           </div>
 
