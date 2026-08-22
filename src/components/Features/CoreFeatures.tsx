@@ -60,6 +60,34 @@ export default function CoreFeatures() {
   const duplicatedCards = [...cards, ...cards];
 
   return (
+    <>
+      <section id="analytics" className="py-10 ">
+      <div className="container mx-auto px-4">
+        <h2 className="font-['var(--font-head)]  text-[#0066cc]  text-3xl md:text-5xl text-center mb-4">
+         Everything You Need in One Platform
+        </h2>
+        <p className="text-center text-[#5da2e7] max-w-2xl mx-auto mb-16 text-lg">
+         Manage leads, track clients, automate marketing, close deals faster
+        </p>
+
+       <div className="relative w-full flex justify-center">
+  <div className="w-full">
+    <img
+      src="https://res.cloudinary.com/djipgt6vc/image/upload/v1775625175/ai-dash-mobile_heogas.png"
+      className="w-full h-auto object-cover rounded-2xl block sm:hidden"
+      alt="CRM Collaboration"
+    />
+    <img
+      src="https://res.cloudinary.com/djipgt6vc/image/upload/v1774526986/ai-dashboard-sec_ngpvcl.png"
+      className="w-full h-auto object-cover rounded-2xl hidden sm:block"
+      alt="CRM Collaboration"
+    />
+  </div>
+</div>
+
+      </div>
+    </section>
+
     <section id="ai-agents" className="relative scroll-mt-20 py-6 sm:py-10 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center relative">
         <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl mb-10">
@@ -123,5 +151,6 @@ export default function CoreFeatures() {
         }
       `}</style>
     </section>
+    </>
   );
 }
