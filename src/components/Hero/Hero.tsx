@@ -82,12 +82,12 @@ export default function Hero() {
                 </svg>
               </Link>
 
-              <a
-                href="#ai-agents"
+              <Link
+                href="/explore-ai-agent"
                 className="inline-flex items-center justify-center rounded-xl border-2 border-cyan-600 px-8 py-4 font-semibold text-cyan-700 hover:bg-cyan-50 transition-all"
               >
                 Explore All Agents
-              </a>
+              </Link>
             </div>
           </div>
 
