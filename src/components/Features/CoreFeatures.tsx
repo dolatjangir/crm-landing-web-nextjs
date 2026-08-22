@@ -120,7 +120,7 @@ export default function CoreFeatures() {
                   <img
                     src={card.image}
                     alt={card.title}
-                    className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-contain  group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                   />
                 </div>
