@@ -5,6 +5,7 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import ScrollProgressBar from "@/components/common/indicators/ScrollProgressBar";
 import ScrollUpButton from "@/components/common/scrollUpButton/ScrollUpButton";
+import WhatsAppChatbot from "@/components/whatsapp-button/whatsapp";
 
 export const metadata = {
   title: "ibigdata CRM",
@@ -44,7 +45,7 @@ export default function RootLayout({
           {children}
           {/* Footer */}
           <Footer />
-          <ScrollUpButton />
+          <WhatsAppChatbot />
         </div>
 
       </body>
